@@ -119,15 +119,6 @@ Still learning. Always shipping.
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=YRB19&show_icons=true&theme=dark&bg_color=0d1117&border_color=30363d&icon_color=ffffff&title_color=ffffff&text_color=8b949e&hide_border=false&include_all_commits=true&count_private=true" height="165" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YRB19&layout=compact&theme=dark&bg_color=0d1117&border_color=30363d&title_color=ffffff&text_color=8b949e&hide_border=false&langs_count=6" height="165" />
-
-</div>
-
-<br/>
-
-<div align="center">
-
 <img src="https://streak-stats.demolab.com?user=YRB19&theme=dark&background=0d1117&border=30363d&stroke=30363d&ring=ffffff&fire=ffffff&currStreakNum=ffffff&sideNums=8b949e&currStreakLabel=8b949e&sideLabels=8b949e&dates=8b949e&hide_border=false" />
 
 </div>
