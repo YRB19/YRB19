@@ -127,6 +127,8 @@ Still learning. Always shipping.
 
 </div>
 
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=YRB19&bg_color=0d1117&color=8b949e&line=ffffff&point=ffffff&area=true&area_color=ffffff&hide_border=false&border_color=30363d&radius=6" width="100%" />
+
 <br/>
 
 ---
