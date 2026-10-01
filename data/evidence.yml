@@ -1,0 +1,244 @@
+# Provenance for every field in projects.yml that was derived from GitHub rather than typed by hand.
+# confidence: HIGH = directly supported by code/config · MEDIUM = explicitly documented in README/docs ·
+#             STATED = stated by the owner (project brief) · LOW = inferred (NEVER published).
+# Paths are relative to the repo's default branch (main). Audit date 2026-10-01, public-web access only.
+audit:
+  date: "2026-10-01"
+  method: "No API token available: github.com pages, full git history (clone), repository archives, README/config/source inspection."
+  limitations:
+    - "Private repositories and private activity are invisible to this audit."
+    - "Live URLs could not be probed from the audit environment (egress allow-list); demo URLs are documented, not confirmed live."
+    - "CI run logs need authentication; only the latest-run badge status was readable."
+
+projects:
+  UsageOS:
+    tagline:     { value: "Self-hosted multi-account Claude.ai usage tracking platform", confidence: MEDIUM, evidence: ["README.md intro line"] }
+    description: { value: "Track token usage across multiple Claude.ai accounts with a Chrome extension, view analytics in a React dashboard, and receive limit-reset notifications via Telegram.", confidence: MEDIUM, evidence: ["README.md intro paragraph"] }
+    docs:        { value: "https://github.com/YRB19/UsageOS/blob/main/DEPLOY.md", confidence: HIGH, evidence: ["DEPLOY.md exists on main"] }
+    category:    { value: developer-tools, confidence: STATED, evidence: ["project brief (spec §7.2)"] }
+    family:      { value: os-series, confidence: STATED, evidence: ["project brief: OS Series"] }
+    status:      { value: active, confidence: LOW, evidence: ["spec draft default", "last commit 2026-09-30 (activity signal only)"] }
+    stack:
+      - { value: FastAPI, confidence: HIGH, evidence: ["backend/requirements.txt"] }
+      - { value: PostgreSQL, confidence: HIGH, evidence: ["docker-compose.yml postgres:16-alpine", "backend/requirements.txt asyncpg"] }
+      - { value: React, confidence: HIGH, evidence: ["frontend/package.json"] }
+      - { value: Chrome Extension, confidence: HIGH, evidence: ["extension/manifest.json manifest_version 3"] }
+      - { value: Telegram Bot API, confidence: HIGH, evidence: ["backend/app/telegram.py calls api.telegram.org"] }
+      - { value: Docker, confidence: HIGH, evidence: ["backend/Dockerfile", "frontend/Dockerfile", "docker-compose.yml"] }
+      - { value: Vite, confidence: HIGH, evidence: ["frontend/package.json"] }
+      - { value: Tailwind CSS, confidence: HIGH, evidence: ["frontend/package.json"] }
+      - { value: SQLAlchemy, confidence: HIGH, evidence: ["backend/requirements.txt"] }
+      - { value: Alembic, confidence: HIGH, evidence: ["backend/alembic.ini", "backend/requirements.txt"] }
+      - { value: Nginx, confidence: HIGH, evidence: ["frontend/Dockerfile", "frontend/nginx.conf"] }
+      - { value: Chart.js, confidence: HIGH, evidence: ["frontend/package.json", "extension/lib/chart.umd.min.js"] }
+    infrastructure:
+      - { value: "Docker Compose: PostgreSQL 16, FastAPI backend, Nginx-served React frontend", confidence: HIGH, evidence: ["docker-compose.yml"] }
+    services:
+      - { value: "Telegram Bot API (outbound notifications + webhook)", confidence: HIGH, evidence: ["backend/app/telegram.py", "backend/app/routers/telegram_webhook.py"] }
+      - { value: "claude.ai usage endpoints (read by the extension)", confidence: MEDIUM, evidence: ["README.md Chrome Extension section"] }
+    architecture:
+      - { value: "Browser extension syncs usage to the backend over /api/v1/sync; dashboards read /api/v1/accounts", confidence: HIGH, evidence: ["backend/app/main.py include_router prefixes", "backend/app/routers/sync.py", "backend/app/routers/accounts.py"] }
+      - { value: "Relational model: accounts, sync events, notes, settings, notification log; Alembic migrations", confidence: HIGH, evidence: ["backend/app/models.py", "backend/alembic/"] }
+      - { value: "Frontend container proxies /api to the backend container", confidence: HIGH, evidence: ["frontend/nginx.conf proxy_pass http://backend:8000"] }
+    features:
+      - { value: "Multi-account usage tracking", confidence: HIGH, evidence: ["backend/app/models.py Account", "backend/app/routers/accounts.py"] }
+      - { value: "Per-account notes", confidence: HIGH, evidence: ["backend/app/models.py AccountNote", "backend/app/routers/notes.py"] }
+      - { value: "Telegram limit-reset notifications", confidence: HIGH, evidence: ["backend/app/telegram.py", "backend/app/models.py NotificationLog"] }
+      - { value: "React dashboard and extension-side dashboard", confidence: HIGH, evidence: ["frontend/src/App.tsx", "extension/dashboard.html"] }
+      - { value: "Chrome, Firefox and Electron extension manifests", confidence: HIGH, evidence: ["extension/manifest_chrome.json", "extension/manifest_firefox.json", "extension/manifest_electron.json"] }
+    notes:
+      - "No releases or tags; no CI workflows; no automated tests found; no repository-level LICENSE file."
+      - "extension/ carries a GPL-3.0 LICENSE and source links to another maintainer's Ko-fi page (extension/background.js, extension/popup.js); no attribution appears in the README."
+      - "Placeholders remain: your-username (README), your-name (manifest author), your-server-url.com (manifest host permission)."
+      - "README mentions Caddy/HTTPS but the repository contains no Caddy configuration; DEPLOY.md uses 'ATLAS Claude' names and directory names that differ from the repository layout."
+      - "backend/pyproject.toml lists python-jose and passlib; neither is imported by backend/app and neither is in requirements.txt."
+
+  ResearchOS:
+    tagline:     { value: "Autonomous deep-research platform with parallel specialist agents", confidence: MEDIUM, evidence: ["README.md blockquote", "app/agents.py: 10 AGENT_DOMAINS run via asyncio.gather"] }
+    description: { value: "Autonomous deep research platform that runs specialist AI agents in parallel, iterates through evidence with a confidence-gated loop, detects contradictions, and produces citation-backed reports.", confidence: MEDIUM, evidence: ["README.md blockquote (condensed; Telegram delivery omitted — no Telegram client code in app/)"] }
+    docs:        { value: "https://github.com/YRB19/ResearchOS/blob/main/reference/ARCHITECTURE.md", confidence: HIGH, evidence: ["reference/ARCHITECTURE.md exists on main"] }
+    category:    { value: ai, confidence: STATED, evidence: ["project brief (spec §7.2)"] }
+    family:      { value: os-series, confidence: STATED, evidence: ["project brief: OS Series"] }
+    status:      { value: active, confidence: LOW, evidence: ["spec draft default", "last commit 2026-08-02 (activity signal only)"] }
+    stack:
+      - { value: FastAPI, confidence: HIGH, evidence: ["requirements.txt"] }
+      - { value: SQLite, confidence: HIGH, evidence: ["requirements.txt aiosqlite", "app/db.py"] }
+      - { value: NVIDIA NIM, confidence: HIGH, evidence: ["app/llm.py https://integrate.api.nvidia.com/v1"] }
+      - { value: Docker, confidence: HIGH, evidence: ["Dockerfile", "deploy/compose-service-snippet.yml"] }
+      - { value: AI Agents, confidence: HIGH, evidence: ["app/agents.py", "app/orchestrator.py"] }
+      - { value: LLMs, confidence: HIGH, evidence: ["app/llm.py"] }
+      - { value: pytest, confidence: HIGH, evidence: ["requirements-dev.txt", "tests/"] }
+    infrastructure:
+      - { value: "Single Docker service, SQLite state at /data/jobs.db", confidence: HIGH, evidence: ["Dockerfile", "app/db.py", "deploy/compose-service-snippet.yml"] }
+    services:
+      - { value: "NVIDIA NIM (LLM)", confidence: HIGH, evidence: ["app/llm.py"] }
+      - { value: "Tavily, Serper, DuckDuckGo (search)", confidence: HIGH, evidence: ["app/search.py"] }
+      - { value: "Jina Reader, Firecrawl (scraping)", confidence: HIGH, evidence: ["app/scrape.py"] }
+    architecture:
+      - { value: "REST job API: POST /jobs, GET /jobs, /jobs/{id}, /jobs/{id}/report, /jobs/{id}/pdf, /health", confidence: HIGH, evidence: ["app/main.py"] }
+      - { value: "10 specialist agent domains run concurrently (asyncio.gather, Semaphore(3))", confidence: HIGH, evidence: ["app/agents.py"] }
+      - { value: "Pipeline modules: search, scrape, process, contradictions, reflection, report, citations, export, delivery", confidence: HIGH, evidence: ["app/*.py"] }
+    features:
+      - { value: "Confidence-gated research loop with reflection", confidence: MEDIUM, evidence: ["README.md Architecture", "app/reflection.py"] }
+      - { value: "Contradiction detection", confidence: MEDIUM, evidence: ["README.md", "app/contradictions.py"] }
+      - { value: "Citation-backed PDF reports", confidence: HIGH, evidence: ["app/export.py", "requirements.txt fpdf2", "app/main.py /pdf route"] }
+    notes:
+      - "No releases or tags; no CI workflows; no LICENSE file although the README shows an MIT badge."
+      - "README describes native Telegram long-polling; app/ contains no Telegram API client code (only a character-budget comment in app/delivery.py). Telegram is therefore NOT published for ResearchOS."
+      - "reference/ holds 21 JSON files from the earlier n8n implementation (documented migration)."
+      - "40 pytest test functions across 4 test files. 1 open issue."
+
+  ClipOS:
+    tagline:     { value: "Turns long videos into short, vertical, captioned clips", confidence: MEDIUM, evidence: ["README.md intro (condensed)"] }
+    description: { value: "Upload a long video (or YouTube URL) and ClipOS automatically turns it into short, vertical, captioned clips ready for social media.", confidence: MEDIUM, evidence: ["README.md intro (self-comparison to another product omitted)"] }
+    category:    { value: ai-media, confidence: STATED, evidence: ["project brief (spec §7.2)"] }
+    family:      { value: os-series, confidence: STATED, evidence: ["project brief: OS Series"] }
+    status:      { value: active, confidence: LOW, evidence: ["spec draft default", "README status badge says MVP", "last commit 2026-08-01 (activity signal only)"] }
+    stack:
+      - { value: FastAPI, confidence: HIGH, evidence: ["clipos-backend/requirements.txt"] }
+      - { value: React, confidence: HIGH, evidence: ["clipos-frontend/package.json"] }
+      - { value: faster-whisper, confidence: HIGH, evidence: ["clipos-backend/requirements.txt", "clipos-backend/app/core/transcribe.py"] }
+      - { value: FFmpeg, confidence: HIGH, evidence: ["clipos-backend/app/core/clip_cutter.py", "clipos-backend/app/core/ffprobe.py"] }
+      - { value: OpenCV, confidence: HIGH, evidence: ["clipos-backend/requirements.txt", "clipos-backend/app/core/reframe.py"] }
+      - { value: Redis, confidence: HIGH, evidence: ["clipos-backend/requirements.txt redis, rq", "clipos-backend/app/core/queue.py"] }
+      - { value: NVIDIA NIM, confidence: HIGH, evidence: ["clipos-backend/app/core/nvidia_client.py"] }
+      - { value: TypeScript, confidence: HIGH, evidence: ["clipos-frontend/tsconfig.json"] }
+      - { value: Vite, confidence: HIGH, evidence: ["clipos-frontend/vite.config.ts"] }
+      - { value: Tailwind CSS, confidence: HIGH, evidence: ["clipos-frontend/tailwind.config.js"] }
+      - { value: SQLModel, confidence: HIGH, evidence: ["clipos-backend/requirements.txt"] }
+      - { value: yt-dlp, confidence: HIGH, evidence: ["clipos-backend/requirements.txt"] }
+    infrastructure:
+      - { value: "FastAPI API + Redis/RQ worker + Vite frontend (no Dockerfile or compose file)", confidence: HIGH, evidence: ["clipos-backend/worker.py", "clipos-backend/app/core/queue.py"] }
+    services:
+      - { value: "NVIDIA NIM with OpenRouter fallback (LLM)", confidence: HIGH, evidence: ["clipos-backend/app/core/llm_fallback.py", "clipos-backend/app/core/openrouter_client.py"] }
+    architecture:
+      - { value: "Staged pipeline: transcribe, highlights, clips, reframe, captions, score; each stage has a module and a router", confidence: HIGH, evidence: ["clipos-backend/app/core/pipeline.py", "clipos-backend/app/routers/"] }
+      - { value: "Jobs run asynchronously on a Redis/RQ worker", confidence: HIGH, evidence: ["clipos-backend/worker.py"] }
+    features:
+      - { value: "File or YouTube URL ingest", confidence: HIGH, evidence: ["clipos-backend/app/routers/ingest.py", "yt-dlp"] }
+      - { value: "Local speech transcription", confidence: HIGH, evidence: ["clipos-backend/app/core/transcribe.py"] }
+      - { value: "LLM highlight detection", confidence: HIGH, evidence: ["clipos-backend/app/core/highlights.py"] }
+      - { value: "Vertical reframing (1080x1920) with face-tracking pan", confidence: MEDIUM, evidence: ["README.md pipeline table", "clipos-backend/app/core/reframe.py"] }
+      - { value: "ASS caption generation", confidence: MEDIUM, evidence: ["README.md", "clipos-backend/app/core/captions.py"] }
+      - { value: "Clip scoring and title generation", confidence: MEDIUM, evidence: ["README.md", "clipos-backend/app/core/scoring.py"] }
+    notes:
+      - "No releases or tags; no CI workflows; no LICENSE file. 9 backend pytest files; frontend has vitest configured."
+      - "README labels the project MVP and describes it as a clone of another product."
+      - "clipos-frontend/.env is tracked; it contains only VITE_API_BASE_URL (no secret)."
+
+  CompanionOS:
+    tagline:     { value: "Live Formula 1 timing and session-tracking desktop app", confidence: MEDIUM, evidence: ["README.md intro"] }
+    description: { value: "A live Formula 1 timing and session-tracking desktop app, built with Tauri v2, React, and strict TypeScript.", confidence: MEDIUM, evidence: ["README.md intro"] }
+    category:    { value: systems, confidence: STATED, evidence: ["project brief (spec §7.2)"] }
+    family:      { value: os-series, confidence: STATED, evidence: ["project brief: OS Series"] }
+    status:      { value: active, confidence: MEDIUM, evidence: ["README.md: 'Status: Active development'"] }
+    stack:
+      - { value: Tauri, confidence: HIGH, evidence: ["src-tauri/Cargo.toml", "src-tauri/tauri.conf.json"] }
+      - { value: Rust, confidence: HIGH, evidence: ["src-tauri/Cargo.toml", "src-tauri/src/main.rs"] }
+      - { value: React, confidence: HIGH, evidence: ["package.json"] }
+      - { value: TypeScript, confidence: HIGH, evidence: ["package.json", "tsconfig"] }
+      - { value: Vite, confidence: HIGH, evidence: ["package.json"] }
+      - { value: Tailwind CSS, confidence: HIGH, evidence: ["package.json @tailwindcss/vite"] }
+      - { value: Zustand, confidence: HIGH, evidence: ["package.json"] }
+      - { value: TanStack Query, confidence: HIGH, evidence: ["package.json"] }
+      - { value: uPlot, confidence: HIGH, evidence: ["package.json"] }
+      - { value: Vitest, confidence: HIGH, evidence: ["package.json"] }
+      - { value: Playwright, confidence: HIGH, evidence: ["package.json", "playwright.config.ts"] }
+      - { value: GitHub Actions, confidence: HIGH, evidence: [".github/workflows/ci.yml", ".github/workflows/e2e.yml"] }
+    infrastructure:
+      - { value: "GitHub Actions: CI, E2E, scheduled schema-drift and soak workflows (macOS and Ubuntu runners)", confidence: HIGH, evidence: [".github/workflows/"] }
+    services:
+      - { value: "OpenF1 API", confidence: HIGH, evidence: ["src/api/openf1.ts"] }
+      - { value: "Jolpica API", confidence: HIGH, evidence: ["src/api/jolpica.ts"] }
+      - { value: "Open-Meteo API", confidence: HIGH, evidence: ["src/api/open-meteo.ts"] }
+    architecture:
+      - { value: "Tauri v2 desktop shell with a React/TypeScript front end; native tray and macOS dock-badge code in Rust", confidence: HIGH, evidence: ["src-tauri/Cargo.toml (objc2 macOS target)", "src/hooks/useTray.ts"] }
+      - { value: "Client-side data layer over three public APIs with schema-drift tests", confidence: HIGH, evidence: ["src/api/", "test/api/schema-drift.test.ts"] }
+    features:
+      - { value: "Live dashboard, telemetry, weather, team radio, track map, constructor/driver/history and race-weekend pages", confidence: HIGH, evidence: ["src/pages/*.tsx"] }
+      - { value: "System tray updates and always-on-top picture-in-picture tracker", confidence: MEDIUM, evidence: ["README.md Features", "src/hooks/useTray.ts"] }
+      - { value: "Replay of the most recent completed session between race weekends", confidence: MEDIUM, evidence: ["README.md Features"] }
+    notes:
+      - "No releases or tags; no LICENSE file; app version 0.0.0."
+      - "All four workflows (CI, E2E, schema-drift, soak) show 'failing' on their latest default-branch run as of 2026-10-01; the cause needs authenticated log access."
+      - "README lists 'widgets-native' under the stack; no such dependency appears in package.json or Cargo.toml."
+      - "31 test files; about 16.2k lines of TypeScript and 0.8k lines of Rust."
+
+  NetOS:
+    notes:
+      - "github.com/YRB19/NetOS returns 404 without authentication and is absent from the public repository list. It is private, unpublished, or named differently; nothing about it can be verified or published."
+
+  FREYA:
+    notes:
+      - "github.com/YRB19/FREYA returns 404 without authentication and is absent from the public repository list. It is private, unpublished, or named differently; nothing about it can be verified or published."
+
+  RepoHealth:
+    tagline:     { value: "Instant analytics and health insights for your GitHub repositories", confidence: MEDIUM, evidence: ["README.md tagline"] }
+    description: { value: "A web app that surfaces health signals for any GitHub repository — commit activity, issue trends, contributor patterns — in a readable dashboard.", confidence: MEDIUM, evidence: ["README.md 'What is RepoHealth?' (condensed)"] }
+    demo:        { value: "https://repohealth.vercel.app", confidence: MEDIUM, evidence: ["README.md 'Live demo' link", "vercel[bot] commits in history"] }
+    category:    { value: web, confidence: STATED, evidence: ["project brief; code suggests developer tooling"] }
+    status:      { value: maintained, confidence: LOW, evidence: ["spec draft default", "last commit 2026-05-16"] }
+    stack:
+      - { value: Next.js, confidence: HIGH, evidence: ["package.json next 16.2.6"] }
+      - { value: React, confidence: HIGH, evidence: ["package.json react ^19"] }
+      - { value: TypeScript, confidence: HIGH, evidence: ["tsconfig.json"] }
+      - { value: Tailwind CSS, confidence: HIGH, evidence: ["package.json tailwindcss ^4.1"] }
+      - { value: Recharts, confidence: HIGH, evidence: ["package.json"] }
+      - { value: SWR, confidence: HIGH, evidence: ["package.json"] }
+      - { value: Vercel AI SDK, confidence: HIGH, evidence: ["package.json ai 5.0.60"] }
+      - { value: Vercel, confidence: MEDIUM, evidence: ["README.md demo URL", "vercel[bot] commits"] }
+    services:
+      - { value: "GitHub REST API (search, repo, readme)", confidence: HIGH, evidence: ["app/api/search/route.ts", "app/api/readme/route.ts"] }
+      - { value: "Google Gemini API (gemini-2.0-flash) for AI search", confidence: HIGH, evidence: ["app/api/ai-search/route.ts"] }
+    notes:
+      - "README says Next.js 15; package.json pins 16.2.6 (code is authoritative). package.json name is 'my-v0-project'."
+      - "15 of 23 commits are authored by the v0 bot and 3 by vercel[bot]; 1 open pull request. No releases, CI or LICENSE."
+
+  Finwise:
+    tagline:     { value: "A real-time stock tracking web application built with vanilla JavaScript, HTML, and CSS", confidence: MEDIUM, evidence: ["README.md first line"] }
+    category:    { value: fintech, confidence: STATED, evidence: ["project brief (spec §7.2)"] }
+    status:      { value: maintained, confidence: LOW, evidence: ["spec draft default", "last commit 2026-04-13"] }
+    stack:
+      - { value: JavaScript, confidence: HIGH, evidence: ["app.js"] }
+      - { value: HTML, confidence: HIGH, evidence: ["index.html"] }
+      - { value: CSS, confidence: HIGH, evidence: ["style.css"] }
+      - { value: Finnhub API, confidence: HIGH, evidence: ["app.js BASE_URL https://finnhub.io/api/v1"] }
+    services:
+      - { value: "Finnhub /quote endpoint", confidence: HIGH, evidence: ["app.js", "README.md API section"] }
+    features:
+      - { value: "Watchlist quotes, symbol search, gain/loss filter, sorting, persisted dark/light theme", confidence: MEDIUM, evidence: ["README.md Core Features"] }
+    notes:
+      - "Four files, no build tooling, no package.json. No releases, CI or LICENSE."
+
+  CosmicExplorer:
+    tagline:     { value: "Immersive, educational web app for exploring space and astronomy", confidence: MEDIUM, evidence: ["README.md (condensed)"] }
+    demo:        { value: "https://cosmic-explorer-wap.vercel.app", confidence: MEDIUM, evidence: ["live-demo badge in the owner's previous profile README (docs/legacy-README.md line 19); liveness not verified"] }
+    category:    { value: web, confidence: STATED, evidence: ["project brief (spec §7.2)"] }
+    status:      { value: maintained, confidence: LOW, evidence: ["spec draft default", "last commit 2026-05-09"] }
+    stack:
+      - { value: React, confidence: HIGH, evidence: ["package.json"] }
+      - { value: Three.js, confidence: HIGH, evidence: ["package.json three"] }
+      - { value: React Three Fiber, confidence: HIGH, evidence: ["package.json @react-three/fiber"] }
+      - { value: Tailwind CSS, confidence: HIGH, evidence: ["package.json"] }
+      - { value: Vite, confidence: HIGH, evidence: ["package.json"] }
+      - { value: NASA Image and Video Library API, confidence: HIGH, evidence: ["src/services/nasaApi.js images-api.nasa.gov"] }
+    services:
+      - { value: "NASA Image and Video Library", confidence: HIGH, evidence: ["src/services/nasaApi.js"] }
+    notes:
+      - "README says React/TypeScript/Tailwind; the app is JavaScript/JSX (a single src/types/apod.ts file exists), so TypeScript is not published."
+      - "Three contributors appear in the commit history (owner authored 27 of 56 commits); it is a team project."
+      - "README is written in future/aspirational wording ('would be'). No releases, CI or LICENSE."
+
+  N8N-YT:
+    tagline:     { value: "A long form story creator locally hosted via n8n", confidence: HIGH, evidence: ["GitHub repository About description"] }
+    category:    { value: automation, confidence: STATED, evidence: ["project brief (spec §7.2)"] }
+    status:      { value: maintained, confidence: LOW, evidence: ["spec draft default", "last commit 2026-05-13"] }
+    stack:
+      - { value: n8n, confidence: HIGH, evidence: ["Comic Style Final Working.json (28 n8n nodes)"] }
+      - { value: Telegram, confidence: HIGH, evidence: ["workflow JSON: telegramTrigger + 3 telegram nodes"] }
+      - { value: YouTube, confidence: HIGH, evidence: ["workflow JSON: youTube node"] }
+      - { value: Google Drive, confidence: HIGH, evidence: ["workflow JSON: googleDrive node"] }
+    features:
+      - { value: "Story text to comic-style narrated video, Telegram-triggered, uploaded to YouTube and Google Drive", confidence: MEDIUM, evidence: ["README.md Overview", "workflow JSON nodes"] }
+    notes:
+      - "Two files (workflow JSON + README); two commits. No releases, CI or LICENSE."

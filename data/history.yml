@@ -1,0 +1,11 @@
+# Non-GitHub / private / undated work. date: null -> no date rendered (never invent dates).
+entries:
+  - { title: "Smart House (Arduino + RFID)", era: hardware, date: null }
+  - { title: "Rainwater Harvester", era: hardware, date: null }
+  - { title: "LEGO Mindstorms", era: hardware, date: null }
+  - { title: "Trex Game", era: early, date: null }
+  - { title: "Bank Statement Analyzer", era: fintech, date: null }
+  - { title: "Mock IPL Auction platform", era: web, date: null }
+  - { title: "ShikshaSahayak", era: ai-apps, date: null }
+  - { title: "PersonaOS", era: ai-systems, date: null, repo: null }
+  - { title: "IDEMI Data Science & Business Analytics", era: data, date: null }

@@ -1,0 +1,128 @@
+# Fields below were reconciled against GitHub on 2026-10-01; every published value has a record in
+# data/evidence.yml (HIGH/MEDIUM/STATED only — `validate` enforces this). Nothing here is invented.
+UsageOS:
+  repo: YRB19/UsageOS
+  title: UsageOS
+  category: developer-tools
+  family: os-series
+  status: active
+  featured: true
+  priority: 100
+  tagline: "Self-hosted multi-account Claude.ai usage tracking platform"
+  description: "Track token usage across multiple Claude.ai accounts with a Chrome extension, view analytics in a React dashboard, and receive limit-reset notifications via Telegram."
+  stack: [FastAPI, PostgreSQL, React, Chrome Extension, Docker, Telegram Bot API, Vite, Tailwind CSS]
+  demo: null
+  docs: "https://github.com/YRB19/UsageOS/blob/main/DEPLOY.md"
+  deployment: { health_url: null }
+  verified: true
+
+ResearchOS:
+  repo: YRB19/ResearchOS
+  title: ResearchOS
+  category: ai
+  family: os-series
+  status: active
+  featured: true
+  priority: 98
+  tagline: "Autonomous deep-research platform with parallel specialist agents"
+  description: "Autonomous deep research platform that runs specialist AI agents in parallel, iterates through evidence with a confidence-gated loop, detects contradictions, and produces citation-backed reports."
+  stack: [FastAPI, SQLite, NVIDIA NIM, Docker, AI Agents, LLMs]
+  docs: "https://github.com/YRB19/ResearchOS/blob/main/reference/ARCHITECTURE.md"
+  verified: true
+
+ClipOS:
+  repo: YRB19/ClipOS
+  title: ClipOS
+  category: ai-media
+  family: os-series
+  status: active
+  featured: true
+  priority: 96
+  tagline: "Turns long videos into short, vertical, captioned clips"
+  description: "Upload a long video (or YouTube URL) and ClipOS automatically turns it into short, vertical, captioned clips ready for social media."
+  stack: [FastAPI, faster-whisper, FFmpeg, OpenCV, Redis, NVIDIA NIM, React, TypeScript]
+  verified: true
+
+CompanionOS:
+  repo: YRB19/CompanionOS
+  title: CompanionOS
+  category: systems
+  family: os-series
+  status: active
+  featured: true
+  priority: 94
+  tagline: "Live Formula 1 timing and session-tracking desktop app"
+  description: "A live Formula 1 timing and session-tracking desktop app, built with Tauri v2, React, and strict TypeScript."
+  stack: [Tauri, Rust, React, TypeScript, Vite, Tailwind CSS, Zustand, TanStack Query]
+  verified: true
+
+# NetOS and FREYA: github.com/YRB19/NetOS and /FREYA return 404 without authentication and are absent
+# from the public repository list (private, unpublished or renamed). Nothing can be verified, so nothing
+# is published; they are omitted from generated sections until a public repo resolves.
+NetOS:
+  repo: YRB19/NetOS
+  category: systems
+  family: os-series
+  status: active
+  featured: true
+  priority: 92
+  tagline: null
+  verified: false
+
+FREYA:
+  repo: YRB19/FREYA
+  category: ai
+  family: os-series
+  status: active
+  featured: true
+  priority: 90
+  tagline: null
+  verified: false
+
+# Secondary / earlier
+RepoHealth:
+  repo: YRB19/repohealth
+  title: RepoHealth
+  category: web
+  status: maintained
+  featured: false
+  group: earlier
+  tagline: "Instant analytics and health insights for your GitHub repositories"
+  description: "A web app that surfaces health signals for any GitHub repository — commit activity, issue trends, contributor patterns — in a readable dashboard."
+  stack: [Next.js, React, TypeScript, Tailwind CSS, Recharts, SWR, Vercel AI SDK]
+  demo: "https://repohealth.vercel.app"
+  verified: true
+
+Finwise:
+  repo: YRB19/Finwise
+  title: Finwise
+  category: fintech
+  status: maintained
+  featured: false
+  group: earlier
+  tagline: "A real-time stock tracking web application built with vanilla JavaScript, HTML, and CSS"
+  stack: [JavaScript, HTML, CSS, Finnhub API]
+  verified: true
+
+CosmicExplorer:
+  repo: YRB19/Cosmic-Explorer
+  title: Cosmic Explorer
+  category: web
+  status: maintained
+  featured: false
+  group: earlier
+  tagline: "Immersive, educational web app for exploring space and astronomy"
+  stack: [React, Three.js, React Three Fiber, Tailwind CSS, Vite, NASA Image and Video Library API]
+  demo: "https://cosmic-explorer-wap.vercel.app"
+  verified: true
+
+N8N-YT:
+  repo: YRB19/N8N-YT
+  title: N8N-YT
+  category: automation
+  status: maintained
+  featured: false
+  group: earlier
+  tagline: "A long form story creator locally hosted via n8n"
+  stack: [n8n, Telegram, YouTube, Google Drive]
+  verified: true

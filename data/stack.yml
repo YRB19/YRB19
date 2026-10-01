@@ -1,0 +1,79 @@
+# Only items with non-empty `evidence` are rendered. Evidence below comes from the 2026-10-01 GitHub audit
+# (see data/evidence.yml and docs/AUDIT.md). Items with `evidence: []` have no support in any public repo and
+# stay hidden (RAG, C++, Linux): NetOS/FREYA are not publicly visible, so they cannot back anything.
+groups:
+  Languages:
+  - name: Python
+    evidence: ['repo:YRB19/ResearchOS requirements.txt', 'repo:YRB19/UsageOS backend/requirements.txt', 'repo:YRB19/ClipOS clipos-backend/requirements.txt']
+  - name: TypeScript
+    evidence: ['repo:YRB19/CompanionOS package.json', 'repo:YRB19/ClipOS clipos-frontend/tsconfig.json', 'repo:YRB19/repohealth tsconfig.json']
+  - name: JavaScript
+    evidence: ['repo:YRB19/Finwise app.js', 'repo:YRB19/UsageOS extension/*.js', 'repo:YRB19/Cosmic-Explorer src/*.jsx']
+  - name: C++
+    evidence: []
+  - name: Rust
+    evidence: ['repo:YRB19/CompanionOS src-tauri/Cargo.toml']
+  - name: SQL
+    evidence: ['repo:YRB19/ResearchOS app/db.py (raw SQL)', 'repo:YRB19/UsageOS backend/app/routers/maintenance.py (raw SQL)']
+  Frontend:
+  - name: React
+    evidence: ['repo:YRB19/UsageOS frontend/package.json', 'repo:YRB19/CompanionOS package.json', 'repo:YRB19/ClipOS clipos-frontend/package.json']
+  - name: Next.js
+    evidence: ['repo:YRB19/repohealth package.json next 16.2.6']
+  - name: Vite
+    evidence: ['repo:YRB19/UsageOS frontend/package.json', 'repo:YRB19/CompanionOS package.json']
+  - name: Tailwind CSS
+    evidence: ['repo:YRB19/UsageOS frontend/package.json', 'repo:YRB19/repohealth package.json']
+  Backend & Data:
+  - name: FastAPI
+    evidence: ['repo:YRB19/UsageOS backend/requirements.txt', 'repo:YRB19/ResearchOS requirements.txt', 'repo:YRB19/ClipOS clipos-backend/requirements.txt']
+  - name: PostgreSQL
+    evidence: ['repo:YRB19/UsageOS docker-compose.yml postgres:16-alpine']
+  - name: SQLite
+    evidence: ['repo:YRB19/ResearchOS app/db.py', 'repo:YRB19/ClipOS README.md SQLModel (SQLite)']
+  - name: SQLModel
+    evidence: ['repo:YRB19/ClipOS clipos-backend/requirements.txt']
+  - name: Redis
+    evidence: ['repo:YRB19/ClipOS clipos-backend/requirements.txt redis, rq']
+  AI & Media:
+  - name: LLMs
+    evidence: ['repo:YRB19/ResearchOS app/llm.py', 'repo:YRB19/ClipOS clipos-backend/app/core/highlights.py']
+  - name: AI Agents
+    evidence: ['repo:YRB19/ResearchOS app/agents.py']
+  - name: RAG
+    evidence: []
+  - name: Whisper
+    evidence: ['repo:YRB19/ClipOS clipos-backend/requirements.txt faster-whisper']
+  - name: NVIDIA NIM
+    evidence: ['repo:YRB19/ResearchOS app/llm.py', 'repo:YRB19/ClipOS clipos-backend/app/core/nvidia_client.py']
+  - name: OpenCV
+    evidence: ['repo:YRB19/ClipOS clipos-backend/requirements.txt']
+  - name: ffmpeg
+    evidence: ['repo:YRB19/ClipOS clipos-backend/app/core/clip_cutter.py']
+  Systems & Infrastructure:
+  - name: Docker
+    evidence: ['repo:YRB19/UsageOS docker-compose.yml', 'repo:YRB19/ResearchOS Dockerfile']
+  - name: Tauri
+    evidence: ['repo:YRB19/CompanionOS src-tauri/tauri.conf.json']
+  - name: Git
+    evidence: [all repositories (GitHub)]
+  - name: GitHub Actions
+    evidence: ['repo:YRB19/CompanionOS .github/workflows/ci.yml']
+  - name: Linux
+    evidence: []
+  - name: Vercel
+    evidence: ['repo:YRB19/repohealth README.md demo URL; vercel[bot] commits (MEDIUM)']
+  Automation & Integrations:
+  - name: n8n
+    evidence: ['repo:YRB19/N8N-YT workflow JSON (28 nodes)', 'repo:YRB19/ResearchOS reference/ (archived n8n workflows)']
+  - name: Telegram Bot API
+    evidence: ['repo:YRB19/UsageOS backend/app/telegram.py']
+  - name: Google Gemini API
+    evidence: ['repo:YRB19/repohealth app/api/ai-search/route.ts']
+  Testing:
+  - name: pytest
+    evidence: ['repo:YRB19/ResearchOS tests/', 'repo:YRB19/ClipOS clipos-backend/tests/']
+  - name: Vitest
+    evidence: ['repo:YRB19/CompanionOS package.json']
+  - name: Playwright
+    evidence: ['repo:YRB19/CompanionOS playwright.config.ts']

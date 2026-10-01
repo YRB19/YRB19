@@ -1,0 +1,24 @@
+display:
+  ai: { label: AI }
+  systems: { label: SYSTEMS }
+  developer-tools: { label: DEVTOOLS }
+  automation: { label: AUTOMATION }
+  fintech: { label: FINTECH }
+  web: { label: WEB }
+  ai-media: { label: MEDIA }
+  hackathon: { label: HACKATHON }
+  experiment: { label: EXPERIMENT }
+  earlier: { label: EARLIER }
+  archived: { label: ARCHIVED }
+
+topic_map:
+  ai: [ai, llm, rag, agents, machine-learning]
+  automation: [automation, n8n, workflow]
+  fintech: [finance, fintech, stocks]
+  web: [react, nextjs, frontend]
+  developer-tools: [developer-tools, cli, devtools]
+  ai-media: [video, whisper, ffmpeg, opencv]
+
+language_map:
+  Rust: systems
+  C++: systems
