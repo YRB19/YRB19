@@ -1,0 +1,75 @@
+# Only known fields are set; everything else stays null/absent. Never invent content here.
+UsageOS:
+  repo: YRB19/UsageOS
+  title: UsageOS
+  category: developer-tools
+  family: os-series
+  status: active
+  featured: true
+  priority: 100
+  tagline: null
+  description: null
+  stack: []
+  demo: null
+  docs: null
+  deployment: { health_url: null }
+  verified: false
+
+ResearchOS:
+  repo: YRB19/ResearchOS
+  category: ai
+  family: os-series
+  status: active
+  featured: true
+  priority: 98
+  tagline: null
+  stack: []
+  verified: false
+
+ClipOS:
+  repo: YRB19/ClipOS
+  category: ai-media
+  family: os-series
+  status: active
+  featured: true
+  priority: 96
+  tagline: null
+  stack: []
+  verified: false
+
+CompanionOS:
+  repo: YRB19/CompanionOS
+  category: systems
+  family: os-series
+  status: active
+  featured: true
+  priority: 94
+  tagline: null
+  stack: []
+  verified: false
+
+NetOS:
+  repo: YRB19/NetOS
+  category: systems
+  family: os-series
+  status: active
+  featured: true
+  priority: 92      # spec extension of the 100/98/96/94 pattern — adjust freely
+  tagline: null     # PLACEHOLDER — do not invent
+  verified: false
+
+FREYA:
+  repo: YRB19/FREYA
+  category: ai
+  family: os-series
+  status: active
+  featured: true
+  priority: 90
+  tagline: null     # PLACEHOLDER — do not invent
+  verified: false
+
+# Secondary / earlier (statuses are draft defaults)
+RepoHealth:     { repo: YRB19/repohealth,       category: web,        status: maintained, featured: false, group: earlier }
+Finwise:        { repo: YRB19/Finwise,          category: fintech,    status: maintained, featured: false, group: earlier }
+CosmicExplorer: { repo: YRB19/Cosmic-Explorer,  category: web,        status: maintained, featured: false, group: earlier }
+N8N-YT:         { repo: YRB19/N8N-YT,           category: automation, status: maintained, featured: false, group: earlier }

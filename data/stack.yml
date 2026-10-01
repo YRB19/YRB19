@@ -1,0 +1,37 @@
+# Only items with non-empty `evidence` are rendered. Evidence = "repo:<owner/name>", "file:<path>",
+# "brief:<Project>" (named in your project brief — confirm against the repo) or "manual-confirmed".
+# Empty evidence = pending: flagged by `validate`, hidden from the README.
+groups:
+  Languages:
+    - { name: Python,      evidence: [] }
+    - { name: TypeScript,  evidence: ["brief:CompanionOS"] }
+    - { name: JavaScript,  evidence: [] }
+    - { name: C++,         evidence: [] }
+    - { name: Rust,        evidence: ["brief:CompanionOS"] }
+    - { name: SQL,         evidence: [] }
+  Frontend:
+    - { name: React,        evidence: ["brief:UsageOS", "brief:CompanionOS"] }
+    - { name: Next.js,      evidence: [] }
+    - { name: Vite,         evidence: [] }
+    - { name: Tailwind CSS, evidence: [] }
+  Backend & Data:
+    - { name: FastAPI,    evidence: ["brief:UsageOS"] }
+    - { name: PostgreSQL, evidence: ["brief:UsageOS"] }
+    - { name: SQLite,     evidence: [] }
+    - { name: SQLModel,   evidence: [] }
+    - { name: Redis,      evidence: [] }
+  AI & Media:
+    - { name: LLMs,       evidence: [] }
+    - { name: AI Agents,  evidence: [] }
+    - { name: RAG,        evidence: [] }
+    - { name: Whisper,    evidence: [] }
+    - { name: NVIDIA NIM, evidence: [] }
+    - { name: OpenCV,     evidence: [] }
+    - { name: ffmpeg,     evidence: [] }
+  Systems & Infrastructure:
+    - { name: Docker,         evidence: [] }
+    - { name: Tauri,          evidence: ["brief:CompanionOS"] }
+    - { name: Git,            evidence: [] }
+    - { name: GitHub Actions, evidence: [] }
+    - { name: Linux,          evidence: [] }
+    - { name: Vercel,         evidence: [] }

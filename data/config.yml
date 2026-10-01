@@ -1,0 +1,12 @@
+thresholds: { active: 0.45, quiet: 0.15 }
+weights:    { recency: 0.35, volume: 0.25, momentum: 0.25, manual: 0.15 }
+windows:    { short_days: 7, mid_days: 30, long_days: 90 }
+earlier_before: "2025-01-01"   # draft
+exclude_languages: []
+exclude_repos: []
+min_language_pct: 2
+new_build_days: 14
+shipped_window_days: 60
+stale_after_h: 24
+health: { timeout_s: 5, retries: 2, stale_after_h: 24 }
+commit_policy: { min_changed_bytes: 1, ignore_timestamp_only: true }

@@ -1,0 +1,3 @@
+# Alternate / renamed repo names -> canonical project slug (keeps history across renames)
+aliases:
+  repohealth: RepoHealth

@@ -1,0 +1,25 @@
+identity:
+  name: Rishit Babbar
+  handle: YRB19
+  headline: "CS + AI Student · Systems Builder"
+  bio:
+    - "I build AI-powered systems, developer tools, automation pipelines, and full-stack products."
+    - "My projects usually start with a practical problem and grow into systems around it — combining software, data, APIs, automation, and AI."
+  tags: [AI Systems, Developer Tools, Automation, Fintech, Systems]
+
+now:
+  exploring: [Agentic systems, AI infrastructure]
+  learning: [Systems design, Distributed workflows]
+  planning_next: []
+
+theme:
+  accent: "#3B82F6"   # placeholder default from the spec — change freely
+  fonts: system
+  modes: [light, dark]
+
+display:
+  streak: false
+  show_freshness_stamp: true
+  show_zero_stars: false
+  max_currently_building: 5
+  max_recently_shipped: 6

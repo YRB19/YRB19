@@ -1,0 +1,5 @@
+focus: {}            # <Slug>: force_active | force_quiet | hide
+pin_order: []        # optional manual order for Selected Systems
+exclude_repos: []    # repos never shown/counted (owner/name)
+category_overrides: {}
+hide_fields: {}      # <Slug>: [stars, forks]
