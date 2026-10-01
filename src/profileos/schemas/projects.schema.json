@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "minProperties": 1,
+  "patternProperties": {
+    "^[A-Za-z0-9_.-]+$": {
+      "type": "object",
+      "required": ["category", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "repo": {"type": ["string", "null"], "pattern": "^[A-Za-z0-9-]+/[A-Za-z0-9_.-]+$"},
+        "title": {"type": ["string", "null"]},
+        "tagline": {"type": ["string", "null"], "maxLength": 90},
+        "description": {"type": ["string", "null"]},
+        "category": {"type": "string"},
+        "family": {"type": ["string", "null"]},
+        "group": {"type": ["string", "null"]},
+        "status": {"enum": ["active", "experimental", "maintained", "paused", "archived", "private"]},
+        "featured": {"type": "boolean"},
+        "priority": {"type": "integer", "minimum": 0, "maximum": 100},
+        "stack": {"type": "array", "items": {"type": "string"}},
+        "demo": {"type": ["string", "null"]},
+        "docs": {"type": ["string", "null"]},
+        "deployment": {"type": "object", "additionalProperties": false, "properties": {"health_url": {"type": ["string", "null"]}}},
+        "relations": {
+          "type": "array",
+          "items": {"type": "object", "required": ["from", "to"], "additionalProperties": false,
+                    "properties": {"from": {"type": "string"}, "to": {"type": "string"}, "label": {"type": ["string", "null"]}}}
+        },
+        "verified": {"type": "boolean"},
+        "visibility": {"enum": ["public", "private"]},
+        "show_unlinked": {"type": "boolean"},
+        "visual": {"type": "object"}
+      }
+    }
+  },
+  "additionalProperties": false
+}
