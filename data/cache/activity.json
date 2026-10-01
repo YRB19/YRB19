@@ -1,0 +1,1696 @@
+{
+  "data": {
+    "YRB19/Capstone-GOW": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 4,
+          "date": "2025-12-09T10:19:53Z",
+          "headline": "jump",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "959fdfa46801e47beca28a447c3f50c96eef8938",
+          "url": "https://github.com/YRB19/Capstone-GOW/commit/959fdfa46801e47beca28a447c3f50c96eef8938"
+        },
+        {
+          "changed_files": 2,
+          "date": "2025-12-09T06:36:22Z",
+          "headline": "js",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "aa0c09f6343cff533b373322dc3946def903dfdd",
+          "url": "https://github.com/YRB19/Capstone-GOW/commit/aa0c09f6343cff533b373322dc3946def903dfdd"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-12-09T06:30:45Z",
+          "headline": "js for landing",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "8acb774303464bb85d7c84bf5b90e15d258e8856",
+          "url": "https://github.com/YRB19/Capstone-GOW/commit/8acb774303464bb85d7c84bf5b90e15d258e8856"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-12-08T14:02:22Z",
+          "headline": "js",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "f74a6feabf91412813b9627c9a6d46ddf6fd4c4c",
+          "url": "https://github.com/YRB19/Capstone-GOW/commit/f74a6feabf91412813b9627c9a6d46ddf6fd4c4c"
+        },
+        {
+          "changed_files": 2,
+          "date": "2025-12-08T13:57:33Z",
+          "headline": "js",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "a7ab59e2e90ac160393adaf03a6a1ecbd99e0235",
+          "url": "https://github.com/YRB19/Capstone-GOW/commit/a7ab59e2e90ac160393adaf03a6a1ecbd99e0235"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-12-08T13:55:02Z",
+          "headline": "js",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "ea40d03fb7aac16d8b8a8cd3b9dec58724f169d2",
+          "url": "https://github.com/YRB19/Capstone-GOW/commit/ea40d03fb7aac16d8b8a8cd3b9dec58724f169d2"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-12-08T13:50:06Z",
+          "headline": "js",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "a2c9972a5ffd9f1127f629a6270a9a4efb01fa2c",
+          "url": "https://github.com/YRB19/Capstone-GOW/commit/a2c9972a5ffd9f1127f629a6270a9a4efb01fa2c"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-11-20T11:07:42Z",
+          "headline": "glow color chage",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "eaddfc84aba78a927c174477e1bd4c10d7eab62e",
+          "url": "https://github.com/YRB19/Capstone-GOW/commit/eaddfc84aba78a927c174477e1bd4c10d7eab62e"
+        }
+      ]
+    },
+    "YRB19/ClipOS": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 21
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 2,
+          "date": "2026-07-31T21:06:12Z",
+          "headline": "Add README and command documentation",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "d4c88df4277cc9057ad6869f163723487fe3f60d",
+          "url": "https://github.com/YRB19/ClipOS/commit/d4c88df4277cc9057ad6869f163723487fe3f60d"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-07-31T21:06:12Z",
+          "headline": "Migrate frontend routing to pages directory structure",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "86bafda52ee3869758b179273277c23f712252a1",
+          "url": "https://github.com/YRB19/ClipOS/commit/86bafda52ee3869758b179273277c23f712252a1"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-07-31T21:06:12Z",
+          "headline": "Update LLM fallback provider models and pin opencv version",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "6880fb6fbc8d1d8b471e0b76e3117facb3458728",
+          "url": "https://github.com/YRB19/ClipOS/commit/6880fb6fbc8d1d8b471e0b76e3117facb3458728"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-07-13T21:02:22Z",
+          "headline": "Refactor routing in App component to use new views and improve structure",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "cac2a132ff3f4be211c2c286b068f5ce25079b5b",
+          "url": "https://github.com/YRB19/ClipOS/commit/cac2a132ff3f4be211c2c286b068f5ce25079b5b"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-07-12T21:30:06Z",
+          "headline": "Update .gitignore to include additional entries for .venv, .DS_Store,…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "1beb8aa68a4c934c1e0bf355e8dc8b8360de646f",
+          "url": "https://github.com/YRB19/ClipOS/commit/1beb8aa68a4c934c1e0bf355e8dc8b8360de646f"
+        },
+        {
+          "changed_files": 41,
+          "date": "2026-07-12T21:24:20Z",
+          "headline": "Add React frontend with Vite and shadcn/ui",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "379cbdd5de992c68897a0afd6a2c22af35a3cd33",
+          "url": "https://github.com/YRB19/ClipOS/commit/379cbdd5de992c68897a0afd6a2c22af35a3cd33"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-07-12T21:24:06Z",
+          "headline": "Add CLI clean commands and pipeline queue-status tests",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "5b07dad372d75f34361d14ae77a32e880fef27c4",
+          "url": "https://github.com/YRB19/ClipOS/commit/5b07dad372d75f34361d14ae77a32e880fef27c4"
+        },
+        {
+          "changed_files": 4,
+          "date": "2026-07-12T21:24:03Z",
+          "headline": "Add updated_at timestamp tracking across all core pipeline stages",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "0e921ce9dbc2e7c5ac49c367202ac15fd7c41dcd",
+          "url": "https://github.com/YRB19/ClipOS/commit/0e921ce9dbc2e7c5ac49c367202ac15fd7c41dcd"
+        }
+      ]
+    },
+    "YRB19/CompanionOS": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 66
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 1,
+          "date": "2026-07-29T11:34:53Z",
+          "headline": "Rename project to CompanionOS",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "4cc1a290dfd136da75e23e5f8c046738512a3042",
+          "url": "https://github.com/YRB19/CompanionOS/commit/4cc1a290dfd136da75e23e5f8c046738512a3042"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-07-20T12:04:00Z",
+          "headline": "docs: rewrite README with project overview, features, stack, and test…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "e3e826b46b151744348bd1eb781d6192aa9998b5",
+          "url": "https://github.com/YRB19/CompanionOS/commit/e3e826b46b151744348bd1eb781d6192aa9998b5"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-07-20T11:38:57Z",
+          "headline": "docs: add project README with feature overview, data sources, and qui…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "d6dca4e6d2082c44274912b5f90b53a0df779c00",
+          "url": "https://github.com/YRB19/CompanionOS/commit/d6dca4e6d2082c44274912b5f90b53a0df779c00"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-07-20T11:36:02Z",
+          "headline": "test: verify app loads in browser and displays expected page title vi…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "06f8648b1d5fcaad1517a1bba5df23df3c1c30df",
+          "url": "https://github.com/YRB19/CompanionOS/commit/06f8648b1d5fcaad1517a1bba5df23df3c1c30df"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-07-20T11:36:01Z",
+          "headline": "test: verify live session hook handles sustained polling without memo…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "9fe92262ebce2fe2d9853e36ade6a91f2f1071f6",
+          "url": "https://github.com/YRB19/CompanionOS/commit/9fe92262ebce2fe2d9853e36ade6a91f2f1071f6"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-07-20T11:35:58Z",
+          "headline": "test: verify replay mode produces consistent session data across repe…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "b1c5b71203f3da42cf44579c7f8ffab29909634f",
+          "url": "https://github.com/YRB19/CompanionOS/commit/b1c5b71203f3da42cf44579c7f8ffab29909634f"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-07-20T11:35:57Z",
+          "headline": "test: verify app navigation between dashboard, drivers, and settings …",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "4028dc5e47372814d82fcb600876c5afdfe0d457",
+          "url": "https://github.com/YRB19/CompanionOS/commit/4028dc5e47372814d82fcb600876c5afdfe0d457"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-07-20T11:35:56Z",
+          "headline": "test: verify Tauri app launches and renders main window with correct …",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "626cf86d9cb367f9eb30f17f12324c141b211563",
+          "url": "https://github.com/YRB19/CompanionOS/commit/626cf86d9cb367f9eb30f17f12324c141b211563"
+        }
+      ]
+    },
+    "YRB19/Cosmic-Explorer": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 1,
+          "date": "2026-05-08T19:49:23Z",
+          "headline": "Update class name for planet selection prompt",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "2ba6e00db10dbf07d1adf0999bae93aeb0587a3c",
+          "url": "https://github.com/YRB19/Cosmic-Explorer/commit/2ba6e00db10dbf07d1adf0999bae93aeb0587a3c"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-05-08T19:47:07Z",
+          "headline": "Change import path for planet data file",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "6ccd249609679f6bc4dc211e19385610fba80f68",
+          "url": "https://github.com/YRB19/Cosmic-Explorer/commit/6ccd249609679f6bc4dc211e19385610fba80f68"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-05-08T19:38:16Z",
+          "headline": "Fix syntax errors and improve Sun component",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "1cdb389b41364c20c49a81238f8dd08dca4429a3",
+          "url": "https://github.com/YRB19/Cosmic-Explorer/commit/1cdb389b41364c20c49a81238f8dd08dca4429a3"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-05-08T19:34:05Z",
+          "headline": "Add Vite configuration for React project",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "8c1eaf1467ead565015d1caa7b7bafd6dd0e4312",
+          "url": "https://github.com/YRB19/Cosmic-Explorer/commit/8c1eaf1467ead565015d1caa7b7bafd6dd0e4312"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-05-08T19:33:46Z",
+          "headline": "Create tailwind.config.js",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "f02fbe8425a8ab62f5f175a64b6927f508fcf8a7",
+          "url": "https://github.com/YRB19/Cosmic-Explorer/commit/f02fbe8425a8ab62f5f175a64b6927f508fcf8a7"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-05-08T19:33:21Z",
+          "headline": "Add PostCSS configuration with Tailwind CSS and Autoprefixer",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "7cea81e0ff203640a674a0105bc1c3499274cd48",
+          "url": "https://github.com/YRB19/Cosmic-Explorer/commit/7cea81e0ff203640a674a0105bc1c3499274cd48"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-05-08T19:32:58Z",
+          "headline": "Initialize package.json with project dependencies",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "ba1e8b1eec2676837547088e51aad4e7a49085a0",
+          "url": "https://github.com/YRB19/Cosmic-Explorer/commit/ba1e8b1eec2676837547088e51aad4e7a49085a0"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-05-08T19:27:58Z",
+          "headline": "Implement main App component with navigation and panels",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "fc38d61b4a1247e2aa632c2368fd779b82fbd349",
+          "url": "https://github.com/YRB19/Cosmic-Explorer/commit/fc38d61b4a1247e2aa632c2368fd779b82fbd349"
+        }
+      ]
+    },
+    "YRB19/FREYA": {
+      "commits": {
+        "d30": 20,
+        "d7": 1,
+        "d90": 20
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 3,
+          "date": "2026-09-25T10:23:34Z",
+          "headline": "fix: test_layer_8 & executor",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "00220bf4388b19037e2468304bd7dbbe1ff40df9",
+          "url": "https://github.com/YRB19/FREYA/commit/00220bf4388b19037e2468304bd7dbbe1ff40df9"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-09-23T06:32:56Z",
+          "headline": "fix: handle missing files correctly in Obsidian MCP reads",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "62c6752d39e3346b0532753c3397dd8cbc80ea18",
+          "url": "https://github.com/YRB19/FREYA/commit/62c6752d39e3346b0532753c3397dd8cbc80ea18"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-09-18T10:18:49Z",
+          "headline": "feat: Phase 6 test_suite update",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "f3f9e47c1dd02870024d9295293d6e8333ac14d5",
+          "url": "https://github.com/YRB19/FREYA/commit/f3f9e47c1dd02870024d9295293d6e8333ac14d5"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-09-18T10:16:48Z",
+          "headline": "feat: Phase 8 origin gate test suite expansion",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "4a83ce7631c1e00853f8d4c8ba89b87cb029219f",
+          "url": "https://github.com/YRB19/FREYA/commit/4a83ce7631c1e00853f8d4c8ba89b87cb029219f"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-09-18T10:16:27Z",
+          "headline": "feat: build_plan accepts origin parameter for Phase 8 origin gate int…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "b8d182a5263db6661e454c5c8d3d8a56ebd455c2",
+          "url": "https://github.com/YRB19/FREYA/commit/b8d182a5263db6661e454c5c8d3d8a56ebd455c2"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-09-18T10:14:28Z",
+          "headline": "feat: Pipeline wires origin='PRODUCTION' to build_plan",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "13d2a61120b3482930852e3d8b0ac83867fd3c6e",
+          "url": "https://github.com/YRB19/FREYA/commit/13d2a61120b3482930852e3d8b0ac83867fd3c6e"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-09-18T10:14:14Z",
+          "headline": "feat: Phase 8 - Runner CLI with --db-path argument",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "77771105eed40a05ad2d9986d29ae7af721da0e5",
+          "url": "https://github.com/YRB19/FREYA/commit/77771105eed40a05ad2d9986d29ae7af721da0e5"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-09-18T10:14:02Z",
+          "headline": "feat: Layer 8 - Canonical executor origin safety gate",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "830fb1fb9017886a5c331aec06630a1d445dd300",
+          "url": "https://github.com/YRB19/FREYA/commit/830fb1fb9017886a5c331aec06630a1d445dd300"
+        }
+      ]
+    },
+    "YRB19/Finwise": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 1,
+          "date": "2026-04-12T18:43:49Z",
+          "headline": "Fix formatting issue in app.js",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "b8784544d94dbf5ea5ed1247ffe74b9967eda71e",
+          "url": "https://github.com/YRB19/Finwise/commit/b8784544d94dbf5ea5ed1247ffe74b9967eda71e"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-04-12T18:38:09Z",
+          "headline": "Update README.md",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "1e2cbabf2039cd5c9bda437529403da13efe116e",
+          "url": "https://github.com/YRB19/Finwise/commit/1e2cbabf2039cd5c9bda437529403da13efe116e"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-04-12T18:36:00Z",
+          "headline": "Update app.js",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "935027b8457440c79cd8f12093e6ccd91cdde66b",
+          "url": "https://github.com/YRB19/Finwise/commit/935027b8457440c79cd8f12093e6ccd91cdde66b"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-04-12T18:34:01Z",
+          "headline": "Update README with project overview and features",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "f6d21be83f2aaa395cc6f7642665a4c403ef1671",
+          "url": "https://github.com/YRB19/Finwise/commit/f6d21be83f2aaa395cc6f7642665a4c403ef1671"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-04-12T18:28:21Z",
+          "headline": "Expand watchlist with additional companies",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "0ed2d90ea632dbc259e4ceb54c5a12034c8c54a0",
+          "url": "https://github.com/YRB19/Finwise/commit/0ed2d90ea632dbc259e4ceb54c5a12034c8c54a0"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-04-12T18:18:38Z",
+          "headline": "Rename app from StockPulse to Finwise",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "0da7c0b38f9993d9f123b0b3fd246e5e0ce77ba1",
+          "url": "https://github.com/YRB19/Finwise/commit/0da7c0b38f9993d9f123b0b3fd246e5e0ce77ba1"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-04-12T18:18:05Z",
+          "headline": "Rename site title from 'StockPulse' to 'Finwise'",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "8519b33be488b4777c6ba81ba751fb2edfca1019",
+          "url": "https://github.com/YRB19/Finwise/commit/8519b33be488b4777c6ba81ba751fb2edfca1019"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-04-12T18:17:45Z",
+          "headline": "Add initial app.js for Finwise application",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "849eea94b7e56782b805c36d9fafbe93fcd0778e",
+          "url": "https://github.com/YRB19/Finwise/commit/849eea94b7e56782b805c36d9fafbe93fcd0778e"
+        }
+      ]
+    },
+    "YRB19/Foodelns": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 1,
+          "date": "2025-11-18T13:34:35Z",
+          "headline": "Add files via upload",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "c9b1ab4c9d4802a561cbb4934b27fd7d4fbf092d",
+          "url": "https://github.com/YRB19/Foodelns/commit/c9b1ab4c9d4802a561cbb4934b27fd7d4fbf092d"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-11-18T05:19:42Z",
+          "headline": "Add files via upload",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "d6c9089883633b87099de253d2b1ed81cead68aa",
+          "url": "https://github.com/YRB19/Foodelns/commit/d6c9089883633b87099de253d2b1ed81cead68aa"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-11-18T05:19:24Z",
+          "headline": "Add new content to Images/i.txt",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "56ea8376d81f0a77d5e9bbbc36b21272ef659b0e",
+          "url": "https://github.com/YRB19/Foodelns/commit/56ea8376d81f0a77d5e9bbbc36b21272ef659b0e"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-09-29T03:48:54Z",
+          "headline": "feat: remove PWA install popup but keep PWA functionality",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "f186960dc2887ff1680ae9f7079b48af97d5b0a2",
+          "url": "https://github.com/YRB19/Foodelns/commit/f186960dc2887ff1680ae9f7079b48af97d5b0a2"
+        },
+        {
+          "changed_files": 9,
+          "date": "2025-09-29T03:44:53Z",
+          "headline": "fix: resolve hover issue & fix camera flip; add PWA support",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "2a683f7bb7f64b190e5fdd0af84395638be2e9d5",
+          "url": "https://github.com/YRB19/Foodelns/commit/2a683f7bb7f64b190e5fdd0af84395638be2e9d5"
+        },
+        {
+          "changed_files": 2,
+          "date": "2025-09-27T17:23:35Z",
+          "headline": "feat: update favicon to new green sparkles design",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "ad7039aa8d659ba35d510a2d6312598de08faeb4",
+          "url": "https://github.com/YRB19/Foodelns/commit/ad7039aa8d659ba35d510a2d6312598de08faeb4"
+        },
+        {
+          "changed_files": 2,
+          "date": "2025-09-27T17:20:29Z",
+          "headline": "feat: add Sparkles icon as favicon for FoodLens app",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "98a72c60e93231316e070614066badf3955539e1",
+          "url": "https://github.com/YRB19/Foodelns/commit/98a72c60e93231316e070614066badf3955539e1"
+        },
+        {
+          "changed_files": 2,
+          "date": "2025-09-27T17:10:37Z",
+          "headline": "feat: remove API key setup popup",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "8d4615077beb6c0696c6ac61a5fdbf4f3a1137ff",
+          "url": "https://github.com/YRB19/Foodelns/commit/8d4615077beb6c0696c6ac61a5fdbf4f3a1137ff"
+        }
+      ]
+    },
+    "YRB19/Hackathon-16-hrs": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 1,
+          "date": "2025-10-04T20:34:46Z",
+          "headline": "Update github-api.ts",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "b46bd3a096653d1668abdf38aee329f8d4dd7e62",
+          "url": "https://github.com/YRB19/Hackathon-16-hrs/commit/b46bd3a096653d1668abdf38aee329f8d4dd7e62"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-10-04T20:31:45Z",
+          "headline": "Update github-api.ts",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "557be0a98ecf7111c446dd920072ddf1e0438261",
+          "url": "https://github.com/YRB19/Hackathon-16-hrs/commit/557be0a98ecf7111c446dd920072ddf1e0438261"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-10-04T20:10:03Z",
+          "headline": "Update vite.config.ts",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "9717cb7bfb8289fc7f19f4d88737297073848eba",
+          "url": "https://github.com/YRB19/Hackathon-16-hrs/commit/9717cb7bfb8289fc7f19f4d88737297073848eba"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-10-04T20:06:50Z",
+          "headline": "Create github-api.ts",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "0fc0256abbd01ceea0523bb8042edcb9f9446ef5",
+          "url": "https://github.com/YRB19/Hackathon-16-hrs/commit/0fc0256abbd01ceea0523bb8042edcb9f9446ef5"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-10-04T19:42:27Z",
+          "headline": "Update vite.config.ts",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "2e12eac54b8712cdab27bce5badbd5833e1c9107",
+          "url": "https://github.com/YRB19/Hackathon-16-hrs/commit/2e12eac54b8712cdab27bce5badbd5833e1c9107"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-10-04T19:36:36Z",
+          "headline": "Update vite.config.ts",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "743019486dec71877afa8620489b5b9215bd189c",
+          "url": "https://github.com/YRB19/Hackathon-16-hrs/commit/743019486dec71877afa8620489b5b9215bd189c"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-10-04T17:17:18Z",
+          "headline": "Update README.md",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "ea758eabb07e8a4abc39e6b4d96dae697103df87",
+          "url": "https://github.com/YRB19/Hackathon-16-hrs/commit/ea758eabb07e8a4abc39e6b4d96dae697103df87"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-10-04T16:28:53Z",
+          "headline": "Update SearchResultsPage.tsx",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "1340b5efee625a739ad6c803dc9aaacb92c26674",
+          "url": "https://github.com/YRB19/Hackathon-16-hrs/commit/1340b5efee625a739ad6c803dc9aaacb92c26674"
+        }
+      ]
+    },
+    "YRB19/Hackathon-16hrs": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 48,
+          "date": "2025-10-04T14:05:28Z",
+          "headline": "Add files via upload",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "4f1144e4d2fb3cdb6ccffd808ec40a0e0b7b6fb4",
+          "url": "https://github.com/YRB19/Hackathon-16hrs/commit/4f1144e4d2fb3cdb6ccffd808ec40a0e0b7b6fb4"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-10-04T14:01:50Z",
+          "headline": "Create 1",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "96d4aa25c2b6cc53fe43a46de30404a5a192e358",
+          "url": "https://github.com/YRB19/Hackathon-16hrs/commit/96d4aa25c2b6cc53fe43a46de30404a5a192e358"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-10-04T14:00:49Z",
+          "headline": "Delete src/figma/1",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "130439625e450aecb96e7f29434c45cd6d0e338f",
+          "url": "https://github.com/YRB19/Hackathon-16hrs/commit/130439625e450aecb96e7f29434c45cd6d0e338f"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-10-04T14:00:22Z",
+          "headline": "Add files via upload",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "18b1cc23aa1e3f11f36c1134fdf1a81cbb187e5e",
+          "url": "https://github.com/YRB19/Hackathon-16hrs/commit/18b1cc23aa1e3f11f36c1134fdf1a81cbb187e5e"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-10-04T14:00:09Z",
+          "headline": "Create 1",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "6e1fd4859663c8edcf605f34015bd506b9a671c5",
+          "url": "https://github.com/YRB19/Hackathon-16hrs/commit/6e1fd4859663c8edcf605f34015bd506b9a671c5"
+        },
+        {
+          "changed_files": 0,
+          "date": "2025-10-04T13:59:13Z",
+          "headline": "Add files via upload",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "500b6af0b497568da4e0c701ea8d7ac0568f06bc",
+          "url": "https://github.com/YRB19/Hackathon-16hrs/commit/500b6af0b497568da4e0c701ea8d7ac0568f06bc"
+        },
+        {
+          "changed_files": 10,
+          "date": "2025-10-04T13:58:10Z",
+          "headline": "Add files via upload",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "4fd0e46f5447a287b2cedac40d28ef68bf8ca9ac",
+          "url": "https://github.com/YRB19/Hackathon-16hrs/commit/4fd0e46f5447a287b2cedac40d28ef68bf8ca9ac"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-10-04T13:57:29Z",
+          "headline": "Create BookmarksPage.tsx",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "2a8f12c9518096dbc4cdd656dae4a9b049c0702a",
+          "url": "https://github.com/YRB19/Hackathon-16hrs/commit/2a8f12c9518096dbc4cdd656dae4a9b049c0702a"
+        }
+      ]
+    },
+    "YRB19/IPL_auction": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 1,
+          "date": "2025-11-27T07:37:19Z",
+          "headline": "Delete IPL-Auction.zip",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "61f9f0d8255fb17158be9aebd481eb2ed0b28ef7",
+          "url": "https://github.com/YRB19/IPL_auction/commit/61f9f0d8255fb17158be9aebd481eb2ed0b28ef7"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-11-27T07:37:02Z",
+          "headline": "Add files via upload",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "bfbb82c4c7320a850220cd5cd86aaaaa98fb213e",
+          "url": "https://github.com/YRB19/IPL_auction/commit/bfbb82c4c7320a850220cd5cd86aaaaa98fb213e"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-11-27T07:36:34Z",
+          "headline": "Add files via upload",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "764c7946f2e60c2818fbf094daa4c75cccac9621",
+          "url": "https://github.com/YRB19/IPL_auction/commit/764c7946f2e60c2818fbf094daa4c75cccac9621"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-11-26T14:18:08Z",
+          "headline": "Initial commit",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "2d5c0964a0ed4c88f48eea83c2cef24f345d698c",
+          "url": "https://github.com/YRB19/IPL_auction/commit/2d5c0964a0ed4c88f48eea83c2cef24f345d698c"
+        }
+      ]
+    },
+    "YRB19/N8N-YT": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 1,
+          "date": "2026-05-13T06:18:05Z",
+          "headline": "Add README for Comic Style Story Video Generator",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "990ba70df71b72554278ed244391c42b3d0a7e37",
+          "url": "https://github.com/YRB19/N8N-YT/commit/990ba70df71b72554278ed244391c42b3d0a7e37"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-05-13T06:10:35Z",
+          "headline": "Add files via upload",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "9030060a6b149044c16aebb3bc093a78ee9d6c49",
+          "url": "https://github.com/YRB19/N8N-YT/commit/9030060a6b149044c16aebb3bc093a78ee9d6c49"
+        }
+      ]
+    },
+    "YRB19/NetOS": {
+      "commits": {
+        "d30": 76,
+        "d7": 76,
+        "d90": 76
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 6,
+          "date": "2026-10-01T07:12:46Z",
+          "headline": "style(slice-5): format test files with ruff",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "0c2e2041a468e595a556bc2340b1307096e7b52b",
+          "url": "https://github.com/YRB19/NetOS/commit/0c2e2041a468e595a556bc2340b1307096e7b52b"
+        },
+        {
+          "changed_files": 5,
+          "date": "2026-10-01T07:12:34Z",
+          "headline": "style(slice-5): format research harness source with ruff",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "b34263aaa01cc1d054eb88f677b972bff3ada972",
+          "url": "https://github.com/YRB19/NetOS/commit/b34263aaa01cc1d054eb88f677b972bff3ada972"
+        },
+        {
+          "changed_files": 7,
+          "date": "2026-10-01T06:44:43Z",
+          "headline": "docs(slice-5): record research harness and protocol",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "ac689ce6f09928a95a16291e0e78b6e4afd688d1",
+          "url": "https://github.com/YRB19/NetOS/commit/ac689ce6f09928a95a16291e0e78b6e4afd688d1"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-10-01T06:44:41Z",
+          "headline": "test(slice-5): add end-to-end integration tests",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "0bf863b803b0d069d3da4854d4c0f3d5e70cb0ff",
+          "url": "https://github.com/YRB19/NetOS/commit/0bf863b803b0d069d3da4854d4c0f3d5e70cb0ff"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-10-01T06:44:38Z",
+          "headline": "test(slice-5): add fault-injection tests",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "9ba185d726ad806c12431acdf9250c03ba18f314",
+          "url": "https://github.com/YRB19/NetOS/commit/9ba185d726ad806c12431acdf9250c03ba18f314"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-10-01T06:44:34Z",
+          "headline": "test(slice-5): add adversarial lookahead and isolation tests",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "32a85f28b90c8e9dc0addc042304ece2e8c96ca0",
+          "url": "https://github.com/YRB19/NetOS/commit/32a85f28b90c8e9dc0addc042304ece2e8c96ca0"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-10-01T06:44:30Z",
+          "headline": "test(slice-5): validate research harness core",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "0a7f7462c9ed291cc081830fcc16332b2bfe2879",
+          "url": "https://github.com/YRB19/NetOS/commit/0a7f7462c9ed291cc081830fcc16332b2bfe2879"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-10-01T06:44:20Z",
+          "headline": "feat(slice-5): add contamination guards and experiment store",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "00adec4deef054ce8e065fb8e87742682e15477e",
+          "url": "https://github.com/YRB19/NetOS/commit/00adec4deef054ce8e065fb8e87742682e15477e"
+        }
+      ]
+    },
+    "YRB19/Pokmon-card-trading-exchange": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 2,
+          "date": "2025-11-23T08:30:17Z",
+          "headline": "Update files from Figma Make",
+          "is_bot": true,
+          "is_merge": false,
+          "sha": "e1879723fb367c10a153ec2d63e18aa7c34e573c",
+          "url": "https://github.com/YRB19/Pokmon-card-trading-exchange/commit/e1879723fb367c10a153ec2d63e18aa7c34e573c"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-11-22T17:45:01Z",
+          "headline": "butn",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "291a219c9eb9d081d9f203ee6a26c4364e041183",
+          "url": "https://github.com/YRB19/Pokmon-card-trading-exchange/commit/291a219c9eb9d081d9f203ee6a26c4364e041183"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-11-22T17:09:56Z",
+          "headline": "Delete README.md",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "ae4510aab244b17936c8a563dc03df7526ed0899",
+          "url": "https://github.com/YRB19/Pokmon-card-trading-exchange/commit/ae4510aab244b17936c8a563dc03df7526ed0899"
+        },
+        {
+          "changed_files": 78,
+          "date": "2025-11-22T17:08:41Z",
+          "headline": "Add files from Figma Make",
+          "is_bot": true,
+          "is_merge": false,
+          "sha": "12f088a47a018001227366ca48f0300919766384",
+          "url": "https://github.com/YRB19/Pokmon-card-trading-exchange/commit/12f088a47a018001227366ca48f0300919766384"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-11-22T17:08:38Z",
+          "headline": "Initial commit",
+          "is_bot": true,
+          "is_merge": false,
+          "sha": "e13b72e71b958707c0967cdc28c780acf78cb3fe",
+          "url": "https://github.com/YRB19/Pokmon-card-trading-exchange/commit/e13b72e71b958707c0967cdc28c780acf78cb3fe"
+        }
+      ]
+    },
+    "YRB19/ResearchOS": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 8
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 1,
+          "date": "2026-08-02T11:42:11Z",
+          "headline": "docs: add comprehensive README with API examples, deploy guide, and n…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "06b3906f1a1b556c326727eea25d9371569820c8",
+          "url": "https://github.com/YRB19/ResearchOS/commit/06b3906f1a1b556c326727eea25d9371569820c8"
+        },
+        {
+          "changed_files": 4,
+          "date": "2026-08-02T11:36:11Z",
+          "headline": "docs: add migration plan, baseline metrics, and n8n workflow change log",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "a84b5e43af0d870373af992a3ff720dba49c6c5d",
+          "url": "https://github.com/YRB19/ResearchOS/commit/a84b5e43af0d870373af992a3ff720dba49c6c5d"
+        },
+        {
+          "changed_files": 29,
+          "date": "2026-08-02T11:36:04Z",
+          "headline": "chore: archive n8n workflows as read-only reference in reference/",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "fb72ae22439d0b657513810f00b352593c2e0f54",
+          "url": "https://github.com/YRB19/ResearchOS/commit/fb72ae22439d0b657513810f00b352593c2e0f54"
+        },
+        {
+          "changed_files": 6,
+          "date": "2026-08-02T11:36:02Z",
+          "headline": "infra: add Dockerfile, compose snippet, and Python dependencies for c…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "d419225a27927a1dcb4ac3ce70d4921f6d109332",
+          "url": "https://github.com/YRB19/ResearchOS/commit/d419225a27927a1dcb4ac3ce70d4921f6d109332"
+        },
+        {
+          "changed_files": 5,
+          "date": "2026-08-02T11:35:55Z",
+          "headline": "test: add pytest suite covering search fallbacks, agent fan-out, orch…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "d0c3cfc015411be8d3a27638c0bccf4ffd2b5ba5",
+          "url": "https://github.com/YRB19/ResearchOS/commit/d0c3cfc015411be8d3a27638c0bccf4ffd2b5ba5"
+        },
+        {
+          "changed_files": 16,
+          "date": "2026-08-02T11:35:51Z",
+          "headline": "feat: add ResearchOS Python orchestrator with FastAPI, Telegram bot, …",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "0b5b7149e2dedb2b03dca36f8083140d670d70e2",
+          "url": "https://github.com/YRB19/ResearchOS/commit/0b5b7149e2dedb2b03dca36f8083140d670d70e2"
+        },
+        {
+          "changed_files": 26,
+          "date": "2026-08-02T11:35:46Z",
+          "headline": "feat: remove legacy n8n workflows and docs; migrate to Python service",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "9f57a33e16946d8cf06c330acc68e72d8e669ef6",
+          "url": "https://github.com/YRB19/ResearchOS/commit/9f57a33e16946d8cf06c330acc68e72d8e669ef6"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-08-02T11:35:41Z",
+          "headline": "chore: add comprehensive .gitignore for Python, secrets, and tool con…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "c5e03709b8182b3ecd98023d0082a4c5c1c44b97",
+          "url": "https://github.com/YRB19/ResearchOS/commit/c5e03709b8182b3ecd98023d0082a4c5c1c44b97"
+        }
+      ]
+    },
+    "YRB19/TrackWeight": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 2,
+          "date": "2025-07-27T02:34:53Z",
+          "headline": "remove need for xcode in homebrew",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "e322cae241d29afbee2860a6b585e9fe3974bd0c",
+          "url": "https://github.com/YRB19/TrackWeight/commit/e322cae241d29afbee2860a6b585e9fe3974bd0c"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-07-27T02:27:51Z",
+          "headline": "Fix for macos13",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "32836103cbeab4041075c8953b9bd613c4c85b8e",
+          "url": "https://github.com/YRB19/TrackWeight/commit/32836103cbeab4041075c8953b9bd613c4c85b8e"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-07-27T02:11:50Z",
+          "headline": "Change dmg name for homebrew installation ease",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "61739cf45f054103e4f814de24966f5b196a0475",
+          "url": "https://github.com/YRB19/TrackWeight/commit/61739cf45f054103e4f814de24966f5b196a0475"
+        },
+        {
+          "changed_files": 4,
+          "date": "2025-07-27T01:53:22Z",
+          "headline": "Adds support for macos13 (#45)",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "6261ebbfb4155277ce7e395166b52f654e3b6793",
+          "url": "https://github.com/YRB19/TrackWeight/commit/6261ebbfb4155277ce7e395166b52f654e3b6793"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-07-27T01:41:45Z",
+          "headline": "Fix cut off begin button (#36)",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "3b3b8ea681aeef5a54f7b2f0890bca50e3921f14",
+          "url": "https://github.com/YRB19/TrackWeight/commit/3b3b8ea681aeef5a54f7b2f0890bca50e3921f14"
+        },
+        {
+          "changed_files": 4,
+          "date": "2025-07-27T01:39:08Z",
+          "headline": "Enhance README with universal binary build instructions and update CI…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "22d83a5d263a0bfb572cec37cbf427044fd47c91",
+          "url": "https://github.com/YRB19/TrackWeight/commit/22d83a5d263a0bfb572cec37cbf427044fd47c91"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-07-27T00:40:46Z",
+          "headline": "Fixed release pipeline (#41)",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "ebb1e98d4309917c43d28417e3aa99930fd2713d",
+          "url": "https://github.com/YRB19/TrackWeight/commit/ebb1e98d4309917c43d28417e3aa99930fd2713d"
+        },
+        {
+          "changed_files": 8,
+          "date": "2025-07-27T00:24:21Z",
+          "headline": "make signed and notarized workflow (#40)",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "360d9638d357a9a3d5f1074380aab93c7dc45c73",
+          "url": "https://github.com/YRB19/TrackWeight/commit/360d9638d357a9a3d5f1074380aab93c7dc45c73"
+        }
+      ]
+    },
+    "YRB19/UsageOS": {
+      "commits": {
+        "d30": 6,
+        "d7": 6,
+        "d90": 58
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 4,
+          "date": "2026-09-30T06:18:50Z",
+          "headline": "feat(frontend): add maintenance notes and dashboard updates",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "853c622db54fc4b179f60ac7bae9d7a577122eb0",
+          "url": "https://github.com/YRB19/UsageOS/commit/853c622db54fc4b179f60ac7bae9d7a577122eb0"
+        },
+        {
+          "changed_files": 3,
+          "date": "2026-09-30T06:16:56Z",
+          "headline": "fix: replace personal identity with generic placeholders",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "104a1c225ad18e625e1ce8fd62fd8baf81cda494",
+          "url": "https://github.com/YRB19/UsageOS/commit/104a1c225ad18e625e1ce8fd62fd8baf81cda494"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-09-30T06:16:22Z",
+          "headline": "fix(extension): remove deprecated rate-limit-watcher injection",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "79e64873ba18cc14e0239286cf41526718c4fe59",
+          "url": "https://github.com/YRB19/UsageOS/commit/79e64873ba18cc14e0239286cf41526718c4fe59"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-09-30T06:16:00Z",
+          "headline": "fix(extension): replace personal production domain with placeholder",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "195e7b3fcf08a92d14197497b414bcd4664ec449",
+          "url": "https://github.com/YRB19/UsageOS/commit/195e7b3fcf08a92d14197497b414bcd4664ec449"
+        },
+        {
+          "changed_files": 5,
+          "date": "2026-09-30T06:08:30Z",
+          "headline": "feat(frontend): add account customization components",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "634e3406e1efdbf725638f93e5074c2fa9818426",
+          "url": "https://github.com/YRB19/UsageOS/commit/634e3406e1efdbf725638f93e5074c2fa9818426"
+        },
+        {
+          "changed_files": 4,
+          "date": "2026-09-30T06:08:02Z",
+          "headline": "feat(extension): enhance token management and shared dataclasses",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "117d14536daddd5baecf8620203b36a106291f53",
+          "url": "https://github.com/YRB19/UsageOS/commit/117d14536daddd5baecf8620203b36a106291f53"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-08-29T10:36:50Z",
+          "headline": "gitignore update",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "56d09e878a02926ced730c2a8e3e63ede3360671",
+          "url": "https://github.com/YRB19/UsageOS/commit/56d09e878a02926ced730c2a8e3e63ede3360671"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-08-29T10:19:07Z",
+          "headline": "chore(extension): remove deprecated rate-limit-watcher injection",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "98220ec7f0dd455d0664d7c2d2f1a176353d41be",
+          "url": "https://github.com/YRB19/UsageOS/commit/98220ec7f0dd455d0664d7c2d2f1a176353d41be"
+        }
+      ]
+    },
+    "YRB19/Wan2.2": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 1,
+          "date": "2025-11-14T08:01:55Z",
+          "headline": "Merge pull request #158 from ishaangupta-YB/main",
+          "is_bot": false,
+          "is_merge": true,
+          "sha": "e9783574ef77be11fcab9aa5607905402538c08d",
+          "url": "https://github.com/YRB19/Wan2.2/commit/e9783574ef77be11fcab9aa5607905402538c08d"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-11-13T08:37:05Z",
+          "headline": "Merge pull request #276 from HumanAIGC/main",
+          "is_bot": false,
+          "is_merge": true,
+          "sha": "7a76532c2e6d7fd7a55f9d65eb122852e930b189",
+          "url": "https://github.com/YRB19/Wan2.2/commit/7a76532c2e6d7fd7a55f9d65eb122852e930b189"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-11-13T08:23:56Z",
+          "headline": "add wan-animate diffusers code",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "31325ba9147b8b2085d9bc8319bd14142146785b",
+          "url": "https://github.com/YRB19/Wan2.2/commit/31325ba9147b8b2085d9bc8319bd14142146785b"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-11-13T07:46:15Z",
+          "headline": "fix typo",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "c0d1b701c59518a27f6bcde52abf46a913fa4b3e",
+          "url": "https://github.com/YRB19/Wan2.2/commit/c0d1b701c59518a27f6bcde52abf46a913fa4b3e"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-11-13T07:42:17Z",
+          "headline": "add wan-animate diffusers links",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "55a9ce08a569975c6d02d31060e4767eb094faa3",
+          "url": "https://github.com/YRB19/Wan2.2/commit/55a9ce08a569975c6d02d31060e4767eb094faa3"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-11-13T07:31:57Z",
+          "headline": "fix wan-animate in-doc link",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "d8c6bc78322992124c7937879482d6a91c4b4827",
+          "url": "https://github.com/YRB19/Wan2.2/commit/d8c6bc78322992124c7937879482d6a91c4b4827"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-10-12T03:07:45Z",
+          "headline": "Update README.md",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "990af50de458c19590c245151197326e208d7191",
+          "url": "https://github.com/YRB19/Wan2.2/commit/990af50de458c19590c245151197326e208d7191"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-09-19T23:46:49Z",
+          "headline": "fixed sam-2 API compatibility in video_predictor.py by Initializing m…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "2677beaaf508dc2251dcf5056b0af1ef007b7623",
+          "url": "https://github.com/YRB19/Wan2.2/commit/2677beaaf508dc2251dcf5056b0af1ef007b7623"
+        }
+      ]
+    },
+    "YRB19/YRB19": {
+      "commits": {
+        "d30": 8,
+        "d7": 8,
+        "d90": 8
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 4,
+          "date": "2026-10-01T11:53:22Z",
+          "headline": "chore: add remaining config files",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "615dd7f913b93065a84dc40666d6505b03be12fa",
+          "url": "https://github.com/YRB19/YRB19/commit/615dd7f913b93065a84dc40666d6505b03be12fa"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-10-01T11:53:19Z",
+          "headline": "docs: documentation directory",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "5935cbc8b604f21690110d31b614a6b3982aaa8f",
+          "url": "https://github.com/YRB19/YRB19/commit/5935cbc8b604f21690110d31b614a6b3982aaa8f"
+        },
+        {
+          "changed_files": 11,
+          "date": "2026-10-01T11:53:15Z",
+          "headline": "data: initial datasets/configs",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "ba4a0b43c07e57063f5a63f2e08eb075f290f3d3",
+          "url": "https://github.com/YRB19/YRB19/commit/ba4a0b43c07e57063f5a63f2e08eb075f290f3d3"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-10-01T11:53:11Z",
+          "headline": "assets: initial media/resources",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "49bc410e40c4d9ca6a8e354bdaf8c072f15178ce",
+          "url": "https://github.com/YRB19/YRB19/commit/49bc410e40c4d9ca6a8e354bdaf8c072f15178ce"
+        },
+        {
+          "changed_files": 7,
+          "date": "2026-10-01T11:53:01Z",
+          "headline": "test: initial test structure",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "0e547e57b06601808d0e520605b1f4c11509d877",
+          "url": "https://github.com/YRB19/YRB19/commit/0e547e57b06601808d0e520605b1f4c11509d877"
+        },
+        {
+          "changed_files": 33,
+          "date": "2026-10-01T11:52:55Z",
+          "headline": "src: initial source structure",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "e1cd1c8431e1db0c2d2b55ad796d29813e52336d",
+          "url": "https://github.com/YRB19/YRB19/commit/e1cd1c8431e1db0c2d2b55ad796d29813e52336d"
+        },
+        {
+          "changed_files": 3,
+          "date": "2026-10-01T11:52:48Z",
+          "headline": "config: package setup",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "d411adc04a76879efbf3035294cda01c7e181b4a",
+          "url": "https://github.com/YRB19/YRB19/commit/d411adc04a76879efbf3035294cda01c7e181b4a"
+        },
+        {
+          "changed_files": 3,
+          "date": "2026-10-01T11:52:42Z",
+          "headline": "docs: initial setup",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "4592ccb12b79d1c9eb8142ba2fedb9707829a360",
+          "url": "https://github.com/YRB19/YRB19/commit/4592ccb12b79d1c9eb8142ba2fedb9707829a360"
+        }
+      ]
+    },
+    "YRB19/d": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      },
+      "merged_prs": [],
+      "recent_commits": []
+    },
+    "YRB19/git-revision20": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 1,
+          "date": "2025-09-22T07:35:54Z",
+          "headline": "edit 3",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "331e67247c3dffabe9b4b88b5bb432fceac7ed99",
+          "url": "https://github.com/YRB19/git-revision20/commit/331e67247c3dffabe9b4b88b5bb432fceac7ed99"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-09-22T03:25:58Z",
+          "headline": "edit 2",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "7b8617990cac5f2d71876f5494060160a1c10ec4",
+          "url": "https://github.com/YRB19/git-revision20/commit/7b8617990cac5f2d71876f5494060160a1c10ec4"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-09-18T05:03:59Z",
+          "headline": "edit1",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "586f7676a689cbc1416dc57f806250da0c1ab781",
+          "url": "https://github.com/YRB19/git-revision20/commit/586f7676a689cbc1416dc57f806250da0c1ab781"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-09-18T04:34:32Z",
+          "headline": "Initial commit",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "a3a066f58467dcbf7548cbfd9856a92ba80b9dab",
+          "url": "https://github.com/YRB19/git-revision20/commit/a3a066f58467dcbf7548cbfd9856a92ba80b9dab"
+        }
+      ]
+    },
+    "YRB19/multipleWindow3dScene": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 1,
+          "date": "2023-11-27T14:54:51Z",
+          "headline": "Merge pull request #24 from younesbram/main",
+          "is_bot": false,
+          "is_merge": true,
+          "sha": "a99ecb8a865a169864107ccac8b233faf4333582",
+          "url": "https://github.com/YRB19/multipleWindow3dScene/commit/a99ecb8a865a169864107ccac8b233faf4333582"
+        },
+        {
+          "changed_files": 1,
+          "date": "2023-11-26T21:09:25Z",
+          "headline": "Update README.md",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "2b495bbf779e97944ec2c6c92a7ae6d0033c2121",
+          "url": "https://github.com/YRB19/multipleWindow3dScene/commit/2b495bbf779e97944ec2c6c92a7ae6d0033c2121"
+        },
+        {
+          "changed_files": 1,
+          "date": "2023-11-26T21:08:36Z",
+          "headline": "Update README.md",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "1406cd0e16e0392c6cdc1dfc5e7a8684dacf85fe",
+          "url": "https://github.com/YRB19/multipleWindow3dScene/commit/1406cd0e16e0392c6cdc1dfc5e7a8684dacf85fe"
+        },
+        {
+          "changed_files": 1,
+          "date": "2023-11-23T12:07:08Z",
+          "headline": "cleanup + comments",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "2b509c06b79bd5f61d07c7ed00f67553ba58a6c4",
+          "url": "https://github.com/YRB19/multipleWindow3dScene/commit/2b509c06b79bd5f61d07c7ed00f67553ba58a6c4"
+        },
+        {
+          "changed_files": 1,
+          "date": "2023-11-23T12:04:02Z",
+          "headline": "cleanup",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "fb1e12eaf4f3caa457e74a6aaf392e20b52922d3",
+          "url": "https://github.com/YRB19/multipleWindow3dScene/commit/fb1e12eaf4f3caa457e74a6aaf392e20b52922d3"
+        },
+        {
+          "changed_files": 1,
+          "date": "2023-11-23T11:52:15Z",
+          "headline": "added THREE license",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "e1093d8abf0ccaefdd9ae0559a496f360e95b398",
+          "url": "https://github.com/YRB19/multipleWindow3dScene/commit/e1093d8abf0ccaefdd9ae0559a496f360e95b398"
+        },
+        {
+          "changed_files": 1,
+          "date": "2023-11-23T11:38:46Z",
+          "headline": "fixed reinitialize bug",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "fb6d717579ecfac3b585911e8da0d24984da5682",
+          "url": "https://github.com/YRB19/multipleWindow3dScene/commit/fb6d717579ecfac3b585911e8da0d24984da5682"
+        },
+        {
+          "changed_files": 1,
+          "date": "2023-11-23T11:32:02Z",
+          "headline": "tweaks",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "41bc36434e15645a2face65ed1ac4df878b62256",
+          "url": "https://github.com/YRB19/multipleWindow3dScene/commit/41bc36434e15645a2face65ed1ac4df878b62256"
+        }
+      ]
+    },
+    "YRB19/newtondarkmode": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 1,
+          "date": "2025-09-23T12:30:29Z",
+          "headline": "Fix for tutorialspoint.com (#14655)",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "d03c608e745947a7835dd602c1bda34a4ede9b67",
+          "url": "https://github.com/YRB19/newtondarkmode/commit/d03c608e745947a7835dd602c1bda34a4ede9b67"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-09-23T12:27:57Z",
+          "headline": "Fix design activation button",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "98652e1eb988db0b3d54942fb020515c4997bfe9",
+          "url": "https://github.com/YRB19/newtondarkmode/commit/98652e1eb988db0b3d54942fb020515c4997bfe9"
+        },
+        {
+          "changed_files": 2,
+          "date": "2025-09-23T11:53:32Z",
+          "headline": "Fix website activation",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "723226e5dd3d17dbe655776cfe682432216d26bf",
+          "url": "https://github.com/YRB19/newtondarkmode/commit/723226e5dd3d17dbe655776cfe682432216d26bf"
+        },
+        {
+          "changed_files": 2,
+          "date": "2025-09-22T19:33:30Z",
+          "headline": "Website activation",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "a6dfe8cfe359cca341c88ea6ba08bbc03efc80ef",
+          "url": "https://github.com/YRB19/newtondarkmode/commit/a6dfe8cfe359cca341c88ea6ba08bbc03efc80ef"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-09-22T16:27:15Z",
+          "headline": "Fix for color-hex.com (#14653)",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "1e56f15df2464457d9e4517a20e214b14695b64f",
+          "url": "https://github.com/YRB19/newtondarkmode/commit/1e56f15df2464457d9e4517a20e214b14695b64f"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-09-22T16:26:12Z",
+          "headline": "Fix for abc11.com (#14652)",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "3edb42dbc85d3b2dfde7dce4fd500d7eea91c051",
+          "url": "https://github.com/YRB19/newtondarkmode/commit/3edb42dbc85d3b2dfde7dce4fd500d7eea91c051"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-09-22T16:22:07Z",
+          "headline": "Inversion fix for Google Maps (#14651)",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "4785fa14ca6508070224115f44744ae9bd9b7304",
+          "url": "https://github.com/YRB19/newtondarkmode/commit/4785fa14ca6508070224115f44744ae9bd9b7304"
+        },
+        {
+          "changed_files": 1,
+          "date": "2025-09-22T16:20:48Z",
+          "headline": "Fix for keepa.com (#14649)",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "68dfb0131284056aa5175d2e4b406ed13fcad6f7",
+          "url": "https://github.com/YRB19/newtondarkmode/commit/68dfb0131284056aa5175d2e4b406ed13fcad6f7"
+        }
+      ]
+    },
+    "YRB19/pokemon-web": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      },
+      "merged_prs": [],
+      "recent_commits": []
+    },
+    "YRB19/repohealth": {
+      "commits": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      },
+      "merged_prs": [
+        {
+          "merged_at": "2026-05-16T19:36:41Z",
+          "number": 4,
+          "title": "Fix RepoHealth search reliability and application bugs",
+          "url": "https://github.com/YRB19/repohealth/pull/4"
+        },
+        {
+          "merged_at": "2026-05-16T18:42:06Z",
+          "number": 3,
+          "title": "Improve search reliability and error handling",
+          "url": "https://github.com/YRB19/repohealth/pull/3"
+        },
+        {
+          "merged_at": "2026-05-13T07:24:14Z",
+          "number": 2,
+          "title": "Fix GitHub search authentication and stabilize app UI",
+          "url": "https://github.com/YRB19/repohealth/pull/2"
+        }
+      ],
+      "recent_commits": [
+        {
+          "changed_files": 8,
+          "date": "2026-05-16T19:36:40Z",
+          "headline": "Merge pull request #4 from YRB19/v0/ffmoco87-6718-b533d4a9",
+          "is_bot": true,
+          "is_merge": true,
+          "sha": "eefdcf5d06634fa9fb7182e43205f21b10ec9429",
+          "url": "https://github.com/YRB19/repohealth/commit/eefdcf5d06634fa9fb7182e43205f21b10ec9429"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-05-16T19:35:57Z",
+          "headline": "update Next.js to 16.2.6 for security fixes",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "7bea2ae971be4ac73c5d8e8fdcf20b7b7c986f5a",
+          "url": "https://github.com/YRB19/repohealth/commit/7bea2ae971be4ac73c5d8e8fdcf20b7b7c986f5a"
+        },
+        {
+          "changed_files": 6,
+          "date": "2026-05-16T18:55:55Z",
+          "headline": "fix: repohealth app bug fixes",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "305841e67f747012e8aa99de712d73767cafd487",
+          "url": "https://github.com/YRB19/repohealth/commit/305841e67f747012e8aa99de712d73767cafd487"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-05-16T18:42:06Z",
+          "headline": "Merge pull request #3 from YRB19/fix-search-features",
+          "is_bot": true,
+          "is_merge": true,
+          "sha": "d5c42bb9d0c538be988f6939cb7f711d92f1379c",
+          "url": "https://github.com/YRB19/repohealth/commit/d5c42bb9d0c538be988f6939cb7f711d92f1379c"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-05-16T18:25:06Z",
+          "headline": "fix: improve search API error handling and response parsing",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "3b4866943e01acb5717985a149a0995d26ca9b2b",
+          "url": "https://github.com/YRB19/repohealth/commit/3b4866943e01acb5717985a149a0995d26ca9b2b"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-05-13T08:02:39Z",
+          "headline": "Update README.md",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "4805e50421028db2b59ca23bb23d28250ff577cf",
+          "url": "https://github.com/YRB19/repohealth/commit/4805e50421028db2b59ca23bb23d28250ff577cf"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-05-13T07:24:14Z",
+          "headline": "Merge pull request #2 from YRB19/app-not-functioning",
+          "is_bot": true,
+          "is_merge": true,
+          "sha": "16835091411381bc648e3632b40754ace3e20241",
+          "url": "https://github.com/YRB19/repohealth/commit/16835091411381bc648e3632b40754ace3e20241"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-05-13T07:06:35Z",
+          "headline": "fix: resolve GitHub API 401 errors and refresh loop",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "acc763939acc8c1b80ff41a793263b0ced9305cf",
+          "url": "https://github.com/YRB19/repohealth/commit/acc763939acc8c1b80ff41a793263b0ced9305cf"
+        }
+      ]
+    }
+  },
+  "generated_at": "2026-10-01T11:57:33Z",
+  "ok": true,
+  "schema": 1,
+  "source": "github-graphql"
+}
