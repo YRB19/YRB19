@@ -1,0 +1,26 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches-ignore: []
+
+permissions:
+  contents: read                   # read-only, no secrets: safe for fork PRs
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: github.actor != 'profileos[bot]'
+    env:
+      PYTHONPATH: src
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - run: pip install -r requirements-dev.txt
+      - name: Schema, cross-file and marker validation
+        run: python -m profileos validate --online
+      - name: Unit tests
+        run: python -m pytest -q
