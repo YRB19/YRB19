@@ -1,0 +1,46 @@
+name: update-profile
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"        # every 6 h, off-peak minute (GitHub may delay scheduled runs)
+  workflow_dispatch: {}
+  repository_dispatch:
+    types: [profileos-refresh]
+  push:
+    branches: [main]
+    paths: ["data/**", "templates/**", "src/**"]
+
+permissions:
+  contents: write                  # commit generated files only
+
+concurrency:
+  group: profileos
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # Skip runs triggered by our own commits (avoids push -> build -> push loops).
+    if: github.actor != 'profileos[bot]'
+    env:
+      PYTHONPATH: src
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - run: pip install -r requirements.txt
+      - name: Validate data
+        run: python -m profileos validate
+      - name: Fetch, analyse, generate
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python -m profileos build
+      - name: Commit if changed
+        run: |
+          git config user.name  "profileos[bot]"
+          git config user.email "profileos[bot]@users.noreply.github.com"
+          git add -A README.md assets data/cache snapshots docs
+          if git diff --cached --quiet; then echo "No material change"; exit 0; fi
+          git commit -m "chore(profile): refresh generated sections"
+          git push
