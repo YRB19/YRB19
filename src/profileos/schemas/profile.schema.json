@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["identity"],
+  "additionalProperties": false,
+  "properties": {
+    "identity": {
+      "type": "object",
+      "required": ["name", "handle", "headline"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "handle": {"type": "string", "pattern": "^[A-Za-z0-9-]+$"},
+        "headline": {"type": "string"},
+        "bio": {"type": "array", "items": {"type": "string"}},
+        "tags": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "now": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "exploring": {"type": "array", "items": {"type": "string"}},
+        "learning": {"type": "array", "items": {"type": "string"}},
+        "planning_next": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "theme": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "accent": {"type": "string", "pattern": "^#[0-9A-Fa-f]{6}$"},
+        "fonts": {"type": "string"},
+        "modes": {"type": "array", "items": {"enum": ["light", "dark"]}}
+      }
+    },
+    "display": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "streak": {"type": "boolean"},
+        "show_freshness_stamp": {"type": "boolean"},
+        "show_zero_stars": {"type": "boolean"},
+        "max_currently_building": {"type": "integer", "minimum": 1, "maximum": 10},
+        "max_recently_shipped": {"type": "integer", "minimum": 1, "maximum": 12}
+      }
+    }
+  }
+}

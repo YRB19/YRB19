@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "thresholds": {"type": "object", "required": ["active", "quiet"], "properties": {"active": {"type": "number"}, "quiet": {"type": "number"}}},
+    "weights": {"type": "object", "required": ["recency", "volume", "momentum", "manual"],
+                "properties": {"recency": {"type": "number"}, "volume": {"type": "number"}, "momentum": {"type": "number"}, "manual": {"type": "number"}}},
+    "windows": {"type": "object", "properties": {"short_days": {"type": "integer"}, "mid_days": {"type": "integer"}, "long_days": {"type": "integer"}}},
+    "earlier_before": {"type": "string"},
+    "exclude_languages": {"type": "array", "items": {"type": "string"}},
+    "exclude_repos": {"type": "array", "items": {"type": "string"}},
+    "min_language_pct": {"type": "number"},
+    "new_build_days": {"type": "integer"},
+    "shipped_window_days": {"type": "integer"},
+    "stale_after_h": {"type": "number"},
+    "health": {"type": "object"},
+    "commit_policy": {"type": "object"},
+    "output_branch": {"type": ["string", "null"]}
+  }
+}

@@ -1,0 +1,2 @@
+{"$schema": "http://json-schema.org/draft-07/schema#", "type": "object", "required": ["aliases"], "additionalProperties": false,
+ "properties": {"aliases": {"type": "object", "additionalProperties": {"type": "string"}}}}

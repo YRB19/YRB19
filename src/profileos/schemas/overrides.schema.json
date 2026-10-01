@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "focus": {"type": "object", "additionalProperties": {"enum": ["force_active", "force_quiet", "hide"]}},
+    "pin_order": {"type": "array", "items": {"type": "string"}},
+    "exclude_repos": {"type": "array", "items": {"type": "string"}},
+    "category_overrides": {"type": "object", "additionalProperties": {"type": "string"}},
+    "hide_fields": {"type": "object", "additionalProperties": {"type": "array", "items": {"enum": ["stars", "forks"]}}}
+  }
+}
