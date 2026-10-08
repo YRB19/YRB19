@@ -13,36 +13,36 @@ My projects usually start with a practical problem and grow into systems around 
 
 ## Currently Building
 <!-- PROFILEOS:START:CURRENTLY_BUILDING -->
-● [NetOS](https://github.com/YRB19/NetOS) — active  
 ● [UsageOS](https://github.com/YRB19/UsageOS) — active  
+● [NetOS](https://github.com/YRB19/NetOS) — active  
 ● [FREYA](https://github.com/YRB19/FREYA) — active  
 ○ [ResearchOS](https://github.com/YRB19/ResearchOS) — quieter
 <!-- PROFILEOS:END:CURRENTLY_BUILDING -->
 
 <!-- PROFILEOS:START:NOW -->
 **NOW**  
-Building: [NetOS](https://github.com/YRB19/NetOS) · [UsageOS](https://github.com/YRB19/UsageOS) · [FREYA](https://github.com/YRB19/FREYA)  
+Building: [UsageOS](https://github.com/YRB19/UsageOS) · [NetOS](https://github.com/YRB19/NetOS) · [FREYA](https://github.com/YRB19/FREYA)  
 Exploring: Agentic systems · AI infrastructure  
 Learning: Systems design · Distributed workflows  
 Newest build: [FREYA](https://github.com/YRB19/FREYA) · created 2026-09-10  
-Most active (last 30 days): [NetOS](https://github.com/YRB19/NetOS)
+Most active (last 30 days): [UsageOS](https://github.com/YRB19/UsageOS)
 <!-- PROFILEOS:END:NOW -->
 
 ## Development Pulse
 <!-- PROFILEOS:START:PULSE -->
 | COMMITS (30d) | REPOSITORIES | PRs | RELEASES |
 |:-:|:-:|:-:|:-:|
-| 127 | 4 | 0 | 0 |
+| 132 | 4 | 0 | 0 |
 
 <sub>Activity indicators, not quality measures.</sub>
 <!-- PROFILEOS:END:PULSE -->
 
 ## Recently Shipped
 <!-- PROFILEOS:START:RECENTLY_SHIPPED -->
+`10/08` **UsageOS** — [update](https://github.com/YRB19/UsageOS/commit/a8f6a68ebbe58b1be53fa5722d73d4ca40020a64)  
+`10/08` **UsageOS** — [update](https://github.com/YRB19/UsageOS/commit/4dca1f30438046c75d5effd3b0c0cc41d7fe72e0)  
 `10/01` **NetOS** — [update](https://github.com/YRB19/NetOS/commit/0bf863b803b0d069d3da4854d4c0f3d5e70cb0ff)  
 `10/01` **NetOS** — [update](https://github.com/YRB19/NetOS/commit/9ba185d726ad806c12431acdf9250c03ba18f314)  
-`09/30` **UsageOS** — [update](https://github.com/YRB19/UsageOS/commit/853c622db54fc4b179f60ac7bae9d7a577122eb0)  
-`09/30` **UsageOS** — [update](https://github.com/YRB19/UsageOS/commit/104a1c225ad18e625e1ce8fd62fd8baf81cda494)  
 `09/25` **FREYA** — [update](https://github.com/YRB19/FREYA/commit/00220bf4388b19037e2468304bd7dbbe1ff40df9)  
 `09/23` **FREYA** — [update](https://github.com/YRB19/FREYA/commit/62c6752d39e3346b0532753c3397dd8cbc80ea18)
 <!-- PROFILEOS:END:RECENTLY_SHIPPED -->
@@ -58,7 +58,7 @@ Most active (last 30 days): [NetOS](https://github.com/YRB19/NetOS)
 <!-- PROFILEOS:START:SELECTED_SYSTEMS -->
 **[UsageOS](https://github.com/YRB19/UsageOS)**  
 Self-hosted multi-account Claude.ai usage tracking platform  
-FastAPI · PostgreSQL · React · Chrome Extension · ★ 1 · last push 2026-09-30
+FastAPI · PostgreSQL · React · Chrome Extension · ★ 1 · last push 2026-10-08
 
 **[ResearchOS](https://github.com/YRB19/ResearchOS)**  
 Autonomous deep-research platform with parallel specialist agents  
@@ -120,7 +120,7 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 ```text
 NetOS    ███████████████ 76
 FREYA    ████ 20
-UsageOS  █ 6
+UsageOS  ██ 11
 ```
 
 **Languages**
@@ -128,7 +128,7 @@ UsageOS  █ 6
 ```text
 TypeScript  ███████████████ 42.3%
 Python      ███████████ 31.2%
-JavaScript  █████ 13.1%
+JavaScript  █████ 13.2%
 CSS         ███ 8.4%
 HTML        █ 3.0%
 Other       █ 2.0%

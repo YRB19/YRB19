@@ -815,7 +815,7 @@
     "YRB19/NetOS": {
       "commits": {
         "d30": 76,
-        "d7": 12,
+        "d7": 0,
         "d90": 76
       },
       "merged_prs": [],
@@ -1115,12 +1115,57 @@
     },
     "YRB19/UsageOS": {
       "commits": {
-        "d30": 6,
-        "d7": 0,
-        "d90": 52
+        "d30": 11,
+        "d7": 5,
+        "d90": 57
       },
       "merged_prs": [],
       "recent_commits": [
+        {
+          "changed_files": 2,
+          "date": "2026-10-08T08:43:41Z",
+          "headline": "chore(docker): add VITE_API_KEY build argument",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "9a84dae9b2d31f489c07c8c6645b54c0062e49ea",
+          "url": "https://github.com/YRB19/UsageOS/commit/9a84dae9b2d31f489c07c8c6645b54c0062e49ea"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-10-08T08:43:21Z",
+          "headline": "feat(frontend): add save error handling for maintenance notes",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "a8f6a68ebbe58b1be53fa5722d73d4ca40020a64",
+          "url": "https://github.com/YRB19/UsageOS/commit/a8f6a68ebbe58b1be53fa5722d73d4ca40020a64"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-10-08T08:42:53Z",
+          "headline": "feat(frontend): add API key authentication via axios interceptor",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "4dca1f30438046c75d5effd3b0c0cc41d7fe72e0",
+          "url": "https://github.com/YRB19/UsageOS/commit/4dca1f30438046c75d5effd3b0c0cc41d7fe72e0"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-10-08T08:42:15Z",
+          "headline": "feat(extension): refactor atlasSync with per-request auth, auth pause…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "0a8cee4121991a793e2a012e433178e729947d2b",
+          "url": "https://github.com/YRB19/UsageOS/commit/0a8cee4121991a793e2a012e433178e729947d2b"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-10-08T08:30:52Z",
+          "headline": "feat(extension): add limitDisplay utility and refactor account summary",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "cb5d9534274d9f1a3019f20ccd5249bf2744c0c4",
+          "url": "https://github.com/YRB19/UsageOS/commit/cb5d9534274d9f1a3019f20ccd5249bf2744c0c4"
+        },
         {
           "changed_files": 4,
           "date": "2026-09-30T06:18:50Z",
@@ -1147,51 +1192,6 @@
           "is_merge": false,
           "sha": "79e64873ba18cc14e0239286cf41526718c4fe59",
           "url": "https://github.com/YRB19/UsageOS/commit/79e64873ba18cc14e0239286cf41526718c4fe59"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-09-30T06:16:00Z",
-          "headline": "fix(extension): replace personal production domain with placeholder",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "195e7b3fcf08a92d14197497b414bcd4664ec449",
-          "url": "https://github.com/YRB19/UsageOS/commit/195e7b3fcf08a92d14197497b414bcd4664ec449"
-        },
-        {
-          "changed_files": 5,
-          "date": "2026-09-30T06:08:30Z",
-          "headline": "feat(frontend): add account customization components",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "634e3406e1efdbf725638f93e5074c2fa9818426",
-          "url": "https://github.com/YRB19/UsageOS/commit/634e3406e1efdbf725638f93e5074c2fa9818426"
-        },
-        {
-          "changed_files": 4,
-          "date": "2026-09-30T06:08:02Z",
-          "headline": "feat(extension): enhance token management and shared dataclasses",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "117d14536daddd5baecf8620203b36a106291f53",
-          "url": "https://github.com/YRB19/UsageOS/commit/117d14536daddd5baecf8620203b36a106291f53"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-08-29T10:36:50Z",
-          "headline": "gitignore update",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "56d09e878a02926ced730c2a8e3e63ede3360671",
-          "url": "https://github.com/YRB19/UsageOS/commit/56d09e878a02926ced730c2a8e3e63ede3360671"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-08-29T10:19:07Z",
-          "headline": "chore(extension): remove deprecated rate-limit-watcher injection",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "98220ec7f0dd455d0664d7c2d2f1a176353d41be",
-          "url": "https://github.com/YRB19/UsageOS/commit/98220ec7f0dd455d0664d7c2d2f1a176353d41be"
         }
       ]
     },
@@ -1279,12 +1279,21 @@
     },
     "YRB19/YRB19": {
       "commits": {
-        "d30": 28,
-        "d7": 28,
-        "d90": 28
+        "d30": 29,
+        "d7": 19,
+        "d90": 29
       },
       "merged_prs": [],
       "recent_commits": [
+        {
+          "changed_files": 5,
+          "date": "2026-10-08T06:14:39Z",
+          "headline": "chore(profile): refresh generated sections",
+          "is_bot": true,
+          "is_merge": false,
+          "sha": "241e0732dd4c4853e5f5afe2ec04b4d1898d38b8",
+          "url": "https://github.com/YRB19/YRB19/commit/241e0732dd4c4853e5f5afe2ec04b4d1898d38b8"
+        },
         {
           "changed_files": 3,
           "date": "2026-10-07T23:10:07Z",
@@ -1347,15 +1356,6 @@
           "is_merge": false,
           "sha": "8a4535acbfd697e39002c10afcee589eaf633c29",
           "url": "https://github.com/YRB19/YRB19/commit/8a4535acbfd697e39002c10afcee589eaf633c29"
-        },
-        {
-          "changed_files": 5,
-          "date": "2026-10-05T05:50:36Z",
-          "headline": "chore(profile): refresh generated sections",
-          "is_bot": true,
-          "is_merge": false,
-          "sha": "17b4c004fd6261711a89a86683987c0252130d72",
-          "url": "https://github.com/YRB19/YRB19/commit/17b4c004fd6261711a89a86683987c0252130d72"
         }
       ]
     },
@@ -1689,7 +1689,7 @@
       ]
     }
   },
-  "generated_at": "2026-10-08T06:14:30Z",
+  "generated_at": "2026-10-08T13:42:39Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
