@@ -118,8 +118,8 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 
 ```text
 NetOS    ███████████████ 76
-FREYA    ███ 13
 UsageOS  ██ 11
+FREYA    ██ 9
 ```
 
 **Languages**
