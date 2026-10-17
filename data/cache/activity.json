@@ -330,12 +330,21 @@
     },
     "YRB19/FREYA": {
       "commits": {
-        "d30": 9,
-        "d7": 0,
-        "d90": 20
+        "d30": 10,
+        "d7": 1,
+        "d90": 21
       },
       "merged_prs": [],
       "recent_commits": [
+        {
+          "changed_files": 6,
+          "date": "2026-10-17T10:38:12Z",
+          "headline": "feat: Phase 9A - Reconciliation health and transaction models",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "b09ba8642a0d270c3abb5992a3a71a0958c91eb3",
+          "url": "https://github.com/YRB19/FREYA/commit/b09ba8642a0d270c3abb5992a3a71a0958c91eb3"
+        },
         {
           "changed_files": 3,
           "date": "2026-09-25T10:23:34Z",
@@ -398,15 +407,6 @@
           "is_merge": false,
           "sha": "77771105eed40a05ad2d9986d29ae7af721da0e5",
           "url": "https://github.com/YRB19/FREYA/commit/77771105eed40a05ad2d9986d29ae7af721da0e5"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-09-18T10:14:02Z",
-          "headline": "feat: Layer 8 - Canonical executor origin safety gate",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "830fb1fb9017886a5c331aec06630a1d445dd300",
-          "url": "https://github.com/YRB19/FREYA/commit/830fb1fb9017886a5c331aec06630a1d445dd300"
         }
       ]
     },
@@ -1279,12 +1279,21 @@
     },
     "YRB19/YRB19": {
       "commits": {
-        "d30": 54,
+        "d30": 55,
         "d7": 22,
-        "d90": 54
+        "d90": 55
       },
       "merged_prs": [],
       "recent_commits": [
+        {
+          "changed_files": 5,
+          "date": "2026-10-17T04:37:21Z",
+          "headline": "chore(profile): refresh generated sections",
+          "is_bot": true,
+          "is_merge": false,
+          "sha": "61e97db630a9faf8e9eba1f8a661fe657c1c194a",
+          "url": "https://github.com/YRB19/YRB19/commit/61e97db630a9faf8e9eba1f8a661fe657c1c194a"
+        },
         {
           "changed_files": 3,
           "date": "2026-10-16T21:19:13Z",
@@ -1347,15 +1356,6 @@
           "is_merge": false,
           "sha": "0c5a1c8d69c8afa73384772862ce0a99f2470315",
           "url": "https://github.com/YRB19/YRB19/commit/0c5a1c8d69c8afa73384772862ce0a99f2470315"
-        },
-        {
-          "changed_files": 3,
-          "date": "2026-10-14T21:46:50Z",
-          "headline": "chore(profile): refresh generated sections",
-          "is_bot": true,
-          "is_merge": false,
-          "sha": "631ff9498c7e6a36cdaf453b952ae56b105cb161",
-          "url": "https://github.com/YRB19/YRB19/commit/631ff9498c7e6a36cdaf453b952ae56b105cb161"
         }
       ]
     },
@@ -1689,7 +1689,7 @@
       ]
     }
   },
-  "generated_at": "2026-10-17T04:37:11Z",
+  "generated_at": "2026-10-17T10:52:53Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
