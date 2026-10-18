@@ -814,83 +814,83 @@
     },
     "YRB19/NetOS": {
       "commits": {
-        "d30": 77,
-        "d7": 1,
-        "d90": 77
+        "d30": 89,
+        "d7": 13,
+        "d90": 89
       },
       "merged_prs": [],
       "recent_commits": [
         {
-          "changed_files": 38,
-          "date": "2026-10-18T03:34:18Z",
-          "headline": "feat(slice-6): Tier-2 momentum, Risk Engine, deterministic sizing, si…",
+          "changed_files": 11,
+          "date": "2026-10-18T16:17:04Z",
+          "headline": "feat(slice-6): add support files — arch-lint rules, failure categorie…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "1bc85dfb3d1e0b2e1cdc83f5baf9a29bce040037",
-          "url": "https://github.com/YRB19/NetOS/commit/1bc85dfb3d1e0b2e1cdc83f5baf9a29bce040037"
+          "sha": "54cdff28a66c486d6f16d157eac981936ebfe07a",
+          "url": "https://github.com/YRB19/NetOS/commit/54cdff28a66c486d6f16d157eac981936ebfe07a"
         },
         {
-          "changed_files": 6,
-          "date": "2026-10-01T07:12:46Z",
-          "headline": "style(slice-5): format test files with ruff",
+          "changed_files": 3,
+          "date": "2026-10-18T16:15:59Z",
+          "headline": "docs(slice-6): document risk engine, sizing, simulated broker",
           "is_bot": false,
           "is_merge": false,
-          "sha": "0c2e2041a468e595a556bc2340b1307096e7b52b",
-          "url": "https://github.com/YRB19/NetOS/commit/0c2e2041a468e595a556bc2340b1307096e7b52b"
-        },
-        {
-          "changed_files": 5,
-          "date": "2026-10-01T07:12:34Z",
-          "headline": "style(slice-5): format research harness source with ruff",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "b34263aaa01cc1d054eb88f677b972bff3ada972",
-          "url": "https://github.com/YRB19/NetOS/commit/b34263aaa01cc1d054eb88f677b972bff3ada972"
-        },
-        {
-          "changed_files": 7,
-          "date": "2026-10-01T06:44:43Z",
-          "headline": "docs(slice-5): record research harness and protocol",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "ac689ce6f09928a95a16291e0e78b6e4afd688d1",
-          "url": "https://github.com/YRB19/NetOS/commit/ac689ce6f09928a95a16291e0e78b6e4afd688d1"
+          "sha": "85693a80c2a444e1ba3a3e91716b5fe1bf8a5476",
+          "url": "https://github.com/YRB19/NetOS/commit/85693a80c2a444e1ba3a3e91716b5fe1bf8a5476"
         },
         {
           "changed_files": 1,
-          "date": "2026-10-01T06:44:41Z",
-          "headline": "test(slice-5): add end-to-end integration tests",
+          "date": "2026-10-18T16:15:56Z",
+          "headline": "test(slice-6): add adversarial isolation and execution path safety tests",
           "is_bot": false,
           "is_merge": false,
-          "sha": "0bf863b803b0d069d3da4854d4c0f3d5e70cb0ff",
-          "url": "https://github.com/YRB19/NetOS/commit/0bf863b803b0d069d3da4854d4c0f3d5e70cb0ff"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-10-01T06:44:38Z",
-          "headline": "test(slice-5): add fault-injection tests",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "9ba185d726ad806c12431acdf9250c03ba18f314",
-          "url": "https://github.com/YRB19/NetOS/commit/9ba185d726ad806c12431acdf9250c03ba18f314"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-10-01T06:44:34Z",
-          "headline": "test(slice-5): add adversarial lookahead and isolation tests",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "32a85f28b90c8e9dc0addc042304ece2e8c96ca0",
-          "url": "https://github.com/YRB19/NetOS/commit/32a85f28b90c8e9dc0addc042304ece2e8c96ca0"
+          "sha": "3b98b7f35d26ee02a67327d116904653b92ba3d8",
+          "url": "https://github.com/YRB19/NetOS/commit/3b98b7f35d26ee02a67327d116904653b92ba3d8"
         },
         {
           "changed_files": 2,
-          "date": "2026-10-01T06:44:30Z",
-          "headline": "test(slice-5): validate research harness core",
+          "date": "2026-10-18T16:15:54Z",
+          "headline": "test(slice-6): add end-to-end execution pipeline tests",
           "is_bot": false,
           "is_merge": false,
-          "sha": "0a7f7462c9ed291cc081830fcc16332b2bfe2879",
-          "url": "https://github.com/YRB19/NetOS/commit/0a7f7462c9ed291cc081830fcc16332b2bfe2879"
+          "sha": "94506ce904253127e63b5cd8ea7539a24d444ae6",
+          "url": "https://github.com/YRB19/NetOS/commit/94506ce904253127e63b5cd8ea7539a24d444ae6"
+        },
+        {
+          "changed_files": 6,
+          "date": "2026-10-18T16:15:51Z",
+          "headline": "feat(slice-6): implement offline execution pipeline",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "a38a6c6deb7bef1c4f8ade2ec03a9111d772ec65",
+          "url": "https://github.com/YRB19/NetOS/commit/a38a6c6deb7bef1c4f8ade2ec03a9111d772ec65"
+        },
+        {
+          "changed_files": 3,
+          "date": "2026-10-18T16:15:48Z",
+          "headline": "feat(slice-6): implement simulated broker adapter",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "0e662e773e4d83c468d0e98f329b4f31113e11b9",
+          "url": "https://github.com/YRB19/NetOS/commit/0e662e773e4d83c468d0e98f329b4f31113e11b9"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-10-18T16:15:46Z",
+          "headline": "feat(slice-6): implement deterministic position sizing",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "56a8ab16f4031767ab6d643c5a9c107e72088cca",
+          "url": "https://github.com/YRB19/NetOS/commit/56a8ab16f4031767ab6d643c5a9c107e72088cca"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-10-18T16:15:44Z",
+          "headline": "test(slice-6): validate risk engine checks and fail-closed behavior",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "367530df0e4524de73ec65ff8a45def6f4dbbeb7",
+          "url": "https://github.com/YRB19/NetOS/commit/367530df0e4524de73ec65ff8a45def6f4dbbeb7"
         }
       ]
     },
@@ -1279,12 +1279,21 @@
     },
     "YRB19/YRB19": {
       "commits": {
-        "d30": 60,
-        "d7": 23,
-        "d90": 60
+        "d30": 61,
+        "d7": 24,
+        "d90": 61
       },
       "merged_prs": [],
       "recent_commits": [
+        {
+          "changed_files": 5,
+          "date": "2026-10-18T15:56:36Z",
+          "headline": "chore(profile): refresh generated sections",
+          "is_bot": true,
+          "is_merge": false,
+          "sha": "9d748a7db5ff2173e2d3b4498cac2338a5805271",
+          "url": "https://github.com/YRB19/YRB19/commit/9d748a7db5ff2173e2d3b4498cac2338a5805271"
+        },
         {
           "changed_files": 4,
           "date": "2026-10-18T11:18:21Z",
@@ -1347,15 +1356,6 @@
           "is_merge": false,
           "sha": "13a0f5e51ef6e7ee0c51e953763a1b31d5821dbf",
           "url": "https://github.com/YRB19/YRB19/commit/13a0f5e51ef6e7ee0c51e953763a1b31d5821dbf"
-        },
-        {
-          "changed_files": 5,
-          "date": "2026-10-16T16:45:28Z",
-          "headline": "chore(profile): refresh generated sections",
-          "is_bot": true,
-          "is_merge": false,
-          "sha": "35161482681bde30b6deef13d0b5265cea020ad5",
-          "url": "https://github.com/YRB19/YRB19/commit/35161482681bde30b6deef13d0b5265cea020ad5"
         }
       ]
     },
@@ -1689,7 +1689,7 @@
       ]
     }
   },
-  "generated_at": "2026-10-18T15:56:28Z",
+  "generated_at": "2026-10-18T20:51:36Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"

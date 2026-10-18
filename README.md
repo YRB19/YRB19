@@ -31,18 +31,18 @@ Most active (last 30 days): [NetOS](https://github.com/YRB19/NetOS)
 <!-- PROFILEOS:START:PULSE -->
 | COMMITS (30d) | REPOSITORIES | PRs | RELEASES |
 |:-:|:-:|:-:|:-:|
-| 122 | 4 | 0 | 0 |
+| 135 | 4 | 0 | 0 |
 
 <sub>Activity indicators, not quality measures.</sub>
 <!-- PROFILEOS:END:PULSE -->
 
 ## Recently Shipped
 <!-- PROFILEOS:START:RECENTLY_SHIPPED -->
-`10/18` **NetOS** — [update](https://github.com/YRB19/NetOS/commit/1bc85dfb3d1e0b2e1cdc83f5baf9a29bce040037)  
+`10/18` **NetOS** — [update](https://github.com/YRB19/NetOS/commit/54cdff28a66c486d6f16d157eac981936ebfe07a)  
+`10/18` **NetOS** — [update](https://github.com/YRB19/NetOS/commit/3b98b7f35d26ee02a67327d116904653b92ba3d8)  
 `10/17` **FREYA** — [update](https://github.com/YRB19/FREYA/commit/b09ba8642a0d270c3abb5992a3a71a0958c91eb3)  
 `10/08` **UsageOS** — [update](https://github.com/YRB19/UsageOS/commit/a8f6a68ebbe58b1be53fa5722d73d4ca40020a64)  
 `10/08` **UsageOS** — [update](https://github.com/YRB19/UsageOS/commit/4dca1f30438046c75d5effd3b0c0cc41d7fe72e0)  
-`10/01` **NetOS** — [update](https://github.com/YRB19/NetOS/commit/0bf863b803b0d069d3da4854d4c0f3d5e70cb0ff)  
 `09/25` **FREYA** — [update](https://github.com/YRB19/FREYA/commit/00220bf4388b19037e2468304bd7dbbe1ff40df9)
 <!-- PROFILEOS:END:RECENTLY_SHIPPED -->
 
@@ -117,7 +117,7 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 **Commits, last 30 days**
 
 ```text
-NetOS    ███████████████ 77
+NetOS    ███████████████ 89
 UsageOS  ██ 11
 FREYA    █ 3
 ```
