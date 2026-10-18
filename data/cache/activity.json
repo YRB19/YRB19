@@ -168,7 +168,7 @@
       "commits": {
         "d30": 0,
         "d7": 0,
-        "d90": 34
+        "d90": 1
       },
       "merged_prs": [],
       "recent_commits": [
@@ -814,12 +814,21 @@
     },
     "YRB19/NetOS": {
       "commits": {
-        "d30": 76,
-        "d7": 0,
-        "d90": 76
+        "d30": 77,
+        "d7": 1,
+        "d90": 77
       },
       "merged_prs": [],
       "recent_commits": [
+        {
+          "changed_files": 38,
+          "date": "2026-10-18T03:34:18Z",
+          "headline": "feat(slice-6): Tier-2 momentum, Risk Engine, deterministic sizing, si…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "1bc85dfb3d1e0b2e1cdc83f5baf9a29bce040037",
+          "url": "https://github.com/YRB19/NetOS/commit/1bc85dfb3d1e0b2e1cdc83f5baf9a29bce040037"
+        },
         {
           "changed_files": 6,
           "date": "2026-10-01T07:12:46Z",
@@ -882,15 +891,6 @@
           "is_merge": false,
           "sha": "0a7f7462c9ed291cc081830fcc16332b2bfe2879",
           "url": "https://github.com/YRB19/NetOS/commit/0a7f7462c9ed291cc081830fcc16332b2bfe2879"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-10-01T06:44:20Z",
-          "headline": "feat(slice-5): add contamination guards and experiment store",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "00adec4deef054ce8e065fb8e87742682e15477e",
-          "url": "https://github.com/YRB19/NetOS/commit/00adec4deef054ce8e065fb8e87742682e15477e"
         }
       ]
     },
@@ -1279,12 +1279,21 @@
     },
     "YRB19/YRB19": {
       "commits": {
-        "d30": 59,
+        "d30": 60,
         "d7": 23,
-        "d90": 59
+        "d90": 60
       },
       "merged_prs": [],
       "recent_commits": [
+        {
+          "changed_files": 4,
+          "date": "2026-10-18T11:18:21Z",
+          "headline": "chore(profile): refresh generated sections",
+          "is_bot": true,
+          "is_merge": false,
+          "sha": "7b276b69099eb2dd92e175e8e7565e1035edbbf2",
+          "url": "https://github.com/YRB19/YRB19/commit/7b276b69099eb2dd92e175e8e7565e1035edbbf2"
+        },
         {
           "changed_files": 5,
           "date": "2026-10-18T04:42:40Z",
@@ -1347,15 +1356,6 @@
           "is_merge": false,
           "sha": "35161482681bde30b6deef13d0b5265cea020ad5",
           "url": "https://github.com/YRB19/YRB19/commit/35161482681bde30b6deef13d0b5265cea020ad5"
-        },
-        {
-          "changed_files": 4,
-          "date": "2026-10-16T11:33:38Z",
-          "headline": "chore(profile): refresh generated sections",
-          "is_bot": true,
-          "is_merge": false,
-          "sha": "d2ec4dbc4665d094b729ea2e8b2532fe1949652c",
-          "url": "https://github.com/YRB19/YRB19/commit/d2ec4dbc4665d094b729ea2e8b2532fe1949652c"
         }
       ]
     },
@@ -1689,7 +1689,7 @@
       ]
     }
   },
-  "generated_at": "2026-10-18T11:18:13Z",
+  "generated_at": "2026-10-18T15:56:28Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"

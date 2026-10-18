@@ -13,18 +13,18 @@ My projects usually start with a practical problem and grow into systems around 
 
 ## Currently Building
 <!-- PROFILEOS:START:CURRENTLY_BUILDING -->
+● [NetOS](https://github.com/YRB19/NetOS) — active  
 ● [FREYA](https://github.com/YRB19/FREYA) — active  
-● [UsageOS](https://github.com/YRB19/UsageOS) — active  
-● [NetOS](https://github.com/YRB19/NetOS) — active
+● [UsageOS](https://github.com/YRB19/UsageOS) — active
 <!-- PROFILEOS:END:CURRENTLY_BUILDING -->
 
 <!-- PROFILEOS:START:NOW -->
 **NOW**  
-Building: [FREYA](https://github.com/YRB19/FREYA) · [UsageOS](https://github.com/YRB19/UsageOS) · [NetOS](https://github.com/YRB19/NetOS)  
+Building: [NetOS](https://github.com/YRB19/NetOS) · [FREYA](https://github.com/YRB19/FREYA) · [UsageOS](https://github.com/YRB19/UsageOS)  
 Exploring: Agentic systems · AI infrastructure  
 Learning: Systems design · Distributed workflows  
 Newest build: [FREYA](https://github.com/YRB19/FREYA) · created 2026-09-10  
-Most active (last 30 days): [FREYA](https://github.com/YRB19/FREYA)
+Most active (last 30 days): [NetOS](https://github.com/YRB19/NetOS)
 <!-- PROFILEOS:END:NOW -->
 
 ## Development Pulse
@@ -38,11 +38,11 @@ Most active (last 30 days): [FREYA](https://github.com/YRB19/FREYA)
 
 ## Recently Shipped
 <!-- PROFILEOS:START:RECENTLY_SHIPPED -->
+`10/18` **NetOS** — [update](https://github.com/YRB19/NetOS/commit/1bc85dfb3d1e0b2e1cdc83f5baf9a29bce040037)  
 `10/17` **FREYA** — [update](https://github.com/YRB19/FREYA/commit/b09ba8642a0d270c3abb5992a3a71a0958c91eb3)  
 `10/08` **UsageOS** — [update](https://github.com/YRB19/UsageOS/commit/a8f6a68ebbe58b1be53fa5722d73d4ca40020a64)  
 `10/08` **UsageOS** — [update](https://github.com/YRB19/UsageOS/commit/4dca1f30438046c75d5effd3b0c0cc41d7fe72e0)  
 `10/01` **NetOS** — [update](https://github.com/YRB19/NetOS/commit/0bf863b803b0d069d3da4854d4c0f3d5e70cb0ff)  
-`10/01` **NetOS** — [update](https://github.com/YRB19/NetOS/commit/9ba185d726ad806c12431acdf9250c03ba18f314)  
 `09/25` **FREYA** — [update](https://github.com/YRB19/FREYA/commit/00220bf4388b19037e2468304bd7dbbe1ff40df9)
 <!-- PROFILEOS:END:RECENTLY_SHIPPED -->
 
@@ -72,7 +72,7 @@ Live Formula 1 timing and session-tracking desktop app
 Tauri · Rust · React · TypeScript · last push 2026-07-29
 
 **[NetOS](https://github.com/YRB19/NetOS)**  
-Python · ★ 1 · last push 2026-10-01
+Python · ★ 1 · last push 2026-10-18
 
 **[FREYA](https://github.com/YRB19/FREYA)**  
 Python · ★ 1 · last push 2026-10-17
@@ -117,7 +117,7 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 **Commits, last 30 days**
 
 ```text
-NetOS    ███████████████ 76
+NetOS    ███████████████ 77
 UsageOS  ██ 11
 FREYA    █ 3
 ```
@@ -125,12 +125,12 @@ FREYA    █ 3
 **Languages**
 
 ```text
-TypeScript  ███████████████ 42.1%
-Python      ███████████ 31.5%
-JavaScript  █████ 13.2%
-CSS         ███ 8.3%
-HTML        █ 3.0%
-Other       █ 2.0%
+TypeScript  ███████████████ 40.2%
+Python      █████████████ 34.6%
+JavaScript  █████ 12.6%
+CSS         ███ 7.9%
+HTML        █ 2.8%
+Other       █ 1.9%
 ```
 
 <sub>Default-branch commits and bytes of code in public repos. Activity indicators, not measures of quality or skill.</sub>
