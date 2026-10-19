@@ -13,37 +13,31 @@ My projects usually start with a practical problem and grow into systems around 
 
 ## Currently Building
 <!-- PROFILEOS:START:CURRENTLY_BUILDING -->
-● [NetOS](https://github.com/YRB19/NetOS) — active  
-● [FREYA](https://github.com/YRB19/FREYA) — active  
 ● [UsageOS](https://github.com/YRB19/UsageOS) — active
 <!-- PROFILEOS:END:CURRENTLY_BUILDING -->
 
 <!-- PROFILEOS:START:NOW -->
 **NOW**  
-Building: [NetOS](https://github.com/YRB19/NetOS) · [FREYA](https://github.com/YRB19/FREYA) · [UsageOS](https://github.com/YRB19/UsageOS)  
+Building: [UsageOS](https://github.com/YRB19/UsageOS)  
 Exploring: Agentic systems · AI infrastructure  
 Learning: Systems design · Distributed workflows  
-Newest build: [FREYA](https://github.com/YRB19/FREYA) · created 2026-09-10  
-Most active (last 30 days): [NetOS](https://github.com/YRB19/NetOS)
+Newest build: [CompanionOS](https://github.com/YRB19/CompanionOS) · created 2026-07-18  
+Most commits (last 30 days): [UsageOS](https://github.com/YRB19/UsageOS)
 <!-- PROFILEOS:END:NOW -->
 
 ## Development Pulse
 <!-- PROFILEOS:START:PULSE -->
-| COMMITS (30d) | REPOSITORIES | PRs | RELEASES |
-|:-:|:-:|:-:|:-:|
-| 128 | 4 | 0 | 0 |
-
-<sub>Activity indicators, not quality measures.</sub>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/generated/pulse.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/generated/pulse.light.svg">
+  <img alt="Development pulse, last 30 days: 139 commits, 4 repositories committed to, 0 pull requests, 0 releases. Activity indicators, not measures of quality." src="assets/generated/pulse.light.svg" width="432">
+</picture>
 <!-- PROFILEOS:END:PULSE -->
 
 ## Recently Shipped
 <!-- PROFILEOS:START:RECENTLY_SHIPPED -->
-`10/18` **NetOS** — [update](https://github.com/YRB19/NetOS/commit/54cdff28a66c486d6f16d157eac981936ebfe07a)  
-`10/18` **NetOS** — [update](https://github.com/YRB19/NetOS/commit/3b98b7f35d26ee02a67327d116904653b92ba3d8)  
-`10/17` **FREYA** — [update](https://github.com/YRB19/FREYA/commit/b09ba8642a0d270c3abb5992a3a71a0958c91eb3)  
 `10/08` **UsageOS** — [update](https://github.com/YRB19/UsageOS/commit/a8f6a68ebbe58b1be53fa5722d73d4ca40020a64)  
-`10/08` **UsageOS** — [update](https://github.com/YRB19/UsageOS/commit/4dca1f30438046c75d5effd3b0c0cc41d7fe72e0)  
-`09/25` **FREYA** — [update](https://github.com/YRB19/FREYA/commit/00220bf4388b19037e2468304bd7dbbe1ff40df9)
+`10/08` **UsageOS** — [update](https://github.com/YRB19/UsageOS/commit/4dca1f30438046c75d5effd3b0c0cc41d7fe72e0)
 <!-- PROFILEOS:END:RECENTLY_SHIPPED -->
 
 ## The OS Series
@@ -61,27 +55,41 @@ Most active (last 30 days): [NetOS](https://github.com/YRB19/NetOS)
 
 ## Selected Systems
 <!-- PROFILEOS:START:SELECTED_SYSTEMS -->
-**[UsageOS](https://github.com/YRB19/UsageOS)**  
-Self-hosted multi-account Claude.ai usage tracking platform  
-FastAPI · PostgreSQL · React · Chrome Extension · ★ 1 · last push 2026-10-08
+<a href="https://github.com/YRB19/UsageOS">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/generated/card-usageos.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/generated/card-usageos.light.svg">
+  <img alt="UsageOS — Self-hosted multi-account Claude.ai usage tracking platform. Stack: FastAPI, PostgreSQL, React, Chrome Extension. Last push 2026-10-08. 1 star." src="assets/generated/card-usageos.light.svg" width="432">
+</picture>
+</a>
 
-**[ResearchOS](https://github.com/YRB19/ResearchOS)**  
-Autonomous deep-research platform with parallel specialist agents  
-FastAPI · SQLite · NVIDIA NIM · Docker · ★ 1 · last push 2026-08-03
+[Docs](https://github.com/YRB19/UsageOS/blob/main/DEPLOY.md)
 
-**[ClipOS](https://github.com/YRB19/ClipOS)**  
-Turns long videos into short, vertical, captioned clips  
-FastAPI · faster-whisper · FFmpeg · OpenCV · last push 2026-08-02
+<a href="https://github.com/YRB19/ResearchOS">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/generated/card-researchos.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/generated/card-researchos.light.svg">
+  <img alt="ResearchOS — Autonomous deep-research platform with parallel specialist agents. Stack: FastAPI, SQLite, NVIDIA NIM, Docker. Last push 2026-08-03. 1 star." src="assets/generated/card-researchos.light.svg" width="432">
+</picture>
+</a>
 
-**[CompanionOS](https://github.com/YRB19/CompanionOS)** · ● ACTIVE  
-Live Formula 1 timing and session-tracking desktop app  
-Tauri · Rust · React · TypeScript · last push 2026-07-29
+[Docs](https://github.com/YRB19/ResearchOS/blob/main/reference/ARCHITECTURE.md)
 
-**[NetOS](https://github.com/YRB19/NetOS)**  
-Python · ★ 1 · last push 2026-10-18
+<a href="https://github.com/YRB19/ClipOS">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/generated/card-clipos.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/generated/card-clipos.light.svg">
+  <img alt="ClipOS — Turns long videos into short, vertical, captioned clips. Stack: FastAPI, faster-whisper, FFmpeg, OpenCV. Last push 2026-08-02." src="assets/generated/card-clipos.light.svg" width="432">
+</picture>
+</a>
 
-**[FREYA](https://github.com/YRB19/FREYA)**  
-Python · ★ 1 · last push 2026-10-17
+<a href="https://github.com/YRB19/CompanionOS">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/generated/card-companionos.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/generated/card-companionos.light.svg">
+  <img alt="CompanionOS — Live Formula 1 timing and session-tracking desktop app. Status: active. Stack: Tauri, Rust, React, TypeScript. Last push 2026-07-29." src="assets/generated/card-companionos.light.svg" width="432">
+</picture>
+</a>
 <!-- PROFILEOS:END:SELECTED_SYSTEMS -->
 
 ## What I Build
@@ -120,26 +128,23 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 
 ## Activity
 <!-- PROFILEOS:START:ACTIVITY -->
-**Commits, last 30 days**
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/generated/heatmap.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/generated/heatmap.light.svg">
+  <img alt="Contribution heatmap: 714 contributions over the last year across 86 active days. Activity indicators, not measures of quality." src="assets/generated/heatmap.light.svg" width="432">
+</picture>
 
-```text
-NetOS    ███████████████ 89
-UsageOS  ██ 11
-FREYA    █ 3
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/generated/activity.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/generated/activity.light.svg">
+  <img alt="Commits by project, last 30 days: UsageOS 11. Default-branch commits; an activity signal." src="assets/generated/activity.light.svg" width="432">
+</picture>
 
-**Languages**
-
-```text
-TypeScript  ███████████████ 40.2%
-Python      █████████████ 34.6%
-JavaScript  █████ 12.6%
-CSS         ███ 7.9%
-HTML        █ 2.8%
-Other       █ 1.9%
-```
-
-<sub>Default-branch commits and bytes of code in public repos. Activity indicators, not measures of quality or skill.</sub>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/generated/languages.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/generated/languages.light.svg">
+  <img alt="Languages by bytes of code in public repositories: TypeScript 53.4%, JavaScript 16.7%, Python 13.1%, CSS 10.5%, HTML 3.7%, Other 2.5%. By bytes of code. Not a skill measure." src="assets/generated/languages.light.svg" width="432">
+</picture>
 <!-- PROFILEOS:END:ACTIVITY -->
 
 ## Links
