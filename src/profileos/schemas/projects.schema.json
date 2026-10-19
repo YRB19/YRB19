@@ -28,6 +28,7 @@
                     "properties": {"from": {"type": "string"}, "to": {"type": "string"}, "label": {"type": ["string", "null"]}}}
         },
         "verified": {"type": "boolean"},
+        "publish": {"type": "boolean"},
         "visibility": {"enum": ["public", "private"]},
         "show_unlinked": {"type": "boolean"},
         "visual": {"type": "object"}
