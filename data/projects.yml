@@ -57,8 +57,10 @@ CompanionOS:
   verified: true
 
 # NetOS and FREYA: github.com/YRB19/NetOS and /FREYA return 404 without authentication and are absent
-# from the public repository list (private, unpublished or renamed). Nothing can be verified, so nothing
-# is published; they are omitted from generated sections until a public repo resolves.
+# from the public repository list (private, unpublished or renamed). They stay here as internal metadata
+# (`publish: false`) and are omitted from EVERY public generated section and the ecosystem graph, even if a
+# public repo with that name appears. To publish: verify the repo, add evidence, then set `publish: true`
+# (or delete the line).
 NetOS:
   repo: YRB19/NetOS
   category: systems
@@ -68,6 +70,7 @@ NetOS:
   priority: 92
   tagline: null
   verified: false
+  publish: false
 
 FREYA:
   repo: YRB19/FREYA
@@ -78,6 +81,7 @@ FREYA:
   priority: 90
   tagline: null
   verified: false
+  publish: false
 
 # Secondary / earlier
 RepoHealth:

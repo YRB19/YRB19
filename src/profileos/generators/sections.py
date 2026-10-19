@@ -1,12 +1,14 @@
-"""Markdown renderers for each registered marker. Every string from repo metadata is sanitised."""
-import datetime as dt
+"""Markdown renderers for each registered marker. Every string from repo metadata is sanitised.
 
-from ..analytics import discovery, languages, scoring, shipped
+Visual blocks (pulse, activity, selected systems, ecosystem) embed the SVG assets built from the same
+view-models in `models.py`, so the README and the images can never disagree.
+"""
+import html
+
+from ..analytics import discovery, scoring, shipped
 from ..sanitize import md
 from ..storage.cache import parse_iso
-
-STATUS = {"active": "● ACTIVE", "experimental": "◐ EXPERIMENTAL", "maintained": "○ MAINTAINED", "paused": "◌ PAUSED", "archived": "■ ARCHIVED"}
-BAR = "█"
+from . import models, visuals
 
 
 class Context:
@@ -16,6 +18,7 @@ class Context:
         self.display = self.prof.get("display", {})
         self.projects = data["projects"]
         self.warnings: list[str] = []
+        self._assets = None
         self.repos = [r for r in datasets.get("repos", []) if not r["is_private"] and r["full_name"].lower() not in self._excluded()]
         self.by_full = {r["full_name"].lower(): r for r in self.repos}
         self.activity, self.releases = datasets.get("activity", {}), datasets.get("releases", {})
@@ -26,8 +29,8 @@ class Context:
         self.resolved = {}
         if "repos" in datasets:
             for slug, p in self.projects.items():
-                if p.get("status") == "private":
-                    continue
+                if not models.publishable(p):
+                    continue  # internal-only: never resolved, never warned about, never rendered
                 r = self._resolve(slug, p)
                 if r:
                     self.resolved[slug] = r
@@ -35,7 +38,10 @@ class Context:
                     self.warnings.append(f"{slug}: repo {p['repo']} not found among public repos — omitted")
 
     def _excluded(self):
-        return {x.lower() for x in list(self.cfg.get("exclude_repos", [])) + list(self.ov.get("exclude_repos", []))}
+        """Repos that must never reach public output: config/override exclusions plus internal-only projects."""
+        hidden = {(p.get("repo") or "").lower() for p in self.projects.values() if not models.publishable(p)}
+        hidden.discard("")
+        return {x.lower() for x in list(self.cfg.get("exclude_repos", [])) + list(self.ov.get("exclude_repos", []))} | hidden
 
     def _resolve(self, slug, p):
         if not p.get("repo"):
@@ -49,18 +55,19 @@ class Context:
                     return repo
         return None
 
+    @property
+    def assets(self) -> dict:
+        """name -> Asset, built once from the shared view-models (raises AssetError if any SVG is unsafe)."""
+        if self._assets is None:
+            self._assets = visuals.build_assets(self)
+        return self._assets
+
     # ---- helpers -------------------------------------------------------------------------
     def note(self, *names) -> str:
         limit = self.cfg.get("stale_after_h", 24)
         if any(self.ages.get(n, 0) > limit for n in names):
             return f"<sub>as of {self.snapshot_date}</sub>"
         return ""
-
-    def status_label(self, slug) -> str:
-        """Manual status is shown only when evidence backs it (HIGH/MEDIUM/STATED); drafts stay internal."""
-        rec = (self.d["evidence"].get("projects", {}).get(slug, {}) or {}).get("status")
-        p = self.projects[slug]
-        return STATUS[p["status"]] if rec and rec.get("confidence") in ("HIGH", "MEDIUM", "STATED") else ""
 
     def link(self, slug):
         p, r = self.projects[slug], self.resolved.get(slug)
@@ -89,6 +96,15 @@ class Context:
         return out
 
 
+def _img(ctx: Context, name: str) -> str:
+    a = ctx.assets.get(name)
+    return visuals.picture(a) if a else ""
+
+
+def _join(parts, sep="\n\n") -> str:
+    return sep.join(p for p in parts if p)
+
+
 # ---- renderers ---------------------------------------------------------------------------------
 def currently_building(ctx: Context) -> str:
     if "repos" not in ctx.ds:
@@ -113,30 +129,17 @@ def now_panel(ctx: Context) -> str:
             newest = max(pub, key=lambda r: (r["created_at"], r["name"]))
             lines.append(f"Newest build: [{md(newest['name'])}]({newest['url']}) · created {newest['created_at'][:10]}")
             known = {(p.get("repo") or "").lower() for p in ctx.projects.values()}
-            best = max(pub, key=lambda r: (ctx.metrics(r, next((p.get("priority") for p in ctx.projects.values() if (p.get("repo") or "").lower() == r["full_name"].lower()), 50))["score"], r["name"]))
-            if ctx.metrics(best)["c30"] > 0:
-                lines.append(f"Most active (last 30 days): [{md(best['name'])}]({best['url']})")
+            busiest = max(pub, key=lambda r: (ctx.metrics(r)["c30"], r["name"].lower()))  # commits only, never priority
+            if ctx.metrics(busiest)["c30"] > 0:
+                lines.append(f"Most commits (last 30 days): [{md(busiest['name'])}]({busiest['url']})")
             for nb in discovery.new_builds(ctx.first_seen, ctx.repos, known, ctx.now, ctx.cfg.get("new_build_days", 14)):
                 lines.append(f"New build: [{md(nb['name'])}]({nb['url']}) · first seen {nb['first_seen']}")
     return "  \n".join(["**NOW**"] + lines) if lines else ""
 
 
 def pulse(ctx: Context) -> str:
-    c = ctx.ds.get("contributions")
-    if not c:
-        return ""
-    p = c["pulse"]
-    rels = sum(1 for repo in ctx.repos for x in ctx.releases.get(repo["full_name"], []) if scoring.within(x["published_at"], ctx.now, 30))
-    out = [
-        "| COMMITS (30d) | REPOSITORIES | PRs | RELEASES |",
-        "|:-:|:-:|:-:|:-:|",
-        f"| {p['commits']} | {p['repos_touched']} | {p['pull_requests']} | {rels} |",
-        "",
-        "<sub>Activity indicators, not quality measures.</sub>",
-    ]
-    if ctx.note("contributions"):
-        out.append(ctx.note("contributions"))
-    return "\n".join(out)
+    img = _img(ctx, "pulse")
+    return _join([img, ctx.note("contributions", "repos") if img else ""])
 
 
 def recently_shipped(ctx: Context) -> str:
@@ -153,54 +156,25 @@ def recently_shipped(ctx: Context) -> str:
 
 
 def os_series(ctx: Context) -> str:
-    members = [s for s, p in ctx.projects.items() if p.get("family") == "os-series" and p["status"] != "private"
-               and (s in ctx.resolved or p.get("show_unlinked") or "repos" not in ctx.ds)]
+    members = models.os_members(ctx)
     if not members:
         return ""
-    members.sort(key=lambda s: -ctx.projects[s].get("priority", 50))
-    out = ["*Building focused systems around messy real-world problems.*", "", " · ".join(ctx.link(s) for s in members)]
-    edges = [f"{md(r['from'])} → {md(r['to'])}" + (f" — {md(r['label'])}" if r.get("label") else "")
-             for s in members for r in ctx.projects[s].get("relations", [])]
-    if edges:
-        out += [""] + ["  \n".join(edges)]
-    return "\n".join(out)
-
-
-def _ordered_flagships(ctx: Context):
-    flag = [s for s, p in ctx.projects.items() if p.get("featured") and p["status"] != "private" and s in ctx.resolved]
-    pins = [s for s in ctx.ov.get("pin_order", []) if s in flag]
-    rest = sorted((s for s in flag if s not in pins), key=lambda s: (-ctx.projects[s].get("priority", 50), s))
-    return pins + rest
+    return _join([
+        "*Building focused systems around messy real-world problems.*",
+        _img(ctx, "os-series"),
+        " · ".join(ctx.link(s) for s in members),
+    ])
 
 
 def selected_systems(ctx: Context) -> str:
-    cards = []
-    for slug in _ordered_flagships(ctx):
-        p, r = ctx.projects[slug], ctx.resolved[slug]
-        hide = set(ctx.ov.get("hide_fields", {}).get(slug, []))
-        head = f"**{ctx.link(slug)}**" + (f" · {ctx.status_label(slug)}" if ctx.status_label(slug) else "")
-        verified = p.get("verified")
-        blurb = md(p["tagline"]) if verified and p.get("tagline") else (md(r["description"]) if r.get("description") else "")
-        bits = []
-        stack = p.get("stack") if verified else None
-        if stack:
-            bits.append(" · ".join(md(x) for x in stack[:4]))
-        elif r.get("primary_language"):
-            bits.append(md(r["primary_language"]))
-        rel = ctx.releases.get(r["full_name"], [])
-        if rel:
-            bits.append(f"[{md(rel[0]['tag'])}]({rel[0]['url']})")
-        show_zero = ctx.display.get("show_zero_stars", False)
-        if "stars" not in hide and (r["stars"] or show_zero):
-            bits.append(f"★ {r['stars']}")
-        if "forks" not in hide and (r["forks"] or show_zero):
-            bits.append(f"⑂ {r['forks']}")
-        if r.get("pushed_at"):
-            bits.append(f"last push {r['pushed_at'][:10]}")
-        if p.get("demo"):
-            bits.append(f"[demo]({p['demo']})")
-        cards.append("  \n".join(x for x in (head, blurb, " · ".join(bits)) if x))
-    return "\n\n".join(cards) + (f"\n\n{ctx.note('repos')}" if cards and ctx.note("repos") else "")
+    blocks = []
+    for card in models.card_models(ctx):
+        a = ctx.assets.get(visuals.card_name(card["slug"]))
+        if not a:
+            continue
+        links = [f"[{label}]({url})" for label, url in (("Demo", card.get("demo")), ("Docs", card.get("docs"))) if url]
+        blocks.append(_join([f'<a href="{html.escape(card["url"], quote=True)}">\n{visuals.picture(a)}\n</a>', " · ".join(links)], "\n\n"))
+    return _join(blocks + ([ctx.note("repos")] if blocks and ctx.note("repos") else []))
 
 
 def stack(ctx: Context) -> str:
@@ -214,7 +188,8 @@ def stack(ctx: Context) -> str:
 
 def earlier_builds(ctx: Context) -> str:
     out = []
-    groups = [ctx.link(s) for s, p in ctx.projects.items() if p.get("group") == "earlier" and p["status"] != "private" and (s in ctx.resolved or "repos" not in ctx.ds)]
+    groups = [ctx.link(s) for s, p in ctx.projects.items()
+              if p.get("group") == "earlier" and models.publishable(p) and (s in ctx.resolved or "repos" not in ctx.ds)]
     if groups:
         out.append(" · ".join(groups))
     hist = []
@@ -227,31 +202,10 @@ def earlier_builds(ctx: Context) -> str:
 
 
 def activity(ctx: Context) -> str:
-    out = []
-    rows = []
-    for slug, repo in ctx.resolved.items():
-        c30 = ctx.metrics(repo)["c30"]
-        if c30 > 0:
-            rows.append((c30, slug))
-    rows.sort(key=lambda t: (-t[0], t[1]))
-    rows = rows[:6]
-    if rows:
-        top = rows[0][0]
-        w = max(len(s) for _, s in rows)
-        bars = "\n".join(f"{s:<{w}}  {BAR * max(1, round(c * 15 / top))} {c}" for c, s in rows)
-        out.append(f"**Commits, last 30 days**\n\n```text\n{bars}\n```")
-    dist = languages.distribution(ctx.repos, exclude_languages=ctx.cfg.get("exclude_languages", []),
-                                  exclude_repos=list(ctx.cfg.get("exclude_repos", [])) + list(ctx.ov.get("exclude_repos", [])),
-                                  min_pct=ctx.cfg.get("min_language_pct", 2))
-    if dist:
-        w = max(len(x["language"]) for x in dist)
-        lang = "\n".join(f"{x['language']:<{w}}  {BAR * max(1, round(x['pct'] * 15 / dist[0]['pct']))} {x['pct']}%" for x in dist)
-        out.append(f"**Languages**\n\n```text\n{lang}\n```")
-    if out:
-        out.append("<sub>Default-branch commits and bytes of code in public repos. Activity indicators, not measures of quality or skill.</sub>")
-        if ctx.note("repos", "activity"):
-            out.append(ctx.note("repos", "activity"))
-    return "\n\n".join(out)
+    visuals_ = [_img(ctx, n) for n in ("heatmap", "activity", "languages")]
+    if not any(visuals_):
+        return ""
+    return _join(visuals_ + [ctx.note("repos", "activity", "contributions")])
 
 
 def links(ctx: Context) -> str:

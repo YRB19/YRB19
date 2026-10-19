@@ -50,7 +50,13 @@ Most active (last 30 days): [NetOS](https://github.com/YRB19/NetOS)
 <!-- PROFILEOS:START:OS_SERIES -->
 *Building focused systems around messy real-world problems.*
 
-[UsageOS](https://github.com/YRB19/UsageOS) · [ResearchOS](https://github.com/YRB19/ResearchOS) · [ClipOS](https://github.com/YRB19/ClipOS) · [CompanionOS](https://github.com/YRB19/CompanionOS) · [NetOS](https://github.com/YRB19/NetOS) · [FREYA](https://github.com/YRB19/FREYA)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/generated/os-series.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/generated/os-series.light.svg">
+  <img alt="OS series: UsageOS (DEVTOOLS), ResearchOS (AI), ClipOS (MEDIA), CompanionOS (SYSTEMS)." src="assets/generated/os-series.light.svg" width="432">
+</picture>
+
+[UsageOS](https://github.com/YRB19/UsageOS) · [ResearchOS](https://github.com/YRB19/ResearchOS) · [ClipOS](https://github.com/YRB19/ClipOS) · [CompanionOS](https://github.com/YRB19/CompanionOS)
 <!-- PROFILEOS:END:OS_SERIES -->
 
 ## Selected Systems

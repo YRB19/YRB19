@@ -30,6 +30,33 @@ class Patched(FixtureClient):
         return nodes
 
 
+def assert_readme_inert(markdown: str):
+    """Render the README as CommonMark (raw HTML on, as GitHub does) and check what *elements* come out:
+    only our own relative SVG images and https GitHub/known links. Hostile text must not become an element."""
+    from html.parser import HTMLParser
+
+    from markdown_it import MarkdownIt
+
+    html_out = MarkdownIt("commonmark", {"html": True}).render(markdown)
+    bad, srcs = [], []
+
+    class P(HTMLParser):
+        def handle_starttag(self, tag, attrs):
+            a = dict(attrs)
+            if tag in ("script", "iframe", "object", "embed", "style", "form", "link", "meta"):
+                bad.append(f"<{tag}>")
+            for key in ("src", "srcset", "href"):
+                if key in a:
+                    srcs.append((tag, key, a[key]))
+
+    P().feed(html_out)
+    assert not bad, bad
+    for tag, key, val in srcs:
+        assert not val.lower().startswith(("javascript:", "data:", "vbscript:")), (tag, key, val)
+        if tag in ("img", "source"):
+            assert val.startswith("assets/generated/") and val.endswith(".svg"), (tag, key, val)  # no external images
+
+
 def cache_files(root):
     return sorted(p.name for p in (root / "data" / "cache").glob("*.json"))
 
@@ -93,15 +120,23 @@ def test_private_repos_never_leak(repo_copy):
 
 
 def test_repo_text_is_sanitised(repo_copy):
+    import yaml
+
+    p = repo_copy / "data" / "projects.yml"
+    d = yaml.safe_load(p.read_text())
+    d["UsageOS"]["verified"] = False  # unverified cards render GitHub's own description, so make it hostile
+    p.write_text(yaml.safe_dump(d, sort_keys=False))
     evil = "Nice\x00tool <script>alert(1)</script> ![x](https://evil/x.png) [click](javascript:alert(1))\n\n# heading"
 
     def tamper(nodes):
         nodes[0]["description"] = evil
 
-    build(repo_copy, client=Patched(NOW, tamper), now=NOW)
+    res = build(repo_copy, client=Patched(NOW, tamper), now=NOW)
     text = (repo_copy / "README.md").read_text()
     assert "<script>" not in text and "\x00" not in text
-    assert "![x](" not in text and "[click](javascript" not in text
+    assert_readme_inert(text)  # hostile text may appear only as inert, escaped attribute text
+    card = res.assets["assets/generated/card-usageos.light.svg"]
+    assert "<script" not in card and "&lt;script&gt;" in card  # rendered as inert text, escaped
 
 
 def test_invalid_data_blocks_build_and_writes_nothing(repo_copy):
@@ -119,22 +154,60 @@ def test_broken_marker_fails_without_writing(repo_copy):
         build(repo_copy, fixtures=True, now=NOW)
 
 
-def test_verified_cards_use_evidence_backed_text_and_unverified_do_not(repo_copy):
-    build(repo_copy, fixtures=True, now=NOW)
-    text = (repo_copy / "README.md").read_text()
-    sel = text.split("PROFILEOS:START:SELECTED_SYSTEMS")[1].split("PROFILEOS:END:SELECTED_SYSTEMS")[0]
-    usage = sel.split("**[NetOS]")[0] if "**[NetOS]" in sel else sel
-    assert "Self-hosted multi-account" in usage and "FastAPI" in usage
-    netos = sel.split("**[NetOS]")[1].split("\n\n")[0]
-    assert "FastAPI" not in netos and "Self-hosted" not in netos
-    assert "ACTIVE" not in netos  # LOW-confidence draft status is never displayed
+def _ctx(repo_copy, client=None, now=NOW):
+    """A fully-built Context (fixtures) for asserting on the shared view-models."""
+    from profileos.data import load_all
+    from profileos.generators.sections import Context
+
+    data = load_all(repo_copy / "data")
+    c = client or FixtureClient(now)
+    from profileos.github.fetch import fetch_repos, fetch_contributions
+
+    ds = {**fetch_repos(c, "YRB19", now), "contributions": fetch_contributions(c, "YRB19", now)}
+    return Context(data, ds, {k: 0.0 for k in ds}, now, now.date().isoformat(), {})
+
+
+def test_verified_cards_use_evidence_backed_text(repo_copy):
+    from profileos.generators import models
+
+    cards = {c["slug"]: c for c in models.card_models(_ctx(repo_copy))}
+    assert cards["UsageOS"]["tagline"] == "Self-hosted multi-account Claude.ai usage tracking platform"
+    assert cards["UsageOS"]["stack"][:2] == ["FastAPI", "PostgreSQL"]
+
+
+def test_unverified_projects_fall_back_to_github_facts_only(repo_copy):
+    import yaml
+    from profileos.generators import models
+
+    p = repo_copy / "data" / "projects.yml"
+    d = yaml.safe_load(p.read_text())
+    d["UsageOS"]["verified"] = False
+    p.write_text(yaml.safe_dump(d, sort_keys=False))
+    cards = {c["slug"]: c for c in models.card_models(_ctx(repo_copy))}
+    assert cards["UsageOS"]["tagline"] == "Synthetic fixture description for UsageOS"  # GitHub's own description
+    assert cards["UsageOS"]["stack"] == ["Python"]                                      # primary language only
 
 
 def test_only_evidence_backed_status_is_displayed(repo_copy):
-    build(repo_copy, fixtures=True, now=NOW)
-    text = (repo_copy / "README.md").read_text()
-    sel = text.split("PROFILEOS:START:SELECTED_SYSTEMS")[1].split("PROFILEOS:END:SELECTED_SYSTEMS")[0]
-    assert sel.count("● ACTIVE") == 1  # CompanionOS only (README states active development)
+    from profileos.generators import models
+
+    cards = {c["slug"]: c["status"] for c in models.card_models(_ctx(repo_copy))}
+    assert cards == {"UsageOS": None, "ResearchOS": None, "ClipOS": None, "CompanionOS": "active"}
+
+
+def test_manual_override_wins(repo_copy):
+    (repo_copy / "data" / "overrides.yml").write_text("focus: {ClipOS: force_active, UsageOS: hide}\n")
+    res = build(repo_copy, fixtures=True, dry_run=True, now=NOW)
+    cb = res.blocks["CURRENTLY_BUILDING"]
+    assert "UsageOS" not in cb
+    assert "ClipOS" in cb and "ClipOS](https://github.com/YRB19/ClipOS) — active" in cb
+
+
+def test_publish_false_beats_force_active(repo_copy):
+    (repo_copy / "data" / "overrides.yml").write_text("focus: {NetOS: force_active, FREYA: force_active}\n")
+    res = build(repo_copy, fixtures=True, dry_run=True, now=NOW)
+    for text in list(res.blocks.values()) + [a.alt for a in res.asset_objects.values()]:
+        assert "NetOS" not in text and "FREYA" not in text
 
 
 def test_profile_repo_is_excluded_from_activity(repo_copy):
@@ -145,13 +218,6 @@ def test_profile_repo_is_excluded_from_activity(repo_copy):
 
     res = build(repo_copy, client=Patched(NOW, add_self), dry_run=True, now=NOW)
     assert "github.com/YRB19/YRB19)" not in res.blocks["NOW"] + res.blocks["ACTIVITY"]
-
-
-def test_manual_override_wins(repo_copy):
-    (repo_copy / "data" / "overrides.yml").write_text("focus: {NetOS: force_active, UsageOS: hide}\n")
-    res = build(repo_copy, fixtures=True, dry_run=True, now=NOW)
-    cb = res.blocks["CURRENTLY_BUILDING"]
-    assert "NetOS" in cb and "UsageOS" not in cb
 
 
 def test_display_limit_respected(repo_copy):
