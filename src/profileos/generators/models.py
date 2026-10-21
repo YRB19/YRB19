@@ -25,6 +25,75 @@ def publishable(project: dict) -> bool:
     return project.get("publish", True) is not False and project.get("status") != "private"
 
 
+def excluded_repos(data: dict) -> set:
+    """Lower-case owner/name of every repo that must never reach public output OR the committed cache:
+    config/override exclusions (e.g. the profile repo itself) and internal-only (`publish: false`) projects.
+    One rule, used by the fetch filters, the cache and the renderers, so they cannot drift apart."""
+    handle = data["profile"]["identity"]["handle"].lower()
+    hidden = set()
+    for slug, p in data["projects"].items():
+        if publishable(p):
+            continue
+        if p.get("repo"):
+            hidden.add(p["repo"].lower())
+        hidden.update(f"{handle}/{a}".lower() for a, target in data["aliases"]["aliases"].items() if target == slug)
+    listed = list(data["config"].get("exclude_repos", [])) + list(data["overrides"].get("exclude_repos", []))
+    return hidden | {x.lower() for x in listed}
+
+
+# ---- Phase 6: CI / deployment health / releases ------------------------------------------------------------------
+CI_LABEL = {"passing": "CI passing", "failing": "CI failing", "in_progress": "CI running", "queued": "CI queued", "cancelled": "CI cancelled"}
+HEALTH_LABEL = {"online": "Online", "degraded": "Degraded", "offline": "Offline"}
+
+
+def _chip(rec, labels, *, date_key):
+    """A status may be drawn only if it is positive evidence of a known state. unknown / not_configured -> None."""
+    if not rec or rec.get("state") not in labels:
+        return None
+    day = (rec.get(date_key) or "")[:10]
+    chip = {"state": rec["state"], "label": labels[rec["state"]]}
+    if date_key == "run_at":                      # CI: the chip names the date of the run it describes, cached or not
+        if day:
+            chip["date"] = day
+    elif rec.get("stale"):                        # health served from an old cache: say so, with the date
+        chip["as_of"] = (rec.get("checked_at") or "")[:10] or None
+    return chip
+
+
+def ci_chip(ctx, slug):
+    p = ctx.projects[slug]
+    if not ctx.cfg.get("ci", {}).get("enabled", True) or (p.get("ci") or {}).get("track") is False:
+        return None
+    r = ctx.resolved.get(slug)
+    return _chip(ctx.ci.get(r["full_name"]) if r else None, CI_LABEL, date_key="run_at")
+
+
+def health_chip(ctx, slug):
+    p = ctx.projects[slug]
+    if (p.get("deployment") or {}).get("health_check") is not True:
+        return None
+    return _chip(ctx.health.get(slug), HEALTH_LABEL, date_key="checked_at")
+
+
+def latest_release(releases) -> dict | None:
+    """Newest *published* non-draft release by publish date (the API list is ordered by creation, not publication)."""
+    ok = [r for r in releases or [] if not r.get("draft") and not r.get("isDraft") and r.get("published_at") and r.get("tag")]
+    return max(ok, key=lambda r: (r["published_at"], r["tag"])) if ok else None
+
+
+def release_rows(ctx, limit: int = 8) -> list[dict]:
+    """Compact release tracker: one row per published project that really has a published release. Curated order."""
+    rows = []
+    for slug in ordered_projects(ctx):
+        rel = latest_release(ctx.releases.get(ctx.resolved[slug]["full_name"], []))
+        if not rel:
+            continue
+        rows.append({"slug": slug, "title": _title(ctx, slug), "repo_url": ctx.resolved[slug]["url"],
+                     "tag": clean_text(rel["tag"], 24), "url": rel["url"], "date": rel["published_at"][:10],
+                     "prerelease": bool(rel.get("prerelease"))})
+    return rows[:limit]
+
+
 def status_key(ctx, slug):
     """A project's status is displayed only when an evidence record (HIGH/MEDIUM/STATED) backs it."""
     rec = (ctx.d["evidence"].get("projects", {}).get(slug, {}) or {}).get("status")
@@ -65,7 +134,11 @@ def pulse_model(ctx):
     if "repos" in ctx.ds:  # a release count is only honest when release data exists
         rels = sum(1 for r in ctx.repos for x in ctx.releases.get(r["full_name"], []) if scoring.within(x["published_at"], ctx.now, 30))
         tiles.append({"label": "Releases", "noun": ("release", "releases"), "value": rels})
-    return {"window": "Last 30 days", "tiles": tiles, "note": "Activity indicators, not measures of quality."}
+    if p.get("scope") == "public-shown":
+        note = "Public repositories shown on this profile. Activity indicators, not measures of quality."
+    else:  # cache written before scope filtering existed: do not claim a scope we cannot vouch for
+        note = "GitHub contribution counts. Activity indicators, not measures of quality."
+    return {"window": "Last 30 days", "tiles": tiles, "note": note}
 
 
 # ---- Commits by project ------------------------------------------------------------------------------------
@@ -78,7 +151,7 @@ def activity_model(ctx):
     rows = rows[:MAX_ACTIVITY_ROWS]
     if not rows:
         return None
-    return {"window": "Last 30 days", "rows": rows, "note": "Default-branch commits; an activity signal."}
+    return {"window": "Last 30 days", "rows": rows, "note": "Projects shown on this profile, default-branch commits. An activity signal."}
 
 
 # ---- Contribution heatmap ----------------------------------------------------------------------------------
@@ -109,7 +182,7 @@ def heatmap_model(ctx):
     return {
         "ncols": ncols, "cells": cells, "months": months, "total": total,
         "active_days": sum(1 for _, c in parsed if c > 0), "max_day": top,
-        "note": "Activity indicators, not measures of quality.",
+        "note": "GitHub's contribution calendar: all activity, including repositories not featured here. Activity indicators, not measures of quality.",
     }
 
 
@@ -131,7 +204,7 @@ def language_model(ctx, max_items: int = MAX_LANGUAGES):
     items = [{"language": clean_text(x["language"], 24), "pct": x["pct"]} for x in named]
     if other > 0:
         items.append({"language": "Other", "pct": round(other, 1)})
-    return {"items": items, "note": "By bytes of code. Not a skill measure."}
+    return {"items": items, "note": "Public non-fork repositories, by bytes of code. Not a skill measure."}
 
 
 # ---- Project cards -----------------------------------------------------------------------------------------
@@ -147,7 +220,7 @@ def card_models(ctx) -> list[dict]:
         stack = [clean_text(x, 30) for x in (p.get("stack") or [])[:4]] if verified else []
         if not stack and r.get("primary_language"):
             stack = [clean_text(r["primary_language"], 30)]
-        rel = ctx.releases.get(r["full_name"], [])
+        rel = latest_release(ctx.releases.get(r["full_name"], []))
         out.append({
             "slug": slug,
             "title": _title(ctx, slug),
@@ -155,7 +228,9 @@ def card_models(ctx) -> list[dict]:
             "status": status_key(ctx, slug),
             "tagline": tagline or None,
             "stack": stack,
-            "release": {"tag": clean_text(rel[0]["tag"], 24), "url": rel[0]["url"]} if rel else None,
+            "release": {"tag": clean_text(rel["tag"], 24), "url": rel["url"], "prerelease": bool(rel.get("prerelease"))} if rel else None,
+            "ci": ci_chip(ctx, slug),
+            "health": health_chip(ctx, slug),
             "stars": r["stars"] if "stars" not in hide and (r["stars"] or show_zero) else None,
             "forks": r["forks"] if "forks" not in hide and (r["forks"] or show_zero) else None,
             "last_push": r["pushed_at"][:10] if r.get("pushed_at") else None,
