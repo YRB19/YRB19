@@ -1,0 +1,45 @@
+# ProfileOS — OPTIONAL event-driven refresh. Disabled by default.
+#
+# Copy this file to  .github/workflows/notify-profile.yml  in a repository whose releases should refresh the
+# profile. Nothing happens until BOTH of these exist on that repository (see docs/EVENT_DISPATCH.md):
+#   * variable  PROFILEOS_DISPATCH_ENABLED = true
+#   * secret    PROFILEOS_DISPATCH_TOKEN   = fine-grained PAT limited to the profile repo (Contents: write)
+# There is deliberately NO fallback to GITHUB_TOKEN or any other credential: without the secret this job exits quietly.
+# The profile still refreshes on its schedule and by hand either way.
+name: notify-profile
+
+on:
+  release:
+    types: [published]          # drafts never fire this event
+
+permissions: {}                 # this workflow's own GITHUB_TOKEN gets no access at all
+
+jobs:
+  notify:
+    if: ${{ vars.PROFILEOS_DISPATCH_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    env:
+      TOKEN: ${{ secrets.PROFILEOS_DISPATCH_TOKEN }}
+      TARGET: ${{ vars.PROFILEOS_TARGET_REPO || 'YRB19/YRB19' }}
+    steps:
+      - name: Ask the profile repository to refresh
+        run: |
+          set -euo pipefail
+          if [ -z "${TOKEN:-}" ]; then
+            echo "::notice::PROFILEOS_DISPATCH_TOKEN is not set; event dispatch stays disabled."
+            exit 0
+          fi
+          if ! printf '%s' "$TARGET" | grep -Eq '^[A-Za-z0-9-]+/[A-Za-z0-9_.-]+$'; then
+            echo "::warning::PROFILEOS_TARGET_REPO is not a valid owner/name; nothing sent."
+            exit 0
+          fi
+          payload=$(printf '{"event_type":"profileos-refresh","client_payload":{"source":"%s","event":"release"}}' "${GITHUB_REPOSITORY:-unknown}")
+          status=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 20 -X POST \
+            -H "Authorization: Bearer ${TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${TARGET}/dispatches" -d "$payload" || echo "000")
+          if [ "$status" != "204" ]; then
+            echo "::warning::profile refresh request returned HTTP ${status}; the scheduled refresh will catch up."
+          fi
