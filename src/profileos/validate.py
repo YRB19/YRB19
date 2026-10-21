@@ -1,13 +1,12 @@
 """Schema + cross-file validation. Human error must be visible BEFORE anything is written."""
-import ipaddress
 import re
 from pathlib import Path
-from urllib.parse import urlparse
 
 import jsonschema
 
 from .data import NAMES, load_all, load_schema
 from .generators.markers import check_markers
+from .status import netguard
 
 FORBIDDEN_KEY = re.compile(r"(token|secret|password|api[_-]?key|private[_-]?key)", re.I)
 PUBLISHABLE = {"HIGH", "MEDIUM", "STATED"}   # LOW is recorded but never published
@@ -80,25 +79,61 @@ def _check_evidence(data, rep):
                 rep.err(f"projects.yml: {slug}.stack '{item}' lacks HIGH/MEDIUM evidence")
 
 
-def public_url_problem(url: str):
-    """Static check only (DNS-level check lands with the health fetcher)."""
-    u = urlparse(url)
-    if u.scheme != "https":
-        return "must be https"
-    host = (u.hostname or "").lower()
-    if not host:
-        return "no host"
-    if host == "localhost" or host.endswith((".local", ".internal", ".localhost")):
-        return "host is not public"
-    try:
-        ip = ipaddress.ip_address(host)
-        if ip.is_private or ip.is_loopback or ip.is_link_local or ip.is_reserved:
-            return "private IP address"
-    except ValueError:
-        pass
-    if u.query:
-        return "query strings are not allowed (may carry secrets)"
-    return None
+def public_url_problem(url: str, *, allowed_ports=netguard.DEFAULT_PORTS, allow_http: bool = False):
+    """Static URL policy (shared with the health checker, which adds the DNS-level checks at probe time).
+    Validation is offline and deterministic, so it never resolves names; plain http is off unless config allows it."""
+    return netguard.url_problem(url, allowed_ports=allowed_ports, allow_http=allow_http)
+
+
+def _check_deployment(slug, p, data, rep):
+    """Health checks are opt-in per project: flag + URL + verified project + publishable evidence for that very URL."""
+    dep = p.get("deployment") or {}
+    url, enabled = dep.get("health_url"), dep.get("health_check") is True
+    hcfg = data["config"].get("health", {})
+    ports, http_ok = hcfg.get("allowed_ports", list(netguard.DEFAULT_PORTS)), hcfg.get("allow_http", False)
+    if url and (problem := public_url_problem(url, allowed_ports=ports, allow_http=http_ok)):
+        rep.err(f"projects.yml: {slug}: deployment.health_url {problem}")
+    for host in dep.get("redirect_hosts") or []:
+        if public_url_problem(f"https://{host}/", allowed_ports=ports):
+            rep.err(f"projects.yml: {slug}: deployment.redirect_hosts '{host}' is not an acceptable public host name")
+    if not enabled:
+        return
+    if not url:
+        rep.err(f"projects.yml: {slug}: deployment.health_check is true but health_url is not set")
+        return
+    if not p.get("verified"):
+        rep.err(f"projects.yml: {slug}: health checks require verified: true")
+    rec = ((data["evidence"].get("projects") or {}).get(slug) or {}).get("health_url")
+    if not rec:
+        rep.err(f"projects.yml: {slug}: health_url is probed but has no evidence record (evidence.yml health_url)")
+    elif rec.get("confidence") not in PUBLISHABLE:
+        rep.err(f"projects.yml: {slug}: health_url evidence has {rec.get('confidence')} confidence — not publishable")
+    elif rec.get("value") != url:
+        rep.err(f"projects.yml: {slug}: health_url differs from its evidence record")
+
+
+def _check_event_dispatch(root: Path, data, rep):
+    cfg = data["config"].get("event_dispatch") or {}
+    if not cfg.get("enabled"):
+        return
+    handle = data["profile"]["identity"]["handle"].lower()
+    target = cfg.get("target_repo")
+    if not target:
+        rep.err("config.yml: event_dispatch.enabled is true but target_repo is not set")
+    elif target.split("/")[0].lower() != handle:
+        rep.err("config.yml: event_dispatch.target_repo must belong to the profile owner")
+    if not cfg.get("sources"):
+        rep.err("config.yml: event_dispatch.enabled is true but sources is empty")
+    if not cfg.get("events"):
+        rep.err("config.yml: event_dispatch.enabled is true but events is empty")
+    wf = root / ".github" / "workflows" / "update-profile.yml"
+    if wf.exists():
+        import yaml
+        doc = yaml.safe_load(wf.read_text(encoding="utf-8")) or {}
+        on = doc.get(True, doc.get("on", {})) or {}   # YAML 1.1 parses the key `on` as True
+        types = ((on.get("repository_dispatch") or {}).get("types")) or []
+        if cfg.get("event_type", "profileos-refresh") not in types:
+            rep.err(f"config.yml: event_dispatch.event_type is not a repository_dispatch type in update-profile.yml ({types})")
 
 
 def validate(root: Path, strict: bool = False) -> Report:
@@ -137,15 +172,14 @@ def validate(root: Path, strict: bool = False) -> Report:
             rep.err(f"projects.yml: {slug}: unknown category '{p['category']}'")
         if p.get("verified") and not (p.get("tagline") and p.get("stack")):
             rep.err(f"projects.yml: {slug}: verified: true requires tagline and stack")
-        url = (p.get("deployment") or {}).get("health_url")
-        if url and (problem := public_url_problem(url)):
-            rep.err(f"projects.yml: {slug}: deployment.health_url {problem}")
+        _check_deployment(slug, p, data, rep)
         for r in p.get("relations", []):
             for end in (r["from"], r["to"]):
                 if end not in projects:
                     rep.err(f"projects.yml: {slug}: relation references unknown project '{end}'")
 
     _check_evidence(data, rep)
+    _check_event_dispatch(root, data, rep)
 
     for alias, target in data["aliases"]["aliases"].items():
         if target not in projects:
