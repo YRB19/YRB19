@@ -84,7 +84,20 @@ def fetch_repos(client, login: str, now: dt.datetime) -> dict:
     return {"repos": repos, "activity": dict(sorted(activity.items())), "releases": dict(sorted(releases.items()))}
 
 
-def fetch_contributions(client, login: str, now: dt.datetime) -> dict:
+def _public_counts(entries, exclude) -> dict:
+    """{owner/name: count} for PUBLIC, non-excluded repos only. Private repos are skipped entirely: never named,
+    never counted, so a token that can see more than the public profile can never widen the output."""
+    out: dict = {}
+    for e in entries or []:
+        repo = (e or {}).get("repository") or {}
+        name = repo.get("nameWithOwner")
+        if not name or repo.get("isPrivate") is not False or name.lower() in exclude:
+            continue
+        out[name] = out.get(name, 0) + int((e.get("contributions") or {}).get("totalCount", 0))
+    return dict(sorted(out.items()))
+
+
+def fetch_contributions(client, login: str, now: dt.datetime, exclude=frozenset()) -> dict:
     v = {"login": login, "f30": _ts(now, 30), "f365": _ts(now, 365), "to": iso(now)}
     u = client.graphql(CONTRIBUTIONS_QUERY, v)["user"]
     pulse, year = u["pulse"], u["year"]["contributionCalendar"]
@@ -92,13 +105,16 @@ def fetch_contributions(client, login: str, now: dt.datetime) -> dict:
         ({"date": d["date"], "count": d["contributionCount"]} for w in year["weeks"] for d in w["contributionDays"]),
         key=lambda d: d["date"],
     )
+    commits = _public_counts(pulse.get("commitContributionsByRepository"), exclude)
+    prs = _public_counts(pulse.get("pullRequestContributionsByRepository"), exclude)
     return {
-        "pulse": {  # counts only — private repo names are never requested
-            "commits": pulse["totalCommitContributions"],
-            "pull_requests": pulse["totalPullRequestContributions"],
+        "pulse": {  # commits/PRs/repos: public, non-excluded repos only ("scope"); reviews/issues are GitHub totals, never displayed
+            "scope": "public-shown",
+            "commits": sum(commits.values()),
+            "pull_requests": sum(prs.values()),
             "reviews": pulse["totalPullRequestReviewContributions"],
             "issues": pulse["totalIssueContributions"],
-            "repos_touched": len(pulse["commitContributionsByRepository"]),
+            "repos_touched": sum(1 for c in commits.values() if c > 0),
         },
         "calendar": {"total": year["totalContributions"], "days": days},
     }
