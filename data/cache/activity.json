@@ -328,88 +328,6 @@
         }
       ]
     },
-    "YRB19/FREYA": {
-      "commits": {
-        "d30": 3,
-        "d7": 1,
-        "d90": 21
-      },
-      "merged_prs": [],
-      "recent_commits": [
-        {
-          "changed_files": 6,
-          "date": "2026-10-17T10:38:12Z",
-          "headline": "feat: Phase 9A - Reconciliation health and transaction models",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "b09ba8642a0d270c3abb5992a3a71a0958c91eb3",
-          "url": "https://github.com/YRB19/FREYA/commit/b09ba8642a0d270c3abb5992a3a71a0958c91eb3"
-        },
-        {
-          "changed_files": 3,
-          "date": "2026-09-25T10:23:34Z",
-          "headline": "fix: test_layer_8 & executor",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "00220bf4388b19037e2468304bd7dbbe1ff40df9",
-          "url": "https://github.com/YRB19/FREYA/commit/00220bf4388b19037e2468304bd7dbbe1ff40df9"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-09-23T06:32:56Z",
-          "headline": "fix: handle missing files correctly in Obsidian MCP reads",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "62c6752d39e3346b0532753c3397dd8cbc80ea18",
-          "url": "https://github.com/YRB19/FREYA/commit/62c6752d39e3346b0532753c3397dd8cbc80ea18"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-09-18T10:18:49Z",
-          "headline": "feat: Phase 6 test_suite update",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "f3f9e47c1dd02870024d9295293d6e8333ac14d5",
-          "url": "https://github.com/YRB19/FREYA/commit/f3f9e47c1dd02870024d9295293d6e8333ac14d5"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-09-18T10:16:48Z",
-          "headline": "feat: Phase 8 origin gate test suite expansion",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "4a83ce7631c1e00853f8d4c8ba89b87cb029219f",
-          "url": "https://github.com/YRB19/FREYA/commit/4a83ce7631c1e00853f8d4c8ba89b87cb029219f"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-09-18T10:16:27Z",
-          "headline": "feat: build_plan accepts origin parameter for Phase 8 origin gate int…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "b8d182a5263db6661e454c5c8d3d8a56ebd455c2",
-          "url": "https://github.com/YRB19/FREYA/commit/b8d182a5263db6661e454c5c8d3d8a56ebd455c2"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-09-18T10:14:28Z",
-          "headline": "feat: Pipeline wires origin='PRODUCTION' to build_plan",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "13d2a61120b3482930852e3d8b0ac83867fd3c6e",
-          "url": "https://github.com/YRB19/FREYA/commit/13d2a61120b3482930852e3d8b0ac83867fd3c6e"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-09-18T10:14:14Z",
-          "headline": "feat: Phase 8 - Runner CLI with --db-path argument",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "77771105eed40a05ad2d9986d29ae7af721da0e5",
-          "url": "https://github.com/YRB19/FREYA/commit/77771105eed40a05ad2d9986d29ae7af721da0e5"
-        }
-      ]
-    },
     "YRB19/Finwise": {
       "commits": {
         "d30": 0,
@@ -812,88 +730,6 @@
         }
       ]
     },
-    "YRB19/NetOS": {
-      "commits": {
-        "d30": 89,
-        "d7": 13,
-        "d90": 89
-      },
-      "merged_prs": [],
-      "recent_commits": [
-        {
-          "changed_files": 11,
-          "date": "2026-10-18T16:17:04Z",
-          "headline": "feat(slice-6): add support files — arch-lint rules, failure categorie…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "54cdff28a66c486d6f16d157eac981936ebfe07a",
-          "url": "https://github.com/YRB19/NetOS/commit/54cdff28a66c486d6f16d157eac981936ebfe07a"
-        },
-        {
-          "changed_files": 3,
-          "date": "2026-10-18T16:15:59Z",
-          "headline": "docs(slice-6): document risk engine, sizing, simulated broker",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "85693a80c2a444e1ba3a3e91716b5fe1bf8a5476",
-          "url": "https://github.com/YRB19/NetOS/commit/85693a80c2a444e1ba3a3e91716b5fe1bf8a5476"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-10-18T16:15:56Z",
-          "headline": "test(slice-6): add adversarial isolation and execution path safety tests",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "3b98b7f35d26ee02a67327d116904653b92ba3d8",
-          "url": "https://github.com/YRB19/NetOS/commit/3b98b7f35d26ee02a67327d116904653b92ba3d8"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-10-18T16:15:54Z",
-          "headline": "test(slice-6): add end-to-end execution pipeline tests",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "94506ce904253127e63b5cd8ea7539a24d444ae6",
-          "url": "https://github.com/YRB19/NetOS/commit/94506ce904253127e63b5cd8ea7539a24d444ae6"
-        },
-        {
-          "changed_files": 6,
-          "date": "2026-10-18T16:15:51Z",
-          "headline": "feat(slice-6): implement offline execution pipeline",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "a38a6c6deb7bef1c4f8ade2ec03a9111d772ec65",
-          "url": "https://github.com/YRB19/NetOS/commit/a38a6c6deb7bef1c4f8ade2ec03a9111d772ec65"
-        },
-        {
-          "changed_files": 3,
-          "date": "2026-10-18T16:15:48Z",
-          "headline": "feat(slice-6): implement simulated broker adapter",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "0e662e773e4d83c468d0e98f329b4f31113e11b9",
-          "url": "https://github.com/YRB19/NetOS/commit/0e662e773e4d83c468d0e98f329b4f31113e11b9"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-10-18T16:15:46Z",
-          "headline": "feat(slice-6): implement deterministic position sizing",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "56a8ab16f4031767ab6d643c5a9c107e72088cca",
-          "url": "https://github.com/YRB19/NetOS/commit/56a8ab16f4031767ab6d643c5a9c107e72088cca"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-10-18T16:15:44Z",
-          "headline": "test(slice-6): validate risk engine checks and fail-closed behavior",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "367530df0e4524de73ec65ff8a45def6f4dbbeb7",
-          "url": "https://github.com/YRB19/NetOS/commit/367530df0e4524de73ec65ff8a45def6f4dbbeb7"
-        }
-      ]
-    },
     "YRB19/Pokmon-card-trading-exchange": {
       "commits": {
         "d30": 0,
@@ -1277,88 +1113,6 @@
         }
       ]
     },
-    "YRB19/YRB19": {
-      "commits": {
-        "d30": 80,
-        "d7": 38,
-        "d90": 80
-      },
-      "merged_prs": [],
-      "recent_commits": [
-        {
-          "changed_files": 7,
-          "date": "2026-10-20T17:17:06Z",
-          "headline": "chore(profile): refresh generated sections",
-          "is_bot": true,
-          "is_merge": false,
-          "sha": "8b12ea0f5b823dbef94e2e41c6d86f8fa0947a05",
-          "url": "https://github.com/YRB19/YRB19/commit/8b12ea0f5b823dbef94e2e41c6d86f8fa0947a05"
-        },
-        {
-          "changed_files": 3,
-          "date": "2026-10-20T11:47:48Z",
-          "headline": "chore(profile): refresh generated sections",
-          "is_bot": true,
-          "is_merge": false,
-          "sha": "231f12f5f823db76a99714f37f81f8171f3baf49",
-          "url": "https://github.com/YRB19/YRB19/commit/231f12f5f823db76a99714f37f81f8171f3baf49"
-        },
-        {
-          "changed_files": 7,
-          "date": "2026-10-20T04:59:27Z",
-          "headline": "chore(profile): refresh generated sections",
-          "is_bot": true,
-          "is_merge": false,
-          "sha": "b1875e46c696f748218cce1503bb402de2a70496",
-          "url": "https://github.com/YRB19/YRB19/commit/b1875e46c696f748218cce1503bb402de2a70496"
-        },
-        {
-          "changed_files": 3,
-          "date": "2026-10-19T22:26:43Z",
-          "headline": "chore(profile): refresh generated sections",
-          "is_bot": true,
-          "is_merge": false,
-          "sha": "1fd8ce8cfd5c613ea19b939e7a46ddd662f7ff37",
-          "url": "https://github.com/YRB19/YRB19/commit/1fd8ce8cfd5c613ea19b939e7a46ddd662f7ff37"
-        },
-        {
-          "changed_files": 3,
-          "date": "2026-10-19T13:31:19Z",
-          "headline": "chore(profile): refresh generated sections",
-          "is_bot": true,
-          "is_merge": false,
-          "sha": "e96379e7fff3b70fc77e25e4061839d8ede827b3",
-          "url": "https://github.com/YRB19/YRB19/commit/e96379e7fff3b70fc77e25e4061839d8ede827b3"
-        },
-        {
-          "changed_files": 21,
-          "date": "2026-10-19T12:11:49Z",
-          "headline": "chore(profile): refresh generated sections",
-          "is_bot": true,
-          "is_merge": false,
-          "sha": "95daec1a543f6ff87717627e10b9416af32c247a",
-          "url": "https://github.com/YRB19/YRB19/commit/95daec1a543f6ff87717627e10b9416af32c247a"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-10-19T12:10:48Z",
-          "headline": "chore: add generated OS series SVG assets",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "adf8f4dfbe74d34e5b671f695d11ec5b04bd55c1",
-          "url": "https://github.com/YRB19/YRB19/commit/adf8f4dfbe74d34e5b671f695d11ec5b04bd55c1"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-10-19T12:10:48Z",
-          "headline": "test: add end-to-end SVG asset integration tests",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "96532beb72e9e1f163d175e09db9170e919eec3f",
-          "url": "https://github.com/YRB19/YRB19/commit/96532beb72e9e1f163d175e09db9170e919eec3f"
-        }
-      ]
-    },
     "YRB19/d": {
       "commits": {
         "d30": 0,
@@ -1689,7 +1443,7 @@
       ]
     }
   },
-  "generated_at": "2026-10-20T21:42:12Z",
+  "generated_at": "2026-10-21T04:58:09Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
