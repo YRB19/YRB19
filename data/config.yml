@@ -8,5 +8,27 @@ min_language_pct: 2
 new_build_days: 14
 shipped_window_days: 60
 stale_after_h: 24
-health: { timeout_s: 5, retries: 2, stale_after_h: 24 }
+# --- Phase 6: factual status. Everything here fails safe: unavailable/stale data is hidden, never shown as healthy. ---
+ci:                                  # GitHub Actions status on flagship cards (public data; see docs/PERMISSIONS.md)
+  enabled: true
+  max_repos: 12
+  max_run_age_days: 90               # a "passing" last run older than this is shown as nothing, not as green
+  stale_after_h: 72                  # cached CI older than this is hidden (a fetch outage never freezes a green badge)
+health:                              # deployment probes run ONLY for projects with deployment.health_check: true
+  timeout_s: 5
+  retries: 1
+  max_redirects: 3
+  max_bytes: 65536
+  degraded_ms: 4000
+  offline_after: 2                   # "offline" needs this many consecutive runs of refusal/NXDOMAIN; timeouts never count
+  max_checks: 6
+  allowed_ports: [80, 443]
+  allow_http: false
+  stale_after_h: 72
+event_dispatch:                      # optional release -> refresh requests from other repos (docs/EVENT_DISPATCH.md)
+  enabled: false                     # off by default; turning it on also needs the secret on the SENDING repos
+  target_repo: YRB19/YRB19
+  event_type: profileos-refresh
+  sources: []                        # e.g. [YRB19/UsageOS, YRB19/ResearchOS]
+  events: [release]
 commit_policy: { min_changed_bytes: 1, ignore_timestamp_only: true }
