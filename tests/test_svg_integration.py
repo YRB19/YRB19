@@ -275,10 +275,14 @@ def test_the_github_client_is_read_only_and_cannot_touch_pins():
     assert '"POST", f"{API}/graphql"' in client
 
 
-def test_live_authenticated_run_is_not_claimed_as_verified():
+def test_verification_claims_stay_within_the_evidence():
+    """Updated for the live run (the old premise, "never run live", is no longer true). The guard's purpose is unchanged:
+    docs must not claim more than was evidenced. The live run is credited to what was observable, and Phase 6 stays unverified."""
     for doc in ("README_DEV.md", "PLAN.md"):
         text = " ".join((ROOT / doc).read_text().lower().split())
-        assert "not been run against a live authenticated" in text, doc
+        assert "phase 6" in text and "not live-verified" in text.replace("**", ""), doc
+        assert "actions logs" in text and "not readable" in text, doc          # run-level details are not claimed
+        assert "production-verified" not in text.replace("not production-verified", ""), doc
 
 
 # ---- CLI ------------------------------------------------------------------------------------------------------
