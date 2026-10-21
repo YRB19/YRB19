@@ -9,7 +9,10 @@ BASE = {
     "dark": {"bg": "#0D1117", "surface": "#161B22", "border": "#30363D", "text": "#E6EDF3", "muted": "#8B949E"},
     "light": {"bg": "#FFFFFF", "surface": "#F6F8FA", "border": "#D0D7DE", "text": "#1F2328", "muted": "#656D76"},
 }
-RED = {"dark": "#F85149", "light": "#CF222E"}  # reserved for failing CI (Phase 6); unused in Phase 5
+# Status colours (Phase 6). Only ever paired with a glyph AND a word, so colour is never the sole carrier.
+RED = {"dark": "#F85149", "light": "#CF222E"}      # failing CI / offline
+GREEN = {"dark": "#3FB950", "light": "#1A7F37"}    # passing CI / online (only from fresh, positive evidence)
+AMBER = {"dark": "#D29922", "light": "#9A6700"}    # degraded
 DEFAULT_ACCENT = "#3B82F6"
 MODES = ("light", "dark")
 
@@ -52,7 +55,7 @@ class Theme:
         self.mode = mode
         self.bg, self.surface, self.border = base["bg"], base["surface"], base["border"]
         self.text, self.muted = base["text"], base["muted"]
-        self.red = RED[mode]
+        self.red, self.green, self.amber = RED[mode], GREEN[mode], AMBER[mode]
         self.derived: set[str] = set()
         accent = accent.upper()
         self.accent = self._toward_text(accent, (self.bg, self.surface), 3.0)        # fills, bars, big numbers
@@ -71,5 +74,5 @@ class Theme:
         return c
 
     def palette(self) -> set[str]:
-        base = {self.bg, self.surface, self.border, self.text, self.muted, self.accent, self.accent_text, self.red}
+        base = {self.bg, self.surface, self.border, self.text, self.muted, self.accent, self.accent_text, self.red, self.green, self.amber}
         return base | self.derived
