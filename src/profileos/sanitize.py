@@ -22,6 +22,20 @@ def md(value, max_len: int = 90) -> str:
     return _MD_SPECIAL.sub(r"\\\1", s)
 
 
+_URL_SAFE = ":/?#@!$&*+,;=%-._~'"
+
+
+def url(value) -> str | None:
+    """A URL that is safe to place inside Markdown link syntax or a table cell, or None to render plain text.
+    https only; whitespace/control characters are refused; `| ( ) < > " \\ ` [ ]` are percent-encoded so a hostile value
+    cannot close the link, add a table column or open an element. Existing %XX escapes are left alone."""
+    from urllib.parse import quote
+    v = str(value or "")
+    if not v.startswith("https://") or len(v) > 400 or _CTRL.search(v) or " " in v:
+        return None
+    return quote(v, safe=_URL_SAFE)
+
+
 def xml(value, max_len: int = 90) -> str:
     """Clean + escape for XML/SVG text nodes and attributes."""
     return html.escape(clean_text(value, max_len) or "", quote=True)
