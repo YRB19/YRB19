@@ -4,14 +4,12 @@
     "YRB19/ClipOS": [],
     "YRB19/CompanionOS": [],
     "YRB19/Cosmic-Explorer": [],
-    "YRB19/FREYA": [],
     "YRB19/Finwise": [],
     "YRB19/Foodelns": [],
     "YRB19/Hackathon-16-hrs": [],
     "YRB19/Hackathon-16hrs": [],
     "YRB19/IPL_auction": [],
     "YRB19/N8N-YT": [],
-    "YRB19/NetOS": [],
     "YRB19/Pokmon-card-trading-exchange": [],
     "YRB19/ResearchOS": [],
     "YRB19/TrackWeight": [],
@@ -24,7 +22,7 @@
     "YRB19/pokemon-web": [],
     "YRB19/repohealth": []
   },
-  "generated_at": "2026-10-21T06:22:45Z",
+  "generated_at": "2026-10-21T10:59:17Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"

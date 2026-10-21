@@ -328,88 +328,6 @@
         }
       ]
     },
-    "YRB19/FREYA": {
-      "commits": {
-        "d30": 3,
-        "d7": 1,
-        "d90": 21
-      },
-      "merged_prs": [],
-      "recent_commits": [
-        {
-          "changed_files": 6,
-          "date": "2026-10-17T10:38:12Z",
-          "headline": "feat: Phase 9A - Reconciliation health and transaction models",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "b09ba8642a0d270c3abb5992a3a71a0958c91eb3",
-          "url": "https://github.com/YRB19/FREYA/commit/b09ba8642a0d270c3abb5992a3a71a0958c91eb3"
-        },
-        {
-          "changed_files": 3,
-          "date": "2026-09-25T10:23:34Z",
-          "headline": "fix: test_layer_8 & executor",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "00220bf4388b19037e2468304bd7dbbe1ff40df9",
-          "url": "https://github.com/YRB19/FREYA/commit/00220bf4388b19037e2468304bd7dbbe1ff40df9"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-09-23T06:32:56Z",
-          "headline": "fix: handle missing files correctly in Obsidian MCP reads",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "62c6752d39e3346b0532753c3397dd8cbc80ea18",
-          "url": "https://github.com/YRB19/FREYA/commit/62c6752d39e3346b0532753c3397dd8cbc80ea18"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-09-18T10:18:49Z",
-          "headline": "feat: Phase 6 test_suite update",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "f3f9e47c1dd02870024d9295293d6e8333ac14d5",
-          "url": "https://github.com/YRB19/FREYA/commit/f3f9e47c1dd02870024d9295293d6e8333ac14d5"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-09-18T10:16:48Z",
-          "headline": "feat: Phase 8 origin gate test suite expansion",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "4a83ce7631c1e00853f8d4c8ba89b87cb029219f",
-          "url": "https://github.com/YRB19/FREYA/commit/4a83ce7631c1e00853f8d4c8ba89b87cb029219f"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-09-18T10:16:27Z",
-          "headline": "feat: build_plan accepts origin parameter for Phase 8 origin gate int…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "b8d182a5263db6661e454c5c8d3d8a56ebd455c2",
-          "url": "https://github.com/YRB19/FREYA/commit/b8d182a5263db6661e454c5c8d3d8a56ebd455c2"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-09-18T10:14:28Z",
-          "headline": "feat: Pipeline wires origin='PRODUCTION' to build_plan",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "13d2a61120b3482930852e3d8b0ac83867fd3c6e",
-          "url": "https://github.com/YRB19/FREYA/commit/13d2a61120b3482930852e3d8b0ac83867fd3c6e"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-09-18T10:14:14Z",
-          "headline": "feat: Phase 8 - Runner CLI with --db-path argument",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "77771105eed40a05ad2d9986d29ae7af721da0e5",
-          "url": "https://github.com/YRB19/FREYA/commit/77771105eed40a05ad2d9986d29ae7af721da0e5"
-        }
-      ]
-    },
     "YRB19/Finwise": {
       "commits": {
         "d30": 0,
@@ -809,88 +727,6 @@
           "is_merge": false,
           "sha": "9030060a6b149044c16aebb3bc093a78ee9d6c49",
           "url": "https://github.com/YRB19/N8N-YT/commit/9030060a6b149044c16aebb3bc093a78ee9d6c49"
-        }
-      ]
-    },
-    "YRB19/NetOS": {
-      "commits": {
-        "d30": 96,
-        "d7": 20,
-        "d90": 96
-      },
-      "merged_prs": [],
-      "recent_commits": [
-        {
-          "changed_files": 2,
-          "date": "2026-10-20T13:14:37Z",
-          "headline": "chore(slice-7): register new packages & arch-lint rules (ADR-10)",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "acd1e428359e3990df119f7ff26623f5c4e8e97f",
-          "url": "https://github.com/YRB19/NetOS/commit/acd1e428359e3990df119f7ff26623f5c4e8e97f"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-10-20T13:14:32Z",
-          "headline": "test(slice-7): add adversarial isolation & integration pipeline tests",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "da78e6e5a49ff609a706653da98070d4a20cc841",
-          "url": "https://github.com/YRB19/NetOS/commit/da78e6e5a49ff609a706653da98070d4a20cc841"
-        },
-        {
-          "changed_files": 3,
-          "date": "2026-10-20T13:14:25Z",
-          "headline": "test(slice-7): add unit tests for order lifecycle & execution reconci…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "42fbd7db86026028808f98a362d86e144f4314e1",
-          "url": "https://github.com/YRB19/NetOS/commit/42fbd7db86026028808f98a362d86e144f4314e1"
-        },
-        {
-          "changed_files": 4,
-          "date": "2026-10-20T13:14:23Z",
-          "headline": "docs(slice-7): document order state machine, idempotency, reconciliat…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "bbd7c2611a5c8f1789b09125d035cf74900dfb6f",
-          "url": "https://github.com/YRB19/NetOS/commit/bbd7c2611a5c8f1789b09125d035cf74900dfb6f"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-10-20T13:14:13Z",
-          "headline": "feat(slice-7): integrate lifecycle & reconciliation into pipeline run…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "695e7a3766dc79fa8d38c7cbd4b52f40f83dc7c8",
-          "url": "https://github.com/YRB19/NetOS/commit/695e7a3766dc79fa8d38c7cbd4b52f40f83dc7c8"
-        },
-        {
-          "changed_files": 3,
-          "date": "2026-10-20T13:14:10Z",
-          "headline": "feat(slice-7): implement execution reconciliation — 3-way (lifecycle/…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "b517bba8e0d4cfcf62674e221fab988ca079c035",
-          "url": "https://github.com/YRB19/NetOS/commit/b517bba8e0d4cfcf62674e221fab988ca079c035"
-        },
-        {
-          "changed_files": 5,
-          "date": "2026-10-20T13:14:07Z",
-          "headline": "feat(slice-7): implement order lifecycle manager — approval re-valida…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "8715484c94f10c34bb3a9356f9ac7b8cf23bdb56",
-          "url": "https://github.com/YRB19/NetOS/commit/8715484c94f10c34bb3a9356f9ac7b8cf23bdb56"
-        },
-        {
-          "changed_files": 11,
-          "date": "2026-10-18T16:17:04Z",
-          "headline": "feat(slice-6): add support files — arch-lint rules, failure categorie…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "54cdff28a66c486d6f16d157eac981936ebfe07a",
-          "url": "https://github.com/YRB19/NetOS/commit/54cdff28a66c486d6f16d157eac981936ebfe07a"
         }
       ]
     },
@@ -1607,7 +1443,7 @@
       ]
     }
   },
-  "generated_at": "2026-10-21T06:22:45Z",
+  "generated_at": "2026-10-21T10:59:17Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
