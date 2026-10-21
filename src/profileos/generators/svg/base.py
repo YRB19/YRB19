@@ -121,3 +121,11 @@ def document(meta: dict, theme, height, body: str, defs: str = "") -> str:
         f'fill="{theme.surface}" stroke="{theme.border}"/>'
         f"{body}</svg>\n"
     )
+
+
+def footer(note: str, y: float, theme, max_lines: int = 3) -> tuple[str, float]:
+    """Footnote wrapped to the canvas (a scope statement must never be clipped or shrunk below the font floor).
+    Returns (markup, canvas height). One line costs exactly what the old single-line footer did."""
+    lines = wrap_text(note, 16, W - 2 * PAD, max_lines)
+    markup = "".join(text(PAD, y + i * 22, ln, 16, theme.muted) for i, ln in enumerate(lines))
+    return markup, y + (len(lines) - 1) * 22 + 22
