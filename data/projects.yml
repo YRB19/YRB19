@@ -56,31 +56,35 @@ CompanionOS:
   stack: [Tauri, Rust, React, TypeScript, Vite, Tailwind CSS, Zustand, TanStack Query]
   verified: true
 
-# NetOS and FREYA: github.com/YRB19/NetOS and /FREYA return 404 without authentication and are absent
-# from the public repository list (private, unpublished or renamed). They stay here as internal metadata
-# (`publish: false`) and are omitted from EVERY public generated section and the ecosystem graph, even if a
-# public repo with that name appears. To publish: verify the repo, add evidence, then set `publish: true`
-# (or delete the line).
+# NetOS and FREYA: 404 on 2026-10-01, publicly accessible by 2026-10-19 (see data/evidence.yml). Their metadata
+# is now audited and evidence-backed, but `publish: false` keeps them out of EVERY public generated section,
+# card, graph and aggregate until the owner switches it on: set `publish: true` (or delete the line).
 NetOS:
   repo: YRB19/NetOS
+  title: NetOS
   category: systems
   family: os-series
   status: active
   featured: true
   priority: 92
-  tagline: null
-  verified: false
+  tagline: "Trading-system research harness: offline replay, data ingestion and cost modelling"
+  description: "Research and engineering project for a trading system: domain contracts, historical data ingestion, feature snapshots, baseline strategy proposals, a deterministic cost calculator and an offline research harness. No live execution."
+  stack: [Python, pytest, Ruff, mypy, GitHub Actions]
+  verified: true
   publish: false
 
 FREYA:
   repo: YRB19/FREYA
+  title: FREYA
   category: ai
   family: os-series
   status: active
   featured: true
   priority: 90
-  tagline: null
-  verified: false
+  tagline: "Background daemon that watches a notes vault and plans canonical knowledge updates"
+  description: "Background daemon that watches a notes vault, extracts knowledge and relationships, plans canonical updates, and applies them only through an Obsidian MCP adapter."
+  stack: [Python, SQLite, watchdog, Obsidian MCP, launchd]
+  verified: true
   publish: false
 
 # Secondary / earlier
