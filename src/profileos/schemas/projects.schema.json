@@ -21,7 +21,13 @@
         "stack": {"type": "array", "items": {"type": "string"}},
         "demo": {"type": ["string", "null"]},
         "docs": {"type": ["string", "null"]},
-        "deployment": {"type": "object", "additionalProperties": false, "properties": {"health_url": {"type": ["string", "null"]}}},
+        "deployment": {"type": "object", "additionalProperties": false, "properties": {
+          "health_url": {"type": ["string", "null"]},
+          "health_check": {"type": "boolean"},
+          "redirect_hosts": {"type": "array", "maxItems": 3, "items": {"type": "string"}}}},
+        "ci": {"type": "object", "additionalProperties": false, "properties": {
+          "track": {"type": "boolean"},
+          "workflow": {"type": ["string", "null"], "maxLength": 80}}},
         "relations": {
           "type": "array",
           "items": {"type": "object", "required": ["from", "to"], "additionalProperties": false,
