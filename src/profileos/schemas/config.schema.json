@@ -14,7 +14,29 @@
     "new_build_days": {"type": "integer"},
     "shipped_window_days": {"type": "integer"},
     "stale_after_h": {"type": "number"},
-    "health": {"type": "object"},
+    "health": {"type": "object", "additionalProperties": false, "properties": {
+      "timeout_s": {"type": "number", "exclusiveMinimum": 0, "maximum": 15},
+      "retries": {"type": "integer", "minimum": 0, "maximum": 3},
+      "max_redirects": {"type": "integer", "minimum": 0, "maximum": 5},
+      "max_bytes": {"type": "integer", "minimum": 1024, "maximum": 1048576},
+      "degraded_ms": {"type": "integer", "minimum": 100},
+      "offline_after": {"type": "integer", "minimum": 2, "maximum": 10},
+      "max_checks": {"type": "integer", "minimum": 0, "maximum": 20},
+      "total_timeout_s": {"type": "number", "exclusiveMinimum": 0, "maximum": 60},
+      "allowed_ports": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 1, "maximum": 65535}},
+      "allow_http": {"type": "boolean"},
+      "stale_after_h": {"type": "number", "exclusiveMinimum": 0}}},
+    "ci": {"type": "object", "additionalProperties": false, "properties": {
+      "enabled": {"type": "boolean"},
+      "max_repos": {"type": "integer", "minimum": 1, "maximum": 30},
+      "max_run_age_days": {"type": "integer", "minimum": 1},
+      "stale_after_h": {"type": "number", "exclusiveMinimum": 0}}},
+    "event_dispatch": {"type": "object", "additionalProperties": false, "properties": {
+      "enabled": {"type": "boolean"},
+      "target_repo": {"type": ["string", "null"], "pattern": "^[A-Za-z0-9-]+/[A-Za-z0-9_.-]+$"},
+      "event_type": {"type": "string", "pattern": "^[a-z0-9-]{1,40}$"},
+      "sources": {"type": "array", "items": {"type": "string", "pattern": "^[A-Za-z0-9-]+/[A-Za-z0-9_.-]+$"}},
+      "events": {"type": "array", "items": {"enum": ["release"]}}}},
     "commit_policy": {"type": "object"},
     "output_branch": {"type": ["string", "null"]}
   }
