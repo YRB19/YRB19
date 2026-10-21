@@ -19,6 +19,26 @@ def _days_ago(now, d):
     return iso(now - dt.timedelta(days=d))
 
 
+_COMMITS = {"UsageOS": 20, "ResearchOS": 12, "ClipOS": 9, "CompanionOS": 4, "RepoHealth": 2, "YRB19": 11}  # YRB19 = the profile repo
+_PRS = {"UsageOS": 7, "ResearchOS": 3, "ClipOS": 2}
+
+
+def _by_repo(spec):
+    return [{"repository": {"nameWithOwner": f"YRB19/{n}", "isPrivate": False}, "contributions": {"totalCount": c}} for n, c in spec.items()] + \
+           [{"repository": {"nameWithOwner": "YRB19/Private-Thing", "isPrivate": True}, "contributions": {"totalCount": 50}}]
+
+
+_CI = {"UsageOS": "success", "ResearchOS": "success", "ClipOS": "failure", "CompanionOS": "in_progress"}   # others: no workflows
+
+
+class _Resp:
+    def __init__(self, payload, status=200):
+        self.status_code, self.headers, self._p = status, {}, payload
+
+    def json(self):
+        return self._p
+
+
 class FixtureClient:
     remaining = 4999
 
@@ -35,6 +55,19 @@ class FixtureClient:
         if "contributionsCollection" in query:
             return self._contrib()
         return {"user": {"repositories": {"pageInfo": {"hasNextPage": False, "endCursor": None}, "nodes": self._nodes()}}}
+
+    def rest_response(self, path):
+        """Synthetic Actions runs (fixtures/preview only; never representative of real CI)."""
+        import re
+        m = re.match(r"/repos/[^/]+/([^/]+)/actions/runs", path)
+        kind = _CI.get(m.group(1)) if m else None
+        if not kind:
+            return _Resp({"total_count": 0, "workflow_runs": []})
+        when = _days_ago(self.now, 1)
+        run = {"workflow_id": 1, "name": "CI", "path": ".github/workflows/ci.yml", "event": "push", "created_at": when, "updated_at": when,
+               "html_url": f"https://github.com/YRB19/{m.group(1)}/actions/runs/1",
+               "status": "in_progress" if kind == "in_progress" else "completed", "conclusion": None if kind == "in_progress" else kind}
+        return _Resp({"total_count": 1, "workflow_runs": [run]})
 
     def _nodes(self):
         nodes = []
@@ -68,6 +101,7 @@ class FixtureClient:
         weeks = [{"contributionDays": days[i:i + 7]} for i in range(0, len(days), 7)]
         return {"user": {
             "pulse": {"totalCommitContributions": 47, "totalPullRequestContributions": 12, "totalPullRequestReviewContributions": 0,
-                      "totalIssueContributions": 3, "totalRepositoryContributions": 1, "commitContributionsByRepository": [{"contributions": {"totalCount": 1}}] * 6},
+                      "totalIssueContributions": 3, "totalRepositoryContributions": 1, "commitContributionsByRepository": _by_repo(_COMMITS),
+                      "pullRequestContributionsByRepository": _by_repo(_PRS)},
             "year": {"contributionCalendar": {"totalContributions": sum(d["contributionCount"] for d in days), "weeks": weeks}},
         }}
