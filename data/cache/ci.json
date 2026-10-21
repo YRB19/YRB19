@@ -2,14 +2,14 @@
   "data": {
     "YRB19/ClipOS": {
       "auth": "github-token",
-      "checked_at": "2026-10-21T04:58:09Z",
+      "checked_at": "2026-10-21T06:22:45Z",
       "reason": "no workflow runs on the default branch",
       "source": "github-actions-api",
       "state": "not_configured"
     },
     "YRB19/CompanionOS": {
       "auth": "github-token",
-      "checked_at": "2026-10-21T04:58:09Z",
+      "checked_at": "2026-10-21T06:22:45Z",
       "conclusion": "failure",
       "run_at": "2026-07-29T11:35:21Z",
       "run_status": "completed",
@@ -19,22 +19,41 @@
       "workflow": "CI",
       "workflows": 4
     },
+    "YRB19/FREYA": {
+      "auth": "github-token",
+      "checked_at": "2026-10-21T06:22:45Z",
+      "reason": "no workflow runs on the default branch",
+      "source": "github-actions-api",
+      "state": "not_configured"
+    },
+    "YRB19/NetOS": {
+      "auth": "github-token",
+      "checked_at": "2026-10-21T06:22:45Z",
+      "conclusion": "failure",
+      "run_at": "2026-10-21T04:22:56Z",
+      "run_status": "completed",
+      "source": "github-actions-api",
+      "state": "failing",
+      "url": "https://github.com/YRB19/NetOS/actions/runs/39543692529",
+      "workflow": "CI",
+      "workflows": 1
+    },
     "YRB19/ResearchOS": {
       "auth": "github-token",
-      "checked_at": "2026-10-21T04:58:09Z",
+      "checked_at": "2026-10-21T06:22:45Z",
       "reason": "no workflow runs on the default branch",
       "source": "github-actions-api",
       "state": "not_configured"
     },
     "YRB19/UsageOS": {
       "auth": "github-token",
-      "checked_at": "2026-10-21T04:58:09Z",
+      "checked_at": "2026-10-21T06:22:45Z",
       "reason": "no workflow runs on the default branch",
       "source": "github-actions-api",
       "state": "not_configured"
     }
   },
-  "generated_at": "2026-10-21T04:58:09Z",
+  "generated_at": "2026-10-21T06:22:45Z",
   "ok": true,
   "schema": 1,
   "source": "github-actions-api"
