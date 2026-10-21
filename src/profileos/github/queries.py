@@ -45,7 +45,8 @@ query($login: String!, $f30: DateTime!, $f365: DateTime!, $to: DateTime!) {
     pulse: contributionsCollection(from: $f30, to: $to) {
       totalCommitContributions totalPullRequestContributions
       totalPullRequestReviewContributions totalIssueContributions totalRepositoryContributions
-      commitContributionsByRepository(maxRepositories: 100) { contributions { totalCount } }
+      commitContributionsByRepository(maxRepositories: 100) { repository { nameWithOwner isPrivate } contributions { totalCount } }
+      pullRequestContributionsByRepository(maxRepositories: 100) { repository { nameWithOwner isPrivate } contributions { totalCount } }
     }
     year: contributionsCollection(from: $f365, to: $to) {
       contributionCalendar { totalContributions weeks { contributionDays { date contributionCount } } }
