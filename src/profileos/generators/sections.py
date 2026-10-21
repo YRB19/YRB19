@@ -6,7 +6,7 @@ view-models in `models.py`, so the README and the images can never disagree.
 import html
 
 from ..analytics import discovery, scoring, shipped
-from ..sanitize import md
+from ..sanitize import md, url as safe_url
 from ..storage.cache import parse_iso
 from . import models, visuals
 
@@ -22,6 +22,7 @@ class Context:
         self.repos = [r for r in datasets.get("repos", []) if not r["is_private"] and r["full_name"].lower() not in self._excluded()]
         self.by_full = {r["full_name"].lower(): r for r in self.repos}
         self.activity, self.releases = datasets.get("activity", {}), datasets.get("releases", {})
+        self.ci, self.health = datasets.get("ci", {}), datasets.get("health", {})   # already staleness-checked (build.py)
         self.first_seen = first_seen
         self._alias = {}
         for a, slug in data["aliases"]["aliases"].items():
@@ -38,10 +39,8 @@ class Context:
                     self.warnings.append(f"{slug}: repo {p['repo']} not found among public repos — omitted")
 
     def _excluded(self):
-        """Repos that must never reach public output: config/override exclusions plus internal-only projects."""
-        hidden = {(p.get("repo") or "").lower() for p in self.projects.values() if not models.publishable(p)}
-        hidden.discard("")
-        return {x.lower() for x in list(self.cfg.get("exclude_repos", [])) + list(self.ov.get("exclude_repos", []))} | hidden
+        """Repos that must never reach public output: see models.excluded_repos (shared with the cache filter)."""
+        return models.excluded_repos(self.d)
 
     def _resolve(self, slug, p):
         if not p.get("repo"):
@@ -72,7 +71,7 @@ class Context:
     def link(self, slug):
         p, r = self.projects[slug], self.resolved.get(slug)
         label = md(p.get("title") or slug)
-        return f"[{label}]({r['url']})" if r else label
+        return f"[{label}]({safe_url(r['url'])})" if r and safe_url(r["url"]) else label
 
     def metrics(self, repo, priority=None):
         act = self.activity.get(repo["full_name"], {"commits": {"d7": 0, "d30": 0, "d90": 0}, "merged_prs": []})
@@ -151,8 +150,24 @@ def recently_shipped(ctx: Context) -> str:
     lines = []
     for it in items:
         d = parse_iso(it["date"])
-        lines.append(f"`{d:%m/%d}` **{md(it['repo'])}** — [{it['kind']}]({it['url']})")
+        link = safe_url(it["url"])
+        what = f"[{md(it['text'])}]({link})" if link else md(it["text"])
+        lines.append(f"`{d:%m/%d}` **{md(it['repo'])}** — {what}")
     return "  \n".join(lines)
+
+
+def releases(ctx: Context) -> str:
+    """Release tracker. The heading lives inside the block so a profile with no published releases shows nothing."""
+    rows = models.release_rows(ctx)
+    if not rows:
+        return ""
+    lines = ["### Latest releases", "", "| Project | Version | Released |", "| --- | --- | --- |"]
+    for r in rows:
+        link, repo = safe_url(r["url"]), safe_url(r["repo_url"])
+        ver = (f"[{md(r['tag'])}]({link})" if link else md(r["tag"])) + (" · pre-release" if r["prerelease"] else "")
+        lines.append(f"| {f'[{md(r['title'])}]({repo})' if repo else md(r['title'])} | {ver} | {r['date']} |")
+    note = ctx.note("repos")
+    return "\n".join(lines) + (f"\n\n{note}" if note else "")
 
 
 def os_series(ctx: Context) -> str:
@@ -220,6 +235,7 @@ def footer(ctx: Context) -> str:
 
 RENDERERS = {
     "CURRENTLY_BUILDING": currently_building, "NOW": now_panel, "PULSE": pulse, "RECENTLY_SHIPPED": recently_shipped,
+    "RELEASES": releases,
     "OS_SERIES": os_series, "SELECTED_SYSTEMS": selected_systems, "STACK": stack, "EARLIER_BUILDS": earlier_builds,
     "ACTIVITY": activity, "LINKS": links, "FOOTER": footer,
 }
