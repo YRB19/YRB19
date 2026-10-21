@@ -4,8 +4,8 @@ on:
   schedule:
     - cron: "17 */6 * * *"        # every 6 h, off-peak minute (GitHub may delay scheduled runs)
   workflow_dispatch: {}
-  repository_dispatch:
-    types: [profileos-refresh]
+  repository_dispatch:                # optional: sent by templates/notify-profile.yml (docs/EVENT_DISPATCH.md)
+    types: [profileos-refresh]        # bursts are serialised by the concurrency group below
   push:
     branches: [main]
     paths: ["data/**", "templates/**", "src/**"]
@@ -35,6 +35,9 @@ jobs:
       - name: Fetch, analyse, generate
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # OPTIONAL, read-only fine-grained PAT (Actions: read, Metadata: read) so CI status can be read with more
+          # headroom than public access. Absent/empty is fine: ProfileOS falls back to GITHUB_TOKEN, then public data.
+          PROFILEOS_STATUS_TOKEN: ${{ secrets.PROFILEOS_STATUS_TOKEN }}
         run: python -m profileos build
       - name: Commit if changed
         run: |
