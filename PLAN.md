@@ -1,9 +1,12 @@
 # ProfileOS — Build Plan
 
 Source of truth: `PROFILEOS_SPEC.md` (v1.0). This plan sequences it into shippable phases.
-> **Verification status:** the fetch → analyse → generate workflow has **not been run against a live authenticated GitHub request**
-> and is not production-verified. It is covered by fixture-based tests, a mocked HTTP client, and the public-web audit of 2026-10-01.
-> The first successful `update-profile` run in `YRB19/YRB19` is the real test.
+> **Verification status (updated 2026-10-20):** the `update-profile` workflow **has run on `main`**. Evidence read from the repository itself:
+> bot commits `chore(profile): refresh generated sections` (authored by `profileos[bot]`), a populated `data/cache/` with real GitHub data, and the
+> 18 generated SVG assets in `assets/generated/` (9 assets x light/dark). The Actions logs and the Actions badge are not readable from the
+> build sandbox, so run-level details (duration, token permissions used) are not independently confirmed here.
+> **Phase 6 (CI status, deployment health, release tracker, event dispatch) is *not* live-verified**: it is covered by fixtures and mocked
+> transports only. Its first real exercise is the first scheduled run after it is merged.
 
 Legend: ✅ built in this drop · 🟡 scaffolded · ⬜ not started
 
@@ -15,8 +18,8 @@ Legend: ✅ built in this drop · 🟡 scaffolded · ⬜ not started
 | 3 | GitHub fetch + analytics | ✅ (fixture-tested; live run needs your repo Actions) |
 | 3b | GitHub audit + data reconciliation (`docs/AUDIT.md`, `data/evidence.yml`) | ✅ |
 | 4 | README generators + Actions | ✅ |
-| 5 | SVG components (light/dark) | ✅ built, tested, visually reviewed on synthetic data — awaiting your review |
-| 6 | Health, CI, releases, event dispatch | ⬜ |
+| 5 | SVG components (light/dark) | ✅ reviewed; live `update-profile` run generated all 18 assets on `main` |
+| 6 | Health, CI, releases, event dispatch | ✅ built + mock-tested; **not live-verified**; awaiting your review |
 | 7 | Snapshots, timeline, keep-alive | ⬜ |
 | 8 | Flagship repo READMEs + social cards | ⬜ |
 | 9 | GitHub Pages app | ⬜ |
@@ -55,7 +58,7 @@ Order of value: 1 → 2 → 3 → 4 → 5 (profile already strong), then 6–10.
 - `update-profile.yml` (6 h cron + dispatch + path-filtered push), commit only on material change.
 - **Exit:** scheduled run updates only marker content; a no-change run makes no commit.
 
-## Phase 5 — SVG components ✅ (pending your review)
+## Phase 5 — SVG components ✅
 Built on the existing validated data model; the README Markdown and every SVG read from one set of view-models
 (`generators/models.py`), so they cannot disagree.
 
@@ -88,11 +91,47 @@ Built on the existing validated data model; the README Markdown and every SVG re
   328px content width GitHub uses on phones: no clipping, no horizontal scroll. This used **synthetic fixture data** — real numbers appear only after a live run.
 - Known trade-off: at the 16-unit font floor the heatmap skips some month labels where they would collide.
 
-**Not done on purpose:** Phase 6, the Pages app, and any change to GitHub pins. `assets/generated/` is empty until a real run produces assets
-(synthetic assets are never committed to the profile).
+**Live result:** the first real `update-profile` runs produced `assets/generated/*.svg` on `main` (bot commits above). Synthetic preview assets were never committed.
 
-## Phase 6 — Health, CI, releases, events
-Deployment + CI fetchers, DNS-level SSRF guard, release tracker, optional `notify-profile.yml`.
+### Reconciliation with `main` and production-README fixes (before Phase 6)
+Compared the live `main` against the delivered package: code, tests, data files and workflows are identical; only the generated README blocks,
+`data/cache/` and `assets/generated/` differ (expected). Two issues in the production README were fixed without touching the visual design:
+
+| Issue | Cause | Fix |
+|---|---|---|
+| Generic "Recently Shipped" (`[update]`, `[release]` links) | entries rendered only the kind | entries now show what shipped: release tag, merged-PR title or commit headline; generic headlines (`update`, `fix`, `Initial commit`, `Update README.md`...) are dropped, never shown |
+| Unclear metric scope | Pulse used GitHub's whole-account totals (including the profile repo and repos not shown) | commits/PRs/repos in Pulse are now counted from **public, non-excluded repos shown on the profile** (private repos never named or counted); every card states its scope in its footnote; heatmap says it is the full GitHub calendar; caches written before this fix make no scope claim |
+| Possible self-feeding commits | the profile repo's own bot commits changed its cached activity, which changed the cache, which caused another commit | excluded/internal repos (profile repo, `publish: false`) are scrubbed from `repos`/`activity`/`releases` before caching (one shared rule: `models.excluded_repos`) |
+
+Known, inherent: the contribution calendar changes daily, so there is at most one data commit per day.
+NetOS and FREYA are now public and their evidence is recorded (`data/evidence.yml`), but they stay `publish: false` until you flip it.
+
+## Phase 6 — Health, CI, releases, events ✅ (mock-tested; not live-verified; pending your review)
+Principle: *automate factual status, preserve uncertainty, never look healthier than the evidence.*
+
+| # | Deliverable | Where |
+|---|---|---|
+| 1 | CI status: latest run per workflow on the default branch, aggregated worst-first; states `passing/failing/in_progress/queued/cancelled/unknown/not_configured`; stale or ambiguous => `unknown` (not drawn) | `status/ci.py` |
+| 2 | Least-privilege auth: optional read-only `PROFILEOS_STATUS_TOKEN` -> `GITHUB_TOKEN` -> public data; broad classic tokens refused; only ever steps down in privilege; GET only | `status/ci.py`, `github/client.py` |
+| 3 | Deployment health (opt-in per project, needs flag + URL + `verified` + evidence): states `online/offline/degraded/unknown/not_configured` | `status/health.py` |
+| 4 | SSRF guard: URL policy, IPv4/IPv6 + embedded-IPv4 (mapped, NAT64, 6to4, Teredo) rejection, double DNS resolution, pinned-IP connect, peer check, per-hop redirect validation, bounded time/bytes, no credentials sent | `status/netguard.py`, `status/health.py` |
+| 5 | Honest health evidence: timeouts/blocks/401-403-429 => `unknown`; `offline` only after refusal/NXDOMAIN in N consecutive runs | `status/health.py` |
+| 6 | Release tracker (`RELEASES` marker; heading inside the block so it vanishes when there are no releases): latest published non-draft per project, link, date, pre-release flag; reuses the existing releases dataset (no extra API calls) | `models.release_rows`, `sections.releases` |
+| 7 | Cards show CI (glyph + word + run date) and health; new `GREEN`/`AMBER` tokens with computed contrast; red only for failing/offline | `svg/cards.py`, `svg/tokens.py` |
+| 8 | Caching: per-record `checked_at`; change-only writes ignore it, with at most one timestamp-only refresh per day; stale cache hidden after `stale_after_h` (72 h) | `storage/cache.py`, `build.py` |
+| 9 | Optional event dispatch: `templates/notify-profile.yml` (inert unless variable + secret exist, `permissions: {}`, no fallback credential); config + validation | `templates/`, `docs/EVENT_DISPATCH.md`, `validate.py` |
+| 10 | Docs: tokens, scopes, secrets, safety | `docs/PERMISSIONS.md`, `docs/EVENT_DISPATCH.md` |
+
+**Defaults you control (nothing health-related is enabled yet):** no project has `health_check: true`; `event_dispatch.enabled: false`.
+To probe RepoHealth: set `deployment: {health_url: "https://repohealth.vercel.app", health_check: true}`, `verified: true`, and add a `health_url`
+evidence record (the README "Live demo" link is MEDIUM evidence) — `profileos validate` will tell you what is missing.
+
+**Verification:** fixtures + mocked transports only (see `README_DEV.md`). No live GitHub CI fetch and no live deployment probe was performed.
+
+**Limitations:** unauthenticated CI reads are rate-limited (60/h per IP, shared on hosted runners) and then fall back to cache; the
+release query reads the 10 most recently *created* releases per repo (the latest *published* of those is shown); `offline` needs two runs;
+the dispatch token needs `Contents: write` on the profile repo (GitHub's minimum for that endpoint); a fine-grained status token's scopes cannot be
+inspected by code.
 
 ## Phase 7 — Snapshots & timeline
 Daily/monthly rollups, timeline (no invented dates), keep-alive.
@@ -116,7 +155,7 @@ Failure-injection tests, `README_DEV.md`, Dependabot, SHA-pinned actions.
 5. README-keyword categorisation (rule 4) deferred: needs an extra API call per repo.
 6. Footer date = date the *data last changed* (not run date) so stamp-only commits never happen.
 7. Discovery state in `data/cache/discovery.json` (first-seen dates) to implement the repo-list diff.
-8. Priority-index components that need extra API calls (docs/tests/deploy) default to neutral 0.5 until Phase 6.
+8. Priority-index components that need extra API calls (docs/tests/deploy) still default to neutral 0.5; Phase 6 adds status display, not scoring.
 9. "Meaningful commit" uses `changedFilesIfAvailable` > 0 plus message/bot/merge rules; doc-only detection deferred.
 10. Per-dataset TTL skipping (§15.2) is not implemented yet: every run fetches (<25 calls). Revisit in Phase 10.
 11. Actions are referenced by version tag; SHA-pinning is a Phase 10 task.
