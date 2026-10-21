@@ -7,7 +7,13 @@ API = "https://api.github.com"
 
 
 class GitHubError(Exception):
-    pass
+    """`status` is the last HTTP status seen (None for transport failures); `rate_limited` marks quota/abuse limits,
+    so callers can tell "we were throttled" from "this resource is not available" without parsing messages."""
+
+    def __init__(self, message: str, status: int | None = None, rate_limited: bool = False):
+        super().__init__(message)
+        self.status = status
+        self.rate_limited = rate_limited
 
 
 class GitHubClient:
@@ -21,7 +27,7 @@ class GitHubClient:
         self.remaining: int | None = None
 
     def _request(self, method: str, url: str, **kw) -> httpx.Response:
-        last = None
+        last, last_status, was_limited = None, None, False
         for attempt in range(self._max + 1):
             try:
                 r = self._http.request(method, url, **kw)
@@ -34,14 +40,14 @@ class GitHubClient:
                 limited = r.status_code in (429,) or (r.status_code == 403 and (rem == "0" or "retry-after" in r.headers or "secondary" in r.text.lower()))
                 if r.status_code < 500 and not limited:
                     return r
-                last = GitHubError(f"HTTP {r.status_code}")
+                last, last_status, was_limited = GitHubError(f"HTTP {r.status_code}"), r.status_code, limited
                 if attempt < self._max:
                     wait = float(r.headers["retry-after"]) if "retry-after" in r.headers else 2 ** attempt
                     self._sleep(min(wait, 60))
                     continue
             if attempt < self._max:
                 self._sleep(2 ** attempt)
-        raise GitHubError(f"request failed after {self._max + 1} attempts: {last}")
+        raise GitHubError(f"request failed after {self._max + 1} attempts: {last}", status=last_status, rate_limited=was_limited)
 
     def graphql(self, query: str, variables: dict) -> dict:
         r = self._request("POST", f"{API}/graphql", json={"query": query, "variables": variables})
@@ -61,10 +67,14 @@ class GitHubClient:
         if r.status_code == 304:
             return 304, None
         if r.status_code != 200:
-            raise GitHubError(f"REST {path}: HTTP {r.status_code}")
+            raise GitHubError(f"REST {path}: HTTP {r.status_code}", status=r.status_code)
         if etags is not None and r.headers.get("etag"):
             etags[path] = r.headers["etag"]
         return 200, r.json()
+
+    def rest_response(self, path: str):
+        """GET returning the raw httpx.Response (status/headers visible, never raises on 4xx). Read-only by construction."""
+        return self._request("GET", f"{API}{path}")
 
     def low_budget(self, floor: int = 100) -> bool:
         return self.remaining is not None and self.remaining < floor
