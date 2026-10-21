@@ -71,7 +71,7 @@ NetOS:
   description: "Research and engineering project for a trading system: domain contracts, historical data ingestion, feature snapshots, baseline strategy proposals, a deterministic cost calculator and an offline research harness. No live execution."
   stack: [Python, pytest, Ruff, mypy, GitHub Actions]
   verified: true
-  publish: false
+  publish: true
 
 FREYA:
   repo: YRB19/FREYA
@@ -85,7 +85,7 @@ FREYA:
   description: "Background daemon that watches a notes vault, extracts knowledge and relationships, plans canonical updates, and applies them only through an Obsidian MCP adapter."
   stack: [Python, SQLite, watchdog, Obsidian MCP, launchd]
   verified: true
-  publish: false
+  publish: true
 
 # Secondary / earlier
 RepoHealth:
