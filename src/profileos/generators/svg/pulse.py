@@ -1,5 +1,5 @@
 """Development Pulse card: up to four big numbers (2x2 so labels stay legible on a phone)."""
-from .base import PAD, W, document, line, text, text_width
+from .base import PAD, W, document, line, text, text_width, footer
 
 TITLE = "Development pulse"
 
@@ -27,5 +27,6 @@ def render(m: dict, theme, meta: dict) -> str:
         body.append(text(x, y0 + 42, f"{t['value']:,}", size, theme.accent, bold=True))
         body.append(text(x, y0 + 66, t["label"], 16, theme.muted))
     foot_y = 62 + rows * 76 + 20
-    body.append(text(PAD, foot_y, m["note"], 16, theme.muted))
-    return document(meta, theme, foot_y + 22, "".join(body))
+    note_svg, height = footer(m["note"], foot_y, theme)
+    body.append(note_svg)
+    return document(meta, theme, height, "".join(body))

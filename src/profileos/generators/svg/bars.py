@@ -1,5 +1,5 @@
 """Activity bars: commits per project over the window, in curated (not performance) order."""
-from .base import PAD, W, document, fit_text, line, rect, text, text_width
+from .base import PAD, W, document, fit_text, line, rect, text, text_width, footer
 
 TITLE = "Commits by project"
 ROW = 34
@@ -32,5 +32,6 @@ def render(m: dict, theme, meta: dict) -> str:
             body.append(rect(bar_x, cy - 5, max(4.0, track * r["value"] / top), 10, fill=theme.accent, rx=5))
         body.append(text(W - PAD, cy + 5.5, f"{r['value']:,}", 16, theme.text, bold=True, anchor="end"))
     foot_y = 72 + (len(rows) - 1) * ROW + 34
-    body.append(text(PAD, foot_y, m["note"], 16, theme.muted))
-    return document(meta, theme, foot_y + 22, "".join(body))
+    note_svg, height = footer(m["note"], foot_y, theme)
+    body.append(note_svg)
+    return document(meta, theme, height, "".join(body))

@@ -1,5 +1,5 @@
 """Language distribution: stacked bar + two-column legend (labels and percentages, never colour alone)."""
-from .base import PAD, W, document, fit_text, line, num, rect, text, text_width
+from .base import PAD, W, document, fit_text, line, num, rect, text, text_width, footer
 
 TITLE = "Languages"
 RAMP = (0.0, 0.20, 0.38, 0.54, 0.68, 0.80)  # accent blended toward the text colour: distinct lightness steps
@@ -45,5 +45,6 @@ def render(m: dict, theme, meta: dict) -> str:
         pct_x = lx + COL_W - (18 if c == 0 else 0)  # left column keeps a gutter before the next swatch
         body.append(text(pct_x, ly, f"{it['pct']:.1f}%", 16, theme.muted, anchor="end"))
     foot_y = 104 + ((len(items) + 1) // 2 - 1) * 28 + 34
-    body.append(text(PAD, foot_y, m["note"], 16, theme.muted))
-    return document(meta, theme, foot_y + 22, "".join(body), defs=defs)
+    note_svg, height = footer(m["note"], foot_y, theme)
+    body.append(note_svg)
+    return document(meta, theme, height, "".join(body), defs=defs)

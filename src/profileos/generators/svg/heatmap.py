@@ -1,5 +1,5 @@
 """Contribution heatmap: one cell per day, five intensity steps (empty + four accent tints)."""
-from .base import PAD, W, document, fit_text, num, text, text_width
+from .base import PAD, W, document, fit_text, num, text, text_width, footer
 
 GRID_X = PAD  # grid left edge aligns with the title text
 GRID_W = W - 2 * GRID_X
@@ -54,5 +54,6 @@ def render(m: dict, theme, meta: dict) -> str:
         body.append(f'<rect x="{num(sq_start + i * (sw + gap))}" y="{num(leg_y - 10)}" width="{sw}" height="{sw}" rx="2" fill="{col}"/>')
     body.append(text(sq_start - 6, leg_y, "Less", 16, theme.muted, anchor="end"))
     foot_y = leg_y + 26
-    body.append(text(PAD, foot_y, m["note"], 16, theme.muted))
-    return document(meta, theme, foot_y + 22, "".join(body))
+    note_svg, height = footer(m["note"], foot_y, theme)
+    body.append(note_svg)
+    return document(meta, theme, height, "".join(body))
