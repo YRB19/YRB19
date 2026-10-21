@@ -165,12 +165,44 @@ projects:
       - "31 test files; about 16.2k lines of TypeScript and 0.8k lines of Rust."
 
   NetOS:
+    tagline:     { value: "Trading-system research harness: offline replay, data ingestion and cost modelling", confidence: MEDIUM, evidence: ["README.md Scope: offline deterministic replay, simulated research accounting, cost integration", "README.md Structure: historical data ingestion, deterministic cost calculator"] }
+    description: { value: "Research and engineering project for a trading system: domain contracts, historical data ingestion, feature snapshots, baseline strategy proposals, a deterministic cost calculator and an offline research harness. No live execution.", confidence: MEDIUM, evidence: ["README.md intro and Scope sections (condensed)"] }
+    category:    { value: systems, confidence: STATED, evidence: ["project brief (spec §7.2)"] }
+    family:      { value: os-series, confidence: STATED, evidence: ["project brief: OS Series"] }
+    status:      { value: active, confidence: LOW, evidence: ["spec draft default", "last commit 2026-10-18 (activity signal only)"] }
+    stack:
+      - { value: Python, confidence: HIGH, evidence: ["pyproject.toml requires-python >=3.11; dependencies = []"] }
+      - { value: pytest, confidence: HIGH, evidence: ["pyproject.toml dev extras", "41 test_*.py files"] }
+      - { value: Ruff, confidence: HIGH, evidence: ["pyproject.toml [tool.ruff]"] }
+      - { value: mypy, confidence: HIGH, evidence: ["pyproject.toml dev extras", "README.md validation commands"] }
+      - { value: GitHub Actions, confidence: HIGH, evidence: [".github/workflows/ci.yml"] }
+    architecture:
+      - { value: "Flat package layout by plane: domain, data, intelligence, risk_execution, observability, research, simulation, shared, governance; import-graph checks in scripts/ and tools/", confidence: HIGH, evidence: ["pyproject.toml [tool.setuptools] packages", "scripts/check_import_graph.py"] }
     notes:
-      - "github.com/YRB19/NetOS returns 404 without authentication and is absent from the public repository list. It is private, unpublished, or named differently; nothing about it can be verified or published."
+      - "Visibility: unauthenticated 404 on 2026-10-01 08:14 UTC; listed as public by the GitHub API on the first scheduled run (2026-10-01 11:57 UTC); anonymous git access confirmed 2026-10-19. Metadata below is verified, but the project stays unpublished (`publish: false`) until you switch it on."
+      - "README is out of date: it says 'no ... risk engine' and describes Slices 1-4, while docs/ contains risk-engine.md, simulated-broker.md, sizing.md and tier2-momentum.md and recent commits are 'slice-6'. The tagline is therefore limited to what README and code agree on."
+      - "No releases, no LICENSE file. One CI workflow (ci.yml); its latest run status was not readable in this audit. The README itself states a passing research run is infrastructure verification, not evidence of profitability."
+  
 
   FREYA:
+    tagline:     { value: "Background daemon that watches a notes vault and plans canonical knowledge updates", confidence: MEDIUM, evidence: ["README.md: background daemon on the Mac; Layer 7 canonical change planner", "freya/watcher.py (watchdog)"] }
+    description: { value: "Background daemon that watches a notes vault, extracts knowledge and relationships, plans canonical updates, and applies them only through an Obsidian MCP adapter.", confidence: MEDIUM, evidence: ["README.md layer descriptions (condensed)", "freya/mcp_adapter.py docstring: the only canonical write mechanism"] }
+    category:    { value: ai, confidence: STATED, evidence: ["project brief (spec §7.2)"] }
+    family:      { value: os-series, confidence: STATED, evidence: ["project brief: OS Series"] }
+    status:      { value: active, confidence: LOW, evidence: ["spec draft default", "last commit 2026-10-17 (activity signal only)"] }
+    stack:
+      - { value: Python, confidence: HIGH, evidence: ["main.py", "freya/*.py", "requirements.txt"] }
+      - { value: SQLite, confidence: HIGH, evidence: ["freya/state_store.py imports sqlite3"] }
+      - { value: watchdog, confidence: HIGH, evidence: ["requirements.txt watchdog>=4.0.0", "freya/watcher.py"] }
+      - { value: Obsidian MCP, confidence: HIGH, evidence: ["freya/mcp_adapter.py (JSON-RPC to 127.0.0.1:27200/mcp)"] }
+      - { value: launchd, confidence: HIGH, evidence: ["deploy/com.yoboxo.freya.plist"] }
     notes:
-      - "github.com/YRB19/FREYA returns 404 without authentication and is absent from the public repository list. It is private, unpublished, or named differently; nothing about it can be verified or published."
+      - "Visibility: unauthenticated 404 on 2026-10-01 08:14 UTC; listed as public by the GitHub API on the first scheduled run (2026-10-01 11:57 UTC); anonymous git access confirmed 2026-10-19. Metadata below is verified, but the project stays unpublished (`publish: false`) until you switch it on."
+      - "No LLM SDK is imported anywhere and the README says the planner never calls Claude, so the 'ai' category (from your brief) is not supported by the code itself."
+      - "README is titled 'Phase 7 build' and reads as a changelog; the code contains Phase 8 (executor, MCP adapter) and Phase 9A (reconciliation) that it does not describe."
+      - "main.py and the launchd plist hard-code personal macOS paths (/Users/yoboxo/...). It runs only on macOS with Obsidian running; there is no demo or deployment to link."
+      - "No CI workflow, no releases, no LICENSE file. 8 test files."
+
 
   RepoHealth:
     tagline:     { value: "Instant analytics and health insights for your GitHub repositories", confidence: MEDIUM, evidence: ["README.md tagline"] }
