@@ -3,11 +3,12 @@
 **Automate facts. Curate identity.** Spec: `PROFILEOS_SPEC.md` · plan/status: `PLAN.md`.
 
 ## Verification status (read this first)
-- **Live GitHub workflow: not production-verified.** The fetch/analyse/generate pipeline has not been run against a live authenticated
-  GitHub request. It is covered by fixture-based tests, a mocked HTTP client and the 2026-10-01 public-web audit (`docs/AUDIT.md`),
-  but the real GraphQL query shape and the Actions run are unproven until the first `update-profile` run succeeds in `YRB19/YRB19`.
-- Generated SVGs are covered by tests (safety, light/dark, missing data, alt text, 360px font floor) and were reviewed visually,
-  but only on **synthetic fixture data**. Nothing in `assets/generated/` is committed until a real run produces it.
+- **Live `update-profile` run: succeeded on `main`** (bot commits, real `data/cache/`, 18 generated SVGs). Actions logs are not readable from the build sandbox.
+- **Phase 6 is NOT live-verified.** CI status, deployment health, release tracker and the dispatch template are tested with fixtures,
+  mocked HTTP transports, fake resolvers/sockets and a stubbed `curl` only. No live GitHub Actions read, no real deployment probe and no real
+  `repository_dispatch` was performed.
+- First live check after merging Phase 6: run `update-profile` manually, then confirm (a) cards for repos with workflows show `CI <state> · <date>`
+  matching the Actions tab, (b) the log warns nothing unexpected under `ci:`, (c) `data/cache/ci.json` exists, (d) a second run makes no commit.
 - The profile pins are never touched: the client only issues read-only queries (tested).
 
 ## Run it
@@ -36,6 +37,11 @@ Adding a project = one block in `data/projects.yml`. Flagship taglines/stacks ar
 - Second run with the same upstream data ⇒ byte-identical outputs, no commit.
 - API failure ⇒ last valid cache is used; >24 h old ⇒ labelled "as of <date>"; no cache ⇒ section hidden.
 - Private repos are dropped in code even if the API returns them; repo text is sanitised/escaped.
+
+## Phase 6 (status)
+Config lives in `data/config.yml` (`ci`, `health`, `event_dispatch`); per-project `deployment` / `ci` fields in `projects.yml`.
+Permissions and secrets: `docs/PERMISSIONS.md`. Event dispatch: `docs/EVENT_DISPATCH.md`. New README marker: `RELEASES`
+(add `<!-- PROFILEOS:START:RELEASES -->` / `END` once; the shipped README already has it).
 
 ## Install into the profile repo
 Copy this folder's contents into `YRB19/YRB19`, commit, then run the `update-profile` workflow once
