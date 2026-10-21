@@ -21,13 +21,18 @@ def test_bad_status_fails(repo_copy):
     assert any("status" in e for e in validate(repo_copy).errors)
 
 
+def _scratch(d, **extra):
+    """A project with no evidence records at all (NetOS/FREYA are now fully evidenced, so they no longer serve)."""
+    d["Scratch"] = {"repo": "YRB19/Scratch", "category": "web", "status": "maintained", **extra}
+
+
 def test_verified_requires_tagline_and_stack(repo_copy):
-    _edit(repo_copy, "projects", lambda d: d["NetOS"].update(verified=True))
+    _edit(repo_copy, "projects", lambda d: _scratch(d, verified=True))
     assert any("verified" in e for e in validate(repo_copy).errors)
 
 
 def test_published_fields_need_publishable_evidence(repo_copy):
-    _edit(repo_copy, "projects", lambda d: d["NetOS"].update(tagline="Invented tagline"))
+    _edit(repo_copy, "projects", lambda d: _scratch(d, tagline="Invented tagline"))
     assert any("no evidence record" in e for e in validate(repo_copy).errors)
 
 
