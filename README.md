@@ -40,6 +40,9 @@ Most commits (last 30 days): [UsageOS](https://github.com/YRB19/UsageOS)
 `10/08` **UsageOS** — [update](https://github.com/YRB19/UsageOS/commit/4dca1f30438046c75d5effd3b0c0cc41d7fe72e0)
 <!-- PROFILEOS:END:RECENTLY_SHIPPED -->
 
+<!-- PROFILEOS:START:RELEASES -->
+<!-- PROFILEOS:END:RELEASES -->
+
 ## The OS Series
 <!-- PROFILEOS:START:OS_SERIES -->
 *Building focused systems around messy real-world problems.*
