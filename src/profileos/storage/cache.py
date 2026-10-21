@@ -59,3 +59,26 @@ class Cache:
 def would_change(cache: "Cache", name: str, data) -> bool:
     prev = cache.read(name)
     return not (prev and prev.get("ok") and digest(prev["data"]) == digest(data))
+
+
+def _strip(obj, keys):
+    if isinstance(obj, dict):
+        return {k: _strip(v, keys) for k, v in obj.items() if k not in keys}
+    if isinstance(obj, list):
+        return [_strip(v, keys) for v in obj]
+    return obj
+
+
+def would_change_status(cache: "Cache", name: str, data, now: dt.datetime, refresh_after_h: float = 24) -> bool:
+    """Change-only rule for CI / health datasets, which carry a `checked_at` per record.
+
+    The check time is real information (it is how a later outage decides whether the cache is too old to trust), but a
+    commit per run just to move a timestamp is churn. So: ignore `checked_at` when comparing, and refresh the file only
+    when a state really changed OR the stored check is older than `refresh_after_h` (at most one timestamp-only commit
+    per day, which the daily contribution-calendar update already causes anyway)."""
+    prev = cache.read(name)
+    if not (prev and prev.get("ok")):
+        return True
+    if digest(_strip(prev["data"], {"checked_at"})) != digest(_strip(data, {"checked_at"})):
+        return True
+    return Cache.age_hours(prev, now) >= refresh_after_h
