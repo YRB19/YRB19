@@ -149,6 +149,9 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 </picture>
 <!-- PROFILEOS:END:ACTIVITY -->
 
+<!-- PROFILEOS:START:TIMELINE -->
+<!-- PROFILEOS:END:TIMELINE -->
+
 ## Links
 <!-- PROFILEOS:START:LINKS -->
 [GitHub](https://github.com/YRB19)
