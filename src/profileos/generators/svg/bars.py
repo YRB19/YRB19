@@ -5,9 +5,13 @@ TITLE = "Commits by project"
 ROW = 34
 
 
+def title(m: dict) -> str:
+    return m.get("title", TITLE)
+
+
 def alt(m: dict) -> str:
     rows = ", ".join(f"{r['label']} {r['value']:,}" for r in m["rows"])
-    return f"{TITLE}, {m['window'].lower()}: {rows}. {m['note']}"
+    return f"{title(m)}, {m['window'].lower()}: {rows}. {m['note']}"
 
 
 def render(m: dict, theme, meta: dict) -> str:
@@ -20,7 +24,7 @@ def render(m: dict, theme, meta: dict) -> str:
     bar_end = W - PAD - val_w - 10
     track = bar_end - bar_x
     body = [
-        text(PAD, 34, TITLE, 18, theme.text, bold=True),
+        text(PAD, 34, title(m), 18, theme.text, bold=True),
         text(W - PAD, 34, m["window"], 16, theme.muted, anchor="end"),
         line(PAD, 48, W - PAD, 48, theme.border),
     ]
