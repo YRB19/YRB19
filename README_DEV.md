@@ -4,11 +4,12 @@
 
 ## Verification status (read this first)
 - **Live `update-profile` run: succeeded on `main`** (bot commits, real `data/cache/`, 18 generated SVGs). Actions logs are not readable from the build sandbox.
-- **Phase 6 is NOT live-verified.** CI status, deployment health, release tracker and the dispatch template are tested with fixtures,
-  mocked HTTP transports, fake resolvers/sockets and a stubbed `curl` only. No live GitHub Actions read, no real deployment probe and no real
-  `repository_dispatch` was performed.
-- First live check after merging Phase 6: run `update-profile` manually, then confirm (a) cards for repos with workflows show `CI <state> · <date>`
-  matching the Actions tab, (b) the log warns nothing unexpected under `ci:`, (c) `data/cache/ci.json` exists, (d) a second run makes no commit.
+- **Phase 6 CI status: observed live** (`data/cache/ci.json`, written by the bot). **Phase 6 deployment health, event dispatch and release tracker are not live-verified**
+  (no project has `health_check` enabled, dispatch is off, no repository has releases yet).
+- **Phase 7 is NOT live-verified.** Snapshots, rollups, timeline and the monthly chart are tested with synthetic fixtures in temp directories only. Snapshot
+  scheduling has not been validated on GitHub Actions; no real snapshot exists until the first run after Phase 7 is merged.
+- First live check after merging Phase 7: run `update-profile` manually, then confirm `snapshots/daily/<year>/<today>.json` exists (a `+1 day` run adds
+  exactly one more), `snapshots/timeline.json` exists, a second run the same day makes no commit, and `python -m profileos validate` passes on the result.
 - The profile pins are never touched: the client only issues read-only queries (tested).
 
 ## Run it
@@ -42,6 +43,11 @@ Adding a project = one block in `data/projects.yml`. Flagship taglines/stacks ar
 Config lives in `data/config.yml` (`ci`, `health`, `event_dispatch`); per-project `deployment` / `ci` fields in `projects.yml`.
 Permissions and secrets: `docs/PERMISSIONS.md`. Event dispatch: `docs/EVENT_DISPATCH.md`. New README marker: `RELEASES`
 (add `<!-- PROFILEOS:START:RELEASES -->` / `END` once; the shipped README already has it).
+
+## Phase 7 (history)
+Config: `snapshots:` in `data/config.yml`; milestones in `data/history.yml`. Formats/rules: `docs/SNAPSHOTS.md`; retention + keep-alive decision:
+`docs/RETENTION.md`. New README marker: `TIMELINE` (add `<!-- PROFILEOS:START:TIMELINE -->` / `END` once; the shipped README has it).
+Never commit records produced from `--fixtures` (they are never written, and `validate` rejects any marked `synthetic`).
 
 ## Install into the profile repo
 Copy this folder's contents into `YRB19/YRB19`, commit, then run the `update-profile` workflow once

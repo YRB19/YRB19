@@ -1,12 +1,15 @@
 # ProfileOS — Build Plan
 
 Source of truth: `PROFILEOS_SPEC.md` (v1.0). This plan sequences it into shippable phases.
-> **Verification status (updated 2026-10-20):** the `update-profile` workflow **has run on `main`**. Evidence read from the repository itself:
-> bot commits `chore(profile): refresh generated sections` (authored by `profileos[bot]`), a populated `data/cache/` with real GitHub data, and the
-> 18 generated SVG assets in `assets/generated/` (9 assets x light/dark). The Actions logs and the Actions badge are not readable from the
-> build sandbox, so run-level details (duration, token permissions used) are not independently confirmed here.
-> **Phase 6 (CI status, deployment health, release tracker, event dispatch) is *not* live-verified**: it is covered by fixtures and mocked
-> transports only. Its first real exercise is the first scheduled run after it is merged.
+> **Verification status (updated 2026-10-22):**
+> * **Live on `main` (observed in the repository):** the `update-profile` workflow runs on schedule and commits as `profileos[bot]`; generated README
+>   blocks, 18 SVG assets and `data/cache/` hold real data. Phase 6 **CI status was fetched live**: `data/cache/ci.json` (committed by the bot,
+>   `auth: github-token`) holds real Actions results. The Actions logs and badge are not readable from the build sandbox, so run-level
+>   details (duration, exact permissions used) are not independently confirmed here.
+> * **Phase 6 deployment health, event dispatch and the release tracker are not live-verified** (no project has `health_check` enabled; dispatch is
+>   off; no repository has published releases yet).
+> * **Phase 7 is fixture-tested only. Snapshot scheduling has not been validated on GitHub Actions**: no real snapshot exists yet; the first one
+>   is created by the first `update-profile` run after Phase 7 is merged.
 
 Legend: ✅ built in this drop · 🟡 scaffolded · ⬜ not started
 
@@ -19,8 +22,8 @@ Legend: ✅ built in this drop · 🟡 scaffolded · ⬜ not started
 | 3b | GitHub audit + data reconciliation (`docs/AUDIT.md`, `data/evidence.yml`) | ✅ |
 | 4 | README generators + Actions | ✅ |
 | 5 | SVG components (light/dark) | ✅ reviewed; live `update-profile` run generated all 18 assets on `main` |
-| 6 | Health, CI, releases, event dispatch | ✅ built + mock-tested; **not live-verified**; awaiting your review |
-| 7 | Snapshots, timeline, keep-alive | ⬜ |
+| 6 | Health, CI, releases, event dispatch | ✅ merged; CI fetch observed live (`ci.json`); health/dispatch/releases not live-verified |
+| 7 | Snapshots, rollups, timeline, retention | ✅ built + fixture-tested; **not live-verified**; awaiting your review |
 | 8 | Flagship repo READMEs + social cards | ⬜ |
 | 9 | GitHub Pages app | ⬜ |
 | 10 | Hardening + docs | ⬜ |
@@ -133,8 +136,31 @@ release query reads the 10 most recently *created* releases per repo (the latest
 the dispatch token needs `Contents: write` on the profile repo (GitHub's minimum for that endpoint); a fine-grained status token's scopes cannot be
 inspected by code.
 
-## Phase 7 — Snapshots & timeline
-Daily/monthly rollups, timeline (no invented dates), keep-alive.
+## Phase 7 — Snapshots, rollups, timeline, retention ✅ (fixture-tested; not live-verified; pending your review)
+Principle: *preserve history faithfully, define every metric clearly, never manufacture historical facts.* Formats and counting rules:
+`docs/SNAPSHOTS.md`; retention, scheduling and the keep-alive decision: `docs/RETENTION.md`.
+
+| # | Deliverable | Where |
+|---|---|---|
+| 1 | Versioned, schema-validated daily record (`snapshots/daily/<YYYY>/<date>.json`): closed-day commits/PRs/releases, rolling windows, languages, per-project summaries, repo list, scope + counting rules in every record | `history/snapshot.py`, `schemas/snapshot.schema.json` |
+| 2 | Explicit timezone policy (`snapshots.timezone`, default UTC); a snapshot dated D describes the closed day D-1 as inclusive UTC instants (DST-correct) | `history/snapshot.py` |
+| 3 | Create-only, idempotent daily writes; one per local day; validation first; atomic; past records never regenerated | `history/snapshot.py`, `history/run.py` |
+| 4 | Failure policy: stale repo data, API failure, unreadable repo or malformed count => **no snapshot (a gap)**; never zeros; synthetic runs never recorded | `history/run.py`, `github/fetch.fetch_day_commits` |
+| 5 | Monthly rollups from stored dailies only: sums of closed days, unique active repos, month-end language reading; coverage + missing days; `lower_bound`/`null` instead of invented precision; older months frozen, drift warned | `history/rollup.py`, `schemas/monthly.schema.json` |
+| 6 | Append-only timeline of verified events (repo created, release published, sourced milestone, first observed) with separate date kinds; no inferred dates; shown only for currently published projects | `history/timeline.py`, `schemas/timeline.schema.json`, `data/history.yml` `milestones` |
+| 7 | README: `Commits by month` chart (appears once 2 months exist, partial months starred) reusing Phase 5 tokens/safety/themes; concise `TIMELINE` block (new marker) | `generators/models.py`, `svg/bars.py`, `sections.py` |
+| 8 | Integrity checks in `profileos validate`: schema, filenames, duplicates, committed synthetic records, credential-looking strings, rollup drift, leftover temp files | `history/run.verify`, `validate.py` |
+| 9 | Automation: existing workflow extended (it already commits `snapshots/`); no new scheduler; no keep-alive (documented decision) | `.github/workflows/update-profile.yml`, `docs/RETENTION.md` |
+
+**Rules enforced (and tested):** NetOS/FREYA (and any `publish: false` project, the profile repo, private repos) never appear in snapshots, rollups,
+the timeline view or charts; `first_observed` is never used as a creation date; a project published later gets a `first_observed` event dated
+that day, never a backdated one; a no-change run writes nothing; a failed render leaves `snapshots/` untouched; every chart states its scope.
+
+**Not drawn on purpose:** language-over-time and per-project trend charts (stored in rollups; no data yet; reserved for the Pages phase).
+**Limitations:** history starts at the first real run (no backfill: closed-day counts for past days would have to be re-derived and are not
+recorded as history); the PR/release counts need fewer than 10 recent items per repo or they are `null`; "committer date" can differ from push
+date; a rewritten (force-pushed) default branch changes what the API reports but never what was already recorded; the daily snapshot is taken by the
+first run after local midnight, so its `taken_at` can be up to ~6 h after midnight; GitHub's rule for keeping scheduled workflows alive is not verified.
 
 ## Phase 8 — Flagship READMEs & social cards
 §13 templates per repo; PNG cards via resvg/cairosvg; NetOS/FREYA only from verified info.
