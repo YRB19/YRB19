@@ -186,6 +186,49 @@ def heatmap_model(ctx):
     }
 
 
+# ---- Phase 7: history -----------------------------------------------------------------------------------------------
+MONTH_NAMES = MONTHS
+
+
+def monthly_model(ctx):
+    """Commits per month = SUM of stored closed-day counts (docs/SNAPSHOTS.md). Shown only once at least two months have
+    recorded data; partial months are starred and say so. Nothing is estimated or extrapolated."""
+    st = getattr(ctx, "history", None)
+    cfg = ctx.cfg.get("snapshots", {})
+    months = (st.monthly if st else [])[-int(cfg.get("chart_months", 12)):]
+    if len(months) < 2:
+        return None
+    rows, partial = [], False
+    for m in months:
+        y, mo = m["month"].split("-")
+        star = "" if m["coverage"]["complete"] else "*"
+        partial = partial or bool(star)
+        rows.append({"label": f"{MONTH_NAMES[int(mo) - 1]} {y[2:]}{star}", "value": int(m["metrics"]["commits"]["value"])})
+    note = ("Commits per month, summed from daily snapshots of the public repositories shown here. "
+            + ("* = partial month: only recorded days are counted. " if partial else "")
+            + "An activity signal, not a quality measure.")
+    return {"title": "Commits by month", "window": f"Last {len(rows)} months", "rows": rows, "note": note}
+
+
+def timeline_rows(ctx):
+    """Newest-first verified events for projects that are CURRENTLY published (the stored file is a faithful record; what it
+    shows publicly is decided here). Hidden until there are at least `min_timeline_events`."""
+    st = getattr(ctx, "history", None)
+    cfg = ctx.cfg.get("snapshots", {})
+    if not st or not st.timeline:
+        return []
+    ok = {s for s, p in ctx.projects.items() if publishable(p)}
+    events = [e for e in st.timeline["events"] if e["project"] in ok]
+    if len(events) < int(cfg.get("min_timeline_events", 3)):
+        return []
+    events.sort(key=lambda e: (e["date"], e["id"]), reverse=True)
+    out = []
+    for e in events[: int(cfg.get("timeline_max_items", 8))]:
+        out.append({"date": e["date"], "project": _title(ctx, e["project"]), "title": clean_text(e["title"], 80),
+                    "url": e["source"].get("url"), "type": e["type"]})
+    return out
+
+
 # ---- Language distribution ---------------------------------------------------------------------------------
 def language_model(ctx, max_items: int = MAX_LANGUAGES):
     dist = languages.distribution(
