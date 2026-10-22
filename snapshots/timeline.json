@@ -111,6 +111,62 @@
       },
       "title": "Repository created",
       "type": "repository_created"
+    },
+    {
+      "date": "2026-09-05",
+      "date_kind": "repository_created_at",
+      "id": "NetOS:created",
+      "observed_on": "2026-10-22",
+      "project": "NetOS",
+      "source": {
+        "kind": "github_repository",
+        "ref": null,
+        "url": "https://github.com/YRB19/NetOS"
+      },
+      "title": "Repository created",
+      "type": "repository_created"
+    },
+    {
+      "date": "2026-09-10",
+      "date_kind": "repository_created_at",
+      "id": "FREYA:created",
+      "observed_on": "2026-10-22",
+      "project": "FREYA",
+      "source": {
+        "kind": "github_repository",
+        "ref": null,
+        "url": "https://github.com/YRB19/FREYA"
+      },
+      "title": "Repository created",
+      "type": "repository_created"
+    },
+    {
+      "date": "2026-10-22",
+      "date_kind": "first_observed_by_profileos",
+      "id": "FREYA:first-observed",
+      "observed_on": "2026-10-22",
+      "project": "FREYA",
+      "source": {
+        "kind": "profileos_observation",
+        "ref": "profileos project discovery",
+        "url": null
+      },
+      "title": "First seen by ProfileOS",
+      "type": "first_observed"
+    },
+    {
+      "date": "2026-10-22",
+      "date_kind": "first_observed_by_profileos",
+      "id": "NetOS:first-observed",
+      "observed_on": "2026-10-22",
+      "project": "NetOS",
+      "source": {
+        "kind": "profileos_observation",
+        "ref": "profileos project discovery",
+        "url": null
+      },
+      "title": "First seen by ProfileOS",
+      "type": "first_observed"
     }
   ],
   "schema": 1,
