@@ -56,6 +56,7 @@ def build_assets(ctx) -> dict:
         ("pulse", pulse, models.pulse_model(ctx)),
         ("activity", bars, models.activity_model(ctx)),
         ("heatmap", heatmap, models.heatmap_model(ctx)),
+        ("monthly", bars, models.monthly_model(ctx)),
         ("languages", langbar, models.language_model(ctx)),
         ("os-series", ecosystem, models.ecosystem_model(ctx)),
     ]

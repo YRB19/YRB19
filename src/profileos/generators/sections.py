@@ -22,6 +22,7 @@ class Context:
         self.repos = [r for r in datasets.get("repos", []) if not r["is_private"] and r["full_name"].lower() not in self._excluded()]
         self.by_full = {r["full_name"].lower(): r for r in self.repos}
         self.activity, self.releases = datasets.get("activity", {}), datasets.get("releases", {})
+        self.history = None                        # set by build() after the history step (snapshots, rollups, timeline)
         self.ci, self.health = datasets.get("ci", {}), datasets.get("health", {})   # already staleness-checked (build.py)
         self.first_seen = first_seen
         self._alias = {}
@@ -170,6 +171,21 @@ def releases(ctx: Context) -> str:
     return "\n".join(lines) + (f"\n\n{note}" if note else "")
 
 
+def timeline(ctx: Context) -> str:
+    rows = models.timeline_rows(ctx)
+    if not rows:
+        return ""
+    lines = ["### Project timeline", ""]
+    for r in rows:
+        link = safe_url(r["url"])
+        what = f"[{md(r['title'])}]({link})" if link else md(r["title"])
+        lines.append(f"`{r['date']}` **{md(r['project'])}** — {what}  ")
+    lines.append("")
+    lines.append("<sub>Dates come from GitHub (repository creation, release publication) or sourced milestones. "
+                 "\"First seen\" is when ProfileOS first listed a project, not when it was started.</sub>")
+    return "\n".join(lines)
+
+
 def os_series(ctx: Context) -> str:
     members = models.os_members(ctx)
     if not members:
@@ -217,7 +233,7 @@ def earlier_builds(ctx: Context) -> str:
 
 
 def activity(ctx: Context) -> str:
-    visuals_ = [_img(ctx, n) for n in ("heatmap", "activity", "languages")]
+    visuals_ = [_img(ctx, n) for n in ("heatmap", "monthly", "activity", "languages")]
     if not any(visuals_):
         return ""
     return _join(visuals_ + [ctx.note("repos", "activity", "contributions")])
@@ -237,7 +253,7 @@ RENDERERS = {
     "CURRENTLY_BUILDING": currently_building, "NOW": now_panel, "PULSE": pulse, "RECENTLY_SHIPPED": recently_shipped,
     "RELEASES": releases,
     "OS_SERIES": os_series, "SELECTED_SYSTEMS": selected_systems, "STACK": stack, "EARLIER_BUILDS": earlier_builds,
-    "ACTIVITY": activity, "LINKS": links, "FOOTER": footer,
+    "ACTIVITY": activity, "TIMELINE": timeline, "LINKS": links, "FOOTER": footer,
 }
 
 
