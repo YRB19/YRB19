@@ -1,0 +1,111 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "schema",
+  "seeded_on",
+  "seeded_projects",
+  "events"
+ ],
+ "properties": {
+  "schema": {
+   "const": 1
+  },
+  "seeded_on": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+  },
+  "seeded_projects": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "events": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "id",
+     "project",
+     "type",
+     "date",
+     "date_kind",
+     "title",
+     "source",
+     "observed_on"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "maxLength": 120
+     },
+     "project": {
+      "type": "string"
+     },
+     "type": {
+      "enum": [
+       "repository_created",
+       "release_published",
+       "milestone",
+       "first_observed"
+      ]
+     },
+     "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+     },
+     "date_kind": {
+      "enum": [
+       "repository_created_at",
+       "release_published_at",
+       "milestone_date",
+       "first_observed_by_profileos"
+      ]
+     },
+     "title": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "kind"
+      ],
+      "properties": {
+       "kind": {
+        "enum": [
+         "github_repository",
+         "github_release",
+         "history_yml",
+         "profileos_observation"
+        ]
+       },
+       "url": {
+        "type": [
+         "string",
+         "null"
+        ],
+        "pattern": "^https://"
+       },
+       "ref": {
+        "type": [
+         "string",
+         "null"
+        ],
+        "maxLength": 200
+       }
+      }
+     },
+     "observed_on": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+     }
+    }
+   }
+  }
+ }
+}

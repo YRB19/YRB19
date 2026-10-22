@@ -1,0 +1,301 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "schema",
+  "kind",
+  "date",
+  "timezone",
+  "taken_at",
+  "closed_day",
+  "source",
+  "scope",
+  "repos",
+  "totals",
+  "languages",
+  "projects"
+ ],
+ "properties": {
+  "schema": {
+   "const": 1
+  },
+  "kind": {
+   "const": "daily"
+  },
+  "date": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+  },
+  "timezone": {
+   "type": "string",
+   "maxLength": 40
+  },
+  "taken_at": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+  },
+  "synthetic": {
+   "type": "boolean"
+  },
+  "closed_day": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "date",
+    "start",
+    "end"
+   ],
+   "properties": {
+    "date": {
+     "type": "string",
+     "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "start": {
+     "type": "string",
+     "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+    },
+    "end": {
+     "type": "string",
+     "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+    }
+   }
+  },
+  "source": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "name",
+    "repos_fetched_at"
+   ],
+   "properties": {
+    "name": {
+     "const": "github-graphql"
+    },
+    "repos_fetched_at": {
+     "type": "string",
+     "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+    }
+   }
+  },
+  "scope": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "summary",
+    "rules"
+   ],
+   "properties": {
+    "summary": {
+     "type": "string",
+     "maxLength": 400
+    },
+    "rules": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "string",
+      "maxLength": 300
+     },
+     "minProperties": 1
+    }
+   }
+  },
+  "repos": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "included",
+    "names",
+    "active_on_closed_day"
+   ],
+   "properties": {
+    "included": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "names": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9-]+/[A-Za-z0-9_.-]+$"
+     },
+     "uniqueItems": true
+    },
+    "active_on_closed_day": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9-]+/[A-Za-z0-9_.-]+$"
+     },
+     "uniqueItems": true
+    }
+   }
+  },
+  "totals": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "closed_day",
+    "rolling"
+   ],
+   "properties": {
+    "closed_day": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "commits",
+      "merged_prs",
+      "releases"
+     ],
+     "properties": {
+      "commits": {
+       "type": "integer",
+       "minimum": 0
+      },
+      "merged_prs": {
+       "type": [
+        "integer",
+        "null"
+       ],
+       "minimum": 0
+      },
+      "releases": {
+       "type": [
+        "integer",
+        "null"
+       ],
+       "minimum": 0
+      }
+     }
+    },
+    "rolling": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "d7",
+      "d30",
+      "d90"
+     ],
+     "properties": {
+      "d7": {
+       "type": "integer",
+       "minimum": 0
+      },
+      "d30": {
+       "type": "integer",
+       "minimum": 0
+      },
+      "d90": {
+       "type": "integer",
+       "minimum": 0
+      }
+     }
+    }
+   }
+  },
+  "languages": {
+   "type": "array",
+   "maxItems": 12,
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "language",
+     "pct"
+    ],
+    "properties": {
+     "language": {
+      "type": "string",
+      "maxLength": 24
+     },
+     "pct": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+     }
+    }
+   }
+  },
+  "projects": {
+   "type": "object",
+   "additionalProperties": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "closed_day",
+     "rolling",
+     "repo_created_on",
+     "pushed_on"
+    ],
+    "properties": {
+     "closed_day": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "commits",
+       "merged_prs",
+       "releases"
+      ],
+      "properties": {
+       "commits": {
+        "type": "integer",
+        "minimum": 0
+       },
+       "merged_prs": {
+        "type": [
+         "integer",
+         "null"
+        ],
+        "minimum": 0
+       },
+       "releases": {
+        "type": [
+         "integer",
+         "null"
+        ],
+        "minimum": 0
+       }
+      }
+     },
+     "rolling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "d7",
+       "d30",
+       "d90"
+      ],
+      "properties": {
+       "d7": {
+        "type": "integer",
+        "minimum": 0
+       },
+       "d30": {
+        "type": "integer",
+        "minimum": 0
+       },
+       "d90": {
+        "type": "integer",
+        "minimum": 0
+       }
+      }
+     },
+     "repo_created_on": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+     },
+     "pushed_on": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+     }
+    }
+   },
+   "propertyNames": {
+    "pattern": "^[A-Za-z0-9_.-]+$"
+   }
+  }
+ }
+}
