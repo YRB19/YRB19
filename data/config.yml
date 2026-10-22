@@ -32,3 +32,11 @@ event_dispatch:                      # optional release -> refresh requests from
   sources: []                        # e.g. [YRB19/UsageOS, YRB19/ResearchOS]
   events: [release]
 commit_policy: { min_changed_bytes: 1, ignore_timestamp_only: true }
+# --- Phase 7: history (docs/SNAPSHOTS.md, docs/RETENTION.md) ---
+snapshots:
+  enabled: true
+  timezone: UTC             # the day boundary for "one snapshot per day". Choose once; changing it later shifts day boundaries
+                            # for new records only (old records keep the timezone they were written with).
+  chart_months: 12          # monthly chart shows at most this many months, and only once >= 2 months have data
+  timeline_max_items: 8     # README timeline length (newest first); the full record lives in snapshots/timeline.json
+  min_timeline_events: 3    # timeline hidden below this many verified events
