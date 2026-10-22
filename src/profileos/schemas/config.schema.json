@@ -31,6 +31,12 @@
       "max_repos": {"type": "integer", "minimum": 1, "maximum": 30},
       "max_run_age_days": {"type": "integer", "minimum": 1},
       "stale_after_h": {"type": "number", "exclusiveMinimum": 0}}},
+    "snapshots": {"type": "object", "additionalProperties": false, "properties": {
+      "enabled": {"type": "boolean"},
+      "timezone": {"type": "string", "maxLength": 40},
+      "chart_months": {"type": "integer", "minimum": 2, "maximum": 24},
+      "timeline_max_items": {"type": "integer", "minimum": 3, "maximum": 12},
+      "min_timeline_events": {"type": "integer", "minimum": 1, "maximum": 12}}},
     "event_dispatch": {"type": "object", "additionalProperties": false, "properties": {
       "enabled": {"type": "boolean"},
       "target_repo": {"type": ["string", "null"], "pattern": "^[A-Za-z0-9-]+/[A-Za-z0-9_.-]+$"},
