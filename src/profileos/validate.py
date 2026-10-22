@@ -194,6 +194,13 @@ def validate(root: Path, strict: bool = False) -> Report:
             if not it["evidence"]:
                 (rep.err if strict else rep.warn)(f"stack.yml: {group}/{it['name']} has no evidence — hidden from README until confirmed")
 
+    from .history import run as history_run
+    herrs, hwarns = history_run.verify(root, (data["config"].get("snapshots") or {}).get("timezone", "UTC"))
+    for m in herrs:
+        rep.err(f"history: {m}")
+    for m in hwarns:
+        rep.warn(f"history: {m}")
+
     readme = root / "README.md"
     if not readme.exists():
         rep.err("README.md is missing")
