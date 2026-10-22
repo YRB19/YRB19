@@ -16,6 +16,7 @@ from .github.fetch import fetch_contributions, fetch_repos
 from .github.fixtures import FixtureClient
 from .status import ci as ci_status, health as health_status
 from .generators import models
+from .history import run as history_run
 from .storage.cache import Cache, iso, parse_iso, would_change, would_change_status
 from .validate import validate
 
@@ -39,6 +40,8 @@ class BuildResult:
     assets: dict = field(default_factory=dict)          # relative path -> SVG text (every asset, both modes)
     asset_changes: list = field(default_factory=list)   # relative paths added/updated/removed vs what is on disk
     asset_objects: dict = field(default_factory=dict)   # name -> Asset (title/alt/svg per mode), for previews
+    history_status: str = "disabled"                    # created | exists | skipped: <reason> | disabled
+    history_written: list = field(default_factory=list)  # snapshots/ paths created or updated (empty on dry runs)
 
 
 def utcnow():
@@ -128,7 +131,7 @@ def _refresh_status(data, datasets, ages, cache, client, now, warnings, *, fixtu
 
 
 def build(root, *, fixtures=False, dry_run=False, force=False, now=None, client=None, status_clients=None,
-          health_fetcher=None, resolver=None, sleep=None) -> BuildResult:
+          health_fetcher=None, resolver=None, sleep=None, allow_synthetic_history=False) -> BuildResult:
     root = Path(root)
     now = now or utcnow()
     rep = validate(root)
@@ -207,6 +210,13 @@ def build(root, *, fixtures=False, dry_run=False, force=False, now=None, client=
     # staleness label uses the cache's own date for datasets that fell back
     ctx_snapshot = min(snap.values()) if snap else snapshot_date
     ctx = Context(data, datasets, ages, now, ctx_snapshot if snap else snapshot_date, first_seen)
+    # ---- Phase 7: history (computed here, written only after everything rendered) -----------------------------------------
+    hist = history_run.run(
+        root, cfg=data["config"].get("snapshots"), now=now, repos=ctx.repos, activity=ctx.activity, releases=ctx.releases,
+        resolved=ctx.resolved, languages=(models.language_model(ctx) or {}).get("items", []) if "repos" in datasets else [],
+        milestones=data["history"].get("milestones", []), repos_fresh="repos" in fresh, client=client,
+        synthetic=isinstance(client, FixtureClient), allow_synthetic=allow_synthetic_history, warnings=warnings)
+    ctx.history = hist
     try:
         blocks = render_all(ctx)
         assets = visuals.files(ctx.assets)
@@ -229,6 +239,7 @@ def build(root, *, fixtures=False, dry_run=False, force=False, now=None, client=
     asset_dir = root / visuals.ASSET_DIR
     asset_changes = _plan_assets(asset_dir, assets)
 
+    written: list = []
     # ---- everything rendered and checked; only now touch the disk ----------------------------------------
     if not dry_run:
         for n in changed_data:
@@ -236,10 +247,12 @@ def build(root, *, fixtures=False, dry_run=False, force=False, now=None, client=
         if changed_data:
             cache.write("generated_at", {"api_ok": api_ok, "changed_at": iso(now)}, "profileos", now)
         _apply_assets(root, assets, asset_changes)
+        written = history_run.apply(root, hist)
         if readme_changed:
             readme_path.write_text(new, encoding="utf-8")
     return BuildResult(
-        changed=readme_changed or bool(changed_data) or bool(asset_changes),
+        changed=readme_changed or bool(changed_data) or bool(asset_changes) or bool(hist.writes),
+        history_status=hist.snapshot_status, history_written=written,
         blocks=blocks, warnings=warnings, dry_run=dry_run, assets=assets, asset_changes=asset_changes,
         asset_objects=ctx.assets,
     )
