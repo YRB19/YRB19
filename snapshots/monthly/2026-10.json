@@ -1,0 +1,122 @@
+{
+  "coverage": {
+    "closed_days_covered": 1,
+    "complete": false,
+    "days_in_month": 31,
+    "first_day": "2026-10-21",
+    "last_day": "2026-10-21",
+    "missing_days": [
+      "2026-10-01",
+      "2026-10-02",
+      "2026-10-03",
+      "2026-10-04",
+      "2026-10-05",
+      "2026-10-06",
+      "2026-10-07",
+      "2026-10-08",
+      "2026-10-09",
+      "2026-10-10",
+      "2026-10-11",
+      "2026-10-12",
+      "2026-10-13",
+      "2026-10-14",
+      "2026-10-15",
+      "2026-10-16",
+      "2026-10-17",
+      "2026-10-18",
+      "2026-10-19",
+      "2026-10-20",
+      "2026-10-22",
+      "2026-10-23",
+      "2026-10-24",
+      "2026-10-25",
+      "2026-10-26",
+      "2026-10-27",
+      "2026-10-28",
+      "2026-10-29",
+      "2026-10-30",
+      "2026-10-31"
+    ]
+  },
+  "kind": "monthly",
+  "languages": {
+    "as_of": "2026-10-22",
+    "items": [
+      {
+        "language": "TypeScript",
+        "pct": 53.4
+      },
+      {
+        "language": "JavaScript",
+        "pct": 16.7
+      },
+      {
+        "language": "Python",
+        "pct": 13.1
+      },
+      {
+        "language": "CSS",
+        "pct": 10.5
+      },
+      {
+        "language": "HTML",
+        "pct": 3.7
+      },
+      {
+        "language": "Other",
+        "pct": 2.5
+      }
+    ],
+    "statistic": "month-end reading: the last daily snapshot whose closed day is in the month"
+  },
+  "metrics": {
+    "active_repos": {
+      "statistic": "unique repositories with at least one commit on a covered day",
+      "value": 0
+    },
+    "commits": {
+      "statistic": "sum of closed-day counts over the covered days",
+      "value": 0
+    },
+    "merged_prs": {
+      "lower_bound": false,
+      "statistic": "sum of closed-day counts over the covered days",
+      "value": 0
+    },
+    "releases": {
+      "lower_bound": false,
+      "statistic": "sum of closed-day counts over the covered days",
+      "value": 0
+    }
+  },
+  "month": "2026-10",
+  "per_project": {
+    "ClipOS": {
+      "commits": 0
+    },
+    "CompanionOS": {
+      "commits": 0
+    },
+    "CosmicExplorer": {
+      "commits": 0
+    },
+    "Finwise": {
+      "commits": 0
+    },
+    "N8N-YT": {
+      "commits": 0
+    },
+    "RepoHealth": {
+      "commits": 0
+    },
+    "ResearchOS": {
+      "commits": 0
+    },
+    "UsageOS": {
+      "commits": 0
+    }
+  },
+  "repos_included_at_month_end": 15,
+  "schema": 1,
+  "timezone": "UTC"
+}

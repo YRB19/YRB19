@@ -133,7 +133,7 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/heatmap.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/heatmap.light.svg">
-  <img alt="Contribution heatmap: 782 contributions over the last year across 88 active days. GitHub&#x27;s contribution calendar: all activity, including repositories not featured here. Activity indicators, not measures of quality." src="assets/generated/heatmap.light.svg" width="432">
+  <img alt="Contribution heatmap: 816 contributions over the last year across 89 active days. GitHub&#x27;s contribution calendar: all activity, including repositories not featured here. Activity indicators, not measures of quality." src="assets/generated/heatmap.light.svg" width="432">
 </picture>
 
 <picture>
@@ -150,6 +150,18 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 <!-- PROFILEOS:END:ACTIVITY -->
 
 <!-- PROFILEOS:START:TIMELINE -->
+### Project timeline
+
+`2026-07-18` **CompanionOS** — [Repository created](https://github.com/YRB19/CompanionOS)  
+`2026-07-11` **ClipOS** — [Repository created](https://github.com/YRB19/ClipOS)  
+`2026-07-08` **UsageOS** — [Repository created](https://github.com/YRB19/UsageOS)  
+`2026-06-26` **ResearchOS** — [Repository created](https://github.com/YRB19/ResearchOS)  
+`2026-05-13` **N8N-YT** — [Repository created](https://github.com/YRB19/N8N-YT)  
+`2026-04-27` **Cosmic Explorer** — [Repository created](https://github.com/YRB19/Cosmic-Explorer)  
+`2026-03-24` **Finwise** — [Repository created](https://github.com/YRB19/Finwise)  
+`2025-10-04` **RepoHealth** — [Repository created](https://github.com/YRB19/repohealth)  
+
+<sub>Dates come from GitHub (repository creation, release publication) or sourced milestones. "First seen" is when ProfileOS first listed a project, not when it was started.</sub>
 <!-- PROFILEOS:END:TIMELINE -->
 
 ## Links
