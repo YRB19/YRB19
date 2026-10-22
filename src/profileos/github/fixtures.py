@@ -52,6 +52,13 @@ class FixtureClient:
         return 200, {}
 
     def graphql(self, query, variables):
+        if "history(since: $s, until: $u)" in query:           # closed-day commit counts (history snapshots)
+            out = {}
+            for k, v in variables.items():
+                if k.startswith("o") and k[1:].isdigit():
+                    name = variables["n" + k[1:]]
+                    out["r" + k[1:]] = {"defaultBranchRef": {"target": {"history": {"totalCount": (sum(map(ord, name)) % 5)}}}}
+            return out
         if "contributionsCollection" in query:
             return self._contrib()
         return {"user": {"repositories": {"pageInfo": {"hasNextPage": False, "endCursor": None}, "nodes": self._nodes()}}}

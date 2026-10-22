@@ -54,3 +54,13 @@ query($login: String!, $f30: DateTime!, $f365: DateTime!, $to: DateTime!) {
   }
 }
 """
+
+
+def day_commits_query(n: int) -> str:
+    """Commit counts for one closed time window across n repositories, in ONE request (aliases r0..r{n-1}).
+    Owner/name travel as variables, never interpolated into the query text."""
+    decl = ", ".join(f"$o{i}: String!, $n{i}: String!" for i in range(n))
+    body = "\n".join(
+        f"  r{i}: repository(owner: $o{i}, name: $n{i}) {{ defaultBranchRef {{ target {{ ... on Commit {{ history(since: $s, until: $u) {{ totalCount }} }} }} }} }}"
+        for i in range(n))
+    return f"query($s: GitTimestamp!, $u: GitTimestamp!, {decl}) {{\n{body}\n}}"

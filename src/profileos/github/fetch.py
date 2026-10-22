@@ -1,8 +1,10 @@
 """GraphQL fetch -> normalised, deterministic datasets."""
 import datetime as dt
+import re
 
 from ..storage.cache import iso
-from .queries import CONTRIBUTIONS_QUERY, REPOS_QUERY
+from .client import GitHubError
+from .queries import day_commits_query, CONTRIBUTIONS_QUERY, REPOS_QUERY
 
 MAX_PAGES = 10  # safety cap
 
@@ -118,3 +120,38 @@ def fetch_contributions(client, login: str, now: dt.datetime, exclude=frozenset(
         },
         "calendar": {"total": year["totalContributions"], "days": days},
     }
+
+
+_NAME = re.compile(r"^([A-Za-z0-9-]+)/([A-Za-z0-9_.-]+)$")
+
+
+def fetch_day_commits(client, full_names: list, start: str, end: str, batch: int = 20) -> dict:
+    """{full_name: commit count on the default branch in [start, end]} for a CLOSED window (both ends inclusive).
+
+    All-or-nothing: a repository that comes back null (not found / not visible), a malformed count or any request failure
+    raises GitHubError. We never turn "could not read" into 0, because a snapshot built on guessed zeros would be a
+    fabricated historical fact. A repository with no default branch (an empty repo) is a genuine 0."""
+    out: dict = {}
+    names = sorted(set(full_names))
+    for i in range(0, len(names), batch):
+        chunk = names[i:i + batch]
+        variables = {"s": start, "u": end}
+        for j, full in enumerate(chunk):
+            m = _NAME.match(full)
+            if not m:
+                raise GitHubError(f"unsafe repository name {full!r}")
+            variables[f"o{j}"], variables[f"n{j}"] = m.group(1), m.group(2)
+        data = client.graphql(day_commits_query(len(chunk)), variables)
+        for j, full in enumerate(chunk):
+            node = (data or {}).get(f"r{j}")
+            if node is None:
+                raise GitHubError(f"{full}: not readable for the closed-day commit count")
+            target = (node.get("defaultBranchRef") or {}).get("target") if node.get("defaultBranchRef") else None
+            if node.get("defaultBranchRef") is None:
+                out[full] = 0
+                continue
+            total = ((target or {}).get("history") or {}).get("totalCount")
+            if not isinstance(total, int) or total < 0:
+                raise GitHubError(f"{full}: malformed closed-day commit count")
+            out[full] = total
+    return out
