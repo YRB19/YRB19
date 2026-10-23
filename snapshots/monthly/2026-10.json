@@ -1,10 +1,10 @@
 {
   "coverage": {
-    "closed_days_covered": 1,
+    "closed_days_covered": 2,
     "complete": false,
     "days_in_month": 31,
     "first_day": "2026-10-21",
-    "last_day": "2026-10-21",
+    "last_day": "2026-10-22",
     "missing_days": [
       "2026-10-01",
       "2026-10-02",
@@ -26,7 +26,6 @@
       "2026-10-18",
       "2026-10-19",
       "2026-10-20",
-      "2026-10-22",
       "2026-10-23",
       "2026-10-24",
       "2026-10-25",
@@ -40,31 +39,31 @@
   },
   "kind": "monthly",
   "languages": {
-    "as_of": "2026-10-22",
+    "as_of": "2026-10-23",
     "items": [
       {
         "language": "TypeScript",
-        "pct": 53.4
-      },
-      {
-        "language": "JavaScript",
-        "pct": 16.7
+        "pct": 39.1
       },
       {
         "language": "Python",
-        "pct": 13.1
+        "pct": 36.3
+      },
+      {
+        "language": "JavaScript",
+        "pct": 12.2
       },
       {
         "language": "CSS",
-        "pct": 10.5
+        "pct": 7.7
       },
       {
         "language": "HTML",
-        "pct": 3.7
+        "pct": 2.7
       },
       {
         "language": "Other",
-        "pct": 2.5
+        "pct": 1.8
       }
     ],
     "statistic": "month-end reading: the last daily snapshot whose closed day is in the month"
@@ -100,10 +99,16 @@
     "CosmicExplorer": {
       "commits": 0
     },
+    "FREYA": {
+      "commits": 0
+    },
     "Finwise": {
       "commits": 0
     },
     "N8N-YT": {
+      "commits": 0
+    },
+    "NetOS": {
       "commits": 0
     },
     "RepoHealth": {
@@ -116,7 +121,7 @@
       "commits": 0
     }
   },
-  "repos_included_at_month_end": 15,
+  "repos_included_at_month_end": 17,
   "schema": 1,
   "timezone": "UTC"
 }
