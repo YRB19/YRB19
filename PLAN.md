@@ -8,8 +8,11 @@ Source of truth: `PROFILEOS_SPEC.md` (v1.0). This plan sequences it into shippab
 >   details (duration, exact permissions used) are not independently confirmed here.
 > * **Phase 6 deployment health, event dispatch and the release tracker are not live-verified** (no project has `health_check` enabled; dispatch is
 >   off; no repository has published releases yet).
-> * **Phase 7 is fixture-tested only. Snapshot scheduling has not been validated on GitHub Actions**: no real snapshot exists yet; the first one
->   is created by the first `update-profile` run after Phase 7 is merged.
+> * **Phase 7 is observed live on `main`:** a real daily snapshot (`snapshots/daily/2026/2026-10-22.json`), a monthly rollup (`2026-10`) and
+>   `snapshots/timeline.json` were committed by the workflow. What is **not** confirmed is multi-day behaviour (gaps, month rollover, drift
+>   warnings): only one day of history exists. That 22 Oct snapshot records 0 closed-day commits across 15 repos; this was not investigated.
+> * **Phase 8 is local/staged only.** Nothing has been merged to any flagship repository, no repository social preview has been set, and no
+>   repository metadata has been changed. See the Phase 8 section.
 
 Legend: ✅ built in this drop · 🟡 scaffolded · ⬜ not started
 
@@ -23,8 +26,8 @@ Legend: ✅ built in this drop · 🟡 scaffolded · ⬜ not started
 | 4 | README generators + Actions | ✅ |
 | 5 | SVG components (light/dark) | ✅ reviewed; live `update-profile` run generated all 18 assets on `main` |
 | 6 | Health, CI, releases, event dispatch | ✅ merged; CI fetch observed live (`ci.json`); health/dispatch/releases not live-verified |
-| 7 | Snapshots, rollups, timeline, retention | ✅ built + fixture-tested; **not live-verified**; awaiting your review |
-| 8 | Flagship repo READMEs + social cards | ⬜ |
+| 7 | Snapshots, rollups, timeline, retention | ✅ merged; first real snapshot/rollup/timeline observed on `main` (1 day of history) |
+| 8 | Flagship repo READMEs + social cards | ✅ staged locally; **not applied to any repo**; awaiting your review |
 | 9 | GitHub Pages app | ⬜ |
 | 10 | Hardening + docs | ⬜ |
 
@@ -162,8 +165,24 @@ recorded as history); the PR/release counts need fewer than 10 recent items per 
 date; a rewritten (force-pushed) default branch changes what the API reports but never what was already recorded; the daily snapshot is taken by the
 first run after local midnight, so its `taken_at` can be up to ~6 h after midnight; GitHub's rule for keeping scheduled workflows alive is not verified.
 
-## Phase 8 — Flagship READMEs & social cards
-§13 templates per repo; PNG cards via resvg/cairosvg; NetOS/FREYA only from verified info.
+## Phase 8 — Flagship READMEs & social cards ✅ (staged locally; not applied to any repository; pending your review)
+Principle: *the repository should show the real product, explain how it works, and substantiate every engineering claim.*
+Audited from full clones of the four repos on 2026-10-23 (source, manifests, workflows, history). Staged copies live in `flagships/<Repo>/`
+(`README.md`, `assets/social-preview.{svg,png}`, `.upstream-files` = tracked-file list used by the link check).
+
+| # | Deliverable | Where |
+|---|---|---|
+| 1 | Rewritten READMEs (UsageOS, ResearchOS, ClipOS, CompanionOS) with Mermaid architecture/flow diagrams derived from code, stack from manifests, limitations, test/CI status stated as found | `flagships/*/README.md` |
+| 2 | 1280×640 PNG social cards + SVG sources, monochrome + `#3B82F6`, text limited to verified description/technologies; rendered with CairoSVG 2.9.1 | `scripts/build_social_cards.py`, `flagships/*/assets/` |
+| 3 | README convention checker (local links/images, alt text, placeholders, local paths, secrets, MIT-without-LICENSE, static CI badges, Mermaid, card size/accent, ResearchOS Telegram guard) + tests | `src/profileos/readme_check.py`, `tests/test_flagship_readmes.py` |
+| 4 | Per-repo change summary, unresolved provenance/licence/metadata questions, how to set a social preview | `docs/FLAGSHIPS.md`, `docs/SOCIAL_PREVIEWS.md` |
+
+**Not done on purpose:** no licence added, removed or changed anywhere; no repository setting, topic, description, pin or visibility touched; no
+screenshots (none exist in any of the four repos); NetOS/FREYA READMEs untouched (they are currently `publish: true` in `data/projects.yml` by your
+choice; this phase does not present them as flagships).
+**Limitations:** Mermaid blocks were syntax-checked only by shape, not rendered by GitHub; live CompanionOS CI could not be re-queried (GitHub API
+access to that repo was not enabled in the build session) so its README quotes the 2026-10-21 cached status (failing) with that date; ProfileOS
+`data/evidence.yml` was not changed.
 
 ## Phase 9 — Pages app
 Vite + React + TS + Tailwind; dashboard, explorer, detail, activity, ecosystem, timeline, compare; `pages.yml`.
