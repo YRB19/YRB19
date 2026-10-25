@@ -330,7 +330,7 @@
     },
     "YRB19/FREYA": {
       "commits": {
-        "d30": 2,
+        "d30": 1,
         "d7": 0,
         "d90": 21
       },
@@ -814,83 +814,83 @@
     },
     "YRB19/NetOS": {
       "commits": {
-        "d30": 106,
-        "d7": 30,
-        "d90": 106
+        "d30": 114,
+        "d7": 38,
+        "d90": 114
       },
       "merged_prs": [],
       "recent_commits": [
         {
-          "changed_files": 1,
-          "date": "2026-10-24T06:53:28Z",
-          "headline": "test(slice-7): add 21 unit tests for portfolio settlement — idempoten…",
+          "changed_files": 4,
+          "date": "2026-10-25T06:20:34Z",
+          "headline": "test(slice-8): update existing pipeline tests to use JournaledHarness…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "9ca9714c6bd90909a26ff2587f035bba074b889e",
-          "url": "https://github.com/YRB19/NetOS/commit/9ca9714c6bd90909a26ff2587f035bba074b889e"
+          "sha": "86e519a76fadca57b80e90c5ec7a113c1f295faf",
+          "url": "https://github.com/YRB19/NetOS/commit/86e519a76fadca57b80e90c5ec7a113c1f295faf"
         },
         {
-          "changed_files": 5,
-          "date": "2026-10-24T06:53:22Z",
-          "headline": "docs(slice-7): document ADR-13 idempotent portfolio settlement, updat…",
+          "changed_files": 3,
+          "date": "2026-10-25T06:20:23Z",
+          "headline": "test(slice-8): add unit & integration tests for decision journal — co…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "9396e7891a355dba9908960b4a47861616bf7a5c",
-          "url": "https://github.com/YRB19/NetOS/commit/9396e7891a355dba9908960b4a47861616bf7a5c"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-10-24T06:52:50Z",
-          "headline": "feat(slice-7): add settlement recovery sweep (simulation/settlement.p…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "e231047ac464e6a9af644990173a803763b308bb",
-          "url": "https://github.com/YRB19/NetOS/commit/e231047ac464e6a9af644990173a803763b308bb"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-10-24T06:52:46Z",
-          "headline": "feat(slice-7): implement idempotent fill application & durable portfo…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "0462413f74ea91cdb2183aeb95f31a4a7b953dc0",
-          "url": "https://github.com/YRB19/NetOS/commit/0462413f74ea91cdb2183aeb95f31a4a7b953dc0"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-10-24T06:52:40Z",
-          "headline": "feat(slice-7): add PORTFOLIO_CHECKPOINT_ERROR failure category",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "eb85cbf1113e0ce1c30951bfd507c75d4601d89f",
-          "url": "https://github.com/YRB19/NetOS/commit/eb85cbf1113e0ce1c30951bfd507c75d4601d89f"
-        },
-        {
-          "changed_files": 6,
-          "date": "2026-10-23T06:43:00Z",
-          "headline": "test(slice-7): add unit tests for fee/avg-cost reconciliation, event …",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "b07f2901f4c2bfeccde3152ea45617fd3c5ca789",
-          "url": "https://github.com/YRB19/NetOS/commit/b07f2901f4c2bfeccde3152ea45617fd3c5ca789"
+          "sha": "fd550788850252c592ba573081fc703c9887cf7f",
+          "url": "https://github.com/YRB19/NetOS/commit/fd550788850252c592ba573081fc703c9887cf7f"
         },
         {
           "changed_files": 4,
-          "date": "2026-10-23T06:42:54Z",
-          "headline": "docs(slice-7): document ADR-11, ADR-12, fee/avg-cost policy, provenan…",
+          "date": "2026-10-25T06:19:49Z",
+          "headline": "docs(slice-8): document ADR-14 — decision journal & observability con…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "23e7d938d4ff313d808d6375ef0ccd87fe045397",
-          "url": "https://github.com/YRB19/NetOS/commit/23e7d938d4ff313d808d6375ef0ccd87fe045397"
+          "sha": "ebe1a7fda8c58b7c3be1bc39997fbadce5657b42",
+          "url": "https://github.com/YRB19/NetOS/commit/ebe1a7fda8c58b7c3be1bc39997fbadce5657b42"
         },
         {
-          "changed_files": 4,
-          "date": "2026-10-23T06:42:36Z",
-          "headline": "feat(slice-7): add per-fill fee reconciliation & three-way average-co…",
+          "changed_files": 2,
+          "date": "2026-10-25T06:19:33Z",
+          "headline": "feat(slice-8): integrate journal into run artifacts & result — journa…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "5da954756a3cedb2a9a36cc32a0a5e7caa1134c1",
-          "url": "https://github.com/YRB19/NetOS/commit/5da954756a3cedb2a9a36cc32a0a5e7caa1134c1"
+          "sha": "d8b813b18f695a0f4704cdcf4c1f3466b20f3447",
+          "url": "https://github.com/YRB19/NetOS/commit/d8b813b18f695a0f4704cdcf4c1f3466b20f3447"
+        },
+        {
+          "changed_files": 3,
+          "date": "2026-10-25T06:19:28Z",
+          "headline": "feat(slice-8): implement pipeline journaling adapter & wiring — RunJo…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "40126ee9132ce06936ec3a4f2096ca022228b932",
+          "url": "https://github.com/YRB19/NetOS/commit/40126ee9132ce06936ec3a4f2096ca022228b932"
+        },
+        {
+          "changed_files": 7,
+          "date": "2026-10-25T06:19:18Z",
+          "headline": "feat(slice-8): implement durable hash-chained decision journal — JSON…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "24a9b36b61a8f95e36eec5e9679e79e9e19d2cbf",
+          "url": "https://github.com/YRB19/NetOS/commit/24a9b36b61a8f95e36eec5e9679e79e9e19d2cbf"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-10-25T06:19:14Z",
+          "headline": "feat(slice-8): add structured evidence to RiskCheckResult — exact inp…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "4fd2fbcce0da2bdbc936400ddac7f1a7ad22ed8a",
+          "url": "https://github.com/YRB19/NetOS/commit/4fd2fbcce0da2bdbc936400ddac7f1a7ad22ed8a"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-10-25T06:19:11Z",
+          "headline": "feat(slice-8): add explicit no-order TerminalState members (HOLD, NO_…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "0505d262d645ee14ca99f60182759b767c82872e",
+          "url": "https://github.com/YRB19/NetOS/commit/0505d262d645ee14ca99f60182759b767c82872e"
         }
       ]
     },
@@ -1607,7 +1607,7 @@
       ]
     }
   },
-  "generated_at": "2026-10-24T11:12:26Z",
+  "generated_at": "2026-10-25T11:42:00Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"

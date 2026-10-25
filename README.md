@@ -32,14 +32,14 @@ Most commits (last 30 days): [NetOS](https://github.com/YRB19/NetOS)
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/pulse.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/pulse.light.svg">
-  <img alt="Development pulse, last 30 days: 119 commits, 3 repositories committed to, 0 pull requests, 0 releases. Public repositories shown on this profile. Activity indicators, not measures of quality." src="assets/generated/pulse.light.svg" width="432">
+  <img alt="Development pulse, last 30 days: 127 commits, 3 repositories committed to, 0 pull requests, 0 releases. Public repositories shown on this profile. Activity indicators, not measures of quality." src="assets/generated/pulse.light.svg" width="432">
 </picture>
 <!-- PROFILEOS:END:PULSE -->
 
 ## Recently Shipped
 <!-- PROFILEOS:START:RECENTLY_SHIPPED -->
-`10/24` **NetOS** — [test(slice-7): add 21 unit tests for portfolio settlement — idempoten…](https://github.com/YRB19/NetOS/commit/9ca9714c6bd90909a26ff2587f035bba074b889e)  
-`10/24` **NetOS** — [feat(slice-7): add settlement recovery sweep (simulation/settlement.p…](https://github.com/YRB19/NetOS/commit/e231047ac464e6a9af644990173a803763b308bb)  
+`10/25` **NetOS** — [test(slice-8): update existing pipeline tests to use JournaledHarness…](https://github.com/YRB19/NetOS/commit/86e519a76fadca57b80e90c5ec7a113c1f295faf)  
+`10/25` **NetOS** — [test(slice-8): add unit \& integration tests for decision journal — co…](https://github.com/YRB19/NetOS/commit/fd550788850252c592ba573081fc703c9887cf7f)  
 `10/17` **FREYA** — [feat: Phase 9A - Reconciliation health and transaction models](https://github.com/YRB19/FREYA/commit/b09ba8642a0d270c3abb5992a3a71a0958c91eb3)  
 `10/08` **UsageOS** — [feat(frontend): add save error handling for maintenance notes](https://github.com/YRB19/UsageOS/commit/a8f6a68ebbe58b1be53fa5722d73d4ca40020a64)  
 `10/08` **UsageOS** — [feat(frontend): add API key authentication via axios interceptor](https://github.com/YRB19/UsageOS/commit/4dca1f30438046c75d5effd3b0c0cc41d7fe72e0)  
@@ -104,7 +104,7 @@ Most commits (last 30 days): [NetOS](https://github.com/YRB19/NetOS)
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/card-netos.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/card-netos.light.svg">
-  <img alt="NetOS — Trading-system research harness: offline replay, data ingestion and cost modelling. Stack: Python, pytest, Ruff, mypy. CI failing, last run 2026-10-24. Last push 2026-10-24. 1 star." src="assets/generated/card-netos.light.svg" width="432">
+  <img alt="NetOS — Trading-system research harness: offline replay, data ingestion and cost modelling. Stack: Python, pytest, Ruff, mypy. CI failing, last run 2026-10-25. Last push 2026-10-25. 1 star." src="assets/generated/card-netos.light.svg" width="432">
 </picture>
 </a>
 
@@ -156,19 +156,19 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/heatmap.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/heatmap.light.svg">
-  <img alt="Contribution heatmap: 864 contributions over the last year across 90 active days. GitHub&#x27;s contribution calendar: all activity, including repositories not featured here. Activity indicators, not measures of quality." src="assets/generated/heatmap.light.svg" width="432">
+  <img alt="Contribution heatmap: 872 contributions over the last year across 90 active days. GitHub&#x27;s contribution calendar: all activity, including repositories not featured here. Activity indicators, not measures of quality." src="assets/generated/heatmap.light.svg" width="432">
 </picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/activity.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/activity.light.svg">
-  <img alt="Commits by project, last 30 days: UsageOS 11, NetOS 106, FREYA 2. Projects shown on this profile, default-branch commits. An activity signal." src="assets/generated/activity.light.svg" width="432">
+  <img alt="Commits by project, last 30 days: UsageOS 11, NetOS 114, FREYA 1. Projects shown on this profile, default-branch commits. An activity signal." src="assets/generated/activity.light.svg" width="432">
 </picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/languages.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/languages.light.svg">
-  <img alt="Languages by bytes of code in public repositories: TypeScript 38.3%, Python 37.7%, JavaScript 12.0%, CSS 7.6%, HTML 2.7%, Other 1.8%. Public non-fork repositories, by bytes of code. Not a skill measure." src="assets/generated/languages.light.svg" width="432">
+  <img alt="Languages by bytes of code in public repositories: Python 39.1%, TypeScript 37.4%, JavaScript 11.7%, CSS 7.4%, HTML 2.6%, Other 1.7%. Public non-fork repositories, by bytes of code. Not a skill measure." src="assets/generated/languages.light.svg" width="432">
 </picture>
 <!-- PROFILEOS:END:ACTIVITY -->
 
