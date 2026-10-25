@@ -1,10 +1,10 @@
 {
   "coverage": {
-    "closed_days_covered": 3,
+    "closed_days_covered": 4,
     "complete": false,
     "days_in_month": 31,
     "first_day": "2026-10-21",
-    "last_day": "2026-10-23",
+    "last_day": "2026-10-24",
     "missing_days": [
       "2026-10-01",
       "2026-10-02",
@@ -26,7 +26,6 @@
       "2026-10-18",
       "2026-10-19",
       "2026-10-20",
-      "2026-10-24",
       "2026-10-25",
       "2026-10-26",
       "2026-10-27",
@@ -38,23 +37,23 @@
   },
   "kind": "monthly",
   "languages": {
-    "as_of": "2026-10-24",
+    "as_of": "2026-10-25",
     "items": [
       {
         "language": "TypeScript",
-        "pct": 39.1
+        "pct": 38.3
       },
       {
         "language": "Python",
-        "pct": 36.3
+        "pct": 37.7
       },
       {
         "language": "JavaScript",
-        "pct": 12.2
+        "pct": 12.0
       },
       {
         "language": "CSS",
-        "pct": 7.7
+        "pct": 7.6
       },
       {
         "language": "HTML",
@@ -70,11 +69,11 @@
   "metrics": {
     "active_repos": {
       "statistic": "unique repositories with at least one commit on a covered day",
-      "value": 0
+      "value": 1
     },
     "commits": {
       "statistic": "sum of closed-day counts over the covered days",
-      "value": 0
+      "value": 5
     },
     "merged_prs": {
       "lower_bound": false,
@@ -108,7 +107,7 @@
       "commits": 0
     },
     "NetOS": {
-      "commits": 0
+      "commits": 5
     },
     "RepoHealth": {
       "commits": 0
