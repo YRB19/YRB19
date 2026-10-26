@@ -1,0 +1,233 @@
+{
+  "closed_day": {
+    "date": "2026-10-25",
+    "end": "2026-10-25T23:59:59Z",
+    "start": "2026-10-25T00:00:00Z"
+  },
+  "date": "2026-10-26",
+  "kind": "daily",
+  "languages": [
+    {
+      "language": "Python",
+      "pct": 39.1
+    },
+    {
+      "language": "TypeScript",
+      "pct": 37.4
+    },
+    {
+      "language": "JavaScript",
+      "pct": 11.7
+    },
+    {
+      "language": "CSS",
+      "pct": 7.4
+    },
+    {
+      "language": "HTML",
+      "pct": 2.6
+    },
+    {
+      "language": "Other",
+      "pct": 1.7
+    }
+  ],
+  "projects": {
+    "ClipOS": {
+      "closed_day": {
+        "commits": 0,
+        "merged_prs": 0,
+        "releases": 0
+      },
+      "pushed_on": "2026-08-02",
+      "repo_created_on": "2026-07-11",
+      "rolling": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 3
+      }
+    },
+    "CompanionOS": {
+      "closed_day": {
+        "commits": 0,
+        "merged_prs": 0,
+        "releases": 0
+      },
+      "pushed_on": "2026-07-29",
+      "repo_created_on": "2026-07-18",
+      "rolling": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 1
+      }
+    },
+    "CosmicExplorer": {
+      "closed_day": {
+        "commits": 0,
+        "merged_prs": 0,
+        "releases": 0
+      },
+      "pushed_on": "2026-05-08",
+      "repo_created_on": "2026-04-27",
+      "rolling": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      }
+    },
+    "FREYA": {
+      "closed_day": {
+        "commits": 0,
+        "merged_prs": 0,
+        "releases": 0
+      },
+      "pushed_on": "2026-10-17",
+      "repo_created_on": "2026-09-10",
+      "rolling": {
+        "d30": 1,
+        "d7": 0,
+        "d90": 21
+      }
+    },
+    "Finwise": {
+      "closed_day": {
+        "commits": 0,
+        "merged_prs": 0,
+        "releases": 0
+      },
+      "pushed_on": "2026-04-12",
+      "repo_created_on": "2026-03-24",
+      "rolling": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      }
+    },
+    "N8N-YT": {
+      "closed_day": {
+        "commits": 0,
+        "merged_prs": 0,
+        "releases": 0
+      },
+      "pushed_on": "2026-05-13",
+      "repo_created_on": "2026-05-13",
+      "rolling": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      }
+    },
+    "NetOS": {
+      "closed_day": {
+        "commits": 8,
+        "merged_prs": 0,
+        "releases": 0
+      },
+      "pushed_on": "2026-10-25",
+      "repo_created_on": "2026-09-05",
+      "rolling": {
+        "d30": 114,
+        "d7": 25,
+        "d90": 114
+      }
+    },
+    "RepoHealth": {
+      "closed_day": {
+        "commits": 0,
+        "merged_prs": 0,
+        "releases": 0
+      },
+      "pushed_on": "2026-05-16",
+      "repo_created_on": "2025-10-04",
+      "rolling": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 0
+      }
+    },
+    "ResearchOS": {
+      "closed_day": {
+        "commits": 0,
+        "merged_prs": 0,
+        "releases": 0
+      },
+      "pushed_on": "2026-08-03",
+      "repo_created_on": "2026-06-26",
+      "rolling": {
+        "d30": 0,
+        "d7": 0,
+        "d90": 8
+      }
+    },
+    "UsageOS": {
+      "closed_day": {
+        "commits": 0,
+        "merged_prs": 0,
+        "releases": 0
+      },
+      "pushed_on": "2026-10-08",
+      "repo_created_on": "2026-07-08",
+      "rolling": {
+        "d30": 11,
+        "d7": 0,
+        "d90": 21
+      }
+    }
+  },
+  "repos": {
+    "active_on_closed_day": [
+      "YRB19/NetOS"
+    ],
+    "included": 17,
+    "names": [
+      "YRB19/Capstone-GOW",
+      "YRB19/ClipOS",
+      "YRB19/CompanionOS",
+      "YRB19/Cosmic-Explorer",
+      "YRB19/FREYA",
+      "YRB19/Finwise",
+      "YRB19/Hackathon-16-hrs",
+      "YRB19/Hackathon-16hrs",
+      "YRB19/IPL_auction",
+      "YRB19/N8N-YT",
+      "YRB19/NetOS",
+      "YRB19/Pokmon-card-trading-exchange",
+      "YRB19/ResearchOS",
+      "YRB19/UsageOS",
+      "YRB19/d",
+      "YRB19/pokemon-web",
+      "YRB19/repohealth"
+    ]
+  },
+  "schema": 1,
+  "scope": {
+    "rules": {
+      "closed_day": "Counts for one complete day in the snapshot timezone (the day before `date`), as the inclusive UTC window [start, end]. Closed days never overlap, so they can be summed.",
+      "commits": "Commits on each repository's default branch, any author, by committer date, in the window.",
+      "languages": "Share of code bytes across the included repositories, as drawn on the profile. A point-in-time reading.",
+      "merged_prs": "Pull requests merged in the window. null when the repository returned a full page of recent PRs (so a complete count cannot be established).",
+      "releases": "Published, non-draft releases in the window. null when a full page of releases came back.",
+      "repos": "Public, non-fork repositories, excluding the profile repository and any project not published. Private repositories are never read into a snapshot.",
+      "rolling": "Rolling default-branch commit counts ending at taken_at (last 7/30/90 days). Windows overlap day to day: point-in-time readings, never to be summed or compared as monthly totals."
+    },
+    "summary": "Public non-fork repositories other than the profile repository and unpublished projects. Default-branch commit counts; an activity signal, not a quality measure."
+  },
+  "source": {
+    "name": "github-graphql",
+    "repos_fetched_at": "2026-10-26T04:56:27Z"
+  },
+  "taken_at": "2026-10-26T04:56:27Z",
+  "timezone": "UTC",
+  "totals": {
+    "closed_day": {
+      "commits": 8,
+      "merged_prs": 0,
+      "releases": 0
+    },
+    "rolling": {
+      "d30": 126,
+      "d7": 25,
+      "d90": 168
+    }
+  }
+}
