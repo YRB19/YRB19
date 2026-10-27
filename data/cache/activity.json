@@ -168,7 +168,7 @@
       "commits": {
         "d30": 0,
         "d7": 0,
-        "d90": 1
+        "d90": 0
       },
       "merged_prs": [],
       "recent_commits": [
@@ -814,83 +814,83 @@
     },
     "YRB19/NetOS": {
       "commits": {
-        "d30": 115,
-        "d7": 26,
-        "d90": 115
+        "d30": 124,
+        "d7": 35,
+        "d90": 124
       },
       "merged_prs": [],
       "recent_commits": [
         {
           "changed_files": 1,
-          "date": "2026-10-26T08:39:48Z",
-          "headline": "docs : README update",
+          "date": "2026-10-27T07:52:25Z",
+          "headline": "test(slice-9): add 50 unit tests for statistical validity — hand-calc…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "bf0f75d5625ecadf16cde6bc76dcdb6027986071",
-          "url": "https://github.com/YRB19/NetOS/commit/bf0f75d5625ecadf16cde6bc76dcdb6027986071"
+          "sha": "9bed4549405b0ac04cf39ecd1b61702357974620",
+          "url": "https://github.com/YRB19/NetOS/commit/9bed4549405b0ac04cf39ecd1b61702357974620"
         },
         {
-          "changed_files": 4,
-          "date": "2026-10-25T06:20:34Z",
-          "headline": "test(slice-8): update existing pipeline tests to use JournaledHarness…",
+          "changed_files": 6,
+          "date": "2026-10-27T07:52:18Z",
+          "headline": "docs(slice-9): document ADR-15..19 — protocol/trials/holdout, point-i…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "86e519a76fadca57b80e90c5ec7a113c1f295faf",
-          "url": "https://github.com/YRB19/NetOS/commit/86e519a76fadca57b80e90c5ec7a113c1f295faf"
+          "sha": "bc07601c2c80a7bf9e0d55467634bc68e7ac01c7",
+          "url": "https://github.com/YRB19/NetOS/commit/bc07601c2c80a7bf9e0d55467634bc68e7ac01c7"
         },
         {
-          "changed_files": 3,
-          "date": "2026-10-25T06:20:23Z",
-          "headline": "test(slice-8): add unit & integration tests for decision journal — co…",
+          "changed_files": 1,
+          "date": "2026-10-27T07:51:45Z",
+          "headline": "feat(slice-9): wire availability ledger into ResearchHarness — availa…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "fd550788850252c592ba573081fc703c9887cf7f",
-          "url": "https://github.com/YRB19/NetOS/commit/fd550788850252c592ba573081fc703c9887cf7f"
+          "sha": "1cffb3159cc12604fa4800c694d098c5bf9f3eeb",
+          "url": "https://github.com/YRB19/NetOS/commit/1cffb3159cc12604fa4800c694d098c5bf9f3eeb"
         },
         {
-          "changed_files": 4,
-          "date": "2026-10-25T06:19:49Z",
-          "headline": "docs(slice-8): document ADR-14 — decision journal & observability con…",
+          "changed_files": 5,
+          "date": "2026-10-27T07:51:26Z",
+          "headline": "feat(slice-9): add validity metrics & evaluation — extended metrics, …",
           "is_bot": false,
           "is_merge": false,
-          "sha": "ebe1a7fda8c58b7c3be1bc39997fbadce5657b42",
-          "url": "https://github.com/YRB19/NetOS/commit/ebe1a7fda8c58b7c3be1bc39997fbadce5657b42"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-10-25T06:19:33Z",
-          "headline": "feat(slice-8): integrate journal into run artifacts & result — journa…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "d8b813b18f695a0f4704cdcf4c1f3466b20f3447",
-          "url": "https://github.com/YRB19/NetOS/commit/d8b813b18f695a0f4704cdcf4c1f3466b20f3447"
-        },
-        {
-          "changed_files": 3,
-          "date": "2026-10-25T06:19:28Z",
-          "headline": "feat(slice-8): implement pipeline journaling adapter & wiring — RunJo…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "40126ee9132ce06936ec3a4f2096ca022228b932",
-          "url": "https://github.com/YRB19/NetOS/commit/40126ee9132ce06936ec3a4f2096ca022228b932"
-        },
-        {
-          "changed_files": 7,
-          "date": "2026-10-25T06:19:18Z",
-          "headline": "feat(slice-8): implement durable hash-chained decision journal — JSON…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "24a9b36b61a8f95e36eec5e9679e79e9e19d2cbf",
-          "url": "https://github.com/YRB19/NetOS/commit/24a9b36b61a8f95e36eec5e9679e79e9e19d2cbf"
+          "sha": "58a1c5d2f00b34b4d94740b7cc2bef9e756d1c00",
+          "url": "https://github.com/YRB19/NetOS/commit/58a1c5d2f00b34b4d94740b7cc2bef9e756d1c00"
         },
         {
           "changed_files": 2,
-          "date": "2026-10-25T06:19:14Z",
-          "headline": "feat(slice-8): add structured evidence to RiskCheckResult — exact inp…",
+          "date": "2026-10-27T07:51:21Z",
+          "headline": "feat(slice-9): add PBO and regime segmentation stats — CSCV/PBO, tren…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "4fd2fbcce0da2bdbc936400ddac7f1a7ad22ed8a",
-          "url": "https://github.com/YRB19/NetOS/commit/4fd2fbcce0da2bdbc936400ddac7f1a7ad22ed8a"
+          "sha": "c3fe7ffce9be1b307762bb3b038f2e3f453738c4",
+          "url": "https://github.com/YRB19/NetOS/commit/c3fe7ffce9be1b307762bb3b038f2e3f453738c4"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-10-27T07:51:17Z",
+          "headline": "feat(slice-9): add walk-forward plan + purge/embargo — explicit docum…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "fa68768610a579f997a7e1a8317db7412556a850",
+          "url": "https://github.com/YRB19/NetOS/commit/fa68768610a579f997a7e1a8317db7412556a850"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-10-27T07:51:14Z",
+          "headline": "feat(slice-9): add point-in-time availability sidecar contract — avai…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "92f5cd06071287e8989259ed8c3150cae464c2da",
+          "url": "https://github.com/YRB19/NetOS/commit/92f5cd06071287e8989259ed8c3150cae464c2da"
+        },
+        {
+          "changed_files": 3,
+          "date": "2026-10-27T07:51:08Z",
+          "headline": "feat(slice-9): add hash-chained trial ledger + holdout exposure regis…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "e0bd65d7d3e68af692ab78377bb2db76bbdbc551",
+          "url": "https://github.com/YRB19/NetOS/commit/e0bd65d7d3e68af692ab78377bb2db76bbdbc551"
         }
       ]
     },
@@ -1607,7 +1607,7 @@
       ]
     }
   },
-  "generated_at": "2026-10-26T13:14:23Z",
+  "generated_at": "2026-10-27T12:22:33Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
