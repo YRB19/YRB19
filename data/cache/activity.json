@@ -814,8 +814,8 @@
     },
     "YRB19/NetOS": {
       "commits": {
-        "d30": 124,
-        "d7": 35,
+        "d30": 71,
+        "d7": 28,
         "d90": 124
       },
       "merged_prs": [],
@@ -891,6 +891,88 @@
           "is_merge": false,
           "sha": "e0bd65d7d3e68af692ab78377bb2db76bbdbc551",
           "url": "https://github.com/YRB19/NetOS/commit/e0bd65d7d3e68af692ab78377bb2db76bbdbc551"
+        }
+      ]
+    },
+    "YRB19/PersonaOS": {
+      "commits": {
+        "d30": 6,
+        "d7": 4,
+        "d90": 6
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 0,
+          "date": "2026-10-27T18:27:18Z",
+          "headline": "merge: integrate origin/master into local master",
+          "is_bot": false,
+          "is_merge": true,
+          "sha": "07533e1a5cd5ea8b1ae9f063f98b17f6f04cdf90",
+          "url": "https://github.com/YRB19/PersonaOS/commit/07533e1a5cd5ea8b1ae9f063f98b17f6f04cdf90"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-10-27T18:27:02Z",
+          "headline": "chore: fix trailing whitespace in requirements.txt",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "4c7611ba3bd3e60e2fdff3dc10469af04b0eb246",
+          "url": "https://github.com/YRB19/PersonaOS/commit/4c7611ba3bd3e60e2fdff3dc10469af04b0eb246"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-10-27T18:10:47Z",
+          "headline": "Add bugs.md and bugs.txt to .gitignore",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "0533d17e4d4666f9241c423cffe12a3ec3d3f20c",
+          "url": "https://github.com/YRB19/PersonaOS/commit/0533d17e4d4666f9241c423cffe12a3ec3d3f20c"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-10-27T18:09:52Z",
+          "headline": "Update .gitignore to exclude 'bugs'",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "35f0578347da9945c577cc3b1f9e0f072cf86f5d",
+          "url": "https://github.com/YRB19/PersonaOS/commit/35f0578347da9945c577cc3b1f9e0f072cf86f5d"
+        },
+        {
+          "changed_files": 11,
+          "date": "2026-10-02T05:41:08Z",
+          "headline": "chore(privacy): scrub real contact names from tracked files",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "b2f6ee956a847e79b0f30b0a16686b65be8b8cba",
+          "url": "https://github.com/YRB19/PersonaOS/commit/b2f6ee956a847e79b0f30b0a16686b65be8b8cba"
+        },
+        {
+          "changed_files": 6,
+          "date": "2026-10-01T14:45:08Z",
+          "headline": "fix(api): unpack v6 generate() tuple in /suggest/reply; repair API/sm…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "5500bb4ae3f8d06de69bc6d0caa9668d01314c69",
+          "url": "https://github.com/YRB19/PersonaOS/commit/5500bb4ae3f8d06de69bc6d0caa9668d01314c69"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-07-26T09:49:23Z",
+          "headline": "docs: fix parse command arg (single FILE, not PATHS...) and add missi…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "47cce5f78a68f5872488dffe33f8ef47ad96ff16",
+          "url": "https://github.com/YRB19/PersonaOS/commit/47cce5f78a68f5872488dffe33f8ef47ad96ff16"
+        },
+        {
+          "changed_files": 3,
+          "date": "2026-07-26T09:48:13Z",
+          "headline": "fix(profiler): stop honorific address terms (bhaiya) from overriding",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "754fa14b97fe139527dfc61f54ecc0f7cf4854e2",
+          "url": "https://github.com/YRB19/PersonaOS/commit/754fa14b97fe139527dfc61f54ecc0f7cf4854e2"
         }
       ]
     },
@@ -1115,12 +1197,21 @@
     },
     "YRB19/UsageOS": {
       "commits": {
-        "d30": 11,
-        "d7": 0,
-        "d90": 21
+        "d30": 12,
+        "d7": 1,
+        "d90": 22
       },
       "merged_prs": [],
       "recent_commits": [
+        {
+          "changed_files": 1,
+          "date": "2026-10-27T17:56:48Z",
+          "headline": "Revise README for clarity and structure",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "0b426ad7a3a546123ad3bdb522bb158a275de716",
+          "url": "https://github.com/YRB19/UsageOS/commit/0b426ad7a3a546123ad3bdb522bb158a275de716"
+        },
         {
           "changed_files": 2,
           "date": "2026-10-08T08:43:41Z",
@@ -1183,15 +1274,6 @@
           "is_merge": false,
           "sha": "104a1c225ad18e625e1ce8fd62fd8baf81cda494",
           "url": "https://github.com/YRB19/UsageOS/commit/104a1c225ad18e625e1ce8fd62fd8baf81cda494"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-09-30T06:16:22Z",
-          "headline": "fix(extension): remove deprecated rate-limit-watcher injection",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "79e64873ba18cc14e0239286cf41526718c4fe59",
-          "url": "https://github.com/YRB19/UsageOS/commit/79e64873ba18cc14e0239286cf41526718c4fe59"
         }
       ]
     },
@@ -1607,7 +1689,7 @@
       ]
     }
   },
-  "generated_at": "2026-10-27T12:22:33Z",
+  "generated_at": "2026-10-27T22:22:01Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
