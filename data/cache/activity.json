@@ -86,7 +86,7 @@
       "commits": {
         "d30": 0,
         "d7": 0,
-        "d90": 3
+        "d90": 0
       },
       "merged_prs": [],
       "recent_commits": [
@@ -814,7 +814,7 @@
     },
     "YRB19/NetOS": {
       "commits": {
-        "d30": 67,
+        "d30": 60,
         "d7": 28,
         "d90": 124
       },
@@ -1197,83 +1197,83 @@
     },
     "YRB19/UsageOS": {
       "commits": {
-        "d30": 12,
-        "d7": 1,
-        "d90": 22
+        "d30": 23,
+        "d7": 12,
+        "d90": 33
       },
       "merged_prs": [],
       "recent_commits": [
         {
-          "changed_files": 1,
-          "date": "2026-10-27T17:56:48Z",
-          "headline": "Revise README for clarity and structure",
+          "changed_files": 8,
+          "date": "2026-10-29T16:33:52Z",
+          "headline": "fix(extension): small fixes for options, popup, container strategy, a…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "0b426ad7a3a546123ad3bdb522bb158a275de716",
-          "url": "https://github.com/YRB19/UsageOS/commit/0b426ad7a3a546123ad3bdb522bb158a275de716"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-10-08T08:43:41Z",
-          "headline": "chore(docker): add VITE_API_KEY build argument",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "9a84dae9b2d31f489c07c8c6645b54c0062e49ea",
-          "url": "https://github.com/YRB19/UsageOS/commit/9a84dae9b2d31f489c07c8c6645b54c0062e49ea"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-10-08T08:43:21Z",
-          "headline": "feat(frontend): add save error handling for maintenance notes",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "a8f6a68ebbe58b1be53fa5722d73d4ca40020a64",
-          "url": "https://github.com/YRB19/UsageOS/commit/a8f6a68ebbe58b1be53fa5722d73d4ca40020a64"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-10-08T08:42:53Z",
-          "headline": "feat(frontend): add API key authentication via axios interceptor",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "4dca1f30438046c75d5effd3b0c0cc41d7fe72e0",
-          "url": "https://github.com/YRB19/UsageOS/commit/4dca1f30438046c75d5effd3b0c0cc41d7fe72e0"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-10-08T08:42:15Z",
-          "headline": "feat(extension): refactor atlasSync with per-request auth, auth pause…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "0a8cee4121991a793e2a012e433178e729947d2b",
-          "url": "https://github.com/YRB19/UsageOS/commit/0a8cee4121991a793e2a012e433178e729947d2b"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-10-08T08:30:52Z",
-          "headline": "feat(extension): add limitDisplay utility and refactor account summary",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "cb5d9534274d9f1a3019f20ccd5249bf2744c0c4",
-          "url": "https://github.com/YRB19/UsageOS/commit/cb5d9534274d9f1a3019f20ccd5249bf2744c0c4"
+          "sha": "a9c30742d62c5789c7218ea5b20fc995c17530dc",
+          "url": "https://github.com/YRB19/UsageOS/commit/a9c30742d62c5789c7218ea5b20fc995c17530dc"
         },
         {
           "changed_files": 4,
-          "date": "2026-09-30T06:18:50Z",
-          "headline": "feat(frontend): add maintenance notes and dashboard updates",
+          "date": "2026-10-29T16:33:52Z",
+          "headline": "refactor(extension): update chrome and firefox manifests, remove elec…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "853c622db54fc4b179f60ac7bae9d7a577122eb0",
-          "url": "https://github.com/YRB19/UsageOS/commit/853c622db54fc4b179f60ac7bae9d7a577122eb0"
+          "sha": "b14dae20be22e169e778810960e551c09513a298",
+          "url": "https://github.com/YRB19/UsageOS/commit/b14dae20be22e169e778810960e551c09513a298"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-10-29T16:33:52Z",
+          "headline": "fix(extension): update usage-sse-watcher injection",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "dceee2c4564ca888d7a3083d76127ce135a87c06",
+          "url": "https://github.com/YRB19/UsageOS/commit/dceee2c4564ca888d7a3083d76127ce135a87c06"
+        },
+        {
+          "changed_files": 6,
+          "date": "2026-10-29T16:33:52Z",
+          "headline": "refactor(extension): update content scripts for notes, free plan, and…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "33ace2457c1d889829e334c728cfc546dc112595",
+          "url": "https://github.com/YRB19/UsageOS/commit/33ace2457c1d889829e334c728cfc546dc112595"
         },
         {
           "changed_files": 3,
-          "date": "2026-09-30T06:16:56Z",
-          "headline": "fix: replace personal identity with generic placeholders",
+          "date": "2026-10-29T16:33:52Z",
+          "headline": "feat(extension): enhance token management and shared dataclasses",
           "is_bot": false,
           "is_merge": false,
-          "sha": "104a1c225ad18e625e1ce8fd62fd8baf81cda494",
-          "url": "https://github.com/YRB19/UsageOS/commit/104a1c225ad18e625e1ce8fd62fd8baf81cda494"
+          "sha": "2c5ad098e67ffb1beb00eb403e8e3a1fd8db1bf7",
+          "url": "https://github.com/YRB19/UsageOS/commit/2c5ad098e67ffb1beb00eb403e8e3a1fd8db1bf7"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-10-29T16:33:52Z",
+          "headline": "feat(extension): enhance claude-api with SSE usage and cache invalida…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "b2f20c9f3a695a82c55e71558ab5c008c5b7944a",
+          "url": "https://github.com/YRB19/UsageOS/commit/b2f20c9f3a695a82c55e71558ab5c008c5b7944a"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-10-29T16:33:52Z",
+          "headline": "refactor(extension): refactor background.js and atlasSync with per-re…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "204775c065a18eeff0a9b70305fa2b113bbe2f45",
+          "url": "https://github.com/YRB19/UsageOS/commit/204775c065a18eeff0a9b70305fa2b113bbe2f45"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-10-29T16:33:52Z",
+          "headline": "feat(extension): add request relay and request hook injections",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "c7f928ed79fbbc71c6c9c58d8d255c71905880df",
+          "url": "https://github.com/YRB19/UsageOS/commit/c7f928ed79fbbc71c6c9c58d8d255c71905880df"
         }
       ]
     },
@@ -1689,7 +1689,7 @@
       ]
     }
   },
-  "generated_at": "2026-10-29T13:13:37Z",
+  "generated_at": "2026-10-29T22:49:27Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"

@@ -521,13 +521,11 @@
       "is_fork": false,
       "is_private": false,
       "languages": {
-        "Batchfile": 903,
-        "CSS": 6358,
+        "CSS": 5986,
         "Dockerfile": 1109,
-        "HTML": 28347,
-        "JavaScript": 475823,
+        "HTML": 28391,
+        "JavaScript": 709547,
         "Mako": 659,
-        "PowerShell": 925,
         "Python": 40979,
         "TypeScript": 79537
       },
@@ -536,7 +534,7 @@
       "open_issues": 2,
       "open_prs": 0,
       "primary_language": "JavaScript",
-      "pushed_at": "2026-10-27T17:56:48Z",
+      "pushed_at": "2026-10-29T16:34:01Z",
       "stars": 1,
       "topics": [],
       "url": "https://github.com/YRB19/UsageOS"
@@ -566,7 +564,7 @@
       "url": "https://github.com/YRB19/Wan2.2"
     }
   ],
-  "generated_at": "2026-10-27T22:22:01Z",
+  "generated_at": "2026-10-29T22:49:27Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
