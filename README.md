@@ -163,7 +163,7 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/activity.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/activity.light.svg">
-  <img alt="Commits by project, last 30 days: UsageOS 12, NetOS 71, FREYA 1. Projects shown on this profile, default-branch commits. An activity signal." src="assets/generated/activity.light.svg" width="432">
+  <img alt="Commits by project, last 30 days: UsageOS 12, NetOS 67, FREYA 1. Projects shown on this profile, default-branch commits. An activity signal." src="assets/generated/activity.light.svg" width="432">
 </picture>
 
 <picture>
