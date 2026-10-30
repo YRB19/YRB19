@@ -815,7 +815,7 @@
     "YRB19/NetOS": {
       "commits": {
         "d30": 60,
-        "d7": 28,
+        "d7": 23,
         "d90": 124
       },
       "merged_prs": [],
@@ -1197,7 +1197,7 @@
     },
     "YRB19/UsageOS": {
       "commits": {
-        "d30": 23,
+        "d30": 17,
         "d7": 12,
         "d90": 33
       },
@@ -1689,7 +1689,7 @@
       ]
     }
   },
-  "generated_at": "2026-10-29T22:49:27Z",
+  "generated_at": "2026-10-30T13:05:58Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
