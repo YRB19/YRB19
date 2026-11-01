@@ -814,83 +814,83 @@
     },
     "YRB19/NetOS": {
       "commits": {
-        "d30": 48,
-        "d7": 18,
-        "d90": 124
+        "d30": 66,
+        "d7": 28,
+        "d90": 142
       },
       "merged_prs": [],
       "recent_commits": [
         {
           "changed_files": 1,
-          "date": "2026-10-27T07:52:25Z",
-          "headline": "test(slice-9): add 50 unit tests for statistical validity — hand-calc…",
+          "date": "2026-11-01T09:33:09Z",
+          "headline": "chore(slice-10): .gitignore for console/frontend build artifacts",
           "is_bot": false,
           "is_merge": false,
-          "sha": "9bed4549405b0ac04cf39ecd1b61702357974620",
-          "url": "https://github.com/YRB19/NetOS/commit/9bed4549405b0ac04cf39ecd1b61702357974620"
+          "sha": "7c495da315e62833256d526d2a46d5dcb1b20f69",
+          "url": "https://github.com/YRB19/NetOS/commit/7c495da315e62833256d526d2a46d5dcb1b20f69"
+        },
+        {
+          "changed_files": 19,
+          "date": "2026-11-01T09:33:05Z",
+          "headline": "test(slice-7): update lifecycle, reconciliation, broker, sizing, pipe…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "d268d483d78189d3ee5adfbbeb34562b3d0f5a12",
+          "url": "https://github.com/YRB19/NetOS/commit/d268d483d78189d3ee5adfbbeb34562b3d0f5a12"
+        },
+        {
+          "changed_files": 8,
+          "date": "2026-11-01T09:33:00Z",
+          "headline": "fix(slice-6): domain models, shared arch_lint, data features, intelli…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "04723a965dd7bc13e60127e270f9b49bf48bde49",
+          "url": "https://github.com/YRB19/NetOS/commit/04723a965dd7bc13e60127e270f9b49bf48bde49"
         },
         {
           "changed_files": 6,
-          "date": "2026-10-27T07:52:18Z",
-          "headline": "docs(slice-9): document ADR-15..19 — protocol/trials/holdout, point-i…",
+          "date": "2026-11-01T09:32:55Z",
+          "headline": "fix(slice-7): simulation — journaling wiring, settlement, runner inte…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "bc07601c2c80a7bf9e0d55467634bc68e7ac01c7",
-          "url": "https://github.com/YRB19/NetOS/commit/bc07601c2c80a7bf9e0d55467634bc68e7ac01c7"
+          "sha": "4fffedfb6b074473f20da93a43c661eec44ed2dd",
+          "url": "https://github.com/YRB19/NetOS/commit/4fffedfb6b074473f20da93a43c661eec44ed2dd"
         },
         {
-          "changed_files": 1,
-          "date": "2026-10-27T07:51:45Z",
-          "headline": "feat(slice-9): wire availability ledger into ResearchHarness — availa…",
+          "changed_files": 6,
+          "date": "2026-11-01T09:32:52Z",
+          "headline": "fix(slice-7): reconciliation + risk engine + sizing refinements — rec…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "1cffb3159cc12604fa4800c694d098c5bf9f3eeb",
-          "url": "https://github.com/YRB19/NetOS/commit/1cffb3159cc12604fa4800c694d098c5bf9f3eeb"
+          "sha": "2e4e71a8c400caa2717a8ca47968cfb6e392e5f3",
+          "url": "https://github.com/YRB19/NetOS/commit/2e4e71a8c400caa2717a8ca47968cfb6e392e5f3"
+        },
+        {
+          "changed_files": 6,
+          "date": "2026-11-01T09:32:47Z",
+          "headline": "fix(slice-7): broker adapters + order lifecycle + manager refinements…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "9befa6b6f2ba2914a6c571f59259000a60daea70",
+          "url": "https://github.com/YRB19/NetOS/commit/9befa6b6f2ba2914a6c571f59259000a60daea70"
         },
         {
           "changed_files": 5,
-          "date": "2026-10-27T07:51:26Z",
-          "headline": "feat(slice-9): add validity metrics & evaluation — extended metrics, …",
+          "date": "2026-11-01T09:32:44Z",
+          "headline": "fix(slice-8): decision log hardening — journal chaining, query, recor…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "58a1c5d2f00b34b4d94740b7cc2bef9e756d1c00",
-          "url": "https://github.com/YRB19/NetOS/commit/58a1c5d2f00b34b4d94740b7cc2bef9e756d1c00"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-10-27T07:51:21Z",
-          "headline": "feat(slice-9): add PBO and regime segmentation stats — CSCV/PBO, tren…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "c3fe7ffce9be1b307762bb3b038f2e3f453738c4",
-          "url": "https://github.com/YRB19/NetOS/commit/c3fe7ffce9be1b307762bb3b038f2e3f453738c4"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-10-27T07:51:17Z",
-          "headline": "feat(slice-9): add walk-forward plan + purge/embargo — explicit docum…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "fa68768610a579f997a7e1a8317db7412556a850",
-          "url": "https://github.com/YRB19/NetOS/commit/fa68768610a579f997a7e1a8317db7412556a850"
+          "sha": "fee3b695085e59ad6a8c704649a2f7fbfc934840",
+          "url": "https://github.com/YRB19/NetOS/commit/fee3b695085e59ad6a8c704649a2f7fbfc934840"
         },
         {
           "changed_files": 1,
-          "date": "2026-10-27T07:51:14Z",
-          "headline": "feat(slice-9): add point-in-time availability sidecar contract — avai…",
+          "date": "2026-11-01T09:32:42Z",
+          "headline": "test(slice-10): console API unit tests — store, readmodel, exports, e…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "92f5cd06071287e8989259ed8c3150cae464c2da",
-          "url": "https://github.com/YRB19/NetOS/commit/92f5cd06071287e8989259ed8c3150cae464c2da"
-        },
-        {
-          "changed_files": 3,
-          "date": "2026-10-27T07:51:08Z",
-          "headline": "feat(slice-9): add hash-chained trial ledger + holdout exposure regis…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "e0bd65d7d3e68af692ab78377bb2db76bbdbc551",
-          "url": "https://github.com/YRB19/NetOS/commit/e0bd65d7d3e68af692ab78377bb2db76bbdbc551"
+          "sha": "7afe7a8677562bfccae9500f2ef09a7a9c3d9bb0",
+          "url": "https://github.com/YRB19/NetOS/commit/7afe7a8677562bfccae9500f2ef09a7a9c3d9bb0"
         }
       ]
     },
@@ -1689,7 +1689,7 @@
       ]
     }
   },
-  "generated_at": "2026-11-01T06:19:09Z",
+  "generated_at": "2026-11-01T17:57:46Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
