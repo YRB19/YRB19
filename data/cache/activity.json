@@ -330,12 +330,21 @@
     },
     "YRB19/FREYA": {
       "commits": {
-        "d30": 1,
-        "d7": 0,
-        "d90": 21
+        "d30": 2,
+        "d7": 1,
+        "d90": 22
       },
       "merged_prs": [],
       "recent_commits": [
+        {
+          "changed_files": 9,
+          "date": "2026-11-05T04:23:12Z",
+          "headline": "feat: Phase 9A reconciliation framework + executor section verification",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "3346eabf682d6db4e6813675e2c0a9f6b23627b9",
+          "url": "https://github.com/YRB19/FREYA/commit/3346eabf682d6db4e6813675e2c0a9f6b23627b9"
+        },
         {
           "changed_files": 6,
           "date": "2026-10-17T10:38:12Z",
@@ -398,15 +407,6 @@
           "is_merge": false,
           "sha": "13d2a61120b3482930852e3d8b0ac83867fd3c6e",
           "url": "https://github.com/YRB19/FREYA/commit/13d2a61120b3482930852e3d8b0ac83867fd3c6e"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-09-18T10:14:14Z",
-          "headline": "feat: Phase 8 - Runner CLI with --db-path argument",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "77771105eed40a05ad2d9986d29ae7af721da0e5",
-          "url": "https://github.com/YRB19/FREYA/commit/77771105eed40a05ad2d9986d29ae7af721da0e5"
         }
       ]
     },
@@ -1689,7 +1689,7 @@
       ]
     }
   },
-  "generated_at": "2026-11-03T19:33:45Z",
+  "generated_at": "2026-11-05T06:57:11Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"

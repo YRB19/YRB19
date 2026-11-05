@@ -15,12 +15,12 @@ My projects usually start with a practical problem and grow into systems around 
 <!-- PROFILEOS:START:CURRENTLY_BUILDING -->
 ● [NetOS](https://github.com/YRB19/NetOS) — active  
 ● [UsageOS](https://github.com/YRB19/UsageOS) — active  
-○ [FREYA](https://github.com/YRB19/FREYA) — quieter
+● [FREYA](https://github.com/YRB19/FREYA) — active
 <!-- PROFILEOS:END:CURRENTLY_BUILDING -->
 
 <!-- PROFILEOS:START:NOW -->
 **NOW**  
-Building: [NetOS](https://github.com/YRB19/NetOS) · [UsageOS](https://github.com/YRB19/UsageOS)  
+Building: [NetOS](https://github.com/YRB19/NetOS) · [UsageOS](https://github.com/YRB19/UsageOS) · [FREYA](https://github.com/YRB19/FREYA)  
 Exploring: Agentic systems · AI infrastructure  
 Learning: Systems design · Distributed workflows  
 Newest build: [FREYA](https://github.com/YRB19/FREYA) · created 2026-09-10  
@@ -33,18 +33,18 @@ New build: [PersonaOS](https://github.com/YRB19/PersonaOS) · first seen 2026-10
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/pulse.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/pulse.light.svg">
-  <img alt="Development pulse, last 30 days: 92 commits, 4 repositories committed to, 0 pull requests, 0 releases. Public repositories shown on this profile. Activity indicators, not measures of quality." src="assets/generated/pulse.light.svg" width="432">
+  <img alt="Development pulse, last 30 days: 93 commits, 4 repositories committed to, 0 pull requests, 0 releases. Public repositories shown on this profile. Activity indicators, not measures of quality." src="assets/generated/pulse.light.svg" width="432">
 </picture>
 <!-- PROFILEOS:END:PULSE -->
 
 ## Recently Shipped
 <!-- PROFILEOS:START:RECENTLY_SHIPPED -->
+`11/05` **FREYA** — [feat: Phase 9A reconciliation framework + executor section verification](https://github.com/YRB19/FREYA/commit/3346eabf682d6db4e6813675e2c0a9f6b23627b9)  
 `11/01` **NetOS** — [test(slice-7): update lifecycle, reconciliation, broker, sizing, pipe…](https://github.com/YRB19/NetOS/commit/d268d483d78189d3ee5adfbbeb34562b3d0f5a12)  
 `11/01` **NetOS** — [fix(slice-6): domain models, shared arch\_lint, data features, intelli…](https://github.com/YRB19/NetOS/commit/04723a965dd7bc13e60127e270f9b49bf48bde49)  
 `10/29` **UsageOS** — [fix(extension): small fixes for options, popup, container strategy, a…](https://github.com/YRB19/UsageOS/commit/a9c30742d62c5789c7218ea5b20fc995c17530dc)  
 `10/29` **UsageOS** — [refactor(extension): update chrome and firefox manifests, remove elec…](https://github.com/YRB19/UsageOS/commit/b14dae20be22e169e778810960e551c09513a298)  
-`10/27` **PersonaOS** — [Add bugs.md and bugs.txt to .gitignore](https://github.com/YRB19/PersonaOS/commit/0533d17e4d4666f9241c423cffe12a3ec3d3f20c)  
-`10/27` **PersonaOS** — [Update .gitignore to exclude 'bugs'](https://github.com/YRB19/PersonaOS/commit/35f0578347da9945c577cc3b1f9e0f072cf86f5d)
+`10/27` **PersonaOS** — [Add bugs.md and bugs.txt to .gitignore](https://github.com/YRB19/PersonaOS/commit/0533d17e4d4666f9241c423cffe12a3ec3d3f20c)
 <!-- PROFILEOS:END:RECENTLY_SHIPPED -->
 
 <!-- PROFILEOS:START:RELEASES -->
@@ -113,7 +113,7 @@ New build: [PersonaOS](https://github.com/YRB19/PersonaOS) · first seen 2026-10
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/card-freya.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/card-freya.light.svg">
-  <img alt="FREYA — Background daemon that watches a notes vault and plans canonical knowledge updates. Stack: Python, SQLite, watchdog, Obsidian MCP. Last push 2026-10-17. 1 star." src="assets/generated/card-freya.light.svg" width="432">
+  <img alt="FREYA — Background daemon that watches a notes vault and plans canonical knowledge updates. Stack: Python, SQLite, watchdog, Obsidian MCP. Last push 2026-11-05. 1 star." src="assets/generated/card-freya.light.svg" width="432">
 </picture>
 </a>
 <!-- PROFILEOS:END:SELECTED_SYSTEMS -->
@@ -157,7 +157,7 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/heatmap.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/heatmap.light.svg">
-  <img alt="Contribution heatmap: 990 contributions over the last year across 96 active days. GitHub&#x27;s contribution calendar: all activity, including repositories not featured here. Activity indicators, not measures of quality." src="assets/generated/heatmap.light.svg" width="432">
+  <img alt="Contribution heatmap: 991 contributions over the last year across 97 active days. GitHub&#x27;s contribution calendar: all activity, including repositories not featured here. Activity indicators, not measures of quality." src="assets/generated/heatmap.light.svg" width="432">
 </picture>
 
 <picture>
@@ -169,13 +169,13 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/activity.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/activity.light.svg">
-  <img alt="Commits by project, last 30 days: UsageOS 17, NetOS 66, FREYA 1. Projects shown on this profile, default-branch commits. An activity signal." src="assets/generated/activity.light.svg" width="432">
+  <img alt="Commits by project, last 30 days: UsageOS 17, NetOS 66, FREYA 2. Projects shown on this profile, default-branch commits. An activity signal." src="assets/generated/activity.light.svg" width="432">
 </picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/languages.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/languages.light.svg">
-  <img alt="Languages by bytes of code in public repositories: Python 46.3%, TypeScript 30.0%, JavaScript 14.4%, CSS 5.9%, HTML 2.1%, Other 1.4%. Public non-fork repositories, by bytes of code. Not a skill measure." src="assets/generated/languages.light.svg" width="432">
+  <img alt="Languages by bytes of code in public repositories: Python 46.8%, TypeScript 29.7%, JavaScript 14.2%, CSS 5.9%, HTML 2.1%, Other 1.4%. Public non-fork repositories, by bytes of code. Not a skill measure." src="assets/generated/languages.light.svg" width="432">
 </picture>
 <!-- PROFILEOS:END:ACTIVITY -->
 
@@ -200,5 +200,5 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 <!-- PROFILEOS:END:LINKS -->
 
 <!-- PROFILEOS:START:FOOTER -->
-<sub>Generated by ProfileOS · data snapshot 2026-11-04 · Automate facts. Curate identity.</sub>
+<sub>Generated by ProfileOS · data snapshot 2026-11-05 · Automate facts. Curate identity.</sub>
 <!-- PROFILEOS:END:FOOTER -->
