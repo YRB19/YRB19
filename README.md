@@ -14,13 +14,13 @@ My projects usually start with a practical problem and grow into systems around 
 ## Currently Building
 <!-- PROFILEOS:START:CURRENTLY_BUILDING -->
 ● [NetOS](https://github.com/YRB19/NetOS) — active  
-● [UsageOS](https://github.com/YRB19/UsageOS) — active  
-● [FREYA](https://github.com/YRB19/FREYA) — active
+● [FREYA](https://github.com/YRB19/FREYA) — active  
+● [UsageOS](https://github.com/YRB19/UsageOS) — active
 <!-- PROFILEOS:END:CURRENTLY_BUILDING -->
 
 <!-- PROFILEOS:START:NOW -->
 **NOW**  
-Building: [NetOS](https://github.com/YRB19/NetOS) · [UsageOS](https://github.com/YRB19/UsageOS) · [FREYA](https://github.com/YRB19/FREYA)  
+Building: [NetOS](https://github.com/YRB19/NetOS) · [FREYA](https://github.com/YRB19/FREYA) · [UsageOS](https://github.com/YRB19/UsageOS)  
 Exploring: Agentic systems · AI infrastructure  
 Learning: Systems design · Distributed workflows  
 Newest build: [FREYA](https://github.com/YRB19/FREYA) · created 2026-09-10  
