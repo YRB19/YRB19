@@ -814,83 +814,83 @@
     },
     "YRB19/NetOS": {
       "commits": {
-        "d30": 66,
-        "d7": 18,
-        "d90": 142
+        "d30": 85,
+        "d7": 37,
+        "d90": 161
       },
       "merged_prs": [],
       "recent_commits": [
         {
           "changed_files": 1,
-          "date": "2026-11-01T09:33:09Z",
-          "headline": "chore(slice-10): .gitignore for console/frontend build artifacts",
+          "date": "2026-11-06T06:19:13Z",
+          "headline": "feat(slice-11): add ai-panel test to frontend test script",
           "is_bot": false,
           "is_merge": false,
-          "sha": "7c495da315e62833256d526d2a46d5dcb1b20f69",
-          "url": "https://github.com/YRB19/NetOS/commit/7c495da315e62833256d526d2a46d5dcb1b20f69"
-        },
-        {
-          "changed_files": 19,
-          "date": "2026-11-01T09:33:05Z",
-          "headline": "test(slice-7): update lifecycle, reconciliation, broker, sizing, pipe…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "d268d483d78189d3ee5adfbbeb34562b3d0f5a12",
-          "url": "https://github.com/YRB19/NetOS/commit/d268d483d78189d3ee5adfbbeb34562b3d0f5a12"
-        },
-        {
-          "changed_files": 8,
-          "date": "2026-11-01T09:33:00Z",
-          "headline": "fix(slice-6): domain models, shared arch_lint, data features, intelli…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "04723a965dd7bc13e60127e270f9b49bf48bde49",
-          "url": "https://github.com/YRB19/NetOS/commit/04723a965dd7bc13e60127e270f9b49bf48bde49"
-        },
-        {
-          "changed_files": 6,
-          "date": "2026-11-01T09:32:55Z",
-          "headline": "fix(slice-7): simulation — journaling wiring, settlement, runner inte…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "4fffedfb6b074473f20da93a43c661eec44ed2dd",
-          "url": "https://github.com/YRB19/NetOS/commit/4fffedfb6b074473f20da93a43c661eec44ed2dd"
-        },
-        {
-          "changed_files": 6,
-          "date": "2026-11-01T09:32:52Z",
-          "headline": "fix(slice-7): reconciliation + risk engine + sizing refinements — rec…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "2e4e71a8c400caa2717a8ca47968cfb6e392e5f3",
-          "url": "https://github.com/YRB19/NetOS/commit/2e4e71a8c400caa2717a8ca47968cfb6e392e5f3"
-        },
-        {
-          "changed_files": 6,
-          "date": "2026-11-01T09:32:47Z",
-          "headline": "fix(slice-7): broker adapters + order lifecycle + manager refinements…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "9befa6b6f2ba2914a6c571f59259000a60daea70",
-          "url": "https://github.com/YRB19/NetOS/commit/9befa6b6f2ba2914a6c571f59259000a60daea70"
-        },
-        {
-          "changed_files": 5,
-          "date": "2026-11-01T09:32:44Z",
-          "headline": "fix(slice-8): decision log hardening — journal chaining, query, recor…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "fee3b695085e59ad6a8c704649a2f7fbfc934840",
-          "url": "https://github.com/YRB19/NetOS/commit/fee3b695085e59ad6a8c704649a2f7fbfc934840"
+          "sha": "29baa0df33c99105069ae92670a030e00536eebb",
+          "url": "https://github.com/YRB19/NetOS/commit/29baa0df33c99105069ae92670a030e00536eebb"
         },
         {
           "changed_files": 1,
-          "date": "2026-11-01T09:32:42Z",
-          "headline": "test(slice-10): console API unit tests — store, readmodel, exports, e…",
+          "date": "2026-11-06T06:19:07Z",
+          "headline": "docs(slice-11): add slice-13 governance adjustment doc — governance &…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "7afe7a8677562bfccae9500f2ef09a7a9c3d9bb0",
-          "url": "https://github.com/YRB19/NetOS/commit/7afe7a8677562bfccae9500f2ef09a7a9c3d9bb0"
+          "sha": "443bb609079f40b1076cfa9e363ab98bb55f429b",
+          "url": "https://github.com/YRB19/NetOS/commit/443bb609079f40b1076cfa9e363ab98bb55f429b"
+        },
+        {
+          "changed_files": 4,
+          "date": "2026-11-06T06:19:03Z",
+          "headline": "docs(slice-11): update console docs, status, decision-journal, implem…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "8a68ca2b80a48c21a03e0e337c9325482c6d0c1e",
+          "url": "https://github.com/YRB19/NetOS/commit/8a68ca2b80a48c21a03e0e337c9325482c6d0c1e"
+        },
+        {
+          "changed_files": 4,
+          "date": "2026-11-06T06:19:00Z",
+          "headline": "docs(slice-11): document ADR-22, ADR-23, model cutoff (ER-3), disclos…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "fc1eb68884b43baa5cb8dba71ee3bb3220ee17e0",
+          "url": "https://github.com/YRB19/NetOS/commit/fc1eb68884b43baa5cb8dba71ee3bb3220ee17e0"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-11-06T06:18:55Z",
+          "headline": "test(slice-11): add smoke test script + test helpers",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "ad7d0b0f03b25e1e76a1bfe99b21f6c1ee4dce05",
+          "url": "https://github.com/YRB19/NetOS/commit/ad7d0b0f03b25e1e76a1bfe99b21f6c1ee4dce05"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-11-06T06:18:50Z",
+          "headline": "test(slice-11): add boundary/adversarial import tests — model_provide…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "edde120b9285cd354aca0ccad514ec959f9cca3e",
+          "url": "https://github.com/YRB19/NetOS/commit/edde120b9285cd354aca0ccad514ec959f9cca3e"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-11-06T06:18:32Z",
+          "headline": "test(slice-11): add console AI panel tests — ai-signals endpoint beha…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "55ce3484741bc7f9915c60b499fb3501ed0a3925",
+          "url": "https://github.com/YRB19/NetOS/commit/55ce3484741bc7f9915c60b499fb3501ed0a3925"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-11-06T06:18:26Z",
+          "headline": "test(slice-11): add pipeline integration tests — AI signal overlay en…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "f7e4d5d78e2c0e04648c0a586ed0dc5bbb24ed67",
+          "url": "https://github.com/YRB19/NetOS/commit/f7e4d5d78e2c0e04648c0a586ed0dc5bbb24ed67"
         }
       ]
     },
@@ -1689,7 +1689,7 @@
       ]
     }
   },
-  "generated_at": "2026-11-05T20:03:33Z",
+  "generated_at": "2026-11-06T06:56:54Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"

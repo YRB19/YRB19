@@ -1,12 +1,11 @@
 {
   "coverage": {
-    "closed_days_covered": 4,
+    "closed_days_covered": 5,
     "complete": false,
     "days_in_month": 30,
     "first_day": "2026-11-01",
-    "last_day": "2026-11-04",
+    "last_day": "2026-11-05",
     "missing_days": [
-      "2026-11-05",
       "2026-11-06",
       "2026-11-07",
       "2026-11-08",
@@ -36,31 +35,31 @@
   },
   "kind": "monthly",
   "languages": {
-    "as_of": "2026-11-05",
+    "as_of": "2026-11-06",
     "items": [
       {
         "language": "Python",
-        "pct": 46.8
+        "pct": 48.0
       },
       {
         "language": "TypeScript",
-        "pct": 29.7
+        "pct": 29.0
       },
       {
         "language": "JavaScript",
-        "pct": 14.2
+        "pct": 13.9
       },
       {
         "language": "CSS",
-        "pct": 5.9
+        "pct": 5.7
       },
       {
         "language": "HTML",
-        "pct": 2.1
+        "pct": 2.0
       },
       {
         "language": "Other",
-        "pct": 1.4
+        "pct": 1.3
       }
     ],
     "statistic": "month-end reading: the last daily snapshot whose closed day is in the month"
@@ -68,11 +67,11 @@
   "metrics": {
     "active_repos": {
       "statistic": "unique repositories with at least one commit on a covered day",
-      "value": 1
+      "value": 2
     },
     "commits": {
       "statistic": "sum of closed-day counts over the covered days",
-      "value": 18
+      "value": 19
     },
     "merged_prs": {
       "lower_bound": false,
@@ -97,7 +96,7 @@
       "commits": 0
     },
     "FREYA": {
-      "commits": 0
+      "commits": 1
     },
     "Finwise": {
       "commits": 0
