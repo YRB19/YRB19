@@ -814,83 +814,83 @@
     },
     "YRB19/NetOS": {
       "commits": {
-        "d30": 85,
-        "d7": 37,
-        "d90": 161
+        "d30": 104,
+        "d7": 56,
+        "d90": 180
       },
       "merged_prs": [],
       "recent_commits": [
         {
-          "changed_files": 1,
-          "date": "2026-11-06T06:19:13Z",
-          "headline": "feat(slice-11): add ai-panel test to frontend test script",
+          "changed_files": 2,
+          "date": "2026-11-07T04:44:23Z",
+          "headline": "fix(slice-11): formatting — model_version, schema",
           "is_bot": false,
           "is_merge": false,
-          "sha": "29baa0df33c99105069ae92670a030e00536eebb",
-          "url": "https://github.com/YRB19/NetOS/commit/29baa0df33c99105069ae92670a030e00536eebb"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-11-06T06:19:07Z",
-          "headline": "docs(slice-11): add slice-13 governance adjustment doc — governance &…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "443bb609079f40b1076cfa9e363ab98bb55f429b",
-          "url": "https://github.com/YRB19/NetOS/commit/443bb609079f40b1076cfa9e363ab98bb55f429b"
+          "sha": "a80a41a681a2fa37d71cbca589c6e049a63e4db1",
+          "url": "https://github.com/YRB19/NetOS/commit/a80a41a681a2fa37d71cbca589c6e049a63e4db1"
         },
         {
           "changed_files": 4,
-          "date": "2026-11-06T06:19:03Z",
-          "headline": "docs(slice-11): update console docs, status, decision-journal, implem…",
+          "date": "2026-11-07T04:44:18Z",
+          "headline": "docs(slice-11): slice status complete, statistical-validation closure…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "8a68ca2b80a48c21a03e0e337c9325482c6d0c1e",
-          "url": "https://github.com/YRB19/NetOS/commit/8a68ca2b80a48c21a03e0e337c9325482c6d0c1e"
-        },
-        {
-          "changed_files": 4,
-          "date": "2026-11-06T06:19:00Z",
-          "headline": "docs(slice-11): document ADR-22, ADR-23, model cutoff (ER-3), disclos…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "fc1eb68884b43baa5cb8dba71ee3bb3220ee17e0",
-          "url": "https://github.com/YRB19/NetOS/commit/fc1eb68884b43baa5cb8dba71ee3bb3220ee17e0"
+          "sha": "7cc71a6011bf60492009e4f37d7747e9de925115",
+          "url": "https://github.com/YRB19/NetOS/commit/7cc71a6011bf60492009e4f37d7747e9de925115"
         },
         {
           "changed_files": 2,
-          "date": "2026-11-06T06:18:55Z",
-          "headline": "test(slice-11): add smoke test script + test helpers",
+          "date": "2026-11-07T04:44:13Z",
+          "headline": "docs(slice-11): ADR-22 provider addition (NVIDIA), implementation-log…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "ad7d0b0f03b25e1e76a1bfe99b21f6c1ee4dce05",
-          "url": "https://github.com/YRB19/NetOS/commit/ad7d0b0f03b25e1e76a1bfe99b21f6c1ee4dce05"
+          "sha": "ccf637dcfee16e83c07330b57f7db01a141d4850",
+          "url": "https://github.com/YRB19/NetOS/commit/ccf637dcfee16e83c07330b57f7db01a141d4850"
         },
         {
           "changed_files": 1,
-          "date": "2026-11-06T06:18:50Z",
-          "headline": "test(slice-11): add boundary/adversarial import tests — model_provide…",
+          "date": "2026-11-07T04:44:08Z",
+          "headline": "docs(slice-11): acceptance closure — snapshot provenance, cutoff gati…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "edde120b9285cd354aca0ccad514ec959f9cca3e",
-          "url": "https://github.com/YRB19/NetOS/commit/edde120b9285cd354aca0ccad514ec959f9cca3e"
+          "sha": "fe4d016d1571c3b20025135edbd32710631f6429",
+          "url": "https://github.com/YRB19/NetOS/commit/fe4d016d1571c3b20025135edbd32710631f6429"
+        },
+        {
+          "changed_files": 3,
+          "date": "2026-11-07T04:44:04Z",
+          "headline": "fix(slice-11): update console, boundary, helpers tests — requested/re…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "b32a50003e9134d7f27d4f95d4bbe7469a985cbd",
+          "url": "https://github.com/YRB19/NetOS/commit/b32a50003e9134d7f27d4f95d4bbe7469a985cbd"
         },
         {
           "changed_files": 1,
-          "date": "2026-11-06T06:18:32Z",
-          "headline": "test(slice-11): add console AI panel tests — ai-signals endpoint beha…",
+          "date": "2026-11-07T04:43:58Z",
+          "headline": "fix(slice-11): update pipeline integration tests — formatting",
           "is_bot": false,
           "is_merge": false,
-          "sha": "55ce3484741bc7f9915c60b499fb3501ed0a3925",
-          "url": "https://github.com/YRB19/NetOS/commit/55ce3484741bc7f9915c60b499fb3501ed0a3925"
+          "sha": "d1f321da4663d47a8dee11742fb81f30a13d2e4d",
+          "url": "https://github.com/YRB19/NetOS/commit/d1f321da4663d47a8dee11742fb81f30a13d2e4d"
         },
         {
           "changed_files": 1,
-          "date": "2026-11-06T06:18:26Z",
-          "headline": "test(slice-11): add pipeline integration tests — AI signal overlay en…",
+          "date": "2026-11-07T04:43:53Z",
+          "headline": "fix(slice-11): update disclosure tests — formatting",
           "is_bot": false,
           "is_merge": false,
-          "sha": "f7e4d5d78e2c0e04648c0a586ed0dc5bbb24ed67",
-          "url": "https://github.com/YRB19/NetOS/commit/f7e4d5d78e2c0e04648c0a586ed0dc5bbb24ed67"
+          "sha": "d2fd54c61e984c29724a03f1ca29d3a74961bac8",
+          "url": "https://github.com/YRB19/NetOS/commit/d2fd54c61e984c29724a03f1ca29d3a74961bac8"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-11-07T04:43:49Z",
+          "headline": "test(slice-11): update AI component tests — resolved_model_identifier…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "c1eb4e0617084d5b6de9b79a0c50ba2a4b6a080c",
+          "url": "https://github.com/YRB19/NetOS/commit/c1eb4e0617084d5b6de9b79a0c50ba2a4b6a080c"
         }
       ]
     },
@@ -1689,7 +1689,7 @@
       ]
     }
   },
-  "generated_at": "2026-11-06T06:56:54Z",
+  "generated_at": "2026-11-07T06:08:28Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"

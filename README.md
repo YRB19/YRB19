@@ -33,14 +33,14 @@ New build: [PersonaOS](https://github.com/YRB19/PersonaOS) · first seen 2026-10
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/pulse.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/pulse.light.svg">
-  <img alt="Development pulse, last 30 days: 112 commits, 4 repositories committed to, 0 pull requests, 0 releases. Public repositories shown on this profile. Activity indicators, not measures of quality." src="assets/generated/pulse.light.svg" width="432">
+  <img alt="Development pulse, last 30 days: 131 commits, 4 repositories committed to, 0 pull requests, 0 releases. Public repositories shown on this profile. Activity indicators, not measures of quality." src="assets/generated/pulse.light.svg" width="432">
 </picture>
 <!-- PROFILEOS:END:PULSE -->
 
 ## Recently Shipped
 <!-- PROFILEOS:START:RECENTLY_SHIPPED -->
-`11/06` **NetOS** — [feat(slice-11): add ai-panel test to frontend test script](https://github.com/YRB19/NetOS/commit/29baa0df33c99105069ae92670a030e00536eebb)  
-`11/06` **NetOS** — [test(slice-11): add smoke test script + test helpers](https://github.com/YRB19/NetOS/commit/ad7d0b0f03b25e1e76a1bfe99b21f6c1ee4dce05)  
+`11/07` **NetOS** — [fix(slice-11): formatting — model\_version, schema](https://github.com/YRB19/NetOS/commit/a80a41a681a2fa37d71cbca589c6e049a63e4db1)  
+`11/07` **NetOS** — [fix(slice-11): update console, boundary, helpers tests — requested/re…](https://github.com/YRB19/NetOS/commit/b32a50003e9134d7f27d4f95d4bbe7469a985cbd)  
 `11/05` **FREYA** — [feat: Phase 9A reconciliation framework + executor section verification](https://github.com/YRB19/FREYA/commit/3346eabf682d6db4e6813675e2c0a9f6b23627b9)  
 `10/29` **UsageOS** — [fix(extension): small fixes for options, popup, container strategy, a…](https://github.com/YRB19/UsageOS/commit/a9c30742d62c5789c7218ea5b20fc995c17530dc)  
 `10/29` **UsageOS** — [refactor(extension): update chrome and firefox manifests, remove elec…](https://github.com/YRB19/UsageOS/commit/b14dae20be22e169e778810960e551c09513a298)  
@@ -105,7 +105,7 @@ New build: [PersonaOS](https://github.com/YRB19/PersonaOS) · first seen 2026-10
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/card-netos.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/card-netos.light.svg">
-  <img alt="NetOS — Trading-system research harness: offline replay, data ingestion and cost modelling. Stack: Python, pytest, Ruff, mypy. CI failing, last run 2026-11-06. Last push 2026-11-06. 1 star." src="assets/generated/card-netos.light.svg" width="432">
+  <img alt="NetOS — Trading-system research harness: offline replay, data ingestion and cost modelling. Stack: Python, pytest, Ruff, mypy. CI failing, last run 2026-11-07. Last push 2026-11-07. 1 star." src="assets/generated/card-netos.light.svg" width="432">
 </picture>
 </a>
 
@@ -157,25 +157,25 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/heatmap.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/heatmap.light.svg">
-  <img alt="Contribution heatmap: 1,029 contributions over the last year across 98 active days. GitHub&#x27;s contribution calendar: all activity, including repositories not featured here. Activity indicators, not measures of quality." src="assets/generated/heatmap.light.svg" width="432">
+  <img alt="Contribution heatmap: 1,048 contributions over the last year across 99 active days. GitHub&#x27;s contribution calendar: all activity, including repositories not featured here. Activity indicators, not measures of quality." src="assets/generated/heatmap.light.svg" width="432">
 </picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/monthly.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/monthly.light.svg">
-  <img alt="Commits by month, last 2 months: Oct 26* 39, Nov 26* 19. Commits per month, summed from daily snapshots of the public repositories shown here. * = partial month: only recorded days are counted. An activity signal, not a quality measure." src="assets/generated/monthly.light.svg" width="432">
+  <img alt="Commits by month, last 2 months: Oct 26* 39, Nov 26* 38. Commits per month, summed from daily snapshots of the public repositories shown here. * = partial month: only recorded days are counted. An activity signal, not a quality measure." src="assets/generated/monthly.light.svg" width="432">
 </picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/activity.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/activity.light.svg">
-  <img alt="Commits by project, last 30 days: UsageOS 17, NetOS 85, FREYA 2. Projects shown on this profile, default-branch commits. An activity signal." src="assets/generated/activity.light.svg" width="432">
+  <img alt="Commits by project, last 30 days: UsageOS 17, NetOS 104, FREYA 2. Projects shown on this profile, default-branch commits. An activity signal." src="assets/generated/activity.light.svg" width="432">
 </picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/languages.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/languages.light.svg">
-  <img alt="Languages by bytes of code in public repositories: Python 48.0%, TypeScript 29.0%, JavaScript 13.9%, CSS 5.7%, HTML 2.0%, Other 1.3%. Public non-fork repositories, by bytes of code. Not a skill measure." src="assets/generated/languages.light.svg" width="432">
+  <img alt="Languages by bytes of code in public repositories: Python 48.4%, TypeScript 28.8%, JavaScript 13.8%, CSS 5.7%, HTML 2.0%, Other 1.3%. Public non-fork repositories, by bytes of code. Not a skill measure." src="assets/generated/languages.light.svg" width="432">
 </picture>
 <!-- PROFILEOS:END:ACTIVITY -->
 
@@ -200,5 +200,5 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 <!-- PROFILEOS:END:LINKS -->
 
 <!-- PROFILEOS:START:FOOTER -->
-<sub>Generated by ProfileOS · data snapshot 2026-11-06 · Automate facts. Curate identity.</sub>
+<sub>Generated by ProfileOS · data snapshot 2026-11-07 · Automate facts. Curate identity.</sub>
 <!-- PROFILEOS:END:FOOTER -->
