@@ -157,7 +157,7 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/heatmap.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/heatmap.light.svg">
-  <img alt="Contribution heatmap: 1,048 contributions over the last year across 99 active days. GitHub&#x27;s contribution calendar: all activity, including repositories not featured here. Activity indicators, not measures of quality." src="assets/generated/heatmap.light.svg" width="432">
+  <img alt="Contribution heatmap: 1,054 contributions over the last year across 99 active days. GitHub&#x27;s contribution calendar: all activity, including repositories not featured here. Activity indicators, not measures of quality." src="assets/generated/heatmap.light.svg" width="432">
 </picture>
 
 <picture>
@@ -169,7 +169,7 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/activity.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/activity.light.svg">
-  <img alt="Commits by project, last 30 days: UsageOS 17, NetOS 104, FREYA 2. Projects shown on this profile, default-branch commits. An activity signal." src="assets/generated/activity.light.svg" width="432">
+  <img alt="Commits by project, last 30 days: UsageOS 12, NetOS 104, FREYA 2. Projects shown on this profile, default-branch commits. An activity signal." src="assets/generated/activity.light.svg" width="432">
 </picture>
 
 <picture>
