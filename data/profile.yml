@@ -8,6 +8,8 @@ identity:
   tags: [AI Systems, Developer Tools, Automation, Fintech, Systems]
 
 now:
+  building: []        # YOU declare current work here (project slugs from projects.yml, e.g. [UsageOS, NetOS]).
+                      # Empty => the section shows no "Building" line; recent public activity is shown separately and labelled as such.
   exploring: [Agentic systems, AI infrastructure]
   learning: [Systems design, Distributed workflows]
   planning_next: []
@@ -23,3 +25,7 @@ display:
   show_zero_stars: false
   max_currently_building: 5
   max_recently_shipped: 6
+
+collaboration:        # closing section text; makes no promise of availability. Links come only from links.yml
+  headline: "Have an interesting problem or idea? Let's build something useful."
+  description: "I'm interested in AI systems, developer tools, automation and thoughtful software engineering."
