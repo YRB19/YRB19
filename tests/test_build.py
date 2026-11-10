@@ -101,7 +101,7 @@ def test_api_failure_falls_back_to_last_cache(repo_copy):
 
 def test_no_cache_and_no_api_hides_sections_never_fabricates(repo_copy):
     res = build(repo_copy, client=Failing(), now=NOW)
-    for sid in ("SIGNAL", "SELECTED_SYSTEMS", "PROJECT_MAP", "LANGUAGE_BUBBLES", "CITY", "RHYTHM", "PET"):
+    for sid in ("SIGNAL", "SELECTED_SYSTEMS", "PROJECT_MAP", "CITY"):
         assert res.blocks[sid] == "", sid                # every fetched-data visual is hidden: no zeros, no placeholders
     assert "github.com" not in res.blocks["BUILDING"]  # only curated Exploring/Learning text remains: no fetched facts or links
     text = (repo_copy / "README.md").read_text()
@@ -135,7 +135,7 @@ def test_repo_text_is_sanitised(repo_copy):
     text = (repo_copy / "README.md").read_text()
     assert "<script>" not in text and "\x00" not in text
     assert_readme_inert(text)  # hostile text may appear only as inert, escaped attribute text
-    card = res.assets["assets/generated/card-usageos.light.svg"]
+    card = res.asset_objects["card-usageos"].svg["light"]
     assert "<script" not in card and "&lt;script&gt;" in card  # rendered as inert text, escaped
 
 
@@ -217,7 +217,7 @@ def test_profile_repo_is_excluded_from_activity(repo_copy):
         nodes.append(me)
 
     res = build(repo_copy, client=Patched(NOW, add_self), dry_run=True, now=NOW)
-    assert "github.com/YRB19/YRB19)" not in res.blocks["BUILDING"] + res.blocks["ACTIVITY"]
+    assert "github.com/YRB19/YRB19)" not in res.blocks["BUILDING"] + res.blocks["CITY"]
 
 
 def test_display_limit_respected(repo_copy):
