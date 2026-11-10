@@ -45,3 +45,12 @@ Text from `profile.yml → collaboration`; links only from `links.yml`. No avail
 
 ## Marker migration
 `PULSE→SIGNAL`, `OS_SERIES→PROJECT_MAP`, `LINKS→CTA`; `CURRENTLY_BUILDING/NOW/RECENTLY_SHIPPED→BUILDING`; missing `LANGUAGE_BUBBLES/CITY/RHYTHM/PET` inserted. In memory, idempotent, applied by `validate` and `build`.
+
+
+## Layout and motion (second pass)
+
+**Layout.** Cards are published as composites, built from the same view-models and nested into one SVG: a two-column version (880 wide) for desktop and a stacked version (432 wide) for phones, chosen by `<picture>` `min-width: 700px` sources. Columns that end up shorter than their neighbour have their last card stretched, so rows end on one line. Composites: `overview` (signal + commit bars | pet + rhythm), `systems` (map | city + languages), `featured` (project cards, two per row). Every project card, map node and link is also a real Markdown link underneath, because links inside an image are not clickable. Headings live inside marker blocks, so a section with no data leaves no empty heading.
+
+**Motion.** Pet hops and its middle button ticks; signal tiles rise in and the live dot pulses; rhythm bars grow; the city rises in a left-to-right wave; map nodes float and dashed (shared-language) lines flow; language bubbles breathe; the CTA dots and bar pulse. Implemented as CSS keyframes in an SVG `<style>`, validated by `safety.check_css` (class selectors, `@keyframes`, animation/transform/opacity/stroke-dash properties only; no `url()`, `@import`, comments or `<`). Any stylesheet that animates must carry a `prefers-reduced-motion: reduce` override or the build fails. SMIL (`animate`, `set`) stays forbidden.
+
+**Status.** Implemented and fixture-tested (Chromium: animations run, reduced-motion shows the final static state). Not yet verified on github.com: that GitHub serves the `min-width` picture sources and plays CSS animation in README images. If either is not honoured the README still renders correctly (static, stacked-or-wide image).

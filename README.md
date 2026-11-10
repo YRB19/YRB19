@@ -11,9 +11,6 @@ My projects usually start with a practical problem and grow into systems around 
 
 </div>
 
----
-
-## Profile Signal
 <!-- PROFILEOS:START:SIGNAL -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/profile-signal.dark.svg">
@@ -22,10 +19,6 @@ My projects usually start with a practical problem and grow into systems around 
 </picture>
 <!-- PROFILEOS:END:SIGNAL -->
 
-
----
-
-## Building in Public
 <!-- PROFILEOS:START:BUILDING -->
 **Exploring** · Agentic systems · AI infrastructure  
 **Learning** · Systems design · Distributed workflows
@@ -42,6 +35,7 @@ My projects usually start with a practical problem and grow into systems around 
 `10/27` **PersonaOS** — [Add bugs.md and bugs.txt to .gitignore](https://github.com/YRB19/PersonaOS/commit/0533d17e4d4666f9241c423cffe12a3ec3d3f20c)
 <!-- PROFILEOS:END:BUILDING -->
 
+<<<<<<< HEAD
 
 ---
 
@@ -100,13 +94,14 @@ My projects usually start with a practical problem and grow into systems around 
 </a>
 <!-- PROFILEOS:END:SELECTED_SYSTEMS -->
 
+=======
+>>>>>>> 8c15ed8 (docs: rewrite README table layout + add layout/motion to FEATURES.md)
 <!-- PROFILEOS:START:RELEASES -->
 <!-- PROFILEOS:END:RELEASES -->
 
+<!-- PROFILEOS:START:SELECTED_SYSTEMS -->
+<!-- PROFILEOS:END:SELECTED_SYSTEMS -->
 
----
-
-## Project Map
 <!-- PROFILEOS:START:PROJECT_MAP -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/project-map.dark.svg">
@@ -117,20 +112,23 @@ My projects usually start with a practical problem and grow into systems around 
 [UsageOS](https://github.com/YRB19/UsageOS) · [ResearchOS](https://github.com/YRB19/ResearchOS) · [ClipOS](https://github.com/YRB19/ClipOS) · [CompanionOS](https://github.com/YRB19/CompanionOS) · [NetOS](https://github.com/YRB19/NetOS) · [FREYA](https://github.com/YRB19/FREYA) · [Cosmic Explorer](https://github.com/YRB19/Cosmic-Explorer) · [Finwise](https://github.com/YRB19/Finwise) · [N8N-YT](https://github.com/YRB19/N8N-YT) · [RepoHealth](https://github.com/YRB19/repohealth)
 <!-- PROFILEOS:END:PROJECT_MAP -->
 
+<table>
+<tr>
+<td valign="top" width="50%">
 
----
-
-## What I Build
+### What I Build
 
 - **AI systems** — research, media, and agent-style pipelines
 - **Developer tools** — software that makes engineering workflows observable and faster
+- **Automation** — pipelines that remove repetitive work
 - **Fintech & data** — dashboards and analysis tools
 - **Full-stack products** — from UI to API to storage
 
+</td>
+<td valign="top" width="50%">
 
----
+### Stack
 
-## Stack
 <!-- PROFILEOS:START:STACK -->
 **Languages** · Python · TypeScript · JavaScript · Rust · SQL  
 **Frontend** · React · Next.js · Vite · Tailwind CSS  
@@ -141,6 +139,7 @@ My projects usually start with a practical problem and grow into systems around 
 **Testing** · pytest · Vitest · Playwright
 <!-- PROFILEOS:END:STACK -->
 
+<<<<<<< HEAD
 ### Languages
 <!-- PROFILEOS:START:LANGUAGE_BUBBLES -->
 <picture>
@@ -149,12 +148,12 @@ My projects usually start with a practical problem and grow into systems around 
   <img alt="Languages by bytes of code in public repositories, bubble area proportional to share: Python 48.4%, TypeScript 28.8%, JavaScript 13.8%, CSS 5.7%, HTML 2.0%, Other 1.3%. Share of code bytes in public non-fork repositories. Not a skill measure." src="assets/generated/language-bubbles.light.svg" width="432">
 </picture>
 <!-- PROFILEOS:END:LANGUAGE_BUBBLES -->
+=======
+</td>
+</tr>
+</table>
+>>>>>>> 8c15ed8 (docs: rewrite README table layout + add layout/motion to FEATURES.md)
 
-
----
-
-## Activity
-### Contribution City
 <!-- PROFILEOS:START:CITY -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/contribution-city.dark.svg">
@@ -163,6 +162,7 @@ My projects usually start with a practical problem and grow into systems around 
 </picture>
 <!-- PROFILEOS:END:CITY -->
 
+<<<<<<< HEAD
 ### Activity Rhythm
 <!-- PROFILEOS:START:RHYTHM -->
 <picture>
@@ -198,25 +198,22 @@ My projects usually start with a practical problem and grow into systems around 
 
 ---
 
+=======
+>>>>>>> 8c15ed8 (docs: rewrite README table layout + add layout/motion to FEATURES.md)
 ## Engineering Approach
 
-I use AI throughout the engineering loop — research, architecture, implementation, testing, debugging, and iteration.
-
-The goal isn't to generate more code.
-
+I use AI throughout the engineering loop — research, architecture, implementation, testing, debugging, and iteration.  
+The goal isn't to generate more code.  
 The goal is to build useful systems that are understandable, testable, and maintainable.
 
+### Earlier Builds
 
----
-
-## Earlier Builds
 <!-- PROFILEOS:START:EARLIER_BUILDS -->
 [RepoHealth](https://github.com/YRB19/repohealth) · [Finwise](https://github.com/YRB19/Finwise) · [Cosmic Explorer](https://github.com/YRB19/Cosmic-Explorer) · [N8N-YT](https://github.com/YRB19/N8N-YT)
 
 Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · Trex Game · Bank Statement Analyzer · Mock IPL Auction platform · ShikshaSahayak · PersonaOS · IDEMI Data Science \& Business Analytics
 <!-- PROFILEOS:END:EARLIER_BUILDS -->
 
-### Project timeline
 <!-- PROFILEOS:START:TIMELINE -->
 ### Project timeline
 
@@ -232,12 +229,6 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 <sub>Dates come from GitHub (repository creation, release publication) or sourced milestones. "First seen" is when ProfileOS first listed a project, not when it was started.</sub>
 <!-- PROFILEOS:END:TIMELINE -->
 
-<sub>Dates come from GitHub (repository creation, release publication) or sourced milestones. "First seen" is when ProfileOS first listed a project, not when it was started.</sub>
-
-
----
-
-## Let's Build Something
 <!-- PROFILEOS:START:CTA -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/collaboration.dark.svg">
@@ -249,5 +240,4 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 <!-- PROFILEOS:END:CTA -->
 
 <!-- PROFILEOS:START:FOOTER -->
-<sub>Generated by ProfileOS · data snapshot 2026-11-10 · Automate facts. Curate identity.</sub>
 <!-- PROFILEOS:END:FOOTER -->
