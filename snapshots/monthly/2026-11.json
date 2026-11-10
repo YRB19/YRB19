@@ -1,12 +1,11 @@
 {
   "coverage": {
-    "closed_days_covered": 8,
+    "closed_days_covered": 9,
     "complete": false,
     "days_in_month": 30,
     "first_day": "2026-11-01",
-    "last_day": "2026-11-08",
+    "last_day": "2026-11-09",
     "missing_days": [
-      "2026-11-09",
       "2026-11-10",
       "2026-11-11",
       "2026-11-12",
@@ -32,7 +31,7 @@
   },
   "kind": "monthly",
   "languages": {
-    "as_of": "2026-11-09",
+    "as_of": "2026-11-10",
     "items": [
       {
         "language": "Python",
