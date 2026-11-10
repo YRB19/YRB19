@@ -56,7 +56,7 @@ def test_good_svg_passes():
 @pytest.mark.parametrize("snippet,expect", [
     ("<script>alert(1)</script>", "script"),
     ('<foreignObject><div xmlns="http://www.w3.org/1999/xhtml">x</div></foreignObject>', "foreignobject"),
-    ("<style>rect{fill:red}</style>", "style"),
+    ("<style>rect{fill:red}</style>", "not allowed"),
     ('<image href="https://evil/x.png" width="1" height="1"/>', "image"),
     ('<use href="#a"/>', "use"),
     ('<a href="https://evil"><rect width="1" height="1"/></a>', "<a>"),
@@ -104,3 +104,29 @@ def test_oversize_and_malformed_and_wrong_root():
 def test_accessibility_requirements_are_enforced(mutation, expect):
     problems = " ".join(safety.validate(mutation(GOOD)))
     assert expect in problems, problems
+
+
+# ---- CSS animation subset ------------------------------------------------------------------------------------
+KF = "@keyframes a{from{opacity:0}to{opacity:1}}"
+OFF = "@media (prefers-reduced-motion: reduce){.x{animation:none}}"
+
+
+def _with_css(css):
+    return GOOD.replace("</svg>", f"<style>{css}</style></svg>")
+
+
+def test_animation_css_with_reduced_motion_is_allowed():
+    assert safety.validate(_with_css(KF + ".x{animation:a 1s ease infinite}" + OFF)) == []
+
+
+def test_animation_without_reduced_motion_is_rejected():
+    assert any("reduced-motion" in p for p in safety.validate(_with_css(KF + ".x{animation:a 1s}")))
+
+
+@pytest.mark.parametrize("css", [
+    ".x{background:url(http://evil/x.png)}", "@import 'x.css';", ".x{fill:red}", "rect{opacity:0}",
+    ".x{animation:a 1s;behavior:url(x)}", ".x{opacity:expression(alert(1))}", "/* c */.x{opacity:0}",
+    ".x{transform:translate(1px,2px)}}", "@font-face{src:url(x)}", ".x{opacity:0 !important;content:'<'}",
+])
+def test_css_outside_the_allowlist_is_rejected(css):
+    assert safety.validate(_with_css(css + OFF)), css

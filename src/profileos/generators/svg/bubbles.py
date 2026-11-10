@@ -5,9 +5,11 @@ colour are never the only carriers.
 """
 import math
 
-from .base import PAD, W, document, fit_text, footer, line, num, text, text_width
+from .base import PAD, W, css, document, fit_text, footer, g, line, num, text, text_width
 
 TITLE = "Languages"
+ANIM = css("@keyframes bb-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}"
+           + "".join(f".bb{i}{{transform-box:fill-box;transform-origin:50% 50%;animation:bb-breathe {3 + i * 0.4:.1f}s ease-in-out {i * 0.3:.1f}s infinite}}" for i in range(3)))
 RAMP = (0.0, 0.20, 0.38, 0.54, 0.68, 0.80, 0.88)
 GAP = 4.0
 BOX_W = W - 2 * PAD
@@ -64,7 +66,7 @@ def render(m: dict, theme, meta: dict) -> str:
     ]
     for i, (it, (cx, cy, r)) in enumerate(zip(items, circles)):
         fill = _color(theme, i, it["language"])
-        body.append(f'<circle cx="{num(ox + cx)}" cy="{num(oy + cy)}" r="{num(max(r - GAP / 2, 2))}" fill="{fill}" stroke="{theme.border}" stroke-width="1"/>')
+        body.append(g(f"bb{i % 3}", f'<circle cx="{num(ox + cx)}" cy="{num(oy + cy)}" r="{num(max(r - GAP / 2, 2))}" fill="{fill}" stroke="{theme.border}" stroke-width="1"/>'))
         label = it["language"]
         pct = f"{it['percentage']:.0f}%" if it["percentage"] >= 10 else ""
         inner = 2 * r - 14
@@ -86,4 +88,4 @@ def render(m: dict, theme, meta: dict) -> str:
     foot_y = y + ((len(items) + 1) // 2 - 1) * 28 + 34
     note_svg, height = footer(m["note"], foot_y, theme)
     body.append(note_svg)
-    return document(meta, theme, height, "".join(body))
+    return document(meta, theme, height, "".join(body), defs=ANIM)

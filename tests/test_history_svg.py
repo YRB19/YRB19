@@ -94,4 +94,4 @@ def test_chart_appears_in_a_real_build_once_two_months_exist(repo_copy):
     res = build(repo_copy, client=FixtureClient(now), now=now)
     # the fixture-built records are not real history; this only checks the chart plumbing with two stored months
     assert "monthly" in res.asset_objects and "Commits by month" in res.asset_objects["monthly"].alt
-    assert "assets/generated/monthly.light.svg" in res.blocks["ACTIVITY"]
+    assert "assets/generated/monthly.light.svg" in res.blocks["CITY"]

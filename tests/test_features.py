@@ -385,9 +385,11 @@ def test_legacy_markers_migrate_safely_and_idempotently():
     assert notes
     for gone in ("CURRENTLY_BUILDING", "NOW", "PULSE", "RECENTLY_SHIPPED", "OS_SERIES", "LINKS"):
         assert f"PROFILEOS:START:{gone} " not in new
-    for sid in ("SIGNAL", "BUILDING", "PROJECT_MAP", "CTA", "LANGUAGE_BUBBLES", "CITY", "RHYTHM", "PET"):
+    for sid in ("SIGNAL", "BUILDING", "PROJECT_MAP", "CTA", "CITY"):
         assert new.count(f"<!-- PROFILEOS:START:{sid} -->") == 1 and new.count(f"<!-- PROFILEOS:END:{sid} -->") == 1, sid
     assert "# T" in new and "x\n<!-- PROFILEOS:END:STACK -->" in new            # text outside generated blocks is untouched
+    for absorbed in ("LANGUAGE_BUBBLES", "RHYTHM", "PET", "ACTIVITY"):
+        assert f"PROFILEOS:START:{absorbed} " not in new
     again, notes2 = migrate_legacy(new)
     assert again == new and notes2 == []
     errors, _ = check_markers(new, required=[s for s in REGISTERED if s not in ("RELEASES", "SELECTED_SYSTEMS", "EARLIER_BUILDS", "TIMELINE", "FOOTER")])
@@ -408,7 +410,7 @@ def test_build_migrates_an_old_readme_in_one_run(repo_copy):
     res = build(repo_copy, fixtures=True, now=NOW)
     text = (repo_copy / "README.md").read_text()
     assert any("migrated marker" in w for w in res.warnings)
-    assert "START:PULSE" not in text and text.count("START:SIGNAL") == 1 and "profile-signal" in text
+    assert "START:PULSE" not in text and text.count("START:SIGNAL") == 1 and "overview.light.svg" in text
 
 
 # ---- no duplicate visuals; README shape; mobile ----------------------------------------------------------------------------------
@@ -419,7 +421,9 @@ def test_readme_shows_each_distribution_once_and_old_widgets_are_gone(repo_copy)
     assert len(srcs) == len(set(srcs))
     for retired in ("pulse", "heatmap", "languages", "os-series"):
         assert retired not in srcs
-    assert {"profile-signal", "project-map", "language-bubbles", "contribution-city", "activity-rhythm", "code-pet", "collaboration"} <= set(srcs)
+    # every feature is published inside a composite: signal + pet, map + languages, city + rhythm (+ the cards), and the banner
+    assert {"overview", "overview-narrow", "systems", "systems-narrow", "featured", "collaboration"} <= set(srcs)
+    assert not {"profile-signal", "code-pet", "project-map", "language-bubbles", "contribution-city", "activity-rhythm"} & set(srcs)  # never twice
     for old in ("Currently Building", "Development Pulse", "The OS Series"):
         assert old not in text
 
@@ -431,7 +435,7 @@ def test_every_new_image_has_alt_light_dark_and_fits_a_360px_screen(repo_copy):
         assert a.alt.strip() and set(a.svg) == {"light", "dark"}
         for svg in a.svg.values():
             w = int(re.search(r'width="(\d+)"', svg).group(1))
-            assert w <= 432                                                   # scales down; never wider than a phone README column x1.3
+            assert w <= 432                                                   # building blocks are phone-width; composites are checked below
             assert not re.search(r"https?://(?!www\.w3\.org)", svg)           # no external references
             sizes = [float(x) for x in re.findall(r'font-size="([\d.]+)"', svg)]
             assert min(sizes) >= 16                                           # the project's legibility floor
@@ -460,3 +464,23 @@ def test_profile_counts_fetch_rejects_malformed_numbers():
             return {"user": {"followers": {"totalCount": None}, "repositories": {"totalCount": 3}}}
     with pytest.raises(GitHubError):
         fetch_profile(Bad(), "YRB19")
+
+
+def test_composites_are_two_column_on_desktop_and_phone_width_when_stacked(repo_copy):
+    res = build(repo_copy, fixtures=True, dry_run=True, now=NOW)
+    for name in ("overview", "systems", "featured"):
+        wide, narrow = res.asset_objects[name], res.asset_objects[f"{name}-narrow"]
+        assert wide.narrow == f"{name}-narrow" and wide.alt == narrow.alt
+        for mode in ("light", "dark"):
+            ww = int(re.search(r'<svg[^>]* width="(\d+)"', wide.svg[mode]).group(1))
+            nw = int(re.search(r'<svg[^>]* width="(\d+)"', narrow.svg[mode]).group(1))
+            assert ww == 2 * 432 + visuals.GAP and nw == 432
+            assert safety.validate(wide.svg[mode], safety.LIMITS["wide"]) == []
+            assert wide.svg[mode].count("<svg") > 2                                # nested cards
+    # the two columns of a row end on the same line: no ragged edge
+    svg = res.asset_objects["overview"].svg["light"]
+    cards = re.findall(r'<svg x="([\d.]+)" y="([\d.]+)" width="432" height="([\d.]+)"', svg)
+    bottoms = {}
+    for x, y, h in cards:
+        bottoms[x] = max(bottoms.get(x, 0), float(y) + float(h))
+    assert len(bottoms) == 2 and len(set(round(v, 1) for v in bottoms.values())) == 1

@@ -8,9 +8,13 @@ byte-identical and neither nodes nor labels collide. The README draws the strong
 relationship list stays in the model for the interactive version.
 """
 from ...sanitize import clean_text
-from .base import PAD, W, document, fit_text, footer, num, text, text_width
+from .base import PAD, W, css, document, fit_text, footer, g, num, text, text_width
 
 TITLE = "Project map"
+ANIM = css("@keyframes map-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}"
+           "@keyframes map-flow{to{stroke-dashoffset:-18}}"
+           ".map-flow{animation:map-flow 2.4s linear infinite}"
+           + "".join(f".map-f{i}{{animation:map-float {3.4 + i * 0.5:.1f}s ease-in-out {i * 0.6:.1f}s infinite}}" for i in range(3)))
 RING = 4.0               # extra radius of the ring that marks OS-series membership
 MARGIN = 8.0
 TOP = 62
@@ -182,15 +186,17 @@ def render(m: dict, theme, meta: dict) -> str:
         (x1, y1), (x2, y2) = where[e["source"]], where[e["target"]]
         op = 0.35 + 0.15 * min(e["strength"], 3)
         sw = 1 + 0.5 * min(e["strength"] - 1, 2)
-        dash = "" if e["shared_topics"] else ' stroke-dasharray="5 4"'
+        dash = "" if e["shared_topics"] else ' stroke-dasharray="5 4" class="map-flow"'
         body.append(f'<line x1="{num(x1)}" y1="{num(y1)}" x2="{num(x2)}" y2="{num(y2)}" stroke="{theme.muted}" '
                     f'stroke-width="{num(sw)}" stroke-opacity="{num(op)}"{dash}/>')
-    for n, (x, y), inf in zip(nodes, pos, info):
+    for k, (n, (x, y), inf) in enumerate(zip(nodes, pos, info)):
         code, col = theme.category(n["category"])
+        node = []
         if n["os_series"]:
-            body.append(f'<circle cx="{num(x)}" cy="{num(y)}" r="{num(n["radius"] + RING)}" fill="none" stroke="{col}" stroke-width="1.5"/>')
-        body.append(f'<circle cx="{num(x)}" cy="{num(y)}" r="{num(n["radius"])}" fill="{theme.mix(theme.surface, col, 0.30)}" stroke="{col}" stroke-width="2"/>')
-        body.append(text(x, y + 5.5, code, 16, theme.text, bold=True, anchor="middle"))
+            node.append(f'<circle cx="{num(x)}" cy="{num(y)}" r="{num(n["radius"] + RING)}" fill="none" stroke="{col}" stroke-width="1.5"/>')
+        node.append(f'<circle cx="{num(x)}" cy="{num(y)}" r="{num(n["radius"])}" fill="{theme.mix(theme.surface, col, 0.30)}" stroke="{col}" stroke-width="2"/>')
+        node.append(text(x, y + 5.5, code, 16, theme.text, bold=True, anchor="middle"))
+        body.append(g(f"map-f{k % 3}", "".join(node)))
         ly = y + inf["r"] + 18
         body.append(text(x, ly, fit_text(n["name"], 16, 150, bold=True), 16, theme.text, bold=True, anchor="middle", halo=theme.surface))
         for k, line_ in enumerate(_lines(n, show)):
@@ -217,6 +223,11 @@ def render(m: dict, theme, meta: dict) -> str:
         body.append(text(x + 24, y, "OS series", 16, theme.muted))
     if kinds or any(n["os_series"] for n in nodes):
         y += 28
-    note_svg, height = footer("Lines: shared repository metadata. Size: stars (bounded scale).", y + 2, theme)
+    note = "Lines: shared repository metadata. Size: stars (bounded scale)."
+    _, h0 = footer(note, y + 2, theme)
+    extra = max(0.0, float(meta.get("min_height", 0)) - h0)      # card stretched to match its neighbour: centre the graph, pin the note
+    if extra:
+        body = body[:2] + [f'<g transform="translate(0 {num(extra / 2)})">{"".join(body[2:])}</g>']
+    note_svg, height = footer(note, y + 2 + extra, theme)
     body.append(note_svg)
-    return document(meta, theme, height, "".join(body))
+    return document(meta, theme, height, "".join(body), defs=ANIM)

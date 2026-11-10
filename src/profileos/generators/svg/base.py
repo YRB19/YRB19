@@ -109,17 +109,31 @@ def line(x1, y1, x2, y2, stroke, sw=1) -> str:
     return f'<line x1="{num(x1)}" y1="{num(y1)}" x2="{num(x2)}" y2="{num(y2)}" stroke="{stroke}" stroke-width="{num(sw)}"/>'
 
 
-def document(meta: dict, theme, height, body: str, defs: str = "") -> str:
-    """Wrap a component body in an accessible, self-contained SVG document (card background + border)."""
+def css(rules: str) -> str:
+    """Animation stylesheet for a card. Appends the reduced-motion override for every class that sets an animation."""
+    import re
+    classes = sorted(set(re.findall(r"\.([A-Za-z][\w-]*)\s*\{[^}]*animation", rules)))
+    off = ",".join(f".{c}" for c in classes)
+    return f"<style>{rules}@media (prefers-reduced-motion: reduce){{{off}{{animation:none}}}}</style>"
+
+
+def g(cls: str, inner: str) -> str:
+    return f'<g class="{cls}">{inner}</g>'
+
+
+def document(meta: dict, theme, height, body: str, defs: str = "", width: int = W) -> str:
+    """Wrap a component body in an accessible, self-contained SVG document (card background + border).
+    meta["min_height"] stretches the card so two cards in a composite end on the same line."""
     uid = f"po-{meta['name']}"
+    height = max(float(height), float(meta.get("min_height", 0)))
     h = num(height)
     return (
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{h}" viewBox="0 0 {W} {h}" '
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{h}" viewBox="0 0 {width} {h}" '
         f'role="img" aria-labelledby="{uid}-t {uid}-d">'
         f'<title id="{uid}-t">{esc(meta["title"], 120)}</title>'
         f'<desc id="{uid}-d">{esc(meta["alt"], 600)}</desc>'
         f"{defs}"
-        f'<rect x=".5" y=".5" width="{W - 1}" height="{num(float(height) - 1)}" rx="12" '
+        f'<rect x=".5" y=".5" width="{width - 1}" height="{num(float(height) - 1)}" rx="12" '
         f'fill="{theme.surface}" stroke="{theme.border}"/>'
         f"{body}</svg>\n"
     )

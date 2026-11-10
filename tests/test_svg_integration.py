@@ -15,8 +15,12 @@ from profileos.github.fixtures import FixtureClient
 from test_build import Failing, Patched, assert_readme_inert
 
 ASSETS = "assets/generated"
-EXPECTED = {"profile-signal", "project-map", "language-bubbles", "contribution-city", "activity-rhythm", "code-pet",
-            "activity", "collaboration", "card-usageos", "card-researchos", "card-clipos", "card-companionos"}
+# Building blocks: built from the shared view-models, held in memory, published only inside a composite.
+PARTS = {"profile-signal", "project-map", "language-bubbles", "contribution-city", "activity-rhythm", "code-pet",
+         "activity", "card-usageos", "card-researchos", "card-clipos", "card-companionos"}
+COMPOSITES = {"overview", "systems", "featured"}
+# Published files: each composite in a two-column and a stacked (phone) version, plus the standalone banner.
+EXPECTED = COMPOSITES | {f"{c}-narrow" for c in COMPOSITES} | {"collaboration"}
 # Retired from the README by the profile-experience enhancement (superseded, never shown alongside their replacement):
 RETIRED = {"pulse", "heatmap", "languages", "os-series"}
 
@@ -59,7 +63,8 @@ def test_expected_assets_exist_in_both_modes(built):
     for n in EXPECTED:
         for mode in ("light", "dark"):
             svg = (root / ASSETS / f"{n}.{mode}.svg").read_text()
-            assert safety.validate(svg, safety.LIMITS.get(n, safety.MAX_BYTES)) == []
+            assert safety.validate(svg, safety.LIMITS["wide"]) == []
+    assert PARTS | EXPECTED <= set(res.asset_objects)
     assert set(res.assets) == {f"{ASSETS}/{n}.{m}.svg" for n in EXPECTED for m in ("light", "dark")}
 
 
@@ -76,19 +81,21 @@ def test_every_readme_image_has_alt_text_that_matches_the_asset(built):
     root, res = built
     text = readme(root)
     imgs = re.findall(r'<img alt="([^"]*)" src="(assets/generated/[^"]+)" width="(\d+)">', text)
-    assert len(imgs) == len(EXPECTED)
+    assert len(imgs) == len(COMPOSITES) + 1
     for alt, src, width in imgs:
-        assert alt.strip() and width == "432"
+        name = Path(src).name.rsplit(".", 2)[0].removesuffix("-narrow")
+        assert alt.strip() and width == ("880" if name in COMPOSITES else "432")
         import html as h
-        assert h.unescape(alt) == res.asset_objects[Path(src).name.rsplit(".", 2)[0]].alt
+        assert h.unescape(alt) == res.asset_objects[name].alt
 
 
 def test_picture_uses_light_and_dark_sources_for_every_asset(built):
     root, _ = built
     text = readme(root)
-    for n in EXPECTED:
+    for n in EXPECTED - COMPOSITES:
         assert f'srcset="assets/generated/{n}.dark.svg"' in text and f'srcset="assets/generated/{n}.light.svg"' in text
-    assert text.count('media="(prefers-color-scheme: dark)"') == len(EXPECTED)
+    assert text.count('media="(prefers-color-scheme: dark)"') == len(COMPOSITES) + 1       # one per picture (the phone/standalone source)
+    assert text.count('(prefers-color-scheme: dark) and (min-width: 700px)') == len(COMPOSITES)   # desktop source per composite
 
 
 def test_manual_prose_outside_markers_is_untouched(built):
@@ -102,7 +109,7 @@ def test_manual_prose_outside_markers_is_untouched(built):
 # ---- same metadata everywhere ---------------------------------------------------------------------------------
 def test_cards_and_markdown_share_one_source_of_truth(built):
     root, res = built
-    svg = res.assets[f"{ASSETS}/card-usageos.light.svg"]
+    svg = res.asset_objects["card-usageos"].svg["light"]
     assert "Self-hosted multi-account Claude.ai usage tracking platform" in svg
     assert "FastAPI" in svg and "PostgreSQL" in svg
     alt = res.asset_objects["card-usageos"].alt
@@ -132,10 +139,13 @@ def test_stale_generated_assets_are_removed_and_unrelated_files_are_not(built):
     keep = {".gitkeep": "", "notes.txt": "mine", "custom.svg": "<svg/>", "Logo.light.svg": "x", "x.light.svg.bak": "y"}
     for k, v in keep.items():
         (root / ASSETS / k).write_text(v)
+    for mode in ("light", "dark"):
+        (root / ASSETS / f"card-gone.{mode}.svg").write_text("<svg/>")      # a generated file nothing refers to any more
     edit_yaml(root, "projects", lambda d: d["ClipOS"].update(publish=False))
     res = build(root, client=FixtureClient(NOW), now=NOW + dt.timedelta(hours=1))
-    assert "card-clipos" not in names(root)
-    assert any("card-clipos.light.svg" in c for c in res.asset_changes)
+    assert "card-gone" not in names(root) and "card-clipos" not in res.asset_objects
+    assert "ClipOS" not in res.asset_objects["featured"].alt          # un-publishing a project removes it from the composite
+    assert any("card-gone.light.svg" in c for c in res.asset_changes)
     for k in keep:
         assert (root / ASSETS / k).exists(), k
 
@@ -191,7 +201,7 @@ def test_status_is_shown_only_where_evidence_backs_it(built):
     root, res = built
     assert "Status: active" in res.asset_objects["card-companionos"].alt
     for n in ("card-usageos", "card-researchos", "card-clipos"):
-        assert "Status" not in res.asset_objects[n].alt and "ACTIVE" not in res.assets[f"{ASSETS}/{n}.light.svg"]
+        assert "Status" not in res.asset_objects[n].alt and "ACTIVE" not in res.asset_objects[n].svg["light"]
 
 
 def test_stack_items_without_evidence_never_appear(built):
@@ -249,13 +259,13 @@ def test_declared_building_comes_only_from_profile_metadata(repo_copy):
 def test_flagship_card_order_ignores_activity(repo_copy):
     res = build(repo_copy, client=Patched(NOW, _boost("CompanionOS", 500)), dry_run=True, now=NOW)
     sel = res.blocks["SELECTED_SYSTEMS"]
-    order = [sel.index(f"card-{n}.light") for n in ("usageos", "researchos", "clipos", "companionos")]
+    order = [sel.index(f"**[{n}]") for n in ("UsageOS", "ResearchOS", "ClipOS", "CompanionOS")]
     assert order == sorted(order)
 
 
 def test_no_quality_scores_or_rankings_are_rendered(built):
     root, res = built
-    shown = " ".join([block(readme(root), "SIGNAL"), block(readme(root), "ACTIVITY"), *map(visible_text, res.assets.values()),
+    shown = " ".join([block(readme(root), "SIGNAL"), block(readme(root), "CITY"), *map(visible_text, res.assets.values()),
                       *(a.alt for a in res.asset_objects.values())]).lower()
     assert "activity indicators" in shown  # the framing sentence is present, so this scans real output
     for word in ("score", "rank", "grade", "top contributor", "best ", "leaderboard", "rating"):
@@ -274,7 +284,7 @@ def test_api_outage_with_cache_keeps_assets_and_labels_staleness(built):
 def test_outage_with_no_cache_draws_only_what_curated_data_supports(repo_copy):
     res = build(repo_copy, client=Failing(), now=NOW)
     assert set(res.asset_objects) == {"collaboration"}   # only curated text survives: no fabricated metrics, no empty cards
-    for sid in ("SIGNAL", "ACTIVITY", "SELECTED_SYSTEMS", "PROJECT_MAP", "CITY", "RHYTHM", "PET", "LANGUAGE_BUBBLES"):
+    for sid in ("SIGNAL", "SELECTED_SYSTEMS", "PROJECT_MAP", "CITY"):
         assert res.blocks[sid] == "", sid
     assert "build something useful" in res.asset_objects["collaboration"].alt
 
@@ -307,7 +317,7 @@ def test_preview_command_writes_review_files_and_never_touches_the_repo(repo_cop
     assert main(["--root", str(repo_copy), "preview", "--fixtures", "--out", str(tmp_path / "pv")]) == 0
     html = (tmp_path / "pv" / "index.html").read_text()
     assert "SYNTHETIC ACTIVITY DATA" in html and "360px" in html
-    assert len(list((tmp_path / "pv" / "assets").glob("*.svg"))) == len(EXPECTED) * 2
+    assert len(list((tmp_path / "pv" / "assets").glob("*.svg"))) == (len(PARTS) + len(EXPECTED)) * 2
     assert readme(repo_copy) == before and list((repo_copy / ASSETS).glob("*.svg")) == []
 
 
@@ -315,4 +325,4 @@ def test_build_command_reports_asset_counts(repo_copy, capsys):
     from profileos.cli import main
 
     assert main(["--root", str(repo_copy), "build", "--fixtures"]) == 0
-    assert "assets: 24 files" in capsys.readouterr().out
+    assert "assets: 14 files" in capsys.readouterr().out
