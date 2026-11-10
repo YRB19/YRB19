@@ -1,6 +1,8 @@
 """Safety + accessibility gate for generated SVGs (spec §10.1, §14).
 
-README images are static: no scripts, no external references, no animation, no embedded HTML. Anything that
+README images carry no scripts, no external references, no SMIL animation and no embedded HTML. The one exception is a
+tiny CSS subset (keyframes + transform/opacity/stroke-dashoffset animation on classes), validated by `check_css` and always
+paired with a prefers-reduced-motion override. Anything that
 fails here aborts the build before a single file is written.
 """
 import re
@@ -9,10 +11,10 @@ import xml.etree.ElementTree as ET
 MAX_BYTES = 50_000
 # Per-asset ceilings for visuals that are legitimately larger. The Contribution City draws up to 371 isometric tiles, ~3 faces each;
 # a fully dense year is the worst case (measured in tests), so it gets a higher but still hard bound.
-LIMITS = {"contribution-city": 80_000}
+LIMITS = {"contribution-city": 80_000, "wide": 200_000}   # "wide" = any composite built from several cards
 SVG_NS = "http://www.w3.org/2000/svg"
 FORBIDDEN_TAGS = {
-    "script", "foreignobject", "iframe", "object", "embed", "image", "style", "use", "a", "video", "audio",
+    "script", "foreignobject", "iframe", "object", "embed", "image", "use", "a", "video", "audio",
     "link", "meta", "animate", "animatetransform", "animatemotion", "set", "feimage",
 }
 _EXTERNAL_URL = re.compile(r"url\(\s*(?!['\"]?#)", re.I)
@@ -22,6 +24,79 @@ _HTTP = re.compile(r"https?://", re.I)
 
 def _local(tag: str) -> str:
     return tag.rsplit("}", 1)[-1].lower()
+
+
+_SEL = re.compile(r"^\.[A-Za-z][\w-]*(\s*,\s*\.[A-Za-z][\w-]*)*$")
+_KF_SEL = re.compile(r"^(from|to|\d{1,3}(\.\d+)?%)(\s*,\s*(from|to|\d{1,3}(\.\d+)?%))*$")
+_PROPS = {"animation", "animation-name", "animation-duration", "animation-delay", "animation-timing-function",
+          "animation-iteration-count", "animation-direction", "animation-fill-mode", "transform", "transform-origin",
+          "transform-box", "opacity", "stroke-dashoffset", "stroke-dasharray", "fill-opacity", "stroke-opacity"}
+_VALUE = re.compile(r"^[\w\s.,%()#\-+/]*$")
+_MEDIA = "@media (prefers-reduced-motion: reduce)"
+
+
+def _blocks(css: str):
+    """Split css into [(prelude, body)] at brace depth 0. Raises ValueError on unbalanced braces or stray text."""
+    out, i = [], 0
+    while i < len(css):
+        j = css.find("{", i)
+        if j < 0:
+            if css[i:].strip():
+                raise ValueError("text outside a rule")
+            break
+        depth, k = 1, j + 1
+        while k < len(css) and depth:
+            depth += {"{": 1, "}": -1}.get(css[k], 0)
+            k += 1
+        if depth:
+            raise ValueError("unbalanced braces")
+        out.append((css[i:j].strip(), css[j + 1:k - 1]))
+        i = k
+    return out
+
+
+def _decls(body: str, problems: list):
+    for d in filter(str.strip, body.split(";")):
+        prop, _, val = d.partition(":")
+        prop, val = prop.strip().lower(), val.strip()
+        if prop not in _PROPS:
+            problems.append(f"css property {prop!r} not allowed")
+        if not _VALUE.match(val) or re.search(r"url\(|expression|javascript|@import", val, re.I):
+            problems.append(f"css value not allowed for {prop}")
+
+
+def check_css(css: str) -> list[str]:
+    """Allowlist: class selectors, @keyframes, and one prefers-reduced-motion block; animation/transform/opacity properties only."""
+    problems: list[str] = []
+    if re.search(r"/\*|@import|url\(|expression|javascript|behavior|<|&", css, re.I):
+        return ["css contains a forbidden construct"]
+    try:
+        blocks = _blocks(css)
+        animated, reduced = False, False
+        for pre, body in blocks:
+            if pre.startswith("@keyframes "):
+                if not re.fullmatch(r"@keyframes [A-Za-z][\w-]*", pre):
+                    problems.append("bad @keyframes name")
+                for kp, kb in _blocks(body):
+                    if not _KF_SEL.match(kp):
+                        problems.append(f"bad keyframe selector {kp!r}")
+                    _decls(kb, problems)
+            elif re.sub(r"\s+", " ", pre) == _MEDIA:
+                reduced = True
+                for sp, sb in _blocks(body):
+                    if not _SEL.match(sp):
+                        problems.append(f"bad selector {sp!r}")
+                    _decls(sb, problems)
+            elif _SEL.match(pre):
+                animated = animated or "animation" in body
+                _decls(body, problems)
+            else:
+                problems.append(f"css rule {pre!r} not allowed")
+        if animated and not reduced:
+            problems.append("animation without a prefers-reduced-motion override")
+    except ValueError as e:
+        problems.append(f"css not parseable: {e}")
+    return problems
 
 
 def validate(svg: str, max_bytes: int = MAX_BYTES) -> list[str]:
@@ -42,6 +117,11 @@ def validate(svg: str, max_bytes: int = MAX_BYTES) -> list[str]:
         problems.append("missing viewBox")
     for el in root.iter():
         name = _local(el.tag)
+        if name == "style":
+            problems.extend(check_css(el.text or ""))
+            if len(el) or el.get("type") not in (None, "text/css"):
+                problems.append("style element must be plain text/css")
+            continue
         if name in FORBIDDEN_TAGS:
             problems.append(f"forbidden element <{name}>")
         for key, val in el.attrib.items():
