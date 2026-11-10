@@ -213,3 +213,23 @@ Failure-injection tests, `README_DEV.md`, Dependabot, SHA-pinned actions.
 
 ## Open inputs (from spec Appendix A)
 Accent colour · verified taglines/stacks (4 flagships) · NetOS/FREYA facts · PersonaOS visibility · stack evidence (C++, Redis, Linux, SQL…) · personal links · Pages hosting option · PAT dispatch yes/no.
+
+
+---
+
+## Profile experience enhancement (8 features) — status
+Legend: **I** implemented · **F** fixture-tested · **L** live-data tested · **D** deployed · **M** manual config needed
+
+| # | Feature | README (static) | Pages (interactive) |
+|---|---|---|---|
+| 1 | Project Map (replaces OS-series graph) | I F · L: rendered from the cached live repos (offline preview), not yet via a live Actions run | not started (Phase 9) |
+| 2 | Profile Signal (replaces Pulse) | I F · followers / public-repo count need the first live run (new `profile` dataset) | not started |
+| 3 | Building in Public | I F · M: set `now.building` in `profile.yml` (empty = no "Building" line) | not started |
+| 4 | Code Pet | I F · L: rendered from cached live calendar (offline preview) | not started |
+| 5 | Contribution City (replaces heatmap) | I F · L: as above | not started |
+| 6 | Activity Rhythm | I F · L: as above | not started |
+| 7 | Language Bubbles (replaces bar) | I F · L: as above | not started |
+| 8 | Collaboration CTA | I F | not started |
+
+Not done / for approval: the GitHub Pages app (Stage C), `pages.url` (M), deployment of the generated assets (D happens on the next `update-profile` run).
+Retired from the README but kept in code: `pulse`, `heatmap`, `languages`, `os-series` SVG modules and their models (the heatmap model still feeds the City). Definitions: `docs/FEATURES.md`.
