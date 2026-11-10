@@ -814,12 +814,66 @@
     },
     "YRB19/NetOS": {
       "commits": {
-        "d30": 104,
-        "d7": 38,
-        "d90": 180
+        "d30": 110,
+        "d7": 44,
+        "d90": 186
       },
       "merged_prs": [],
       "recent_commits": [
+        {
+          "changed_files": 5,
+          "date": "2026-11-10T17:07:38Z",
+          "headline": "docs(slice-12): Slice 12 addenda — disclosure signal, dependency deci…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "6befce27328fed57d05e16977fbe457f93178b50",
+          "url": "https://github.com/YRB19/NetOS/commit/6befce27328fed57d05e16977fbe457f93178b50"
+        },
+        {
+          "changed_files": 3,
+          "date": "2026-11-10T17:07:25Z",
+          "headline": "docs(slice-12): evaluation docs — spec/method, synthetic run report, …",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "3b5fdaedc3d644ee7919a23ab9d76d5081ea9041",
+          "url": "https://github.com/YRB19/NetOS/commit/3b5fdaedc3d644ee7919a23ab9d76d5081ea9041"
+        },
+        {
+          "changed_files": 4,
+          "date": "2026-11-10T17:07:22Z",
+          "headline": "test(slice-12): unit and integration tests for AI vs baseline evaluation",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "57de7408f26ae992ed178d47dcbdeade3c523cda",
+          "url": "https://github.com/YRB19/NetOS/commit/57de7408f26ae992ed178d47dcbdeade3c523cda"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-11-10T17:07:03Z",
+          "headline": "feat(slice-12): evaluation orchestration — tools/ai_vs_baseline.py + …",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "3308919d709d21d4c324f951eecd3ea355ec56e6",
+          "url": "https://github.com/YRB19/NetOS/commit/3308919d709d21d4c324f951eecd3ea355ec56e6"
+        },
+        {
+          "changed_files": 8,
+          "date": "2026-11-10T17:06:41Z",
+          "headline": "feat(slice-12): evaluation core — research/ai_eval analysis package +…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "d43c81da36f1962be1aeae4a4e82f70462ab2fb1",
+          "url": "https://github.com/YRB19/NetOS/commit/d43c81da36f1962be1aeae4a4e82f70462ab2fb1"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-11-10T17:06:10Z",
+          "headline": "docs(slice-12): README overhaul — status, architecture, do/don't, qui…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "7862ba953732f583393c105d499bc6c6c21c705d",
+          "url": "https://github.com/YRB19/NetOS/commit/7862ba953732f583393c105d499bc6c6c21c705d"
+        },
         {
           "changed_files": 2,
           "date": "2026-11-07T04:44:23Z",
@@ -837,60 +891,6 @@
           "is_merge": false,
           "sha": "7cc71a6011bf60492009e4f37d7747e9de925115",
           "url": "https://github.com/YRB19/NetOS/commit/7cc71a6011bf60492009e4f37d7747e9de925115"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-11-07T04:44:13Z",
-          "headline": "docs(slice-11): ADR-22 provider addition (NVIDIA), implementation-log…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "ccf637dcfee16e83c07330b57f7db01a141d4850",
-          "url": "https://github.com/YRB19/NetOS/commit/ccf637dcfee16e83c07330b57f7db01a141d4850"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-11-07T04:44:08Z",
-          "headline": "docs(slice-11): acceptance closure — snapshot provenance, cutoff gati…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "fe4d016d1571c3b20025135edbd32710631f6429",
-          "url": "https://github.com/YRB19/NetOS/commit/fe4d016d1571c3b20025135edbd32710631f6429"
-        },
-        {
-          "changed_files": 3,
-          "date": "2026-11-07T04:44:04Z",
-          "headline": "fix(slice-11): update console, boundary, helpers tests — requested/re…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "b32a50003e9134d7f27d4f95d4bbe7469a985cbd",
-          "url": "https://github.com/YRB19/NetOS/commit/b32a50003e9134d7f27d4f95d4bbe7469a985cbd"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-11-07T04:43:58Z",
-          "headline": "fix(slice-11): update pipeline integration tests — formatting",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "d1f321da4663d47a8dee11742fb81f30a13d2e4d",
-          "url": "https://github.com/YRB19/NetOS/commit/d1f321da4663d47a8dee11742fb81f30a13d2e4d"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-11-07T04:43:53Z",
-          "headline": "fix(slice-11): update disclosure tests — formatting",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "d2fd54c61e984c29724a03f1ca29d3a74961bac8",
-          "url": "https://github.com/YRB19/NetOS/commit/d2fd54c61e984c29724a03f1ca29d3a74961bac8"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-11-07T04:43:49Z",
-          "headline": "test(slice-11): update AI component tests — resolved_model_identifier…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "c1eb4e0617084d5b6de9b79a0c50ba2a4b6a080c",
-          "url": "https://github.com/YRB19/NetOS/commit/c1eb4e0617084d5b6de9b79a0c50ba2a4b6a080c"
         }
       ]
     },
@@ -1689,7 +1689,7 @@
       ]
     }
   },
-  "generated_at": "2026-11-08T13:38:30Z",
+  "generated_at": "2026-11-10T19:49:58Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
