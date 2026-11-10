@@ -5,7 +5,7 @@ level (0 = flat ground tile, 1-4 = building), so the picture reads without colou
 by diagonal (col+row) from far to near; tiles on one diagonal never overlap, so each diagonal is emitted as a few merged
 paths per shade. That keeps a full year well under the 50 KB SVG cap.
 """
-from .base import PAD, W, document, footer, num, text, text_width
+from .base import PAD, W, css, document, footer, g, num, text, text_width
 
 TITLE = "Contribution city"
 LEVEL_MIX = (0.30, 0.55, 0.78, 1.0)
@@ -15,6 +15,9 @@ HS = 0.36                        # tile half-height / half-width: a low, skyline
 FILL = 0.9                       # footprint inside its tile (leaves thin streets between blocks)
 TOP_Y = 48
 BLACK = "#000000"
+STAGES = 14                      # the skyline rises in a left-to-right wave, one stage per band of diagonals
+ANIM = css("@keyframes city-rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}"
+           + "".join(f".city-w{i}{{animation:city-rise .7s ease-out {i * 0.09:.2f}s both}}" for i in range(STAGES)))
 
 
 def alt(m: dict) -> str:
@@ -49,8 +52,10 @@ def render(m: dict, theme, meta: dict) -> str:
     for c in m["cells"]:
         diag.setdefault(c["col"] + c["row"], []).append(c)
     parts = []
-    for d in sorted(diag):
+    order = sorted(diag)
+    for di, d in enumerate(order):
         acc: dict = {}
+        start = len(parts)
         for c in diag[d]:
             cx, cy = centre(c["col"], c["row"])
             h = heights[c["level"]]
@@ -68,6 +73,7 @@ def render(m: dict, theme, meta: dict) -> str:
                 if segs:
                     fill = {"L": lefts, "R": rights, "T": tops}[kind][lv]
                     parts.append(f'<path fill="{fill}" d="{"".join(segs)}"/>')
+        parts[start:] = [g(f"city-w{di * STAGES // len(order)}", "".join(parts[start:]))]
 
     skyline_bottom = oy + (ncols - 1 + ROWS - 1) * a * HS + 2 * a * HS
     body = [text(PAD, 34, TITLE, 18, theme.text, bold=True),
@@ -89,4 +95,4 @@ def render(m: dict, theme, meta: dict) -> str:
     note = f"{a0} to {b0}. {m['note']}"
     note_svg, height = footer(note, leg_y + 28, theme)
     body.append(note_svg)
-    return document(meta, theme, height, "".join(body))
+    return document(meta, theme, height, "".join(body), defs=ANIM)
