@@ -5,7 +5,7 @@ from pathlib import Path
 import jsonschema
 
 from .data import NAMES, load_all, load_schema
-from .generators.markers import check_markers
+from .generators.markers import check_markers, migrate_legacy
 from .status import netguard
 
 FORBIDDEN_KEY = re.compile(r"(token|secret|password|api[_-]?key|private[_-]?key)", re.I)
@@ -178,6 +178,12 @@ def validate(root: Path, strict: bool = False) -> Report:
                 if end not in projects:
                     rep.err(f"projects.yml: {slug}: relation references unknown project '{end}'")
 
+    for slug in (data["profile"].get("now") or {}).get("building", []):
+        if slug not in projects:
+            rep.err(f"profile.yml: now.building references unknown project '{slug}'")
+        elif projects[slug].get("publish", True) is False or projects[slug].get("status") == "private":
+            rep.err(f"profile.yml: now.building lists '{slug}', which is not published (publish: false)")
+
     _check_evidence(data, rep)
     _check_event_dispatch(root, data, rep)
 
@@ -205,7 +211,10 @@ def validate(root: Path, strict: bool = False) -> Report:
     if not readme.exists():
         rep.err("README.md is missing")
     else:
-        errs, warns = check_markers(readme.read_text(encoding="utf-8"))
+        text, migrated = migrate_legacy(readme.read_text(encoding="utf-8"))
+        for m in migrated:
+            rep.warn(f"README.md: {m} (applied in memory; the next build writes it)")
+        errs, warns = check_markers(text)
         for m in errs:
             rep.err(f"README.md: {m}")
         for m in warns:

@@ -8,7 +8,7 @@ import html
 from ..analytics import discovery, scoring, shipped
 from ..sanitize import md, url as safe_url
 from ..storage.cache import parse_iso
-from . import models, visuals
+from . import features, models, visuals
 
 
 class Context:
@@ -22,6 +22,7 @@ class Context:
         self.repos = [r for r in datasets.get("repos", []) if not r["is_private"] and r["full_name"].lower() not in self._excluded()]
         self.by_full = {r["full_name"].lower(): r for r in self.repos}
         self.activity, self.releases = datasets.get("activity", {}), datasets.get("releases", {})
+        self.pet_peak = 0                          # growth high-water mark from the cache (set by build(); never decreases)
         self.history = None                        # set by build() after the history step (snapshots, rollups, timeline)
         self.ci, self.health = datasets.get("ci", {}), datasets.get("health", {})   # already staleness-checked (build.py)
         self.first_seen = first_seen
@@ -106,40 +107,32 @@ def _join(parts, sep="\n\n") -> str:
 
 
 # ---- renderers ---------------------------------------------------------------------------------
-def currently_building(ctx: Context) -> str:
-    if "repos" not in ctx.ds:
+def signal(ctx: Context) -> str:
+    img = _img(ctx, "profile-signal")
+    return _join([img, ctx.note("contributions", "repos", "profile") if img else ""])
+
+
+def building(ctx: Context) -> str:
+    """BUILDING IN PUBLIC: declared (Building / Exploring / Learning) and derived (Recent activity, Recently shipped) parts are
+    labelled differently. Commit volume is never presented as what I am working on."""
+    m = features.building_model(ctx)
+    if not m:
         return ""
-    rows = ctx.states()[: ctx.display.get("max_currently_building", 5)]
-    lines = [f"{'●' if st == 'active' else '○'} {ctx.link(slug)} — {'active' if st == 'active' else 'quieter'}" for slug, st, *_ in rows]
-    return "  \n".join(lines + ([ctx.note("repos", "activity")] if lines and ctx.note("repos", "activity") else []))
-
-
-def now_panel(ctx: Context) -> str:
-    lines = []
-    building = [ctx.link(s) for s, st, *_ in ctx.states() if st == "active"][: ctx.display.get("max_currently_building", 5)]
-    if building:
-        lines.append("Building: " + " · ".join(building))
-    now = ctx.prof.get("now", {})
-    for label, key in (("Exploring", "exploring"), ("Learning", "learning"), ("Planning next", "planning_next")):
-        if now.get(key):
-            lines.append(f"{label}: " + " · ".join(md(x) for x in now[key]))
-    if "repos" in ctx.ds and ctx.repos:
-        pub = [r for r in ctx.repos if not r["is_fork"]]
-        if pub:
-            newest = max(pub, key=lambda r: (r["created_at"], r["name"]))
-            lines.append(f"Newest build: [{md(newest['name'])}]({newest['url']}) · created {newest['created_at'][:10]}")
-            known = {(p.get("repo") or "").lower() for p in ctx.projects.values()}
-            busiest = max(pub, key=lambda r: (ctx.metrics(r)["c30"], r["name"].lower()))  # commits only, never priority
-            if ctx.metrics(busiest)["c30"] > 0:
-                lines.append(f"Most commits (last 30 days): [{md(busiest['name'])}]({busiest['url']})")
-            for nb in discovery.new_builds(ctx.first_seen, ctx.repos, known, ctx.now, ctx.cfg.get("new_build_days", 14)):
-                lines.append(f"New build: [{md(nb['name'])}]({nb['url']}) · first seen {nb['first_seen']}")
-    return "  \n".join(["**NOW**"] + lines) if lines else ""
-
-
-def pulse(ctx: Context) -> str:
-    img = _img(ctx, "pulse")
-    return _join([img, ctx.note("contributions", "repos") if img else ""])
+    head = []
+    if m["building"]:
+        head.append("**Building** · " + " · ".join(f"[{md(b['title'])}]({safe_url(b['url'])})" if b["url"] and safe_url(b["url"]) else md(b["title"]) for b in m["building"]))
+    for label, key in (("Exploring", "exploring"), ("Learning", "learning")):
+        if m[key]:
+            head.append(f"**{label}** · " + " · ".join(md(x) for x in m[key]))
+    derived = []
+    if m["active_repositories"]:
+        derived.append("**Recent activity** · " + " · ".join(f"[{md(a['title'])}]({safe_url(a['url'])})" for a in m["active_repositories"] if safe_url(a["url"]))
+                       + " <sub>public commits, last 30 days (from GitHub, not a statement of intent)</sub>")
+    for nb in m["new_builds"]:
+        derived.append(f"**New on GitHub** · [{md(nb['name'])}]({safe_url(nb['url'])}) <sub>first seen {nb['first_seen']}</sub>")
+    ships = recently_shipped(ctx)
+    parts = ["  \n".join(head), "  \n".join(derived), ("**Recently shipped**  \n" + ships) if ships else ""]
+    return _join(parts + [ctx.note("repos", "activity")])
 
 
 def recently_shipped(ctx: Context) -> str:
@@ -186,15 +179,45 @@ def timeline(ctx: Context) -> str:
     return "\n".join(lines)
 
 
-def os_series(ctx: Context) -> str:
-    members = models.os_members(ctx)
-    if not members:
+def _linked(ctx, inner: str) -> str:
+    url = (ctx.cfg.get("pages") or {}).get("url")
+    return f'<a href="{html.escape(url, quote=True)}">\n{inner}\n</a>' if url and safe_url(url) else inner
+
+
+def project_map(ctx: Context) -> str:
+    a = ctx.assets.get("project-map")
+    if not a:
         return ""
-    return _join([
-        "*Building focused systems around messy real-world problems.*",
-        _img(ctx, "os-series"),
-        " · ".join(ctx.link(s) for s in members),
-    ])
+    m = features.project_map_model(ctx)
+    names = " · ".join(f"[{md(n['name'])}]({safe_url(n['url'])})" for n in m["nodes"])
+    return _join([_linked(ctx, visuals.picture(a)), names, ctx.note("repos")])
+
+
+def language_bubbles(ctx: Context) -> str:
+    return _join([_img(ctx, "language-bubbles"), ctx.note("repos") if "language-bubbles" in ctx.assets else ""])
+
+
+def city(ctx: Context) -> str:
+    img = _img(ctx, "contribution-city")
+    return _join([_linked(ctx, img) if img else "", ctx.note("contributions") if img else ""])
+
+
+def rhythm(ctx: Context) -> str:
+    return _img(ctx, "activity-rhythm")
+
+
+def pet(ctx: Context) -> str:
+    return _img(ctx, "code-pet")
+
+
+def cta(ctx: Context) -> str:
+    m = features.collaboration_model(ctx)
+    if not m:  # never leave the visitor without the verified links, even if the banner text is removed
+        return " · ".join(f"[{md(l['label'])}]({l['url']})" for l in ctx.d["links"]["links"])
+    links = [f"[{md(l['label'])}]({l['url']})" for l in m["approved_links"]]
+    if m["pages_url"]:
+        links.append(f"[Interactive project map]({m['pages_url']})")
+    return _join([_img(ctx, "collaboration"), " · ".join(links)])
 
 
 def selected_systems(ctx: Context) -> str:
@@ -233,14 +256,10 @@ def earlier_builds(ctx: Context) -> str:
 
 
 def activity(ctx: Context) -> str:
-    visuals_ = [_img(ctx, n) for n in ("heatmap", "monthly", "activity", "languages")]
+    visuals_ = [_img(ctx, n) for n in ("monthly", "activity")]
     if not any(visuals_):
         return ""
-    return _join(visuals_ + [ctx.note("repos", "activity", "contributions")])
-
-
-def links(ctx: Context) -> str:
-    return " · ".join(f"[{md(l['label'])}]({l['url']})" for l in ctx.d["links"]["links"])
+    return _join(visuals_ + [ctx.note("repos", "activity")])
 
 
 def footer(ctx: Context) -> str:
@@ -250,10 +269,9 @@ def footer(ctx: Context) -> str:
 
 
 RENDERERS = {
-    "CURRENTLY_BUILDING": currently_building, "NOW": now_panel, "PULSE": pulse, "RECENTLY_SHIPPED": recently_shipped,
-    "RELEASES": releases,
-    "OS_SERIES": os_series, "SELECTED_SYSTEMS": selected_systems, "STACK": stack, "EARLIER_BUILDS": earlier_builds,
-    "ACTIVITY": activity, "TIMELINE": timeline, "LINKS": links, "FOOTER": footer,
+    "SIGNAL": signal, "BUILDING": building, "RELEASES": releases, "SELECTED_SYSTEMS": selected_systems,
+    "PROJECT_MAP": project_map, "STACK": stack, "LANGUAGE_BUBBLES": language_bubbles, "CITY": city, "RHYTHM": rhythm,
+    "PET": pet, "ACTIVITY": activity, "EARLIER_BUILDS": earlier_builds, "TIMELINE": timeline, "CTA": cta, "FOOTER": footer,
 }
 
 

@@ -14,6 +14,21 @@ RED = {"dark": "#F85149", "light": "#CF222E"}      # failing CI / offline
 GREEN = {"dark": "#3FB950", "light": "#1A7F37"}    # passing CI / online (only from fresh, positive evidence)
 AMBER = {"dark": "#D29922", "light": "#9A6700"}    # degraded
 DEFAULT_ACCENT = "#3B82F6"
+# Project categories (Project Map). One central table: (single-letter code, light, dark). The code is drawn inside the
+# node so the map stays readable without colour. Colours never depend on render order or randomness.
+CATEGORY_STYLE = {
+    "ai": ("A", "#8250DF", "#A371F7"),
+    "systems": ("S", "#0969DA", "#58A6FF"),
+    "developer-tools": ("D", "#1A7F37", "#3FB950"),
+    "automation": ("N", "#BC4C00", "#F0883E"),
+    "fintech": ("F", "#9A6700", "#D29922"),
+    "ai-media": ("M", "#BF3989", "#DB61A2"),
+    "web": ("W", "#0A7C86", "#39C5CF"),
+    "experiment": ("X", "#6E7781", "#8B949E"),
+    "hackathon": ("H", "#CF222E", "#F85149"),
+    "earlier": ("E", "#57606A", "#6E7681"),
+    "archived": ("Z", "#8C959F", "#6E7681"),
+}
 MODES = ("light", "dark")
 
 
@@ -67,6 +82,18 @@ class Theme:
             if all(contrast(c, b) >= ratio for b in backgrounds):
                 return c
         return self.text
+
+    def category(self, slug: str):
+        """(code, colour) for a project category; unknown categories fall back to a neutral grey with code '?'."""
+        code, light, dark = CATEGORY_STYLE.get(slug, ("?", "#6E7781", "#8B949E"))
+        colour = light if self.mode == "light" else dark
+        self.derived.add(colour)
+        return code, colour
+
+    def register(self, colour: str) -> str:
+        """Declare a fixed colour (e.g. the Code Pet's LCD greens) as part of this theme's palette."""
+        self.derived.add(colour)
+        return colour
 
     def mix(self, a: str, b: str, t: float) -> str:
         c = mix(a, b, t)

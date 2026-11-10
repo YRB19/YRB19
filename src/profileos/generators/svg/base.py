@@ -82,7 +82,7 @@ def wrap_text(s: str, size: float, max_w: float, max_lines: int, *, bold: bool =
 
 
 # ---- element builders ------------------------------------------------------------------------------------
-def text(x, y, s, size, fill, *, bold=False, anchor="start", tracking=0.0) -> str:
+def text(x, y, s, size, fill, *, bold=False, anchor="start", tracking=0.0, halo=None) -> str:
     attrs = [f'x="{num(x)}"', f'y="{num(y)}"', f'font-size="{num(size)}"', f'font-family="{FONT}"', f'fill="{fill}"']
     if bold:
         attrs.append('font-weight="600"')
@@ -90,6 +90,8 @@ def text(x, y, s, size, fill, *, bold=False, anchor="start", tracking=0.0) -> st
         attrs.append(f'text-anchor="{anchor}"')
     if tracking:
         attrs.append(f'letter-spacing="{num(tracking)}"')
+    if halo:  # a surface-coloured outline keeps labels legible where lines or shapes pass behind them
+        attrs.append(f'stroke="{halo}" stroke-width="4" stroke-linejoin="round" paint-order="stroke"')
     return f"<text {' '.join(attrs)}>{esc(s)}</text>"
 
 

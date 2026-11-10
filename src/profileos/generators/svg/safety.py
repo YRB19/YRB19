@@ -7,6 +7,9 @@ import re
 import xml.etree.ElementTree as ET
 
 MAX_BYTES = 50_000
+# Per-asset ceilings for visuals that are legitimately larger. The Contribution City draws up to 371 isometric tiles, ~3 faces each;
+# a fully dense year is the worst case (measured in tests), so it gets a higher but still hard bound.
+LIMITS = {"contribution-city": 80_000}
 SVG_NS = "http://www.w3.org/2000/svg"
 FORBIDDEN_TAGS = {
     "script", "foreignobject", "iframe", "object", "embed", "image", "style", "use", "a", "video", "audio",
@@ -21,11 +24,11 @@ def _local(tag: str) -> str:
     return tag.rsplit("}", 1)[-1].lower()
 
 
-def validate(svg: str) -> list[str]:
+def validate(svg: str, max_bytes: int = MAX_BYTES) -> list[str]:
     """Return a list of problems (empty = safe and accessible)."""
     problems: list[str] = []
-    if len(svg.encode("utf-8")) > MAX_BYTES:
-        problems.append(f"larger than {MAX_BYTES} bytes")
+    if len(svg.encode("utf-8")) > max_bytes:
+        problems.append(f"larger than {max_bytes} bytes")
     if re.search(r"<!(DOCTYPE|ENTITY)", svg, re.I):
         problems.append("DOCTYPE/ENTITY declarations are not allowed")
         return problems  # never feed those to a parser

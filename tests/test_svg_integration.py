@@ -9,14 +9,16 @@ import yaml
 
 from conftest import NOW, ROOT
 from profileos.build import BuildError, build
-from profileos.generators import models, visuals
+from profileos.generators import features, models, visuals
 from profileos.generators.svg import safety
 from profileos.github.fixtures import FixtureClient
 from test_build import Failing, Patched, assert_readme_inert
 
 ASSETS = "assets/generated"
-EXPECTED = {"pulse", "activity", "heatmap", "languages", "os-series",
-            "card-usageos", "card-researchos", "card-clipos", "card-companionos"}
+EXPECTED = {"profile-signal", "project-map", "language-bubbles", "contribution-city", "activity-rhythm", "code-pet",
+            "activity", "collaboration", "card-usageos", "card-researchos", "card-clipos", "card-companionos"}
+# Retired from the README by the profile-experience enhancement (superseded, never shown alongside their replacement):
+RETIRED = {"pulse", "heatmap", "languages", "os-series"}
 
 
 def names(root):
@@ -57,7 +59,7 @@ def test_expected_assets_exist_in_both_modes(built):
     for n in EXPECTED:
         for mode in ("light", "dark"):
             svg = (root / ASSETS / f"{n}.{mode}.svg").read_text()
-            assert safety.validate(svg) == []
+            assert safety.validate(svg, safety.LIMITS.get(n, safety.MAX_BYTES)) == []
     assert set(res.assets) == {f"{ASSETS}/{n}.{m}.svg" for n in EXPECTED for m in ("light", "dark")}
 
 
@@ -105,7 +107,7 @@ def test_cards_and_markdown_share_one_source_of_truth(built):
     assert "FastAPI" in svg and "PostgreSQL" in svg
     alt = res.asset_objects["card-usageos"].alt
     assert "Self-hosted multi-account Claude.ai usage tracking platform" in alt
-    assert "UsageOS" in res.blocks["OS_SERIES"] and "UsageOS" in res.asset_objects["os-series"].alt
+    assert "UsageOS" in res.blocks["PROJECT_MAP"] and "UsageOS" in res.asset_objects["project-map"].alt
 
 
 # ---- idempotence, dry run, stale files ----------------------------------------------------------------------
@@ -156,7 +158,8 @@ def test_netos_and_freya_are_absent_from_every_public_output(built):
              *[p.read_text() for p in (root / ASSETS).glob("*.svg")]]
     for blob in blobs:
         assert "NetOS" not in blob and "FREYA" not in blob
-    assert [n["label"] for n in models.ecosystem_model(_ctx(root))["nodes"]] == ["UsageOS", "ResearchOS", "ClipOS", "CompanionOS"]
+    names_ = [n["name"] for n in features.project_map_model(_ctx(root))["nodes"]]
+    assert names_[:4] == ["UsageOS", "ResearchOS", "ClipOS", "CompanionOS"] and "NetOS" not in names_ and "FREYA" not in names_
 
 
 def _ctx(root, now=NOW):
@@ -174,13 +177,13 @@ def test_publishing_is_a_single_explicit_switch(repo_copy):
     edit_yaml(repo_copy, "projects", lambda d: d["NetOS"].update(publish=True))
     res = build(repo_copy, fixtures=True, dry_run=True, now=NOW)
     assert "card-netos" in res.asset_objects
-    assert "NetOS" in res.asset_objects["os-series"].alt
-    assert "FREYA" not in res.asset_objects["os-series"].alt
+    assert "NetOS" in res.asset_objects["project-map"].alt
+    assert "FREYA" not in res.asset_objects["project-map"].alt
 
 
 def test_unpublished_repo_is_excluded_from_language_totals_too(repo_copy):
     res = build(repo_copy, fixtures=True, dry_run=True, now=NOW)
-    langs = res.asset_objects["languages"].alt
+    langs = res.asset_objects["language-bubbles"].alt
     assert "C++" not in langs  # NetOS (the only C++ repo in the fixture) is internal-only
 
 
@@ -203,10 +206,11 @@ def test_stack_items_without_evidence_never_appear(built):
 def test_profile_content_is_exactly_what_was_supplied(built):
     root, _ = built
     text = readme(root)
-    now = block(text, "NOW")
-    assert "Exploring: Agentic systems · AI infrastructure" in now and "Learning: Systems design · Distributed workflows" in now
-    assert "Planning next" not in now
-    assert block(text, "LINKS") == "[GitHub](https://github.com/YRB19)"
+    bip = block(text, "BUILDING")
+    assert "**Exploring** · Agentic systems · AI infrastructure" in bip and "**Learning** · Systems design · Distributed workflows" in bip
+    assert "Planning next" not in bip
+    assert "**Building**" not in bip           # nothing is declared in now.building: commit activity is never promoted to intent
+    assert "[GitHub](https://github.com/YRB19)" in block(text, "CTA")
 
 
 # ---- activity is a signal, never an importance ranking -----------------------------------------------------
@@ -227,10 +231,19 @@ def test_activity_bars_follow_curated_order_not_commit_counts(repo_copy):
     assert "ClipOS 500" in alt
 
 
-def test_most_commits_line_uses_commits_only(repo_copy):
+def test_recent_activity_is_labelled_as_derived_and_never_becomes_building(repo_copy):
     res = build(repo_copy, client=Patched(NOW, _boost("ResearchOS", 500)), dry_run=True, now=NOW)
-    assert "Most commits (last 30 days): [ResearchOS]" in res.blocks["NOW"]  # not the higher-priority UsageOS
-    assert "Most active" not in res.blocks["NOW"]
+    bip = res.blocks["BUILDING"]
+    recent = [l for l in bip.splitlines() if l.startswith("**Recent activity**")][0]
+    assert "[ResearchOS]" in recent and "not a statement of intent" in recent
+    assert "**Building**" not in bip and "Most active" not in bip
+
+
+def test_declared_building_comes_only_from_profile_metadata(repo_copy):
+    edit_yaml(repo_copy, "profile", lambda d: d["now"].update(building=["ClipOS"]))
+    res = build(repo_copy, fixtures=True, dry_run=True, now=NOW)
+    line = [l for l in res.blocks["BUILDING"].splitlines() if l.startswith("**Building**")]
+    assert line == ["**Building** · [ClipOS](https://github.com/YRB19/ClipOS)  "] or line == ["**Building** · [ClipOS](https://github.com/YRB19/ClipOS)"]
 
 
 def test_flagship_card_order_ignores_activity(repo_copy):
@@ -242,7 +255,7 @@ def test_flagship_card_order_ignores_activity(repo_copy):
 
 def test_no_quality_scores_or_rankings_are_rendered(built):
     root, res = built
-    shown = " ".join([block(readme(root), "PULSE"), block(readme(root), "ACTIVITY"), *map(visible_text, res.assets.values()),
+    shown = " ".join([block(readme(root), "SIGNAL"), block(readme(root), "ACTIVITY"), *map(visible_text, res.assets.values()),
                       *(a.alt for a in res.asset_objects.values())]).lower()
     assert "activity indicators" in shown  # the framing sentence is present, so this scans real output
     for word in ("score", "rank", "grade", "top contributor", "best ", "leaderboard", "rating"):
@@ -260,10 +273,10 @@ def test_api_outage_with_cache_keeps_assets_and_labels_staleness(built):
 
 def test_outage_with_no_cache_draws_only_what_curated_data_supports(repo_copy):
     res = build(repo_copy, client=Failing(), now=NOW)
-    assert set(res.asset_objects) == {"os-series"}      # no fabricated metrics, no empty cards
-    for sid in ("PULSE", "ACTIVITY", "SELECTED_SYSTEMS", "CURRENTLY_BUILDING", "RECENTLY_SHIPPED"):
+    assert set(res.asset_objects) == {"collaboration"}   # only curated text survives: no fabricated metrics, no empty cards
+    for sid in ("SIGNAL", "ACTIVITY", "SELECTED_SYSTEMS", "PROJECT_MAP", "CITY", "RHYTHM", "PET", "LANGUAGE_BUBBLES"):
         assert res.blocks[sid] == "", sid
-    assert "UsageOS" in res.asset_objects["os-series"].alt
+    assert "build something useful" in res.asset_objects["collaboration"].alt
 
 
 # ---- read-only guarantees ------------------------------------------------------------------------------------
@@ -302,4 +315,4 @@ def test_build_command_reports_asset_counts(repo_copy, capsys):
     from profileos.cli import main
 
     assert main(["--root", str(repo_copy), "build", "--fixtures"]) == 0
-    assert "assets: 18 files" in capsys.readouterr().out
+    assert "assets: 24 files" in capsys.readouterr().out

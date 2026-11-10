@@ -20,9 +20,18 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
+        "building": {"type": "array", "items": {"type": "string"}},
         "exploring": {"type": "array", "items": {"type": "string"}},
         "learning": {"type": "array", "items": {"type": "string"}},
         "planning_next": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "collaboration": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "headline": {"type": "string", "maxLength": 90},
+        "description": {"type": "string", "maxLength": 200}
       }
     },
     "theme": {

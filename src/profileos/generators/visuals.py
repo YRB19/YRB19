@@ -3,8 +3,8 @@ import html
 import re
 from dataclasses import dataclass
 
-from . import models
-from .svg import bars, cards, ecosystem, heatmap, langbar, pulse, safety
+from . import features, models
+from .svg import bars, bubbles, cards, city, cta, pet, projectmap, rhythm, safety, signal
 from .svg.base import W
 from .svg.tokens import DEFAULT_ACCENT, MODES, Theme
 
@@ -41,7 +41,7 @@ def _make(name, mod, model, themes) -> Asset:
     meta = {"name": name, "title": title, "alt": alt}
     svg = {mode: mod.render(model, themes[mode], meta) for mode in MODES}
     for mode, text in svg.items():
-        problems = safety.validate(text)
+        problems = safety.validate(text, safety.LIMITS.get(name, safety.MAX_BYTES))
         if problems:
             raise AssetError(f"{name}.{mode}.svg failed safety checks: {'; '.join(problems)}")
     return Asset(name, title, alt, svg)
@@ -53,12 +53,15 @@ def build_assets(ctx) -> dict:
     themes = {mode: Theme(mode, accent) for mode in MODES}
     out: dict[str, Asset] = {}
     spec = [
-        ("pulse", pulse, models.pulse_model(ctx)),
+        ("profile-signal", signal, features.signal_model(ctx)),
+        ("project-map", projectmap, features.project_map_model(ctx)),
+        ("language-bubbles", bubbles, features.bubbles_model(ctx)),
+        ("contribution-city", city, features.city_model(ctx)),
+        ("activity-rhythm", rhythm, features.rhythm_model(ctx)),
+        ("code-pet", pet, features.pet_model(ctx)),
         ("activity", bars, models.activity_model(ctx)),
-        ("heatmap", heatmap, models.heatmap_model(ctx)),
         ("monthly", bars, models.monthly_model(ctx)),
-        ("languages", langbar, models.language_model(ctx)),
-        ("os-series", ecosystem, models.ecosystem_model(ctx)),
+        ("collaboration", cta, features.collaboration_model(ctx)),
     ]
     for card in models.card_models(ctx):
         spec.append((card_name(card["slug"]), cards, card))

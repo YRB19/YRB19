@@ -330,7 +330,7 @@ def test_release_tracker_reuses_the_existing_dataset_no_extra_api_calls(repo_cop
             calls["graphql"] += 1
             return super().graphql(q, v)
     build(repo_copy, client=C(NOW), now=NOW, dry_run=True)
-    assert calls["graphql"] == 2                                                # repos (1 page) + contributions: releases ride along
+    assert calls["graphql"] == 3                                                # repos (1 page) + contributions + account counts: releases ride along
 
 
 def test_readme_template_has_the_releases_marker_exactly_once():

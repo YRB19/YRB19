@@ -40,3 +40,5 @@ snapshots:
   chart_months: 12          # monthly chart shows at most this many months, and only once >= 2 months have data
   timeline_max_items: 8     # README timeline length (newest first); the full record lives in snapshots/timeline.json
   min_timeline_events: 3    # timeline hidden below this many verified events
+# --- ProfileOS enhancement: GitHub Pages app URL (https). Empty until the interactive site is deployed; when set, README visuals link to it.
+pages: { url: null }

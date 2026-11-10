@@ -9,22 +9,22 @@ from .analytics import discovery
 from .data import load_all
 from .generators import visuals
 from .generators.models import excluded_repos
-from .generators.markers import MarkerError, replace_blocks
+from .generators.markers import MarkerError, migrate_legacy, replace_blocks
 from .generators.sections import Context, render_all
 from .github.client import GitHubClient, GitHubError
-from .github.fetch import fetch_contributions, fetch_repos
+from .github.fetch import fetch_contributions, fetch_profile, fetch_repos
 from .github.fixtures import FixtureClient
 from .status import ci as ci_status, health as health_status
-from .generators import models
+from .generators import features, models
 from .history import run as history_run
 from .storage.cache import Cache, iso, parse_iso, would_change, would_change_status
 from .validate import validate
 
-FETCHED = ("repos", "activity", "releases", "contributions")
+FETCHED = ("repos", "activity", "releases", "contributions", "profile")
 _GENERATED_ASSET = re.compile(r"^[a-z0-9-]+\.(light|dark)\.svg$")  # only files we generate are ever deleted
 
 
-_SOURCE = {"ci": "github-actions-api", "health": "http-probe"}
+_SOURCE = {"ci": "github-actions-api", "health": "http-probe", "pet": "profileos"}
 
 
 class BuildError(Exception):
@@ -166,6 +166,13 @@ def build(root, *, fixtures=False, dry_run=False, force=False, now=None, client=
         api_ok["contributions"] = False
         warnings.append(f"contributions fetch failed, using last valid cache: {e}")
 
+    try:
+        fresh["profile"] = fetch_profile(client, handle)
+        api_ok["profile"] = True
+    except GitHubError as e:
+        api_ok["profile"] = False
+        warnings.append(f"profile counts fetch failed, using last valid cache: {e}")
+
     # resolve each dataset: fresh -> last valid cache -> absent (section hidden, never fabricated)
     datasets, ages, snap = {}, {}, {}
     for name in FETCHED:
@@ -210,6 +217,15 @@ def build(root, *, fixtures=False, dry_run=False, force=False, now=None, client=
     # staleness label uses the cache's own date for datasets that fell back
     ctx_snapshot = min(snap.values()) if snap else snapshot_date
     ctx = Context(data, datasets, ages, now, ctx_snapshot if snap else snapshot_date, first_seen)
+    # Code Pet growth is a high-water mark of REAL contribution data: it can rise, never fall (a quiet stretch must not
+    # shrink the pet). Synthetic runs neither read nor write it.
+    synthetic = isinstance(client, FixtureClient)
+    pet_env = None if synthetic else cache.read("pet")
+    ctx.pet_peak = int(pet_env["data"].get("growth_peak", 0)) if pet_env and pet_env.get("ok") else 0
+    pm = features.pet_model(ctx)
+    if pm and not synthetic and pm["growth_index"] > ctx.pet_peak:
+        to_write["pet"] = {"growth_peak": pm["growth_index"]}
+        changed_data.append("pet")
     # ---- Phase 7: history (computed here, written only after everything rendered) -----------------------------------------
     hist = history_run.run(
         root, cfg=data["config"].get("snapshots"), now=now, repos=ctx.repos, activity=ctx.activity, releases=ctx.releases,
@@ -228,8 +244,10 @@ def build(root, *, fixtures=False, dry_run=False, force=False, now=None, client=
 
     readme_path = root / "README.md"
     old = readme_path.read_text(encoding="utf-8")
+    migrated, notes = migrate_legacy(old)       # old marker sets are upgraded in memory first (idempotent)
+    warnings += notes
     try:
-        new, w = replace_blocks(old, blocks)
+        new, w = replace_blocks(migrated, blocks)
     except MarkerError as e:
         raise BuildError(f"README marker problem: {e}") from e
     warnings += w

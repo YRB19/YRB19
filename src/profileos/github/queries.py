@@ -64,3 +64,13 @@ def day_commits_query(n: int) -> str:
         f"  r{i}: repository(owner: $o{i}, name: $n{i}) {{ defaultBranchRef {{ target {{ ... on Commit {{ history(since: $s, until: $u) {{ totalCount }} }} }} }} }}"
         for i in range(n))
     return f"query($s: GitTimestamp!, $u: GitTimestamp!, {decl}) {{\n{body}\n}}"
+
+
+PROFILE_QUERY = """
+query($login: String!) {
+  user(login: $login) {
+    followers { totalCount }
+    repositories(privacy: PUBLIC, ownerAffiliations: OWNER) { totalCount }
+  }
+}
+"""

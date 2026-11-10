@@ -4,7 +4,7 @@ import re
 
 from ..storage.cache import iso
 from .client import GitHubError
-from .queries import day_commits_query, CONTRIBUTIONS_QUERY, REPOS_QUERY
+from .queries import day_commits_query, CONTRIBUTIONS_QUERY, PROFILE_QUERY, REPOS_QUERY
 
 MAX_PAGES = 10  # safety cap
 
@@ -120,6 +120,18 @@ def fetch_contributions(client, login: str, now: dt.datetime, exclude=frozenset(
         },
         "calendar": {"total": year["totalContributions"], "days": days},
     }
+
+
+def fetch_profile(client, login: str) -> dict:
+    """Account-level counts straight from GitHub: followers and the PUBLIC repository count (forks included, as on the
+    profile page). A malformed count raises GitHubError: we never turn "could not read" into 0."""
+    u = (client.graphql(PROFILE_QUERY, {"login": login}) or {}).get("user") or {}
+    followers = (u.get("followers") or {}).get("totalCount")
+    public = (u.get("repositories") or {}).get("totalCount")
+    for v in (followers, public):
+        if not isinstance(v, int) or isinstance(v, bool) or v < 0:
+            raise GitHubError("profile counts missing or malformed")
+    return {"followers": followers, "public_repos": public}
 
 
 _NAME = re.compile(r"^([A-Za-z0-9-]+)/([A-Za-z0-9_.-]+)$")
