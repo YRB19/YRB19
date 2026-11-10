@@ -106,10 +106,27 @@ def _join(parts, sep="\n\n") -> str:
     return sep.join(p for p in parts if p)
 
 
+def _titled(title: str, body: str, level: int = 2) -> str:
+    """A heading that exists only when its content does: a profile with no data for a section shows no empty heading."""
+    return f"{'#' * level} {title}\n\n{body}" if body else ""
+
+
+def _centered(inner: str) -> str:
+    return f'<div align="center">\n\n{inner}\n\n</div>' if inner else ""
+
+
+def _group(ctx: Context, group: str, members: list) -> str:
+    """The two-column composite for a group of cards (stacked for phones); a lone member is shown on its own."""
+    if group in ctx.assets:
+        return _centered(_img(ctx, group))
+    return _centered(_join([_img(ctx, m) for m in members]))
+
+
 # ---- renderers ---------------------------------------------------------------------------------
 def signal(ctx: Context) -> str:
-    img = _img(ctx, "profile-signal")
-    return _join([img, ctx.note("contributions", "repos", "profile") if img else ""])
+    """The dashboard: Profile Signal and commit bars beside the Code Pet and weekly rhythm."""
+    body = _group(ctx, "overview", ["profile-signal", "activity", "code-pet", "activity-rhythm"])
+    return _join([body, ctx.note("contributions", "repos", "profile", "activity") if body else ""])
 
 
 def building(ctx: Context) -> str:
@@ -132,7 +149,7 @@ def building(ctx: Context) -> str:
         derived.append(f"**New on GitHub** · [{md(nb['name'])}]({safe_url(nb['url'])}) <sub>first seen {nb['first_seen']}</sub>")
     ships = recently_shipped(ctx)
     parts = ["  \n".join(head), "  \n".join(derived), ("**Recently shipped**  \n" + ships) if ships else ""]
-    return _join(parts + [ctx.note("repos", "activity")])
+    return _titled("Building in Public", _join(parts + [ctx.note("repos", "activity")]))
 
 
 def recently_shipped(ctx: Context) -> str:
@@ -168,7 +185,7 @@ def timeline(ctx: Context) -> str:
     rows = models.timeline_rows(ctx)
     if not rows:
         return ""
-    lines = ["### Project timeline", ""]
+    lines = []
     for r in rows:
         link = safe_url(r["url"])
         what = f"[{md(r['title'])}]({link})" if link else md(r["title"])
@@ -176,38 +193,24 @@ def timeline(ctx: Context) -> str:
     lines.append("")
     lines.append("<sub>Dates come from GitHub (repository creation, release publication) or sourced milestones. "
                  "\"First seen\" is when ProfileOS first listed a project, not when it was started.</sub>")
-    return "\n".join(lines)
-
-
-def _linked(ctx, inner: str) -> str:
-    url = (ctx.cfg.get("pages") or {}).get("url")
-    return f'<a href="{html.escape(url, quote=True)}">\n{inner}\n</a>' if url and safe_url(url) else inner
+    return "### Project timeline\n\n" + "\n".join(lines)
 
 
 def project_map(ctx: Context) -> str:
-    a = ctx.assets.get("project-map")
-    if not a:
+    """Project Map beside the contribution city and the language bubbles. The map is an image, so every project is also a link below."""
+    members = ["project-map", "contribution-city", "language-bubbles"]
+    if not any(m in ctx.assets for m in members):
         return ""
     m = features.project_map_model(ctx)
-    names = " · ".join(f"[{md(n['name'])}]({safe_url(n['url'])})" for n in m["nodes"])
-    return _join([_linked(ctx, visuals.picture(a)), names, ctx.note("repos")])
-
-
-def language_bubbles(ctx: Context) -> str:
-    return _join([_img(ctx, "language-bubbles"), ctx.note("repos") if "language-bubbles" in ctx.assets else ""])
+    names = " · ".join(f"[{md(n['name'])}]({safe_url(n['url'])})" for n in m["nodes"]) if m else ""
+    body = _join([_group(ctx, "systems", members), f'<div align="center">{names}</div>' if names else "",
+                  ctx.note("repos", "contributions")])
+    return _titled("Systems & Activity", body)
 
 
 def city(ctx: Context) -> str:
-    img = _img(ctx, "contribution-city")
-    return _join([_linked(ctx, img) if img else "", ctx.note("contributions") if img else ""])
-
-
-def rhythm(ctx: Context) -> str:
-    return _img(ctx, "activity-rhythm")
-
-
-def pet(ctx: Context) -> str:
-    return _img(ctx, "code-pet")
+    """Month-by-month commit history: appears once two months of real history exist."""
+    return _titled("Commit History", _join([_centered(_img(ctx, "monthly")), ctx.note("repos", "activity")])) if "monthly" in ctx.assets else ""
 
 
 def cta(ctx: Context) -> str:
@@ -217,18 +220,22 @@ def cta(ctx: Context) -> str:
     links = [f"[{md(l['label'])}]({l['url']})" for l in m["approved_links"]]
     if m["pages_url"]:
         links.append(f"[Interactive project map]({m['pages_url']})")
-    return _join([_img(ctx, "collaboration"), " · ".join(links)])
+    return _join([_centered(_img(ctx, "collaboration")), f'<div align="center">{" · ".join(links)}</div>'])
 
 
 def selected_systems(ctx: Context) -> str:
-    blocks = []
-    for card in models.card_models(ctx):
-        a = ctx.assets.get(visuals.card_name(card["slug"]))
-        if not a:
-            continue
-        links = [f"[{label}]({url})" for label, url in (("Demo", card.get("demo")), ("Docs", card.get("docs"))) if url]
-        blocks.append(_join([f'<a href="{html.escape(card["url"], quote=True)}">\n{visuals.picture(a)}\n</a>', " · ".join(links)], "\n\n"))
-    return _join(blocks + ([ctx.note("repos")] if blocks and ctx.note("repos") else []))
+    """Featured systems as a two-column grid of cards (stacked on phones) with real links underneath."""
+    cards_ = [c for c in models.card_models(ctx) if visuals.card_name(c["slug"]) in ctx.assets]
+    if not cards_:
+        return ""
+    links = []
+    for card in cards_:
+        bits = [f"**[{md(card['title'])}]({safe_url(card['url'])})**"]
+        bits += [f"[{label}]({url})" for label, url in (("Demo", card.get("demo")), ("Docs", card.get("docs"))) if url]
+        links.append(" · ".join(bits))
+    body = _join([_group(ctx, "featured", [visuals.card_name(c["slug"]) for c in cards_]),
+                  '<div align="center">' + "&nbsp;&nbsp;|&nbsp;&nbsp;".join(links) + "</div>", ctx.note("repos")])
+    return _titled("Featured Systems", body)
 
 
 def stack(ctx: Context) -> str:
@@ -255,13 +262,6 @@ def earlier_builds(ctx: Context) -> str:
     return "\n\n".join(out)
 
 
-def activity(ctx: Context) -> str:
-    visuals_ = [_img(ctx, n) for n in ("monthly", "activity")]
-    if not any(visuals_):
-        return ""
-    return _join(visuals_ + [ctx.note("repos", "activity")])
-
-
 def footer(ctx: Context) -> str:
     if not ctx.display.get("show_freshness_stamp", True):
         return ""
@@ -270,8 +270,8 @@ def footer(ctx: Context) -> str:
 
 RENDERERS = {
     "SIGNAL": signal, "BUILDING": building, "RELEASES": releases, "SELECTED_SYSTEMS": selected_systems,
-    "PROJECT_MAP": project_map, "STACK": stack, "LANGUAGE_BUBBLES": language_bubbles, "CITY": city, "RHYTHM": rhythm,
-    "PET": pet, "ACTIVITY": activity, "EARLIER_BUILDS": earlier_builds, "TIMELINE": timeline, "CTA": cta, "FOOTER": footer,
+    "PROJECT_MAP": project_map, "STACK": stack, "CITY": city,
+    "EARLIER_BUILDS": earlier_builds, "TIMELINE": timeline, "CTA": cta, "FOOTER": footer,
 }
 
 

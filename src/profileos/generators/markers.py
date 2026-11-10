@@ -2,18 +2,18 @@
 import re
 
 REGISTERED = [
-    "SIGNAL", "BUILDING", "RELEASES", "SELECTED_SYSTEMS", "PROJECT_MAP", "STACK", "LANGUAGE_BUBBLES",
-    "CITY", "RHYTHM", "PET", "ACTIVITY", "EARLIER_BUILDS", "TIMELINE", "CTA", "FOOTER",
+    "SIGNAL", "BUILDING", "RELEASES", "SELECTED_SYSTEMS", "PROJECT_MAP", "STACK",
+    "CITY", "EARLIER_BUILDS", "TIMELINE", "CTA", "FOOTER",
 ]
+# Blocks whose visuals are now composed into a neighbouring section (SIGNAL = signal + pet, PROJECT_MAP = map + languages,
+# CITY = city + rhythm + commit bars). Old READMEs that still carry them have those blocks (and a heading right above) removed.
+LEGACY_ABSORBED = ("LANGUAGE_BUBBLES", "RHYTHM", "PET", "ACTIVITY")
 # Marker migration (profile-experience enhancement). Old READMEs are upgraded in memory before validation and build.
 LEGACY_RENAMES = {"PULSE": "SIGNAL", "OS_SERIES": "PROJECT_MAP", "LINKS": "CTA"}
 LEGACY_MERGED_INTO_BUILDING = ("CURRENTLY_BUILDING", "NOW", "RECENTLY_SHIPPED")
 # new marker -> (heading, anchor marker, "before" | "after"): inserted only when the new marker is missing
 INSERTIONS = [
-    ("LANGUAGE_BUBBLES", "Languages", "STACK", "after"),
-    ("CITY", "Contribution city", "ACTIVITY", "before"),
-    ("RHYTHM", "Activity rhythm", "ACTIVITY", "before"),
-    ("PET", "Code pet", "ACTIVITY", "before"),
+    ("CITY", "Activity", "ACTIVITY", "before"),
 ]
 _ANY_START = re.compile(r"<!-- PROFILEOS:START:([A-Z_]+) -->")
 
@@ -90,4 +90,9 @@ def migrate_legacy(text: str):
         else:
             text = text.replace(ea, ea + "\n\n" + block.rstrip("\n"), 1)
         notes.append(f"added missing marker {new}")
+    for old in LEGACY_ABSORBED:
+        so, eo = _tokens(old)
+        if text.count(so) == 1 and text.count(eo) == 1:
+            text = re.sub(r"(?:^#{2,4} [^\n]*\n+)?" + re.escape(so) + r".*?" + re.escape(eo) + r"\n*", "", text, count=1, flags=re.DOTALL | re.MULTILINE)
+            notes.append(f"removed marker {old} (now composed into another section)")
     return text, notes
