@@ -1,8 +1,12 @@
 """Collaboration CTA: a minimal closing banner. Text only: the clickable links are real Markdown links under the image
 (links inside a README image are not clickable). It makes no promise of availability."""
-from .base import PAD, W, document, line, rect, text, wrap_text
+from .base import PAD, W, css, document, g, line, num, rect, text, wrap_text
 
 TITLE = "Let's build something"
+ANIM = css("@keyframes cta-dot{0%,80%,100%{opacity:.2}40%{opacity:1}}"
+           "@keyframes cta-bar{0%,100%{opacity:1}50%{opacity:.45}}"
+           ".cta-bar{animation:cta-bar 3s ease-in-out infinite}"
+           + "".join(f".cta-d{i}{{animation:cta-dot 1.4s ease-in-out {i * 0.2:.1f}s infinite}}" for i in range(3)))
 
 
 def alt(m: dict) -> str:
@@ -22,6 +26,7 @@ def render(m: dict, theme, meta: dict) -> str:
     for ln in desc:
         out.append(text(PAD + 16, y, ln, 16, theme.muted))
         y += 24
-    height = y + 10
-    bar = rect(PAD, 24, 4, height - 48, fill=theme.accent, rx=2)
-    return document(meta, theme, height, bar + "".join(out))
+    dots = "".join(g(f"cta-d{i}", f'<circle cx="{num(PAD + 22 + i * 14)}" cy="{num(y + 2)}" r="4" fill="{theme.accent}"/>') for i in range(3))
+    height = y + 30
+    bar = g("cta-bar", rect(PAD, 24, 4, height - 48, fill=theme.accent, rx=2))
+    return document(meta, theme, height, bar + "".join(out) + dots, defs=ANIM)
