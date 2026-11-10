@@ -59,6 +59,8 @@ class FixtureClient:
                     name = variables["n" + k[1:]]
                     out["r" + k[1:]] = {"defaultBranchRef": {"target": {"history": {"totalCount": (sum(map(ord, name)) % 5)}}}}
             return out
+        if "followers { totalCount }" in query:                 # SYNTHETIC account counts
+            return {"user": {"followers": {"totalCount": 12}, "repositories": {"totalCount": 24}}}
         if "contributionsCollection" in query:
             return self._contrib()
         return {"user": {"repositories": {"pageInfo": {"hasNextPage": False, "endCursor": None}, "nodes": self._nodes()}}}
