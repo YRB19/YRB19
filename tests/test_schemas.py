@@ -78,8 +78,8 @@ def test_health_url_ssrf_rules():
 
 def test_missing_marker_in_readme_fails(repo_copy):
     p = repo_copy / "README.md"
-    p.write_text(p.read_text().replace("<!-- PROFILEOS:END:PULSE -->", ""))
-    assert any("PULSE" in e for e in validate(repo_copy).errors)
+    p.write_text(p.read_text().replace("<!-- PROFILEOS:END:SIGNAL -->", ""))
+    assert any("SIGNAL" in e for e in validate(repo_copy).errors)
 
 
 def test_stack_without_evidence_warns_and_strict_errors(repo_copy):

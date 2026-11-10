@@ -54,7 +54,7 @@ def test_readme_entry_uses_text_and_escapes_markdown(repo_copy):
             return nodes
 
     res = build(repo_copy, client=C(NOW), now=NOW)
-    block = res.blocks["RECENTLY_SHIPPED"]
+    block = res.blocks["BUILDING"]
     assert "[Add \\[x\\]" in block and "](http://evil.test)" not in block.replace("\\]", "").replace("\\(", "(") or "http://evil.test)" not in block.split("](")[0]
     assert "— [merged]" not in block and "— [update]" not in block and "— [release]" not in block
 
@@ -107,10 +107,11 @@ def test_scope_notes_state_what_is_counted():
 def test_scope_notes_are_visible_in_every_card(repo_copy):
     res = build(repo_copy, client=FixtureClient(NOW), now=NOW, dry_run=True)
     alts = {n: a.alt for n, a in res.asset_objects.items()}
-    assert "Public repositories shown" in alts["pulse"]
+    assert "published on this profile" in alts["profile-signal"]
     assert "Projects shown on this profile" in alts["activity"]
-    assert "all activity, including repositories not featured here" in alts["heatmap"]
-    assert "Public non-fork repositories" in alts["languages"]
+    assert "all activity, including repositories not featured here" in alts["contribution-city"]
+    assert "all activity, including repositories not featured here" in alts["activity-rhythm"]
+    assert "public non-fork repositories" in alts["language-bubbles"]
 
 
 # ---- Cache churn -------------------------------------------------------------------------------------------------

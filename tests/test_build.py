@@ -85,7 +85,7 @@ def test_manual_text_outside_markers_untouched(repo_copy):
 def test_dry_run_writes_nothing(repo_copy):
     before = (repo_copy / "README.md").read_text()
     res = build(repo_copy, fixtures=True, dry_run=True, now=NOW)
-    assert res.blocks["CURRENTLY_BUILDING"]
+    assert res.blocks["BUILDING"]
     assert (repo_copy / "README.md").read_text() == before and cache_files(repo_copy) == []
 
 
@@ -101,9 +101,9 @@ def test_api_failure_falls_back_to_last_cache(repo_copy):
 
 def test_no_cache_and_no_api_hides_sections_never_fabricates(repo_copy):
     res = build(repo_copy, client=Failing(), now=NOW)
-    for sid in ("CURRENTLY_BUILDING", "PULSE", "RECENTLY_SHIPPED", "SELECTED_SYSTEMS"):
-        assert res.blocks[sid] == "", sid
-    assert "github.com" not in res.blocks["OS_SERIES"]  # curated names only, no fetched facts or links
+    for sid in ("SIGNAL", "SELECTED_SYSTEMS", "PROJECT_MAP", "LANGUAGE_BUBBLES", "CITY", "RHYTHM", "PET"):
+        assert res.blocks[sid] == "", sid                # every fetched-data visual is hidden: no zeros, no placeholders
+    assert "github.com" not in res.blocks["BUILDING"]  # only curated Exploring/Learning text remains: no fetched facts or links
     text = (repo_copy / "README.md").read_text()
     assert "github.com/YRB19/UsageOS" not in text and "last push" not in text and "data snapshot" in text
 
@@ -149,7 +149,7 @@ def test_invalid_data_blocks_build_and_writes_nothing(repo_copy):
 
 def test_broken_marker_fails_without_writing(repo_copy):
     p = repo_copy / "README.md"
-    p.write_text(p.read_text().replace("<!-- PROFILEOS:START:PULSE -->", ""))
+    p.write_text(p.read_text().replace("<!-- PROFILEOS:START:SIGNAL -->", ""))
     with pytest.raises(BuildError):
         build(repo_copy, fixtures=True, now=NOW)
 
@@ -198,9 +198,9 @@ def test_only_evidence_backed_status_is_displayed(repo_copy):
 def test_manual_override_wins(repo_copy):
     (repo_copy / "data" / "overrides.yml").write_text("focus: {ClipOS: force_active, UsageOS: hide}\n")
     res = build(repo_copy, fixtures=True, dry_run=True, now=NOW)
-    cb = res.blocks["CURRENTLY_BUILDING"]
-    assert "UsageOS" not in cb
-    assert "ClipOS" in cb and "ClipOS](https://github.com/YRB19/ClipOS) — active" in cb
+    recent = [l for l in res.blocks["BUILDING"].splitlines() if l.startswith("**Recent activity**")][0]
+    assert "UsageOS" not in recent
+    assert "[ClipOS](https://github.com/YRB19/ClipOS)" in recent
 
 
 def test_publish_false_beats_force_active(repo_copy):
@@ -217,10 +217,11 @@ def test_profile_repo_is_excluded_from_activity(repo_copy):
         nodes.append(me)
 
     res = build(repo_copy, client=Patched(NOW, add_self), dry_run=True, now=NOW)
-    assert "github.com/YRB19/YRB19)" not in res.blocks["NOW"] + res.blocks["ACTIVITY"]
+    assert "github.com/YRB19/YRB19)" not in res.blocks["BUILDING"] + res.blocks["ACTIVITY"]
 
 
 def test_display_limit_respected(repo_copy):
     (repo_copy / "data" / "profile.yml").write_text((repo_copy / "data" / "profile.yml").read_text().replace("max_currently_building: 5", "max_currently_building: 2"))
     res = build(repo_copy, fixtures=True, dry_run=True, now=NOW)
-    assert res.blocks["CURRENTLY_BUILDING"].count("\n") == 1
+    recent = [l for l in res.blocks["BUILDING"].splitlines() if l.startswith("**Recent activity**")][0]
+    assert recent.count("](") == 2
