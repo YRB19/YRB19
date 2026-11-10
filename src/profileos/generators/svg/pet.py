@@ -6,9 +6,13 @@ growth never goes backwards, and no text guilts or scolds.
 """
 import math
 
-from .base import PAD, W, document, footer, num, rect, text
+from .base import PAD, W, css, document, footer, g, num, rect, text
 
 TITLE = "Code Pet"
+ANIM = css("@keyframes pet-hop{0%,49%{transform:translateY(0)}50%,100%{transform:translateY(-5px)}}"
+           "@keyframes pet-tick{0%,100%{opacity:1}50%{opacity:.35}}"
+           ".pet-hop{animation:pet-hop 1.2s steps(1) infinite}"
+           ".pet-tick{animation:pet-tick 2s ease-in-out infinite}")
 LCD_LIGHT, LCD_DARK, BEZEL, WHITE = "#9BBC0F", "#0F380F", "#0B1220", "#FFFFFF"
 GW, GH, CELL = 22, 18, 5                      # LCD grid and pixel size
 DEV_X, DEV_Y, DEV_W, DEV_H = PAD, 56, 156, 196
@@ -88,11 +92,12 @@ def render(m: dict, theme, meta: dict) -> str:
     parts.append(rect(sx, sy, GW * CELL, GH * CELL, fill=LCD_LIGHT, rx=2))
     px = sorted(sprite(m["growth_index"], m["mood_index"]))
     d = "".join(f"M{num(sx + x * CELL)} {num(sy + y * CELL)}h{CELL}v{CELL}h-{CELL}z" for x, y in px)
-    parts.append(f'<path fill="{LCD_DARK}" d="{d}"/>')
+    parts.append(g("pet-hop", f'<path fill="{LCD_DARK}" d="{d}"/>'))
     parts.append(text(DEV_X + DEV_W / 2, sy + GH * CELL + 38, "YRB19", 16, WHITE, bold=True, anchor="middle", tracking=2))
     by = DEV_Y + DEV_H - 28
     for i in (-1, 0, 1):
-        parts.append(f'<circle cx="{num(DEV_X + DEV_W / 2 + i * 30)}" cy="{num(by)}" r="7" fill="{button}"/>')
+        c = f'<circle cx="{num(DEV_X + DEV_W / 2 + i * 30)}" cy="{num(by)}" r="7" fill="{button}"/>'
+        parts.append(g("pet-tick", c) if i == 0 else c)
     # readout
     x = DEV_X + DEV_W + 28
     y = 74
@@ -108,4 +113,4 @@ def render(m: dict, theme, meta: dict) -> str:
         y += 40
     note_svg, height = footer(m["note"], DEV_Y + DEV_H + 28, theme)
     parts.append(note_svg)
-    return document(meta, theme, height, "".join(parts))
+    return document(meta, theme, height, "".join(parts), defs=ANIM)
