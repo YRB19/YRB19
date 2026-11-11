@@ -30,8 +30,6 @@ My projects usually start with a practical problem and grow into systems around 
 
 
 ---
-
-## Building in Public
 <!-- PROFILEOS:START:BUILDING -->
 ## Building in Public
 
@@ -54,7 +52,6 @@ My projects usually start with a practical problem and grow into systems around 
 
 ## Featured Systems
 <!-- PROFILEOS:START:SELECTED_SYSTEMS -->
-## Featured Systems
 
 <div align="center">
 
