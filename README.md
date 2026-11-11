@@ -72,8 +72,6 @@ My projects usually start with a practical problem and grow into systems around 
 
 
 ---
-
-## Project Map
 <!-- PROFILEOS:START:PROJECT_MAP -->
 ## Systems & Activity
 
