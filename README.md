@@ -49,8 +49,6 @@ My projects usually start with a practical problem and grow into systems around 
 
 
 ---
-
-## Featured Systems
 <!-- PROFILEOS:START:SELECTED_SYSTEMS -->
 ## Featured Systems
 
@@ -64,7 +62,7 @@ My projects usually start with a practical problem and grow into systems around 
   <img alt="UsageOS — Self-hosted multi-account Claude.ai usage tracking platform. Stack: FastAPI, PostgreSQL, React, Chrome Extension. Last push 2026-11-13. 1 star. ResearchOS — Autonomous deep-research platform with parallel specialist agents. Stack: FastAPI, SQLite, NVIDIA NIM, Docker. Last push 2026-08-03. 1 star. ClipOS — Turns long videos into short, vertical, captioned clips. Stack: FastAPI, faster-whisper, FFmpeg, OpenCV. Last push 2026-08-02. CompanionOS — Live Formula 1 timing and session-tracking desktop app. Status: active. Stack: Tauri, Rust, React, TypeScript. CI failing, last run 2026-07-29. Last push 2026-07-29. NetOS — Trading-system research harness: offline replay, data ingestion and cost modelling. Stack: Python, pytest, Ruff, mypy. CI failing, last run 2026-11-13. Last push 2026-11-13. 1 star. FREYA — Background daemon that watches a notes vault and plans canonical knowledge updates. Stack: Python, SQLite, watchdog, Obsidian MCP. Last push 2026-11-05. 1 star." src="assets/generated/featured-narrow.light.svg" width="880">
 </picture>
 
-** [UsageOS](https://github.com/YRB19/UsageOS)** · [Docs](https://github.com/YRB19/UsageOS/blob/main/DEPLOY.md)&nbsp;&nbsp;|&nbsp;&nbsp;**[ResearchOS](https://github.com/YRB19/ResearchOS)** · [Docs](https://github.com/YRB19/ResearchOS/blob/main/reference/ARCHITECTURE.md)&nbsp;&nbsp;|&nbsp;&nbsp;**[ClipOS](https://github.com/YRB19/ClipOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[CompanionOS](https://github.com/YRB19/CompanionOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[NetOS](https://github.com/YRB19/NetOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[FREYA](https://github.com/YRB19/FREYA) **
+**[UsageOS](https://github.com/YRB19/UsageOS)· [Docs](https://github.com/YRB19/UsageOS/blob/main/DEPLOY.md)&nbsp;&nbsp;|&nbsp;&nbsp;[ResearchOS](https://github.com/YRB19/ResearchOS) · [Docs](https://github.com/YRB19/ResearchOS/blob/main/reference/ARCHITECTURE.md)&nbsp;&nbsp;|&nbsp;&nbsp;[ClipOS](https://github.com/YRB19/ClipOS)&nbsp;&nbsp;|&nbsp;&nbsp;[CompanionOS](https://github.com/YRB19/CompanionOS)&nbsp;&nbsp;|&nbsp;&nbsp;[NetOS](https://github.com/YRB19/NetOS)&nbsp;&nbsp;|&nbsp;&nbsp;[FREYA](https://github.com/YRB19/FREYA)**
 
 </div>
 <!-- PROFILEOS:END:SELECTED_SYSTEMS -->
