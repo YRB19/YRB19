@@ -272,7 +272,7 @@ def test_rhythm_svg_labels_and_scope():
     for mode in MODES:
         svg = rhythm.render(m, Theme(mode), meta("activity-rhythm", rhythm.alt(m)))
         assert safety.validate(svg) == [] and all(d in svg for d in ("Mon", "Sun"))
-    assert "Not hours worked" in m["note"] and "productivity" in m["note"]
+    assert "calendar weekday" in m["note"] and "last 12 months" in m["note"]      # scope stated; the "not productivity" disclaimer was trimmed on purpose
 
 
 # ---- Language bubbles -----------------------------------------------------------------------------------------------------

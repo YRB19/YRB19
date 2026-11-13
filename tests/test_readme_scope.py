@@ -111,7 +111,7 @@ def test_scope_notes_are_visible_in_every_card(repo_copy):
     assert "Projects shown on this profile" in alts["activity"]
     assert "all activity, including repositories not featured here" in alts["contribution-city"]
     assert "all activity, including repositories not featured here" in alts["activity-rhythm"]
-    assert "public non-fork repositories" in alts["language-bubbles"]
+    assert "bytes of code" in alts["language-bubbles"] and "public repositories" in alts["language-bubbles"]
 
 
 # ---- Cache churn -------------------------------------------------------------------------------------------------
