@@ -203,7 +203,7 @@ def city_model(ctx):
     return {"cells": hm["cells"], "ncols": hm["ncols"], "total": hm["total"], "active_days": hm["active_days"],
             "max_day": hm["max_day"], "date_range": [days[0][0].isoformat(), days[-1][0].isoformat()],
             "source_scope": CALENDAR_SCOPE, "heights": list(LEVEL_HEIGHTS),
-            "note": "One tile per day, height = relative daily contributions. An activity signal, not a quality measure."}
+            "note": "One tile per day, height = relative daily contributions."}
 
 
 # ---- 6. Activity Rhythm ------------------------------------------------------------------------------------------
