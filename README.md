@@ -67,6 +67,7 @@ My projects usually start with a practical problem and grow into systems around 
 </div>
 
 <div align="center">**[UsageOS](https://github.com/YRB19/UsageOS)** · [Docs](https://github.com/YRB19/UsageOS/blob/main/DEPLOY.md)&nbsp;&nbsp;|&nbsp;&nbsp;**[ResearchOS](https://github.com/YRB19/ResearchOS)** · [Docs](https://github.com/YRB19/ResearchOS/blob/main/reference/ARCHITECTURE.md)&nbsp;&nbsp;|&nbsp;&nbsp;**[ClipOS](https://github.com/YRB19/ClipOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[CompanionOS](https://github.com/YRB19/CompanionOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[NetOS](https://github.com/YRB19/NetOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[FREYA](https://github.com/YRB19/FREYA)**</div>
+
 <!-- PROFILEOS:END:SELECTED_SYSTEMS -->
 
 <!-- PROFILEOS:START:RELEASES -->
@@ -90,6 +91,7 @@ My projects usually start with a practical problem and grow into systems around 
 </div>
 
 <div align="center">[UsageOS](https://github.com/YRB19/UsageOS) · [ResearchOS](https://github.com/YRB19/ResearchOS) · [ClipOS](https://github.com/YRB19/ClipOS) · [CompanionOS](https://github.com/YRB19/CompanionOS) · [NetOS](https://github.com/YRB19/NetOS) · [FREYA](https://github.com/YRB19/FREYA) · [Cosmic Explorer](https://github.com/YRB19/Cosmic-Explorer) · [Finwise](https://github.com/YRB19/Finwise) · [N8N-YT](https://github.com/YRB19/N8N-YT) · [RepoHealth](https://github.com/YRB19/repohealth)</div>
+
 <!-- PROFILEOS:END:PROJECT_MAP -->
 
 
