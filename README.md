@@ -116,6 +116,7 @@ My projects usually start with a practical problem and grow into systems around 
 
 ---
 
+<!-- PROFILEOS:START:CITY -->
 ## Commit History
 
 <div align="center">
@@ -148,6 +149,7 @@ The goal is to build useful systems that are understandable, testable, and maint
 Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · Trex Game · Bank Statement Analyzer · Mock IPL Auction platform · ShikshaSahayak · PersonaOS · IDEMI Data Science \& Business Analytics
 <!-- PROFILEOS:END:EARLIER_BUILDS -->
 
+<!-- PROFILEOS:START:TIMELINE -->
 ### Project timeline
 
 `2026-10-22` **NetOS** — First seen by ProfileOS  
@@ -161,8 +163,6 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 
 <sub>Dates come from GitHub (repository creation, release publication) or sourced milestones. "First seen" is when ProfileOS first listed a project, not when it was started.</sub>
 <!-- PROFILEOS:END:TIMELINE -->
-
-<sub>Dates come from GitHub (repository creation, release publication) or sourced milestones. "First seen" is when ProfileOS first listed a project, not when it was started.</sub>
 
 
 ---
