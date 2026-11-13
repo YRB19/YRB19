@@ -53,7 +53,7 @@ def signal_model(ctx):
     order = {"stars": 0, "contributions": 1, "repositories": 2, "followers": 3}
     tiles.sort(key=lambda t: order[t["key"]])
     return {"tiles": tiles, "generated_at": ctx.snapshot_date, "metric_scopes": scopes,
-            "note": "Snapshot of the latest update. Activity indicators, not quality measures."}
+            "note": "Snapshot of the latest update. Activity indicators."}
 
 
 # ---- 3. Building in Public ---------------------------------------------------------------------------------------
@@ -186,7 +186,7 @@ def bubbles_model(ctx):
         items.append({"language": "Other", "bytes": other_bytes, "percentage": round(other_bytes * 100.0 / grand, 1),
                       "repositories": sorted({n for l, _ in ranked if l not in shown for n in repos[l]}, key=str.lower)})
     return {"items": items, "total_bytes": grand,
-            "note": "Share of code bytes in public non-fork repositories. Not a skill measure."}
+            "note": ""}
 
 
 # ---- 5. Contribution City ----------------------------------------------------------------------------------------
@@ -225,7 +225,7 @@ def rhythm_model(ctx):
             for i in range(7)]
     return {"rows": rows, "total": total, "window": [days[0][0].isoformat(), days[-1][0].isoformat()],
             "source_scope": CALENDAR_SCOPE,
-            "note": "Contributions by calendar weekday over the last 12 months. Not hours worked, not productivity."}
+            "note": "Contributions by calendar weekday over the last 12 months."}
 
 
 # ---- 4. Code Pet -------------------------------------------------------------------------------------------------
@@ -289,7 +289,7 @@ def pet_model(ctx):
         "current_streak": cur, "longest_streak": longest, "latest_completed_day": completed.isoformat(),
         "latest_completed_day_count": latest, "window": [days[0][0].isoformat(), last.isoformat()],
         "generated_at": ctx.snapshot_date,
-        "note": "A playful snapshot of GitHub contributions. Not a measure of productivity or wellbeing; rest days are normal.",
+        "note": "A playful snapshot of GitHub contributions.",
     }
 
 
