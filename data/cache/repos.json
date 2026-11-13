@@ -340,14 +340,14 @@
       "languages": {
         "HTML": 506,
         "JavaScript": 42282,
-        "Python": 1603104
+        "Python": 1786996
       },
       "license": null,
       "name": "NetOS",
       "open_issues": 0,
       "open_prs": 0,
       "primary_language": "Python",
-      "pushed_at": "2026-11-10T17:07:52Z",
+      "pushed_at": "2026-11-13T10:30:09Z",
       "stars": 1,
       "topics": [],
       "url": "https://github.com/YRB19/NetOS"
@@ -523,20 +523,20 @@
       "is_fork": false,
       "is_private": false,
       "languages": {
-        "CSS": 5986,
-        "Dockerfile": 1109,
-        "HTML": 28391,
-        "JavaScript": 709547,
+        "CSS": 7043,
+        "Dockerfile": 1083,
+        "HTML": 28825,
+        "JavaScript": 709822,
         "Mako": 659,
-        "Python": 40979,
-        "TypeScript": 79537
+        "Python": 52092,
+        "TypeScript": 135460
       },
       "license": null,
       "name": "UsageOS",
       "open_issues": 2,
       "open_prs": 0,
       "primary_language": "JavaScript",
-      "pushed_at": "2026-10-29T16:34:01Z",
+      "pushed_at": "2026-11-13T11:42:09Z",
       "stars": 1,
       "topics": [],
       "url": "https://github.com/YRB19/UsageOS"
@@ -566,7 +566,7 @@
       "url": "https://github.com/YRB19/Wan2.2"
     }
   ],
-  "generated_at": "2026-11-10T19:49:58Z",
+  "generated_at": "2026-11-13T12:07:14Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"

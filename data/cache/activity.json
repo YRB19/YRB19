@@ -331,7 +331,7 @@
     "YRB19/FREYA": {
       "commits": {
         "d30": 2,
-        "d7": 1,
+        "d7": 0,
         "d90": 22
       },
       "merged_prs": [],
@@ -814,83 +814,83 @@
     },
     "YRB19/NetOS": {
       "commits": {
-        "d30": 110,
-        "d7": 44,
-        "d90": 186
+        "d30": 123,
+        "d7": 38,
+        "d90": 199
       },
       "merged_prs": [],
       "recent_commits": [
         {
-          "changed_files": 5,
-          "date": "2026-11-10T17:07:38Z",
-          "headline": "docs(slice-12): Slice 12 addenda — disclosure signal, dependency deci…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "6befce27328fed57d05e16977fbe457f93178b50",
-          "url": "https://github.com/YRB19/NetOS/commit/6befce27328fed57d05e16977fbe457f93178b50"
-        },
-        {
-          "changed_files": 3,
-          "date": "2026-11-10T17:07:25Z",
-          "headline": "docs(slice-12): evaluation docs — spec/method, synthetic run report, …",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "3b5fdaedc3d644ee7919a23ab9d76d5081ea9041",
-          "url": "https://github.com/YRB19/NetOS/commit/3b5fdaedc3d644ee7919a23ab9d76d5081ea9041"
-        },
-        {
-          "changed_files": 4,
-          "date": "2026-11-10T17:07:22Z",
-          "headline": "test(slice-12): unit and integration tests for AI vs baseline evaluation",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "57de7408f26ae992ed178d47dcbdeade3c523cda",
-          "url": "https://github.com/YRB19/NetOS/commit/57de7408f26ae992ed178d47dcbdeade3c523cda"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-11-10T17:07:03Z",
-          "headline": "feat(slice-12): evaluation orchestration — tools/ai_vs_baseline.py + …",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "3308919d709d21d4c324f951eecd3ea355ec56e6",
-          "url": "https://github.com/YRB19/NetOS/commit/3308919d709d21d4c324f951eecd3ea355ec56e6"
-        },
-        {
-          "changed_files": 8,
-          "date": "2026-11-10T17:06:41Z",
-          "headline": "feat(slice-12): evaluation core — research/ai_eval analysis package +…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "d43c81da36f1962be1aeae4a4e82f70462ab2fb1",
-          "url": "https://github.com/YRB19/NetOS/commit/d43c81da36f1962be1aeae4a4e82f70462ab2fb1"
-        },
-        {
           "changed_files": 1,
-          "date": "2026-11-10T17:06:10Z",
-          "headline": "docs(slice-12): README overhaul — status, architecture, do/don't, qui…",
+          "date": "2026-11-13T10:30:04Z",
+          "headline": "tools(slice-13): multi-market synthetic demo",
           "is_bot": false,
           "is_merge": false,
-          "sha": "7862ba953732f583393c105d499bc6c6c21c705d",
-          "url": "https://github.com/YRB19/NetOS/commit/7862ba953732f583393c105d499bc6c6c21c705d"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-11-07T04:44:23Z",
-          "headline": "fix(slice-11): formatting — model_version, schema",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "a80a41a681a2fa37d71cbca589c6e049a63e4db1",
-          "url": "https://github.com/YRB19/NetOS/commit/a80a41a681a2fa37d71cbca589c6e049a63e4db1"
+          "sha": "e0027bdfb29197593cfd6014dbaa795432fa26ec",
+          "url": "https://github.com/YRB19/NetOS/commit/e0027bdfb29197593cfd6014dbaa795432fa26ec"
         },
         {
           "changed_files": 4,
-          "date": "2026-11-07T04:44:18Z",
-          "headline": "docs(slice-11): slice status complete, statistical-validation closure…",
+          "date": "2026-11-13T10:30:01Z",
+          "headline": "docs(slice-13): multi-market shadow + feasibility docs + implementati…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "7cc71a6011bf60492009e4f37d7747e9de925115",
-          "url": "https://github.com/YRB19/NetOS/commit/7cc71a6011bf60492009e4f37d7747e9de925115"
+          "sha": "abc25798f3496182eb3ea2c5e815ab230ba4e4ae",
+          "url": "https://github.com/YRB19/NetOS/commit/abc25798f3496182eb3ea2c5e815ab230ba4e4ae"
+        },
+        {
+          "changed_files": 7,
+          "date": "2026-11-13T10:29:57Z",
+          "headline": "test(slice-13): Slice 13 unit + integration tests",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "f1407dc5e67328968d3214b32c61c5d34012b0ae",
+          "url": "https://github.com/YRB19/NetOS/commit/f1407dc5e67328968d3214b32c61c5d34012b0ae"
+        },
+        {
+          "changed_files": 5,
+          "date": "2026-11-13T10:29:54Z",
+          "headline": "feat(slice-13): simulation/multi_market shadow sessions, comparison, …",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "2158bbd73a7ecf407090927c03b5b01a7b686fc4",
+          "url": "https://github.com/YRB19/NetOS/commit/2158bbd73a7ecf407090927c03b5b01a7b686fc4"
+        },
+        {
+          "changed_files": 5,
+          "date": "2026-11-13T10:29:52Z",
+          "headline": "feat(slice-13): risk_execution/external_paper contained comparator (m…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "ae4bd56842aaf8becbab9db2483e5cbcdf8018a8",
+          "url": "https://github.com/YRB19/NetOS/commit/ae4bd56842aaf8becbab9db2483e5cbcdf8018a8"
+        },
+        {
+          "changed_files": 6,
+          "date": "2026-11-13T10:29:49Z",
+          "headline": "feat(slice-13): research/prediction_eval evaluator + research/confirm…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "b1af4d5893a61f1fb9bb6eabccd778e86f86dfce",
+          "url": "https://github.com/YRB19/NetOS/commit/b1af4d5893a61f1fb9bb6eabccd778e86f86dfce"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-11-13T10:29:46Z",
+          "headline": "feat(slice-13): observability/prediction_ledger append-only writer",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "583324e30266d91076b767e1b9513373f60cca67",
+          "url": "https://github.com/YRB19/NetOS/commit/583324e30266d91076b767e1b9513373f60cca67"
+        },
+        {
+          "changed_files": 6,
+          "date": "2026-11-13T10:29:43Z",
+          "headline": "feat(slice-13): data/live observation capture, quality engine, tamper…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "cde6165b482ad8aef067bbb866edba908b173bb5",
+          "url": "https://github.com/YRB19/NetOS/commit/cde6165b482ad8aef067bbb866edba908b173bb5"
         }
       ]
     },
@@ -1198,82 +1198,82 @@
     "YRB19/UsageOS": {
       "commits": {
         "d30": 12,
-        "d7": 0,
+        "d7": 11,
         "d90": 33
       },
       "merged_prs": [],
       "recent_commits": [
         {
-          "changed_files": 8,
-          "date": "2026-10-29T16:33:52Z",
-          "headline": "fix(extension): small fixes for options, popup, container strategy, a…",
+          "changed_files": 1,
+          "date": "2026-11-13T11:41:55Z",
+          "headline": "fic(frontend) : dead space managment",
           "is_bot": false,
           "is_merge": false,
-          "sha": "a9c30742d62c5789c7218ea5b20fc995c17530dc",
-          "url": "https://github.com/YRB19/UsageOS/commit/a9c30742d62c5789c7218ea5b20fc995c17530dc"
+          "sha": "20507cde9f01a2f90a0e857c738db013c6ca6305",
+          "url": "https://github.com/YRB19/UsageOS/commit/20507cde9f01a2f90a0e857c738db013c6ca6305"
         },
         {
           "changed_files": 4,
-          "date": "2026-10-29T16:33:52Z",
-          "headline": "refactor(extension): update chrome and firefox manifests, remove elec…",
+          "date": "2026-11-13T10:42:32Z",
+          "headline": "docs(frontend): update extension documentation",
           "is_bot": false,
           "is_merge": false,
-          "sha": "b14dae20be22e169e778810960e551c09513a298",
-          "url": "https://github.com/YRB19/UsageOS/commit/b14dae20be22e169e778810960e551c09513a298"
+          "sha": "19fed761e547bd824b5fbd61b7245da94479fa5c",
+          "url": "https://github.com/YRB19/UsageOS/commit/19fed761e547bd824b5fbd61b7245da94479fa5c"
         },
         {
-          "changed_files": 1,
-          "date": "2026-10-29T16:33:52Z",
-          "headline": "fix(extension): update usage-sse-watcher injection",
+          "changed_files": 8,
+          "date": "2026-11-13T10:42:24Z",
+          "headline": "fix(frontend): fix extension options, popup, container strategy, and …",
           "is_bot": false,
           "is_merge": false,
-          "sha": "dceee2c4564ca888d7a3083d76127ce135a87c06",
-          "url": "https://github.com/YRB19/UsageOS/commit/dceee2c4564ca888d7a3083d76127ce135a87c06"
+          "sha": "ae997a53b01c3553b8fb091d456cdd99dc009b2a",
+          "url": "https://github.com/YRB19/UsageOS/commit/ae997a53b01c3553b8fb091d456cdd99dc009b2a"
         },
         {
-          "changed_files": 6,
-          "date": "2026-10-29T16:33:52Z",
-          "headline": "refactor(extension): update content scripts for notes, free plan, and…",
+          "changed_files": 7,
+          "date": "2026-11-13T10:42:22Z",
+          "headline": "refactor(frontend): update extension manifests, token management, and…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "33ace2457c1d889829e334c728cfc546dc112595",
-          "url": "https://github.com/YRB19/UsageOS/commit/33ace2457c1d889829e334c728cfc546dc112595"
+          "sha": "8fa449d1786f38db8d6b57c0283c719f4bed0020",
+          "url": "https://github.com/YRB19/UsageOS/commit/8fa449d1786f38db8d6b57c0283c719f4bed0020"
         },
         {
-          "changed_files": 3,
-          "date": "2026-10-29T16:33:52Z",
-          "headline": "feat(extension): enhance token management and shared dataclasses",
+          "changed_files": 10,
+          "date": "2026-11-13T10:42:19Z",
+          "headline": "refactor(frontend): refactor extension background, API, and content s…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "2c5ad098e67ffb1beb00eb403e8e3a1fd8db1bf7",
-          "url": "https://github.com/YRB19/UsageOS/commit/2c5ad098e67ffb1beb00eb403e8e3a1fd8db1bf7"
+          "sha": "555ccbde6bcef8c34d25b3b909fe7423d9dd8619",
+          "url": "https://github.com/YRB19/UsageOS/commit/555ccbde6bcef8c34d25b3b909fe7423d9dd8619"
         },
         {
-          "changed_files": 1,
-          "date": "2026-10-29T16:33:52Z",
-          "headline": "feat(extension): enhance claude-api with SSE usage and cache invalida…",
+          "changed_files": 37,
+          "date": "2026-11-13T10:42:17Z",
+          "headline": "feat(frontend): add extension i18n, common utilities, and request hooks",
           "is_bot": false,
           "is_merge": false,
-          "sha": "b2f20c9f3a695a82c55e71558ab5c008c5b7944a",
-          "url": "https://github.com/YRB19/UsageOS/commit/b2f20c9f3a695a82c55e71558ab5c008c5b7944a"
+          "sha": "2faaea2db1ad80cca5c7e7900a3125d15b445fb8",
+          "url": "https://github.com/YRB19/UsageOS/commit/2faaea2db1ad80cca5c7e7900a3125d15b445fb8"
         },
         {
-          "changed_files": 2,
-          "date": "2026-10-29T16:33:52Z",
-          "headline": "refactor(extension): refactor background.js and atlasSync with per-re…",
+          "changed_files": 16,
+          "date": "2026-11-13T10:42:14Z",
+          "headline": "refactor(frontend): remove deprecated extension files and assets",
           "is_bot": false,
           "is_merge": false,
-          "sha": "204775c065a18eeff0a9b70305fa2b113bbe2f45",
-          "url": "https://github.com/YRB19/UsageOS/commit/204775c065a18eeff0a9b70305fa2b113bbe2f45"
+          "sha": "336b5cb0d87a1ce933cbe0bfbb45d2e91fc78c70",
+          "url": "https://github.com/YRB19/UsageOS/commit/336b5cb0d87a1ce933cbe0bfbb45d2e91fc78c70"
         },
         {
-          "changed_files": 2,
-          "date": "2026-10-29T16:33:52Z",
-          "headline": "feat(extension): add request relay and request hook injections",
+          "changed_files": 13,
+          "date": "2026-11-13T10:42:11Z",
+          "headline": "feat(frontend): add backend API routes, auth, and preferences support",
           "is_bot": false,
           "is_merge": false,
-          "sha": "c7f928ed79fbbc71c6c9c58d8d255c71905880df",
-          "url": "https://github.com/YRB19/UsageOS/commit/c7f928ed79fbbc71c6c9c58d8d255c71905880df"
+          "sha": "404af9922057d384646f5037abbe28f5d7e5ef0c",
+          "url": "https://github.com/YRB19/UsageOS/commit/404af9922057d384646f5037abbe28f5d7e5ef0c"
         }
       ]
     },
@@ -1689,7 +1689,7 @@
       ]
     }
   },
-  "generated_at": "2026-11-10T19:49:58Z",
+  "generated_at": "2026-11-13T12:07:14Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
