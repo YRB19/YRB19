@@ -181,7 +181,7 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
 
 </div>
 
-<div align="center">[GitHub](https://github.com/YRB19)</div>
+**[Email](yrb1907@gmail.com)**
 <!-- PROFILEOS:END:CTA -->
 
 <!-- PROFILEOS:START:FOOTER -->
