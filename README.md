@@ -62,9 +62,10 @@ My projects usually start with a practical problem and grow into systems around 
   <img alt="UsageOS — Self-hosted multi-account Claude.ai usage tracking platform. Stack: FastAPI, PostgreSQL, React, Chrome Extension. Last push 2026-11-14. 1 star. ResearchOS — Autonomous deep-research platform with parallel specialist agents. Stack: FastAPI, SQLite, NVIDIA NIM, Docker. Last push 2026-08-03. 1 star. ClipOS — Turns long videos into short, vertical, captioned clips. Stack: FastAPI, faster-whisper, FFmpeg, OpenCV. Last push 2026-08-02. CompanionOS — Live Formula 1 timing and session-tracking desktop app. Status: active. Stack: Tauri, Rust, React, TypeScript. CI failing, last run 2026-07-29. Last push 2026-07-29. NetOS — Trading-system research harness: offline replay, data ingestion and cost modelling. Stack: Python, pytest, Ruff, mypy. CI failing, last run 2026-11-13. Last push 2026-11-13. 1 star. FREYA — Background daemon that watches a notes vault and plans canonical knowledge updates. Stack: Python, SQLite, watchdog, Obsidian MCP. Last push 2026-11-05. 1 star." src="assets/generated/featured-narrow.light.svg" width="880">
 </picture>
 
-</div>
+
 
 **[UsageOS](https://github.com/YRB19/UsageOS)** · [Docs](https://github.com/YRB19/UsageOS/blob/main/DEPLOY.md)&nbsp;&nbsp;|&nbsp;&nbsp;**[ResearchOS](https://github.com/YRB19/ResearchOS)** · [Docs](https://github.com/YRB19/ResearchOS/blob/main/reference/ARCHITECTURE.md)&nbsp;&nbsp;|&nbsp;&nbsp;**[ClipOS](https://github.com/YRB19/ClipOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[CompanionOS](https://github.com/YRB19/CompanionOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[NetOS](https://github.com/YRB19/NetOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[FREYA](https://github.com/YRB19/FREYA)**
+</div>
 <!-- PROFILEOS:END:SELECTED_SYSTEMS -->
 
 <!-- PROFILEOS:START:RELEASES -->
@@ -85,9 +86,9 @@ My projects usually start with a practical problem and grow into systems around 
   <img alt="Project map of 10 published projects: UsageOS (DEVTOOLS, OS series, JavaScript, 1 star), ResearchOS (AI, OS series, Python, 1 star), ClipOS (MEDIA, OS series, Python), CompanionOS (SYSTEMS, OS series, TypeScript), NetOS (SYSTEMS, OS series, Python, 1 star), FREYA (AI, OS series, Python, 1 star), Cosmic Explorer (WEB, JavaScript), Finwise (FINTECH, JavaScript), N8N-YT (AUTOMATION, 1 star), RepoHealth (WEB, TypeScript, 1 star). Connections from shared repository metadata: shared language JavaScript: Cosmic Explorer, Finwise, UsageOS; shared language Python: ClipOS, FREYA, NetOS, ResearchOS; shared language TypeScript: ClipOS, CompanionOS, RepoHealth. Node size reflects stars on a bounded scale. Contribution city: isometric view of 1,169 contributions from 2025-11-14 to 2026-11-14 across 104 active days. Each tile is one day; taller tiles mean more contributions relative to the busiest day (54). GitHub contribution calendar: all activity, including repositories not featured here. One tile per day, height = relative daily contributions. Languages by bytes of code in public repositories, bubble area proportional to share: Python 50.6%, TypeScript 27.9%, JavaScript 13.0%, CSS 5.3%, Other 3.1%. " src="assets/generated/systems-narrow.light.svg" width="880">
 </picture>
 
-</div>
 
 **[UsageOS](https://github.com/YRB19/UsageOS)** · [Docs](https://github.com/YRB19/UsageOS/blob/main/DEPLOY.md)&nbsp;&nbsp;|&nbsp;&nbsp;**[ResearchOS](https://github.com/YRB19/ResearchOS)** · [Docs](https://github.com/YRB19/ResearchOS/blob/main/reference/ARCHITECTURE.md)&nbsp;&nbsp;|&nbsp;&nbsp;**[ClipOS](https://github.com/YRB19/ClipOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[CompanionOS](https://github.com/YRB19/CompanionOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[NetOS](https://github.com/YRB19/NetOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[FREYA](https://github.com/YRB19/FREYA)**
+</div>
 <!-- PROFILEOS:END:PROJECT_MAP -->
 
 
