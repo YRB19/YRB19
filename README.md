@@ -179,9 +179,10 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
   <img alt="Have an interesting problem or idea? Let&#x27;s build something useful. I&#x27;m interested in AI systems, developer tools, automation and thoughtful software engineering." src="assets/generated/collaboration.light.svg" width="432">
 </picture>
 
-</div>
+
 
 **[Email](yrb1907@gmail.com)**
+</div>
 <!-- PROFILEOS:END:CTA -->
 
 <!-- PROFILEOS:START:FOOTER -->
