@@ -1197,74 +1197,83 @@
     },
     "YRB19/UsageOS": {
       "commits": {
-        "d30": 7,
-        "d7": 7,
-        "d90": 7
+        "d30": 5,
+        "d7": 4,
+        "d90": 26
       },
       "merged_prs": [],
       "recent_commits": [
         {
-          "changed_files": 4,
-          "date": "2026-11-14T17:53:59Z",
-          "headline": "chore: frontend reproducibility, dead code removal, and docker-compos…",
+          "changed_files": 1,
+          "date": "2026-11-14T18:46:54Z",
+          "headline": "chore : finishing readme",
           "is_bot": false,
           "is_merge": false,
-          "sha": "2928f6d2663e1ff97da379558ee682cda71db70d",
-          "url": "https://github.com/YRB19/UsageOS/commit/2928f6d2663e1ff97da379558ee682cda71db70d"
+          "sha": "aae7da97cd69786aeb90d25fbabf07fa0a476c49",
+          "url": "https://github.com/YRB19/UsageOS/commit/aae7da97cd69786aeb90d25fbabf07fa0a476c49"
         },
         {
-          "changed_files": 6,
-          "date": "2026-11-14T17:53:32Z",
-          "headline": "refactor: backend initialization and idempotent migrations",
+          "changed_files": 14,
+          "date": "2026-11-14T18:41:10Z",
+          "headline": "rename: atlas -> server across entire codebase (database, env vars, e…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "c68f27f97bbd6a631c8a56b55abdf82b6d25e69e",
-          "url": "https://github.com/YRB19/UsageOS/commit/c68f27f97bbd6a631c8a56b55abdf82b6d25e69e"
+          "sha": "94fd73a4a7ac45391e39d3463427e6fd0bb606e9",
+          "url": "https://github.com/YRB19/UsageOS/commit/94fd73a4a7ac45391e39d3463427e6fd0bb606e9"
+        },
+        {
+          "changed_files": 34,
+          "date": "2026-11-14T18:32:04Z",
+          "headline": "chore: finalize open-source release files and manifests",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "3320bf98124de74f1553193557acf9de2cbb4b5c",
+          "url": "https://github.com/YRB19/UsageOS/commit/3320bf98124de74f1553193557acf9de2cbb4b5c"
         },
         {
           "changed_files": 3,
-          "date": "2026-11-14T17:53:28Z",
-          "headline": "docs: rewrite README and DEPLOY for public release",
+          "date": "2026-11-14T18:22:37Z",
+          "headline": "chore: add security audit docs and seed script",
           "is_bot": false,
           "is_merge": false,
-          "sha": "10538464d8dfe37ffd96af3852a9a47733c40e41",
-          "url": "https://github.com/YRB19/UsageOS/commit/10538464d8dfe37ffd96af3852a9a47733c40e41"
+          "sha": "c99fd939e9b09c018dc498be147ecc0d0f8f1111",
+          "url": "https://github.com/YRB19/UsageOS/commit/c99fd939e9b09c018dc498be147ecc0d0f8f1111"
         },
         {
-          "changed_files": 4,
-          "date": "2026-11-14T17:53:23Z",
-          "headline": "chore: modernize Python packaging and pin secure dependencies",
+          "changed_files": 1,
+          "date": "2026-10-27T17:56:48Z",
+          "headline": "Revise README for clarity and structure",
           "is_bot": false,
           "is_merge": false,
-          "sha": "c362d109c3f73ef9d4600861964a452bc213b41a",
-          "url": "https://github.com/YRB19/UsageOS/commit/c362d109c3f73ef9d4600861964a452bc213b41a"
+          "sha": "32f1121870f79855732ef0316d998f799b2555cb",
+          "url": "https://github.com/YRB19/UsageOS/commit/32f1121870f79855732ef0316d998f799b2555cb"
         },
         {
-          "changed_files": 6,
-          "date": "2026-11-14T17:53:18Z",
-          "headline": "security: harden Telegram webhook and extension manifests",
+          "changed_files": 2,
+          "date": "2026-10-08T08:43:41Z",
+          "headline": "chore(docker): add VITE_API_KEY build argument",
           "is_bot": false,
           "is_merge": false,
-          "sha": "6f83e95ab1e7e70493ce054b2bb36531de87375b",
-          "url": "https://github.com/YRB19/UsageOS/commit/6f83e95ab1e7e70493ce054b2bb36531de87375b"
+          "sha": "05daf5fcef287061a0f3446716befcb172c4e1ce",
+          "url": "https://github.com/YRB19/UsageOS/commit/05daf5fcef287061a0f3446716befcb172c4e1ce"
         },
         {
-          "changed_files": 7,
-          "date": "2026-11-14T17:53:12Z",
-          "headline": "feat: add open-source foundation files",
+          "changed_files": 1,
+          "date": "2026-10-08T08:43:21Z",
+          "headline": "feat(frontend): add save error handling for maintenance notes",
           "is_bot": false,
           "is_merge": false,
-          "sha": "65a274945871560b987acf33eeef4288962fc36a",
-          "url": "https://github.com/YRB19/UsageOS/commit/65a274945871560b987acf33eeef4288962fc36a"
+          "sha": "242cfc9c13a4e34ecabf9aac25ff3af23b677e56",
+          "url": "https://github.com/YRB19/UsageOS/commit/242cfc9c13a4e34ecabf9aac25ff3af23b677e56"
         },
         {
-          "changed_files": 152,
-          "date": "2026-11-14T11:11:58Z",
-          "headline": "Initial public release",
+          "changed_files": 1,
+          "date": "2026-10-08T08:42:53Z",
+          "headline": "feat(frontend): add API key authentication via axios interceptor",
           "is_bot": false,
           "is_merge": false,
-          "sha": "28295dbd67ef6c8c0f43f8e97714a6b0eac4e677",
-          "url": "https://github.com/YRB19/UsageOS/commit/28295dbd67ef6c8c0f43f8e97714a6b0eac4e677"
+          "sha": "d707dcf9bf43dadc9dbab5e0205420f84cf79e87",
+          "url": "https://github.com/YRB19/UsageOS/commit/d707dcf9bf43dadc9dbab5e0205420f84cf79e87"
         }
       ]
     },
@@ -1680,7 +1689,7 @@
       ]
     }
   },
-  "generated_at": "2026-11-14T18:13:54Z",
+  "generated_at": "2026-11-14T22:33:45Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"

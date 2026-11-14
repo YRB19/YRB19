@@ -516,27 +516,29 @@
     {
       "created_at": "2026-07-08T03:53:18Z",
       "default_branch": "main",
-      "description": null,
+      "description": " A small browser extension quietly records usage from every account you use, and a web dashboard shows all of them side by side.",
       "forks": 0,
       "full_name": "YRB19/UsageOS",
       "is_archived": false,
       "is_fork": false,
       "is_private": false,
       "languages": {
-        "CSS": 7043,
-        "Dockerfile": 1083,
-        "HTML": 28825,
-        "JavaScript": 709822,
+        "Batchfile": 903,
+        "CSS": 6358,
+        "Dockerfile": 845,
+        "HTML": 28347,
+        "JavaScript": 475867,
         "Mako": 659,
-        "Python": 52092,
-        "TypeScript": 135460
+        "PowerShell": 925,
+        "Python": 54851,
+        "TypeScript": 79537
       },
       "license": "GPL-3.0",
       "name": "UsageOS",
       "open_issues": 2,
       "open_prs": 0,
       "primary_language": "JavaScript",
-      "pushed_at": "2026-11-14T17:54:17Z",
+      "pushed_at": "2026-11-14T18:46:57Z",
       "stars": 1,
       "topics": [],
       "url": "https://github.com/YRB19/UsageOS"
@@ -566,7 +568,7 @@
       "url": "https://github.com/YRB19/Wan2.2"
     }
   ],
-  "generated_at": "2026-11-14T18:13:54Z",
+  "generated_at": "2026-11-14T22:33:45Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
