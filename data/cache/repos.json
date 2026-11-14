@@ -531,12 +531,12 @@
         "Python": 52092,
         "TypeScript": 135460
       },
-      "license": null,
+      "license": "GPL-3.0",
       "name": "UsageOS",
       "open_issues": 2,
       "open_prs": 0,
       "primary_language": "JavaScript",
-      "pushed_at": "2026-11-13T11:42:09Z",
+      "pushed_at": "2026-11-14T17:54:17Z",
       "stars": 1,
       "topics": [],
       "url": "https://github.com/YRB19/UsageOS"
@@ -566,7 +566,7 @@
       "url": "https://github.com/YRB19/Wan2.2"
     }
   ],
-  "generated_at": "2026-11-13T12:07:14Z",
+  "generated_at": "2026-11-14T18:13:54Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"

@@ -1197,83 +1197,74 @@
     },
     "YRB19/UsageOS": {
       "commits": {
-        "d30": 12,
-        "d7": 11,
-        "d90": 33
+        "d30": 7,
+        "d7": 7,
+        "d90": 7
       },
       "merged_prs": [],
       "recent_commits": [
         {
-          "changed_files": 1,
-          "date": "2026-11-13T11:41:55Z",
-          "headline": "fic(frontend) : dead space managment",
+          "changed_files": 4,
+          "date": "2026-11-14T17:53:59Z",
+          "headline": "chore: frontend reproducibility, dead code removal, and docker-compos…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "20507cde9f01a2f90a0e857c738db013c6ca6305",
-          "url": "https://github.com/YRB19/UsageOS/commit/20507cde9f01a2f90a0e857c738db013c6ca6305"
+          "sha": "2928f6d2663e1ff97da379558ee682cda71db70d",
+          "url": "https://github.com/YRB19/UsageOS/commit/2928f6d2663e1ff97da379558ee682cda71db70d"
+        },
+        {
+          "changed_files": 6,
+          "date": "2026-11-14T17:53:32Z",
+          "headline": "refactor: backend initialization and idempotent migrations",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "c68f27f97bbd6a631c8a56b55abdf82b6d25e69e",
+          "url": "https://github.com/YRB19/UsageOS/commit/c68f27f97bbd6a631c8a56b55abdf82b6d25e69e"
+        },
+        {
+          "changed_files": 3,
+          "date": "2026-11-14T17:53:28Z",
+          "headline": "docs: rewrite README and DEPLOY for public release",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "10538464d8dfe37ffd96af3852a9a47733c40e41",
+          "url": "https://github.com/YRB19/UsageOS/commit/10538464d8dfe37ffd96af3852a9a47733c40e41"
         },
         {
           "changed_files": 4,
-          "date": "2026-11-13T10:42:32Z",
-          "headline": "docs(frontend): update extension documentation",
+          "date": "2026-11-14T17:53:23Z",
+          "headline": "chore: modernize Python packaging and pin secure dependencies",
           "is_bot": false,
           "is_merge": false,
-          "sha": "19fed761e547bd824b5fbd61b7245da94479fa5c",
-          "url": "https://github.com/YRB19/UsageOS/commit/19fed761e547bd824b5fbd61b7245da94479fa5c"
+          "sha": "c362d109c3f73ef9d4600861964a452bc213b41a",
+          "url": "https://github.com/YRB19/UsageOS/commit/c362d109c3f73ef9d4600861964a452bc213b41a"
         },
         {
-          "changed_files": 8,
-          "date": "2026-11-13T10:42:24Z",
-          "headline": "fix(frontend): fix extension options, popup, container strategy, and …",
+          "changed_files": 6,
+          "date": "2026-11-14T17:53:18Z",
+          "headline": "security: harden Telegram webhook and extension manifests",
           "is_bot": false,
           "is_merge": false,
-          "sha": "ae997a53b01c3553b8fb091d456cdd99dc009b2a",
-          "url": "https://github.com/YRB19/UsageOS/commit/ae997a53b01c3553b8fb091d456cdd99dc009b2a"
+          "sha": "6f83e95ab1e7e70493ce054b2bb36531de87375b",
+          "url": "https://github.com/YRB19/UsageOS/commit/6f83e95ab1e7e70493ce054b2bb36531de87375b"
         },
         {
           "changed_files": 7,
-          "date": "2026-11-13T10:42:22Z",
-          "headline": "refactor(frontend): update extension manifests, token management, and…",
+          "date": "2026-11-14T17:53:12Z",
+          "headline": "feat: add open-source foundation files",
           "is_bot": false,
           "is_merge": false,
-          "sha": "8fa449d1786f38db8d6b57c0283c719f4bed0020",
-          "url": "https://github.com/YRB19/UsageOS/commit/8fa449d1786f38db8d6b57c0283c719f4bed0020"
+          "sha": "65a274945871560b987acf33eeef4288962fc36a",
+          "url": "https://github.com/YRB19/UsageOS/commit/65a274945871560b987acf33eeef4288962fc36a"
         },
         {
-          "changed_files": 10,
-          "date": "2026-11-13T10:42:19Z",
-          "headline": "refactor(frontend): refactor extension background, API, and content s…",
+          "changed_files": 152,
+          "date": "2026-11-14T11:11:58Z",
+          "headline": "Initial public release",
           "is_bot": false,
           "is_merge": false,
-          "sha": "555ccbde6bcef8c34d25b3b909fe7423d9dd8619",
-          "url": "https://github.com/YRB19/UsageOS/commit/555ccbde6bcef8c34d25b3b909fe7423d9dd8619"
-        },
-        {
-          "changed_files": 37,
-          "date": "2026-11-13T10:42:17Z",
-          "headline": "feat(frontend): add extension i18n, common utilities, and request hooks",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "2faaea2db1ad80cca5c7e7900a3125d15b445fb8",
-          "url": "https://github.com/YRB19/UsageOS/commit/2faaea2db1ad80cca5c7e7900a3125d15b445fb8"
-        },
-        {
-          "changed_files": 16,
-          "date": "2026-11-13T10:42:14Z",
-          "headline": "refactor(frontend): remove deprecated extension files and assets",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "336b5cb0d87a1ce933cbe0bfbb45d2e91fc78c70",
-          "url": "https://github.com/YRB19/UsageOS/commit/336b5cb0d87a1ce933cbe0bfbb45d2e91fc78c70"
-        },
-        {
-          "changed_files": 13,
-          "date": "2026-11-13T10:42:11Z",
-          "headline": "feat(frontend): add backend API routes, auth, and preferences support",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "404af9922057d384646f5037abbe28f5d7e5ef0c",
-          "url": "https://github.com/YRB19/UsageOS/commit/404af9922057d384646f5037abbe28f5d7e5ef0c"
+          "sha": "28295dbd67ef6c8c0f43f8e97714a6b0eac4e677",
+          "url": "https://github.com/YRB19/UsageOS/commit/28295dbd67ef6c8c0f43f8e97714a6b0eac4e677"
         }
       ]
     },
@@ -1689,7 +1680,7 @@
       ]
     }
   },
-  "generated_at": "2026-11-14T06:38:00Z",
+  "generated_at": "2026-11-14T18:13:54Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
