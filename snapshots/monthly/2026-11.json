@@ -1,13 +1,12 @@
 {
   "coverage": {
-    "closed_days_covered": 12,
+    "closed_days_covered": 13,
     "complete": false,
     "days_in_month": 30,
     "first_day": "2026-11-01",
-    "last_day": "2026-11-13",
+    "last_day": "2026-11-14",
     "missing_days": [
       "2026-11-11",
-      "2026-11-14",
       "2026-11-15",
       "2026-11-16",
       "2026-11-17",
@@ -28,27 +27,27 @@
   },
   "kind": "monthly",
   "languages": {
-    "as_of": "2026-11-14",
+    "as_of": "2026-11-15",
     "items": [
       {
         "language": "Python",
-        "pct": 50.6
+        "pct": 53.2
       },
       {
         "language": "TypeScript",
-        "pct": 27.9
+        "pct": 28.3
       },
       {
         "language": "JavaScript",
-        "pct": 13.0
+        "pct": 9.6
       },
       {
         "language": "CSS",
-        "pct": 5.3
+        "pct": 5.6
       },
       {
         "language": "Other",
-        "pct": 3.1
+        "pct": 3.3
       }
     ],
     "statistic": "month-end reading: the last daily snapshot whose closed day is in the month"
@@ -60,7 +59,7 @@
     },
     "commits": {
       "statistic": "sum of closed-day counts over the covered days",
-      "value": 87
+      "value": 91
     },
     "merged_prs": {
       "lower_bound": false,
@@ -103,7 +102,7 @@
       "commits": 0
     },
     "UsageOS": {
-      "commits": 11
+      "commits": 15
     }
   },
   "repos_included_at_month_end": 18,
