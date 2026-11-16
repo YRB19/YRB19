@@ -84,83 +84,83 @@
     },
     "YRB19/ClipOS": {
       "commits": {
-        "d30": 0,
-        "d7": 0,
-        "d90": 0
+        "d30": 41,
+        "d7": 41,
+        "d90": 41
       },
       "merged_prs": [],
       "recent_commits": [
         {
           "changed_files": 2,
-          "date": "2026-07-31T21:06:12Z",
-          "headline": "Add README and command documentation",
+          "date": "2026-11-16T17:56:31Z",
+          "headline": "feat: Phase 4 config validation and long-recording flow test",
           "is_bot": false,
           "is_merge": false,
-          "sha": "d4c88df4277cc9057ad6869f163723487fe3f60d",
-          "url": "https://github.com/YRB19/ClipOS/commit/d4c88df4277cc9057ad6869f163723487fe3f60d"
+          "sha": "01cb1e157cc8c8a24db14c5008b5a5fff130c5bd",
+          "url": "https://github.com/YRB19/ClipOS/commit/01cb1e157cc8c8a24db14c5008b5a5fff130c5bd"
         },
         {
-          "changed_files": 1,
-          "date": "2026-07-31T21:06:12Z",
-          "headline": "Migrate frontend routing to pages directory structure",
+          "changed_files": 16,
+          "date": "2026-11-16T17:56:17Z",
+          "headline": "docs: Phase 4 decisions, validation, and configuration",
           "is_bot": false,
           "is_merge": false,
-          "sha": "86bafda52ee3869758b179273277c23f712252a1",
-          "url": "https://github.com/YRB19/ClipOS/commit/86bafda52ee3869758b179273277c23f712252a1"
+          "sha": "54c571f660ff62c18e30e84461c4d9b694779a1e",
+          "url": "https://github.com/YRB19/ClipOS/commit/54c571f660ff62c18e30e84461c4d9b694779a1e"
         },
         {
-          "changed_files": 2,
-          "date": "2026-07-31T21:06:12Z",
-          "headline": "Update LLM fallback provider models and pin opencv version",
+          "changed_files": 5,
+          "date": "2026-11-16T17:56:06Z",
+          "headline": "feat(frontend): chunk progress and evidence display",
           "is_bot": false,
           "is_merge": false,
-          "sha": "6880fb6fbc8d1d8b471e0b76e3117facb3458728",
-          "url": "https://github.com/YRB19/ClipOS/commit/6880fb6fbc8d1d8b471e0b76e3117facb3458728"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-07-13T21:02:22Z",
-          "headline": "Refactor routing in App component to use new views and improve structure",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "cac2a132ff3f4be211c2c286b068f5ce25079b5b",
-          "url": "https://github.com/YRB19/ClipOS/commit/cac2a132ff3f4be211c2c286b068f5ce25079b5b"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-07-12T21:30:06Z",
-          "headline": "Update .gitignore to include additional entries for .venv, .DS_Store,…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "1beb8aa68a4c934c1e0bf355e8dc8b8360de646f",
-          "url": "https://github.com/YRB19/ClipOS/commit/1beb8aa68a4c934c1e0bf355e8dc8b8360de646f"
-        },
-        {
-          "changed_files": 41,
-          "date": "2026-07-12T21:24:20Z",
-          "headline": "Add React frontend with Vite and shadcn/ui",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "379cbdd5de992c68897a0afd6a2c22af35a3cd33",
-          "url": "https://github.com/YRB19/ClipOS/commit/379cbdd5de992c68897a0afd6a2c22af35a3cd33"
+          "sha": "38b3855605eb1a76eb9afe72f37011970b0875ab",
+          "url": "https://github.com/YRB19/ClipOS/commit/38b3855605eb1a76eb9afe72f37011970b0875ab"
         },
         {
           "changed_files": 2,
-          "date": "2026-07-12T21:24:06Z",
-          "headline": "Add CLI clean commands and pipeline queue-status tests",
+          "date": "2026-11-16T17:55:55Z",
+          "headline": "feat(frontend): UploadPage with file/YouTube/local tabs and API",
           "is_bot": false,
           "is_merge": false,
-          "sha": "5b07dad372d75f34361d14ae77a32e880fef27c4",
-          "url": "https://github.com/YRB19/ClipOS/commit/5b07dad372d75f34361d14ae77a32e880fef27c4"
+          "sha": "9d7195ef272cbefebf93f03abfa41f3f3fdc8877",
+          "url": "https://github.com/YRB19/ClipOS/commit/9d7195ef272cbefebf93f03abfa41f3f3fdc8877"
         },
         {
           "changed_files": 4,
-          "date": "2026-07-12T21:24:03Z",
-          "headline": "Add updated_at timestamp tracking across all core pipeline stages",
+          "date": "2026-11-16T17:55:49Z",
+          "headline": "test: chunk/import/cache coverage and pipeline regression",
           "is_bot": false,
           "is_merge": false,
-          "sha": "0e921ce9dbc2e7c5ac49c367202ac15fd7c41dcd",
-          "url": "https://github.com/YRB19/ClipOS/commit/0e921ce9dbc2e7c5ac49c367202ac15fd7c41dcd"
+          "sha": "96e2f515b27ae31bfc893d55ee586ee6ccd328b9",
+          "url": "https://github.com/YRB19/ClipOS/commit/96e2f515b27ae31bfc893d55ee586ee6ccd328b9"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-11-16T17:55:35Z",
+          "headline": "feat: migration v4 source_import + v5 generated_signature column",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "67bf9df70a222c69e661ac2c174985cd587b6301",
+          "url": "https://github.com/YRB19/ClipOS/commit/67bf9df70a222c69e661ac2c174985cd587b6301"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-11-16T17:55:30Z",
+          "headline": "feat: storage cache API and ingest endpoints for local/YouTube/upload",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "2c8830332b705eeaaa3f0a7c1d73f6a3428859e6",
+          "url": "https://github.com/YRB19/ClipOS/commit/2c8830332b705eeaaa3f0a7c1d73f6a3428859e6"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-11-16T17:55:22Z",
+          "headline": "feat: recipe microphone selection and generated_signature protection",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "b1d1698076144803cc58e165747b351478a6211b",
+          "url": "https://github.com/YRB19/ClipOS/commit/b1d1698076144803cc58e165747b351478a6211b"
         }
       ]
     },
@@ -330,7 +330,7 @@
     },
     "YRB19/FREYA": {
       "commits": {
-        "d30": 2,
+        "d30": 1,
         "d7": 0,
         "d90": 22
       },
@@ -814,165 +814,83 @@
     },
     "YRB19/NetOS": {
       "commits": {
-        "d30": 123,
-        "d7": 19,
-        "d90": 199
+        "d30": 137,
+        "d7": 33,
+        "d90": 213
       },
       "merged_prs": [],
       "recent_commits": [
         {
-          "changed_files": 1,
-          "date": "2026-11-13T10:30:04Z",
-          "headline": "tools(slice-13): multi-market synthetic demo",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "e0027bdfb29197593cfd6014dbaa795432fa26ec",
-          "url": "https://github.com/YRB19/NetOS/commit/e0027bdfb29197593cfd6014dbaa795432fa26ec"
-        },
-        {
-          "changed_files": 4,
-          "date": "2026-11-13T10:30:01Z",
-          "headline": "docs(slice-13): multi-market shadow + feasibility docs + implementati…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "abc25798f3496182eb3ea2c5e815ab230ba4e4ae",
-          "url": "https://github.com/YRB19/NetOS/commit/abc25798f3496182eb3ea2c5e815ab230ba4e4ae"
-        },
-        {
-          "changed_files": 7,
-          "date": "2026-11-13T10:29:57Z",
-          "headline": "test(slice-13): Slice 13 unit + integration tests",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "f1407dc5e67328968d3214b32c61c5d34012b0ae",
-          "url": "https://github.com/YRB19/NetOS/commit/f1407dc5e67328968d3214b32c61c5d34012b0ae"
-        },
-        {
           "changed_files": 5,
-          "date": "2026-11-13T10:29:54Z",
-          "headline": "feat(slice-13): simulation/multi_market shadow sessions, comparison, …",
+          "date": "2026-11-16T11:54:58Z",
+          "headline": "docs(slice-13): ADR-29, market-data-feed.md, implementation-log, slic…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "2158bbd73a7ecf407090927c03b5b01a7b686fc4",
-          "url": "https://github.com/YRB19/NetOS/commit/2158bbd73a7ecf407090927c03b5b01a7b686fc4"
-        },
-        {
-          "changed_files": 5,
-          "date": "2026-11-13T10:29:52Z",
-          "headline": "feat(slice-13): risk_execution/external_paper contained comparator (m…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "ae4bd56842aaf8becbab9db2483e5cbcdf8018a8",
-          "url": "https://github.com/YRB19/NetOS/commit/ae4bd56842aaf8becbab9db2483e5cbcdf8018a8"
-        },
-        {
-          "changed_files": 6,
-          "date": "2026-11-13T10:29:49Z",
-          "headline": "feat(slice-13): research/prediction_eval evaluator + research/confirm…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "b1af4d5893a61f1fb9bb6eabccd778e86f86dfce",
-          "url": "https://github.com/YRB19/NetOS/commit/b1af4d5893a61f1fb9bb6eabccd778e86f86dfce"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-11-13T10:29:46Z",
-          "headline": "feat(slice-13): observability/prediction_ledger append-only writer",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "583324e30266d91076b767e1b9513373f60cca67",
-          "url": "https://github.com/YRB19/NetOS/commit/583324e30266d91076b767e1b9513373f60cca67"
-        },
-        {
-          "changed_files": 6,
-          "date": "2026-11-13T10:29:43Z",
-          "headline": "feat(slice-13): data/live observation capture, quality engine, tamper…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "cde6165b482ad8aef067bbb866edba908b173bb5",
-          "url": "https://github.com/YRB19/NetOS/commit/cde6165b482ad8aef067bbb866edba908b173bb5"
-        }
-      ]
-    },
-    "YRB19/PersonaOS": {
-      "commits": {
-        "d30": 4,
-        "d7": 0,
-        "d90": 6
-      },
-      "merged_prs": [],
-      "recent_commits": [
-        {
-          "changed_files": 0,
-          "date": "2026-10-27T18:27:18Z",
-          "headline": "merge: integrate origin/master into local master",
-          "is_bot": false,
-          "is_merge": true,
-          "sha": "07533e1a5cd5ea8b1ae9f063f98b17f6f04cdf90",
-          "url": "https://github.com/YRB19/PersonaOS/commit/07533e1a5cd5ea8b1ae9f063f98b17f6f04cdf90"
+          "sha": "ee7a796354491f69fd097343c3d0002e375e1a50",
+          "url": "https://github.com/YRB19/NetOS/commit/ee7a796354491f69fd097343c3d0002e375e1a50"
         },
         {
           "changed_files": 1,
-          "date": "2026-10-27T18:27:02Z",
-          "headline": "chore: fix trailing whitespace in requirements.txt",
+          "date": "2026-11-16T11:54:54Z",
+          "headline": "chore(slice-13): .gitignore for raw market-data captures",
           "is_bot": false,
           "is_merge": false,
-          "sha": "4c7611ba3bd3e60e2fdff3dc10469af04b0eb246",
-          "url": "https://github.com/YRB19/PersonaOS/commit/4c7611ba3bd3e60e2fdff3dc10469af04b0eb246"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-10-27T18:10:47Z",
-          "headline": "Add bugs.md and bugs.txt to .gitignore",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "0533d17e4d4666f9241c423cffe12a3ec3d3f20c",
-          "url": "https://github.com/YRB19/PersonaOS/commit/0533d17e4d4666f9241c423cffe12a3ec3d3f20c"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-10-27T18:09:52Z",
-          "headline": "Update .gitignore to exclude 'bugs'",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "35f0578347da9945c577cc3b1f9e0f072cf86f5d",
-          "url": "https://github.com/YRB19/PersonaOS/commit/35f0578347da9945c577cc3b1f9e0f072cf86f5d"
-        },
-        {
-          "changed_files": 11,
-          "date": "2026-10-02T05:41:08Z",
-          "headline": "chore(privacy): scrub real contact names from tracked files",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "b2f6ee956a847e79b0f30b0a16686b65be8b8cba",
-          "url": "https://github.com/YRB19/PersonaOS/commit/b2f6ee956a847e79b0f30b0a16686b65be8b8cba"
-        },
-        {
-          "changed_files": 6,
-          "date": "2026-10-01T14:45:08Z",
-          "headline": "fix(api): unpack v6 generate() tuple in /suggest/reply; repair API/sm…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "5500bb4ae3f8d06de69bc6d0caa9668d01314c69",
-          "url": "https://github.com/YRB19/PersonaOS/commit/5500bb4ae3f8d06de69bc6d0caa9668d01314c69"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-07-26T09:49:23Z",
-          "headline": "docs: fix parse command arg (single FILE, not PATHS...) and add missi…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "47cce5f78a68f5872488dffe33f8ef47ad96ff16",
-          "url": "https://github.com/YRB19/PersonaOS/commit/47cce5f78a68f5872488dffe33f8ef47ad96ff16"
+          "sha": "806b6c7a31e7cbd238abd7ea86ff50e9bf7754a0",
+          "url": "https://github.com/YRB19/NetOS/commit/806b6c7a31e7cbd238abd7ea86ff50e9bf7754a0"
         },
         {
           "changed_files": 3,
-          "date": "2026-07-26T09:48:13Z",
-          "headline": "fix(profiler): stop honorific address terms (bhaiya) from overriding",
+          "date": "2026-11-16T11:54:49Z",
+          "headline": "fix(slice-13): arch_lint import rules — feed_transports leaf, data.li…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "754fa14b97fe139527dfc61f54ecc0f7cf4854e2",
-          "url": "https://github.com/YRB19/PersonaOS/commit/754fa14b97fe139527dfc61f54ecc0f7cf4854e2"
+          "sha": "fb2e5bf1ba9ac89b82de60afa74f82866b1b7c03",
+          "url": "https://github.com/YRB19/NetOS/commit/fb2e5bf1ba9ac89b82de60afa74f82866b1b7c03"
+        },
+        {
+          "changed_files": 4,
+          "date": "2026-11-16T11:54:45Z",
+          "headline": "test(slice-13b): slice13b tests — feed infrastructure, upstox mapper,…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "9fb1a8b1ffbb2a891bd8bce3e87437d191d934d4",
+          "url": "https://github.com/YRB19/NetOS/commit/9fb1a8b1ffbb2a891bd8bce3e87437d191d934d4"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-11-16T11:54:41Z",
+          "headline": "feat(slice-13b): tools/upstox_feed_capture.py — composition script",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "8a13ea953790ae0be8012828cc91a52e3c2872c9",
+          "url": "https://github.com/YRB19/NetOS/commit/8a13ea953790ae0be8012828cc91a52e3c2872c9"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-11-16T11:54:35Z",
+          "headline": "feat(slice-13b): feed_transports leaf package — Upstox transport (fak…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "c7a92747e322ccca6076fe842ea4fbd8f9a43887",
+          "url": "https://github.com/YRB19/NetOS/commit/c7a92747e322ccca6076fe842ea4fbd8f9a43887"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-11-16T11:54:31Z",
+          "headline": "feat(slice-13b): data.live capture + feed_pipeline — hash-chained cap…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "2167dee5786bfb940bc509f4595fa9d61754605a",
+          "url": "https://github.com/YRB19/NetOS/commit/2167dee5786bfb940bc509f4595fa9d61754605a"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-11-16T11:54:28Z",
+          "headline": "feat(slice-13b): data.live upstox_v3 — pure decoder/mapper, injected …",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "5ae9ed2eb66f097171a1d57a1c9e449debd54e39",
+          "url": "https://github.com/YRB19/NetOS/commit/5ae9ed2eb66f097171a1d57a1c9e449debd54e39"
         }
       ]
     },
@@ -1689,7 +1607,7 @@
       ]
     }
   },
-  "generated_at": "2026-11-14T22:33:45Z",
+  "generated_at": "2026-11-16T22:15:16Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
