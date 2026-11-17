@@ -1,13 +1,12 @@
 {
   "coverage": {
-    "closed_days_covered": 14,
+    "closed_days_covered": 15,
     "complete": false,
     "days_in_month": 30,
     "first_day": "2026-11-01",
-    "last_day": "2026-11-15",
+    "last_day": "2026-11-16",
     "missing_days": [
       "2026-11-11",
-      "2026-11-16",
       "2026-11-17",
       "2026-11-18",
       "2026-11-19",
@@ -26,27 +25,31 @@
   },
   "kind": "monthly",
   "languages": {
-    "as_of": "2026-11-16",
+    "as_of": "2026-11-17",
     "items": [
       {
         "language": "Python",
-        "pct": 53.2
+        "pct": 51.2
       },
       {
         "language": "TypeScript",
-        "pct": 28.3
+        "pct": 29.7
       },
       {
         "language": "JavaScript",
-        "pct": 9.6
+        "pct": 9.9
       },
       {
         "language": "CSS",
-        "pct": 5.6
+        "pct": 5.8
+      },
+      {
+        "language": "HTML",
+        "pct": 2.1
       },
       {
         "language": "Other",
-        "pct": 3.3
+        "pct": 1.4
       }
     ],
     "statistic": "month-end reading: the last daily snapshot whose closed day is in the month"
@@ -54,11 +57,11 @@
   "metrics": {
     "active_repos": {
       "statistic": "unique repositories with at least one commit on a covered day",
-      "value": 3
+      "value": 4
     },
     "commits": {
       "statistic": "sum of closed-day counts over the covered days",
-      "value": 91
+      "value": 146
     },
     "merged_prs": {
       "lower_bound": false,
@@ -74,7 +77,7 @@
   "month": "2026-11",
   "per_project": {
     "ClipOS": {
-      "commits": 0
+      "commits": 41
     },
     "CompanionOS": {
       "commits": 0
@@ -92,7 +95,7 @@
       "commits": 0
     },
     "NetOS": {
-      "commits": 75
+      "commits": 89
     },
     "RepoHealth": {
       "commits": 0
@@ -104,7 +107,7 @@
       "commits": 15
     }
   },
-  "repos_included_at_month_end": 18,
+  "repos_included_at_month_end": 17,
   "schema": 1,
   "timezone": "UTC"
 }

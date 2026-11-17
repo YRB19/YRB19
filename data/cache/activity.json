@@ -84,83 +84,83 @@
     },
     "YRB19/ClipOS": {
       "commits": {
-        "d30": 41,
-        "d7": 41,
-        "d90": 41
+        "d30": 57,
+        "d7": 57,
+        "d90": 57
       },
       "merged_prs": [],
       "recent_commits": [
         {
-          "changed_files": 2,
-          "date": "2026-11-16T17:56:31Z",
-          "headline": "feat: Phase 4 config validation and long-recording flow test",
+          "changed_files": 6,
+          "date": "2026-11-17T03:44:30Z",
+          "headline": "docs: Phase 5 decisions, validation, and configuration",
           "is_bot": false,
           "is_merge": false,
-          "sha": "01cb1e157cc8c8a24db14c5008b5a5fff130c5bd",
-          "url": "https://github.com/YRB19/ClipOS/commit/01cb1e157cc8c8a24db14c5008b5a5fff130c5bd"
+          "sha": "f36b99f13f51a38d1faf046b4574eb6b65d7f66d",
+          "url": "https://github.com/YRB19/ClipOS/commit/f36b99f13f51a38d1faf046b4574eb6b65d7f66d"
         },
         {
-          "changed_files": 16,
-          "date": "2026-11-16T17:56:17Z",
-          "headline": "docs: Phase 4 decisions, validation, and configuration",
+          "changed_files": 7,
+          "date": "2026-11-17T03:44:25Z",
+          "headline": "feat(frontend): selection review tests and UI updates",
           "is_bot": false,
           "is_merge": false,
-          "sha": "54c571f660ff62c18e30e84461c4d9b694779a1e",
-          "url": "https://github.com/YRB19/ClipOS/commit/54c571f660ff62c18e30e84461c4d9b694779a1e"
-        },
-        {
-          "changed_files": 5,
-          "date": "2026-11-16T17:56:06Z",
-          "headline": "feat(frontend): chunk progress and evidence display",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "38b3855605eb1a76eb9afe72f37011970b0875ab",
-          "url": "https://github.com/YRB19/ClipOS/commit/38b3855605eb1a76eb9afe72f37011970b0875ab"
+          "sha": "a36cd59cbf973cfaa926423452f85b3507e52a76",
+          "url": "https://github.com/YRB19/ClipOS/commit/a36cd59cbf973cfaa926423452f85b3507e52a76"
         },
         {
           "changed_files": 2,
-          "date": "2026-11-16T17:55:55Z",
-          "headline": "feat(frontend): UploadPage with file/YouTube/local tabs and API",
+          "date": "2026-11-17T03:44:22Z",
+          "headline": "feat(frontend): SelectionReview component and selection API",
           "is_bot": false,
           "is_merge": false,
-          "sha": "9d7195ef272cbefebf93f03abfa41f3f3fdc8877",
-          "url": "https://github.com/YRB19/ClipOS/commit/9d7195ef272cbefebf93f03abfa41f3f3fdc8877"
+          "sha": "9abcd9b066b333ad94e35142da3a3f97cd97f784",
+          "url": "https://github.com/YRB19/ClipOS/commit/9abcd9b066b333ad94e35142da3a3f97cd97f784"
         },
         {
-          "changed_files": 4,
-          "date": "2026-11-16T17:55:49Z",
-          "headline": "test: chunk/import/cache coverage and pipeline regression",
+          "changed_files": 7,
+          "date": "2026-11-17T03:44:18Z",
+          "headline": "test: comprehensive selection/fallback/vision/ranking coverage",
           "is_bot": false,
           "is_merge": false,
-          "sha": "96e2f515b27ae31bfc893d55ee586ee6ccd328b9",
-          "url": "https://github.com/YRB19/ClipOS/commit/96e2f515b27ae31bfc893d55ee586ee6ccd328b9"
+          "sha": "dcde1a971cb1b0a30beee73f0928972b6a745a6f",
+          "url": "https://github.com/YRB19/ClipOS/commit/dcde1a971cb1b0a30beee73f0928972b6a745a6f"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-11-17T03:44:13Z",
+          "headline": "feat: migration v6 selection tables and jobs integration",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "6633779fe20e91f4e1d0f2c0d1dfe783479ed77c",
+          "url": "https://github.com/YRB19/ClipOS/commit/6633779fe20e91f4e1d0f2c0d1dfe783479ed77c"
         },
         {
           "changed_files": 1,
-          "date": "2026-11-16T17:55:35Z",
-          "headline": "feat: migration v4 source_import + v5 generated_signature column",
+          "date": "2026-11-17T03:44:10Z",
+          "headline": "feat: selection API (markers, feedback, metrics)",
           "is_bot": false,
           "is_merge": false,
-          "sha": "67bf9df70a222c69e661ac2c174985cd587b6301",
-          "url": "https://github.com/YRB19/ClipOS/commit/67bf9df70a222c69e661ac2c174985cd587b6301"
+          "sha": "f02728a49f59696347ed04b289535081ec28102c",
+          "url": "https://github.com/YRB19/ClipOS/commit/f02728a49f59696347ed04b289535081ec28102c"
         },
         {
           "changed_files": 2,
-          "date": "2026-11-16T17:55:30Z",
-          "headline": "feat: storage cache API and ingest endpoints for local/YouTube/upload",
+          "date": "2026-11-17T03:44:07Z",
+          "headline": "feat: queue timeout for assess and reconciliation update",
           "is_bot": false,
           "is_merge": false,
-          "sha": "2c8830332b705eeaaa3f0a7c1d73f6a3428859e6",
-          "url": "https://github.com/YRB19/ClipOS/commit/2c8830332b705eeaaa3f0a7c1d73f6a3428859e6"
+          "sha": "84451656934f191f9580f480f307ae32ea028fa6",
+          "url": "https://github.com/YRB19/ClipOS/commit/84451656934f191f9580f480f307ae32ea028fa6"
         },
         {
           "changed_files": 1,
-          "date": "2026-11-16T17:55:22Z",
-          "headline": "feat: recipe microphone selection and generated_signature protection",
+          "date": "2026-11-17T03:44:03Z",
+          "headline": "feat: selection configuration with provider models and LLM budget",
           "is_bot": false,
           "is_merge": false,
-          "sha": "b1d1698076144803cc58e165747b351478a6211b",
-          "url": "https://github.com/YRB19/ClipOS/commit/b1d1698076144803cc58e165747b351478a6211b"
+          "sha": "f8e60d95f8faa59124a4152caf46c3ea3c2142ef",
+          "url": "https://github.com/YRB19/ClipOS/commit/f8e60d95f8faa59124a4152caf46c3ea3c2142ef"
         }
       ]
     },
@@ -1607,7 +1607,7 @@
       ]
     }
   },
-  "generated_at": "2026-11-16T22:15:16Z",
+  "generated_at": "2026-11-17T08:03:30Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
