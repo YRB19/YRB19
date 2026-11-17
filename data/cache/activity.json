@@ -84,83 +84,83 @@
     },
     "YRB19/ClipOS": {
       "commits": {
-        "d30": 57,
-        "d7": 57,
-        "d90": 57
+        "d30": 74,
+        "d7": 74,
+        "d90": 74
       },
       "merged_prs": [],
       "recent_commits": [
         {
-          "changed_files": 6,
-          "date": "2026-11-17T03:44:30Z",
-          "headline": "docs: Phase 5 decisions, validation, and configuration",
+          "changed_files": 4,
+          "date": "2026-11-17T10:41:00Z",
+          "headline": "docs: Phase 7 decisions, handoff guide, and checkpoint",
           "is_bot": false,
           "is_merge": false,
-          "sha": "f36b99f13f51a38d1faf046b4574eb6b65d7f66d",
-          "url": "https://github.com/YRB19/ClipOS/commit/f36b99f13f51a38d1faf046b4574eb6b65d7f66d"
-        },
-        {
-          "changed_files": 7,
-          "date": "2026-11-17T03:44:25Z",
-          "headline": "feat(frontend): selection review tests and UI updates",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "a36cd59cbf973cfaa926423452f85b3507e52a76",
-          "url": "https://github.com/YRB19/ClipOS/commit/a36cd59cbf973cfaa926423452f85b3507e52a76"
+          "sha": "5947f790cfccd63aa12b86052500ff3e6ea0cd39",
+          "url": "https://github.com/YRB19/ClipOS/commit/5947f790cfccd63aa12b86052500ff3e6ea0cd39"
         },
         {
           "changed_files": 2,
-          "date": "2026-11-17T03:44:22Z",
-          "headline": "feat(frontend): SelectionReview component and selection API",
+          "date": "2026-11-17T10:40:51Z",
+          "headline": "test: OTIO handoff read-back and MCP stdio integration",
           "is_bot": false,
           "is_merge": false,
-          "sha": "9abcd9b066b333ad94e35142da3a3f97cd97f784",
-          "url": "https://github.com/YRB19/ClipOS/commit/9abcd9b066b333ad94e35142da3a3f97cd97f784"
+          "sha": "70785046f50616532e80e3a5a8d1e4aa5cb91ea7",
+          "url": "https://github.com/YRB19/ClipOS/commit/70785046f50616532e80e3a5a8d1e4aa5cb91ea7"
         },
         {
-          "changed_files": 7,
-          "date": "2026-11-17T03:44:18Z",
-          "headline": "test: comprehensive selection/fallback/vision/ranking coverage",
+          "changed_files": 3,
+          "date": "2026-11-17T10:40:46Z",
+          "headline": "feat: OTIO dependency, handoff router registration, MCP venv ignore",
           "is_bot": false,
           "is_merge": false,
-          "sha": "dcde1a971cb1b0a30beee73f0928972b6a745a6f",
-          "url": "https://github.com/YRB19/ClipOS/commit/dcde1a971cb1b0a30beee73f0928972b6a745a6f"
+          "sha": "7cb7c879dbdf40057b15394995e71eba6635994b",
+          "url": "https://github.com/YRB19/ClipOS/commit/7cb7c879dbdf40057b15394995e71eba6635994b"
         },
         {
           "changed_files": 2,
-          "date": "2026-11-17T03:44:13Z",
-          "headline": "feat: migration v6 selection tables and jobs integration",
+          "date": "2026-11-17T10:40:42Z",
+          "headline": "feat: ClipOS MCP stdio server with project-scoped tools",
           "is_bot": false,
           "is_merge": false,
-          "sha": "6633779fe20e91f4e1d0f2c0d1dfe783479ed77c",
-          "url": "https://github.com/YRB19/ClipOS/commit/6633779fe20e91f4e1d0f2c0d1dfe783479ed77c"
+          "sha": "77befc21390929c8d5491407f01804f3dff0c462",
+          "url": "https://github.com/YRB19/ClipOS/commit/77befc21390929c8d5491407f01804f3dff0c462"
         },
         {
           "changed_files": 1,
-          "date": "2026-11-17T03:44:10Z",
-          "headline": "feat: selection API (markers, feedback, metrics)",
+          "date": "2026-11-17T10:40:31Z",
+          "headline": "feat: moments search and Resolve export endpoints",
           "is_bot": false,
           "is_merge": false,
-          "sha": "f02728a49f59696347ed04b289535081ec28102c",
-          "url": "https://github.com/YRB19/ClipOS/commit/f02728a49f59696347ed04b289535081ec28102c"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-11-17T03:44:07Z",
-          "headline": "feat: queue timeout for assess and reconciliation update",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "84451656934f191f9580f480f307ae32ea028fa6",
-          "url": "https://github.com/YRB19/ClipOS/commit/84451656934f191f9580f480f307ae32ea028fa6"
+          "sha": "3ec575c7941b572c6a6fe9f5ad2293ed85c3f520",
+          "url": "https://github.com/YRB19/ClipOS/commit/3ec575c7941b572c6a6fe9f5ad2293ed85c3f520"
         },
         {
           "changed_files": 1,
-          "date": "2026-11-17T03:44:03Z",
-          "headline": "feat: selection configuration with provider models and LLM budget",
+          "date": "2026-11-17T10:40:26Z",
+          "headline": "feat: source-linked OTIO handoff export",
           "is_bot": false,
           "is_merge": false,
-          "sha": "f8e60d95f8faa59124a4152caf46c3ea3c2142ef",
-          "url": "https://github.com/YRB19/ClipOS/commit/f8e60d95f8faa59124a4152caf46c3ea3c2142ef"
+          "sha": "db505ca4d3346a89a77acdf7edfe876e8b763596",
+          "url": "https://github.com/YRB19/ClipOS/commit/db505ca4d3346a89a77acdf7edfe876e8b763596"
+        },
+        {
+          "changed_files": 5,
+          "date": "2026-11-17T10:09:41Z",
+          "headline": "test: spawn worker integration and benchmark artifacts",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "919faf754841eed6d0815688a7fda493d7705bb8",
+          "url": "https://github.com/YRB19/ClipOS/commit/919faf754841eed6d0815688a7fda493d7705bb8"
+        },
+        {
+          "changed_files": 5,
+          "date": "2026-11-17T10:09:12Z",
+          "headline": "docs: Phase 6 decisions, benchmarks, and checkpoint",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "f659f72178760fe3d3977b65513eb303b1120e84",
+          "url": "https://github.com/YRB19/ClipOS/commit/f659f72178760fe3d3977b65513eb303b1120e84"
         }
       ]
     },
@@ -814,8 +814,8 @@
     },
     "YRB19/NetOS": {
       "commits": {
-        "d30": 137,
-        "d7": 33,
+        "d30": 124,
+        "d7": 27,
         "d90": 213
       },
       "merged_prs": [],
@@ -1607,7 +1607,7 @@
       ]
     }
   },
-  "generated_at": "2026-11-17T08:03:30Z",
+  "generated_at": "2026-11-17T21:01:49Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
