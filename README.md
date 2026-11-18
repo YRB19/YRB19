@@ -22,7 +22,7 @@ My projects usually start with a practical problem and grow into systems around 
   <source media="(prefers-color-scheme: light) and (min-width: 700px)" srcset="assets/generated/overview.light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/overview-narrow.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/overview-narrow.light.svg">
-  <img alt="Profile signal, as of 2026-11-17: 9 stars (published projects), 1,358 contributions (last 12 months), 24 repositories (public on GitHub), 2 followers (on GitHub). Sum of stars across public, non-fork repositories published on this profile (profile repository and unpublished projects excluded). GitHub contribution calendar: all activity, including repositories not featured here, 2025-11-17 to 2026-11-17. The GitHub account&#x27;s public repository count (not the number of featured projects). The account&#x27;s current follower count (no history is recorded). Snapshot of the latest update. Activity indicators. Commits by project, last 30 days: UsageOS 5, ClipOS 74, NetOS 124, FREYA 1. Projects shown on this profile, default-branch commits. An activity signal. Code Pet, snapshot as of 2026-11-17: mood Thriving, food Well fed, growth Adult, current streak 34 days, 202 contributions in the last 7 days. A playful snapshot of GitHub contributions. Activity rhythm, 2025-11-17 to 2026-11-17: contributions by weekday: Monday 283 (21%), Tuesday 219 (16%), Wednesday 144 (11%), Thursday 181 (13%), Friday 162 (12%), Saturday 169 (12%), Sunday 200 (15%). GitHub contribution calendar: all activity, including repositories not featured here. Contributions by calendar weekday over the last 12 months." src="assets/generated/overview-narrow.light.svg" width="880">
+  <img alt="Profile signal, as of 2026-11-18: 9 stars (published projects), 1,365 contributions (last 12 months), 24 repositories (public on GitHub), 2 followers (on GitHub). Sum of stars across public, non-fork repositories published on this profile (profile repository and unpublished projects excluded). GitHub contribution calendar: all activity, including repositories not featured here, 2025-11-18 to 2026-11-18. The GitHub account&#x27;s public repository count (not the number of featured projects). The account&#x27;s current follower count (no history is recorded). Snapshot of the latest update. Activity indicators. Commits by project, last 30 days: UsageOS 5, ClipOS 74, NetOS 124, FREYA 1. Projects shown on this profile, default-branch commits. An activity signal. Code Pet, snapshot as of 2026-11-18: mood Thriving, food Well fed, growth Adult, current streak 35 days, 193 contributions in the last 7 days. A playful snapshot of GitHub contributions. Activity rhythm, 2025-11-18 to 2026-11-18: contributions by weekday: Monday 283 (21%), Tuesday 219 (16%), Wednesday 151 (11%), Thursday 181 (13%), Friday 162 (12%), Saturday 169 (12%), Sunday 200 (15%). GitHub contribution calendar: all activity, including repositories not featured here. Contributions by calendar weekday over the last 12 months." src="assets/generated/overview-narrow.light.svg" width="880">
 </picture>
 
 </div>
@@ -62,9 +62,9 @@ My projects usually start with a practical problem and grow into systems around 
   <img alt="UsageOS — Self-hosted multi-account Claude.ai usage tracking platform. Stack: FastAPI, PostgreSQL, React, Chrome Extension. Last push 2026-11-14. 4 stars. ResearchOS — Autonomous deep-research platform with parallel specialist agents. Stack: FastAPI, SQLite, NVIDIA NIM, Docker. Last push 2026-08-03. 1 star. ClipOS — Turns long videos into short, vertical, captioned clips. Stack: FastAPI, faster-whisper, FFmpeg, OpenCV. Last push 2026-11-17. CompanionOS — Live Formula 1 timing and session-tracking desktop app. Status: active. Stack: Tauri, Rust, React, TypeScript. CI failing, last run 2026-07-29. Last push 2026-07-29. NetOS — Trading-system research harness: offline replay, data ingestion and cost modelling. Stack: Python, pytest, Ruff, mypy. CI failing, last run 2026-11-16. Last push 2026-11-16. 1 star. FREYA — Background daemon that watches a notes vault and plans canonical knowledge updates. Stack: Python, SQLite, watchdog, Obsidian MCP. Last push 2026-11-05. 1 star." src="assets/generated/featured-narrow.light.svg" width="880">
 </picture>
 
-</div>
+**[UsageOS](https://github.com/YRB19/UsageOS)** · [Docs](https://github.com/YRB19/UsageOS/blob/main/DEPLOY.md)&nbsp;&nbsp;|&nbsp;&nbsp;**[ResearchOS](https://github.com/YRB19/ResearchOS)** · [Docs](https://github.com/YRB19/ResearchOS/blob/main/reference/ARCHITECTURE.md)&nbsp;&nbsp;|&nbsp;&nbsp;**[ClipOS](https://github.com/YRB19/ClipOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[CompanionOS](https://github.com/YRB19/CompanionOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[NetOS](https://github.com/YRB19/NetOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[FREYA](https://github.com/YRB19/FREYA)**
 
-<div align="center">**[UsageOS](https://github.com/YRB19/UsageOS)** · [Docs](https://github.com/YRB19/UsageOS/blob/main/DEPLOY.md)&nbsp;&nbsp;|&nbsp;&nbsp;**[ResearchOS](https://github.com/YRB19/ResearchOS)** · [Docs](https://github.com/YRB19/ResearchOS/blob/main/reference/ARCHITECTURE.md)&nbsp;&nbsp;|&nbsp;&nbsp;**[ClipOS](https://github.com/YRB19/ClipOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[CompanionOS](https://github.com/YRB19/CompanionOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[NetOS](https://github.com/YRB19/NetOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[FREYA](https://github.com/YRB19/FREYA)**</div>
+</div>
 <!-- PROFILEOS:END:SELECTED_SYSTEMS -->
 
 <!-- PROFILEOS:START:RELEASES -->
@@ -82,12 +82,12 @@ My projects usually start with a practical problem and grow into systems around 
   <source media="(prefers-color-scheme: light) and (min-width: 700px)" srcset="assets/generated/systems.light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/systems-narrow.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/systems-narrow.light.svg">
-  <img alt="Project map of 10 published projects: UsageOS (DEVTOOLS, OS series, JavaScript, 4 stars), ResearchOS (AI, OS series, Python, 1 star), ClipOS (MEDIA, OS series, Python), CompanionOS (SYSTEMS, OS series, TypeScript), NetOS (SYSTEMS, OS series, Python, 1 star), FREYA (AI, OS series, Python, 1 star), Cosmic Explorer (WEB, JavaScript), Finwise (FINTECH, JavaScript), N8N-YT (AUTOMATION, 1 star), RepoHealth (WEB, TypeScript, 1 star). Connections from shared repository metadata: shared language JavaScript: Cosmic Explorer, Finwise, UsageOS; shared language Python: ClipOS, FREYA, NetOS, ResearchOS; shared language TypeScript: ClipOS, CompanionOS, RepoHealth. Node size reflects stars on a bounded scale. Contribution city: isometric view of 1,358 contributions from 2025-11-17 to 2026-11-17 across 106 active days. Each tile is one day; taller tiles mean more contributions relative to the busiest day (70). GitHub contribution calendar: all activity, including repositories not featured here. One tile per day, height = relative daily contributions. Languages by bytes of code in public repositories, bubble area proportional to share: Python 51.6%, TypeScript 29.5%, JavaScript 9.8%, CSS 5.7%, HTML 2.0%, Other 1.3%. " src="assets/generated/systems-narrow.light.svg" width="880">
+  <img alt="Project map of 10 published projects: UsageOS (DEVTOOLS, OS series, JavaScript, 4 stars), ResearchOS (AI, OS series, Python, 1 star), ClipOS (MEDIA, OS series, Python), CompanionOS (SYSTEMS, OS series, TypeScript), NetOS (SYSTEMS, OS series, Python, 1 star), FREYA (AI, OS series, Python, 1 star), Cosmic Explorer (WEB, JavaScript), Finwise (FINTECH, JavaScript), N8N-YT (AUTOMATION, 1 star), RepoHealth (WEB, TypeScript, 1 star). Connections from shared repository metadata: shared language JavaScript: Cosmic Explorer, Finwise, UsageOS; shared language Python: ClipOS, FREYA, NetOS, ResearchOS; shared language TypeScript: ClipOS, CompanionOS, RepoHealth. Node size reflects stars on a bounded scale. Contribution city: isometric view of 1,365 contributions from 2025-11-18 to 2026-11-18 across 107 active days. Each tile is one day; taller tiles mean more contributions relative to the busiest day (70). GitHub contribution calendar: all activity, including repositories not featured here. One tile per day, height = relative daily contributions. Languages by bytes of code in public repositories, bubble area proportional to share: Python 51.6%, TypeScript 29.5%, JavaScript 9.8%, CSS 5.7%, HTML 2.0%, Other 1.3%. " src="assets/generated/systems-narrow.light.svg" width="880">
 </picture>
 
-</div>
+**[UsageOS](https://github.com/YRB19/UsageOS)** · [Docs](https://github.com/YRB19/UsageOS/blob/main/DEPLOY.md)&nbsp;&nbsp;|&nbsp;&nbsp;**[ResearchOS](https://github.com/YRB19/ResearchOS)** · [Docs](https://github.com/YRB19/ResearchOS/blob/main/reference/ARCHITECTURE.md)&nbsp;&nbsp;|&nbsp;&nbsp;**[ClipOS](https://github.com/YRB19/ClipOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[CompanionOS](https://github.com/YRB19/CompanionOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[NetOS](https://github.com/YRB19/NetOS)**&nbsp;&nbsp;|&nbsp;&nbsp;**[FREYA](https://github.com/YRB19/FREYA)**
 
-<div align="center">[UsageOS](https://github.com/YRB19/UsageOS) · [ResearchOS](https://github.com/YRB19/ResearchOS) · [ClipOS](https://github.com/YRB19/ClipOS) · [CompanionOS](https://github.com/YRB19/CompanionOS) · [NetOS](https://github.com/YRB19/NetOS) · [FREYA](https://github.com/YRB19/FREYA) · [Cosmic Explorer](https://github.com/YRB19/Cosmic-Explorer) · [Finwise](https://github.com/YRB19/Finwise) · [N8N-YT](https://github.com/YRB19/N8N-YT) · [RepoHealth](https://github.com/YRB19/repohealth)</div>
+</div>
 <!-- PROFILEOS:END:PROJECT_MAP -->
 
 
@@ -125,7 +125,7 @@ My projects usually start with a practical problem and grow into systems around 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/monthly.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/generated/monthly.light.svg">
-  <img alt="Commits by month, last 2 months: Oct 26* 39, Nov 26* 146. Commits per month, summed from daily snapshots of the public repositories shown here. * = partial month: only recorded days are counted. An activity signal, not a quality measure." src="assets/generated/monthly.light.svg" width="432">
+  <img alt="Commits by month, last 2 months: Oct 26* 39, Nov 26* 179. Commits per month, summed from daily snapshots of the public repositories shown here. * = partial month: only recorded days are counted. An activity signal, not a quality measure." src="assets/generated/monthly.light.svg" width="432">
 </picture>
 
 </div>
@@ -178,11 +178,11 @@ Also: Smart House (Arduino + RFID) · Rainwater Harvester · LEGO Mindstorms · 
   <img alt="Have an interesting problem or idea? Let&#x27;s build something useful. I&#x27;m interested in AI systems, developer tools, automation and thoughtful software engineering." src="assets/generated/collaboration.light.svg" width="432">
 </picture>
 
-</div>
+**[GitHub](https://github.com/YRB19)** · **[Email](mailto:yrb1907@gmail.com)**
 
-<div align="center">[GitHub](https://github.com/YRB19)</div>
+</div>
 <!-- PROFILEOS:END:CTA -->
 
 <!-- PROFILEOS:START:FOOTER -->
-<sub>Generated by ProfileOS · data snapshot 2026-11-17 · Automate facts. Curate identity.</sub>
+<sub>Generated by ProfileOS · data snapshot 2026-11-18 · Automate facts. Curate identity.</sub>
 <!-- PROFILEOS:END:FOOTER -->
