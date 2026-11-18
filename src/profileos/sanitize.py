@@ -36,6 +36,15 @@ def url(value) -> str | None:
     return quote(v, safe=_URL_SAFE)
 
 
+_MAILTO = re.compile(r"mailto:[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}")
+
+
+def link(value) -> str | None:
+    """`url()` plus a plain `mailto:` address (no query string, so no pre-filled subject/body), for approved contact links."""
+    v = str(value or "")
+    return v if _MAILTO.fullmatch(v) else url(v)
+
+
 def xml(value, max_len: int = 90) -> str:
     """Clean + escape for XML/SVG text nodes and attributes."""
     return html.escape(clean_text(value, max_len) or "", quote=True)

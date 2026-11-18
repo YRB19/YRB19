@@ -9,7 +9,7 @@ import datetime as dt
 import math
 
 from ..analytics import discovery, shipped
-from ..sanitize import clean_text, url as safe_url
+from ..sanitize import clean_text, link as safe_link, url as safe_url
 from . import models
 
 WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
@@ -300,7 +300,7 @@ def collaboration_model(ctx):
         return None
     links = []
     for l in ctx.d["links"]["links"]:           # only links approved in links.yml, each re-checked as a safe public URL
-        if safe_url(l["url"]):
+        if safe_link(l["url"]):
             links.append({"label": clean_text(l["label"], 30), "url": l["url"]})
     pages = (ctx.cfg.get("pages") or {}).get("url")
     return {"headline": clean_text(c["headline"], 90), "description": clean_text(c.get("description"), 200) or None,

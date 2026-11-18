@@ -115,6 +115,21 @@ def _centered(inner: str) -> str:
     return f'<div align="center">\n\n{inner}\n\n</div>' if inner else ""
 
 
+def _card_links(ctx: Context) -> str:
+    """One row of real, clickable links for the featured projects (links inside an image are not clickable)."""
+    links = []
+    for card in [c for c in models.card_models(ctx) if visuals.card_name(c["slug"]) in ctx.assets]:
+        bits = [f"**[{md(card['title'])}]({safe_url(card['url'])})**"]
+        bits += [f"[{label}]({url})" for label, url in (("Demo", card.get("demo")), ("Docs", card.get("docs"))) if url]
+        links.append(" · ".join(bits))
+    return "&nbsp;&nbsp;|&nbsp;&nbsp;".join(links)
+
+
+def _group_img(ctx: Context, group: str, members: list) -> str:
+    """The composite's <picture> (or its members' pictures when only some have data), without the centering wrapper."""
+    return _img(ctx, group) if group in ctx.assets else _join([_img(ctx, m) for m in members])
+
+
 def _group(ctx: Context, group: str, members: list) -> str:
     """The two-column composite for a group of cards (stacked for phones); a lone member is shown on its own."""
     if group in ctx.assets:
@@ -197,14 +212,15 @@ def timeline(ctx: Context) -> str:
 
 
 def project_map(ctx: Context) -> str:
-    """Project Map beside the contribution city and the language bubbles. The map is an image, so every project is also a link below."""
+    """Project Map beside the contribution city and the language bubbles; the featured-project links sit under the image."""
     members = ["project-map", "contribution-city", "language-bubbles"]
     if not any(m in ctx.assets for m in members):
         return ""
-    m = features.project_map_model(ctx)
-    names = " · ".join(f"[{md(n['name'])}]({safe_url(n['url'])})" for n in m["nodes"]) if m else ""
-    body = _join([_group(ctx, "systems", members), f'<div align="center">{names}</div>' if names else "",
-                  ctx.note("repos", "contributions")])
+    if "systems" in ctx.assets:
+        visual = _img(ctx, "systems")
+    else:
+        visual = _join([_img(ctx, m) for m in members])
+    body = _join([_centered(_join([visual, _card_links(ctx)])), ctx.note("repos", "contributions")])
     return _titled("Systems & Activity", body)
 
 
@@ -220,7 +236,7 @@ def cta(ctx: Context) -> str:
     links = [f"[{md(l['label'])}]({l['url']})" for l in m["approved_links"]]
     if m["pages_url"]:
         links.append(f"[Interactive project map]({m['pages_url']})")
-    return _join([_centered(_img(ctx, "collaboration")), f'<div align="center">{" · ".join(links)}</div>'])
+    return _centered(_join([_img(ctx, "collaboration"), "**" + "** · **".join(links) + "**"]))
 
 
 def selected_systems(ctx: Context) -> str:
@@ -228,14 +244,8 @@ def selected_systems(ctx: Context) -> str:
     cards_ = [c for c in models.card_models(ctx) if visuals.card_name(c["slug"]) in ctx.assets]
     if not cards_:
         return ""
-    links = []
-    for card in cards_:
-        bits = [f"**[{md(card['title'])}]({safe_url(card['url'])})**"]
-        bits += [f"[{label}]({url})" for label, url in (("Demo", card.get("demo")), ("Docs", card.get("docs"))) if url]
-        links.append(" · ".join(bits))
-    body = _join([_group(ctx, "featured", [visuals.card_name(c["slug"]) for c in cards_]),
-                  '<div align="center">' + "&nbsp;&nbsp;|&nbsp;&nbsp;".join(links) + "</div>", ctx.note("repos")])
-    return _titled("Featured Systems", body)
+    visual = _group_img(ctx, "featured", [visuals.card_name(c["slug"]) for c in cards_])
+    return _titled("Featured Systems", _join([_centered(_join([visual, _card_links(ctx)])), ctx.note("repos")]))
 
 
 def stack(ctx: Context) -> str:
