@@ -815,7 +815,7 @@
     "YRB19/NetOS": {
       "commits": {
         "d30": 117,
-        "d7": 26,
+        "d7": 14,
         "d90": 213
       },
       "merged_prs": [],
@@ -1115,12 +1115,39 @@
     },
     "YRB19/UsageOS": {
       "commits": {
-        "d30": 5,
-        "d7": 4,
-        "d90": 26
+        "d30": 8,
+        "d7": 7,
+        "d90": 29
       },
       "merged_prs": [],
       "recent_commits": [
+        {
+          "changed_files": 70,
+          "date": "2026-11-20T09:35:29Z",
+          "headline": "refactor(extension): rebuild from upstream v6.1.5 with restored commo…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "df124ef4d339b9b0b33cf16053d1d742ca9ebdd5",
+          "url": "https://github.com/YRB19/UsageOS/commit/df124ef4d339b9b0b33cf16053d1d742ca9ebdd5"
+        },
+        {
+          "changed_files": 23,
+          "date": "2026-11-20T09:35:16Z",
+          "headline": "feat: add extension sync system from upstream + overlay",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "884d62a9c69ba34cbc29ad49197dba0f16f93961",
+          "url": "https://github.com/YRB19/UsageOS/commit/884d62a9c69ba34cbc29ad49197dba0f16f93961"
+        },
+        {
+          "changed_files": 9,
+          "date": "2026-11-20T09:35:11Z",
+          "headline": "docs: contribution guide, launch plan, and API key rename",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "93ad67fa10482f2c6e501b18971761e1e30534ab",
+          "url": "https://github.com/YRB19/UsageOS/commit/93ad67fa10482f2c6e501b18971761e1e30534ab"
+        },
         {
           "changed_files": 1,
           "date": "2026-11-14T18:46:54Z",
@@ -1165,33 +1192,6 @@
           "is_merge": false,
           "sha": "32f1121870f79855732ef0316d998f799b2555cb",
           "url": "https://github.com/YRB19/UsageOS/commit/32f1121870f79855732ef0316d998f799b2555cb"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-10-08T08:43:41Z",
-          "headline": "chore(docker): add VITE_API_KEY build argument",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "05daf5fcef287061a0f3446716befcb172c4e1ce",
-          "url": "https://github.com/YRB19/UsageOS/commit/05daf5fcef287061a0f3446716befcb172c4e1ce"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-10-08T08:43:21Z",
-          "headline": "feat(frontend): add save error handling for maintenance notes",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "242cfc9c13a4e34ecabf9aac25ff3af23b677e56",
-          "url": "https://github.com/YRB19/UsageOS/commit/242cfc9c13a4e34ecabf9aac25ff3af23b677e56"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-10-08T08:42:53Z",
-          "headline": "feat(frontend): add API key authentication via axios interceptor",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "d707dcf9bf43dadc9dbab5e0205420f84cf79e87",
-          "url": "https://github.com/YRB19/UsageOS/commit/d707dcf9bf43dadc9dbab5e0205420f84cf79e87"
         }
       ]
     },
@@ -1607,7 +1607,7 @@
       ]
     }
   },
-  "generated_at": "2026-11-19T20:45:07Z",
+  "generated_at": "2026-11-20T20:28:54Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
