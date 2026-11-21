@@ -1116,7 +1116,7 @@
     "YRB19/UsageOS": {
       "commits": {
         "d30": 8,
-        "d7": 7,
+        "d7": 3,
         "d90": 29
       },
       "merged_prs": [],
@@ -1607,7 +1607,7 @@
       ]
     }
   },
-  "generated_at": "2026-11-20T20:28:54Z",
+  "generated_at": "2026-11-21T19:24:51Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
