@@ -4,14 +4,6 @@
       "days": [
         {
           "count": 0,
-          "date": "2025-11-21"
-        },
-        {
-          "count": 7,
-          "date": "2025-11-22"
-        },
-        {
-          "count": 0,
           "date": "2025-11-23"
         },
         {
@@ -1465,6 +1457,10 @@
         {
           "count": 13,
           "date": "2026-11-21"
+        },
+        {
+          "count": 0,
+          "date": "2026-11-22"
         }
       ],
       "total": 1385
@@ -1478,7 +1474,7 @@
       "scope": "public-shown"
     }
   },
-  "generated_at": "2026-11-21T07:20:40Z",
+  "generated_at": "2026-11-22T07:01:17Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
