@@ -18,9 +18,10 @@
     "YRB19/YRB19": "2026-05-13",
     "YRB19/d": "2025-09-15",
     "YRB19/pokemon-web": "2025-11-22",
-    "YRB19/repohealth": "2025-10-04"
+    "YRB19/repohealth": "2025-10-04",
+    "YRB19/usage-reset-clock": "2026-11-23"
   },
-  "generated_at": "2026-10-27T22:22:01Z",
+  "generated_at": "2026-11-23T23:59:42Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"

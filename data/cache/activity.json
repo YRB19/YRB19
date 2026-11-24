@@ -85,7 +85,7 @@
     "YRB19/ClipOS": {
       "commits": {
         "d30": 74,
-        "d7": 74,
+        "d7": 33,
         "d90": 74
       },
       "merged_prs": [],
@@ -330,12 +330,48 @@
     },
     "YRB19/FREYA": {
       "commits": {
-        "d30": 1,
-        "d7": 0,
-        "d90": 22
+        "d30": 5,
+        "d7": 4,
+        "d90": 26
       },
       "merged_prs": [],
       "recent_commits": [
+        {
+          "changed_files": 1,
+          "date": "2026-11-23T09:27:52Z",
+          "headline": "docs: record audit fixes validation and remaining gaps",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "e96814490bd6a09f8eb7bd8fa0f9be4997a870da",
+          "url": "https://github.com/YRB19/FREYA/commit/e96814490bd6a09f8eb7bd8fa0f9be4997a870da"
+        },
+        {
+          "changed_files": 3,
+          "date": "2026-11-23T09:27:43Z",
+          "headline": "fix: validate recovery evidence and index lock reconciliation",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "e68d3b74eeb19404d55fc1511c42c94013538ed0",
+          "url": "https://github.com/YRB19/FREYA/commit/e68d3b74eeb19404d55fc1511c42c94013538ed0"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-11-23T09:27:32Z",
+          "headline": "fix: preserve relationship confirmations across source files",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "75c65d2fde87b6302f4e04a35b0b6b9a249fdeff",
+          "url": "https://github.com/YRB19/FREYA/commit/75c65d2fde87b6302f4e04a35b0b6b9a249fdeff"
+        },
+        {
+          "changed_files": 6,
+          "date": "2026-11-23T09:27:10Z",
+          "headline": "test: isolate executor recovery and make pytest checks reliable",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "e7fd576b61439b15f3568cba5a4a256b7a91939e",
+          "url": "https://github.com/YRB19/FREYA/commit/e7fd576b61439b15f3568cba5a4a256b7a91939e"
+        },
         {
           "changed_files": 9,
           "date": "2026-11-05T04:23:12Z",
@@ -371,42 +407,6 @@
           "is_merge": false,
           "sha": "62c6752d39e3346b0532753c3397dd8cbc80ea18",
           "url": "https://github.com/YRB19/FREYA/commit/62c6752d39e3346b0532753c3397dd8cbc80ea18"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-09-18T10:18:49Z",
-          "headline": "feat: Phase 6 test_suite update",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "f3f9e47c1dd02870024d9295293d6e8333ac14d5",
-          "url": "https://github.com/YRB19/FREYA/commit/f3f9e47c1dd02870024d9295293d6e8333ac14d5"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-09-18T10:16:48Z",
-          "headline": "feat: Phase 8 origin gate test suite expansion",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "4a83ce7631c1e00853f8d4c8ba89b87cb029219f",
-          "url": "https://github.com/YRB19/FREYA/commit/4a83ce7631c1e00853f8d4c8ba89b87cb029219f"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-09-18T10:16:27Z",
-          "headline": "feat: build_plan accepts origin parameter for Phase 8 origin gate int…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "b8d182a5263db6661e454c5c8d3d8a56ebd455c2",
-          "url": "https://github.com/YRB19/FREYA/commit/b8d182a5263db6661e454c5c8d3d8a56ebd455c2"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-09-18T10:14:28Z",
-          "headline": "feat: Pipeline wires origin='PRODUCTION' to build_plan",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "13d2a61120b3482930852e3d8b0ac83867fd3c6e",
-          "url": "https://github.com/YRB19/FREYA/commit/13d2a61120b3482930852e3d8b0ac83867fd3c6e"
         }
       ]
     },
@@ -815,7 +815,7 @@
     "YRB19/NetOS": {
       "commits": {
         "d30": 107,
-        "d7": 14,
+        "d7": 0,
         "d90": 213
       },
       "merged_prs": [],
@@ -1605,9 +1605,91 @@
           "url": "https://github.com/YRB19/repohealth/commit/acc763939acc8c1b80ff41a793263b0ced9305cf"
         }
       ]
+    },
+    "YRB19/usage-reset-clock": {
+      "commits": {
+        "d30": 16,
+        "d7": 16,
+        "d90": 16
+      },
+      "merged_prs": [],
+      "recent_commits": [
+        {
+          "changed_files": 1,
+          "date": "2026-11-23T07:38:35Z",
+          "headline": "docs: add demo script for deterministic showcase",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "80b23c11ffe281f71a5fd4d1cd3f569875624985",
+          "url": "https://github.com/YRB19/usage-reset-clock/commit/80b23c11ffe281f71a5fd4d1cd3f569875624985"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-11-23T06:43:02Z",
+          "headline": "docs: add README with API reference and examples",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "de84dbdff5e64d91a73d8f6f92df188daa0bf882",
+          "url": "https://github.com/YRB19/usage-reset-clock/commit/de84dbdff5e64d91a73d8f6f92df188daa0bf882"
+        },
+        {
+          "changed_files": 0,
+          "date": "2026-11-22T23:15:15Z",
+          "headline": "chore: configure package.json exports, scripts, publishConfig",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "e27e2555b759a724135d7c6bc54c26a38dcdb9db",
+          "url": "https://github.com/YRB19/usage-reset-clock/commit/e27e2555b759a724135d7c6bc54c26a38dcdb9db"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-11-22T21:52:35Z",
+          "headline": "build: add dual ESM/CJS TypeScript build script",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "43009fe94b5f2c040cd2c30dfe5c6d9056c7284e",
+          "url": "https://github.com/YRB19/usage-reset-clock/commit/43009fe94b5f2c040cd2c30dfe5c6d9056c7284e"
+        },
+        {
+          "changed_files": 0,
+          "date": "2026-11-22T21:00:20Z",
+          "headline": "test: add CommonJS/ESM interop test",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "ee25f90f9f5ddafc1b40645fa36d17cdf9fb762d",
+          "url": "https://github.com/YRB19/usage-reset-clock/commit/ee25f90f9f5ddafc1b40645fa36d17cdf9fb762d"
+        },
+        {
+          "changed_files": 0,
+          "date": "2026-11-22T17:37:08Z",
+          "headline": "test: add parseRetryAfter tests",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "e9ab983df82c6d636783e90476b451d221c78097",
+          "url": "https://github.com/YRB19/usage-reset-clock/commit/e9ab983df82c6d636783e90476b451d221c78097"
+        },
+        {
+          "changed_files": 0,
+          "date": "2026-11-22T14:13:52Z",
+          "headline": "test: add getNextReset tests",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "7ab9bc94dc124b2bc9c83f3ab8597dc45a28a727",
+          "url": "https://github.com/YRB19/usage-reset-clock/commit/7ab9bc94dc124b2bc9c83f3ab8597dc45a28a727"
+        },
+        {
+          "changed_files": 0,
+          "date": "2026-11-22T14:06:13Z",
+          "headline": "test: add getResetStatus tests",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "fa40d37ceadfaf55e1c1a5b382574d2e35a31217",
+          "url": "https://github.com/YRB19/usage-reset-clock/commit/fa40d37ceadfaf55e1c1a5b382574d2e35a31217"
+        }
+      ]
     }
   },
-  "generated_at": "2026-11-23T07:49:59Z",
+  "generated_at": "2026-11-23T23:59:42Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
