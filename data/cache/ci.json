@@ -2,14 +2,14 @@
   "data": {
     "YRB19/ClipOS": {
       "auth": "github-token",
-      "checked_at": "2026-11-23T23:59:42Z",
+      "checked_at": "2026-11-25T08:46:28Z",
       "reason": "no workflow runs on the default branch",
       "source": "github-actions-api",
       "state": "not_configured"
     },
     "YRB19/CompanionOS": {
       "auth": "github-token",
-      "checked_at": "2026-11-23T23:59:42Z",
+      "checked_at": "2026-11-25T08:46:28Z",
       "conclusion": "failure",
       "run_at": "2026-07-29T11:35:21Z",
       "run_status": "completed",
@@ -21,14 +21,14 @@
     },
     "YRB19/FREYA": {
       "auth": "github-token",
-      "checked_at": "2026-11-23T23:59:42Z",
+      "checked_at": "2026-11-25T08:46:28Z",
       "reason": "no workflow runs on the default branch",
       "source": "github-actions-api",
       "state": "not_configured"
     },
     "YRB19/NetOS": {
       "auth": "github-token",
-      "checked_at": "2026-11-23T23:59:42Z",
+      "checked_at": "2026-11-25T08:46:28Z",
       "conclusion": "failure",
       "run_at": "2026-11-16T11:55:23Z",
       "run_status": "completed",
@@ -40,14 +40,14 @@
     },
     "YRB19/ResearchOS": {
       "auth": "github-token",
-      "checked_at": "2026-11-23T23:59:42Z",
+      "checked_at": "2026-11-25T08:46:28Z",
       "reason": "no workflow runs on the default branch",
       "source": "github-actions-api",
       "state": "not_configured"
     },
     "YRB19/UsageOS": {
       "auth": "github-token",
-      "checked_at": "2026-11-23T23:59:42Z",
+      "checked_at": "2026-11-25T08:46:28Z",
       "conclusion": "failure",
       "run_at": "2026-11-23T18:02:09Z",
       "run_status": "completed",
@@ -58,7 +58,7 @@
       "workflows": 1
     }
   },
-  "generated_at": "2026-11-23T23:59:42Z",
+  "generated_at": "2026-11-25T08:46:28Z",
   "ok": true,
   "schema": 1,
   "source": "github-actions-api"
