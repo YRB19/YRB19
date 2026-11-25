@@ -84,83 +84,83 @@
     },
     "YRB19/ClipOS": {
       "commits": {
-        "d30": 74,
-        "d7": 0,
-        "d90": 74
+        "d30": 82,
+        "d7": 8,
+        "d90": 82
       },
       "merged_prs": [],
       "recent_commits": [
         {
           "changed_files": 4,
-          "date": "2026-11-17T10:41:00Z",
-          "headline": "docs: Phase 7 decisions, handoff guide, and checkpoint",
+          "date": "2026-11-25T17:57:08Z",
+          "headline": "test/docs: correction editor test, phase3/phase7 docs",
           "is_bot": false,
           "is_merge": false,
-          "sha": "5947f790cfccd63aa12b86052500ff3e6ea0cd39",
-          "url": "https://github.com/YRB19/ClipOS/commit/5947f790cfccd63aa12b86052500ff3e6ea0cd39"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-11-17T10:40:51Z",
-          "headline": "test: OTIO handoff read-back and MCP stdio integration",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "70785046f50616532e80e3a5a8d1e4aa5cb91ea7",
-          "url": "https://github.com/YRB19/ClipOS/commit/70785046f50616532e80e3a5a8d1e4aa5cb91ea7"
-        },
-        {
-          "changed_files": 3,
-          "date": "2026-11-17T10:40:46Z",
-          "headline": "feat: OTIO dependency, handoff router registration, MCP venv ignore",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "7cb7c879dbdf40057b15394995e71eba6635994b",
-          "url": "https://github.com/YRB19/ClipOS/commit/7cb7c879dbdf40057b15394995e71eba6635994b"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-11-17T10:40:42Z",
-          "headline": "feat: ClipOS MCP stdio server with project-scoped tools",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "77befc21390929c8d5491407f01804f3dff0c462",
-          "url": "https://github.com/YRB19/ClipOS/commit/77befc21390929c8d5491407f01804f3dff0c462"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-11-17T10:40:31Z",
-          "headline": "feat: moments search and Resolve export endpoints",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "3ec575c7941b572c6a6fe9f5ad2293ed85c3f520",
-          "url": "https://github.com/YRB19/ClipOS/commit/3ec575c7941b572c6a6fe9f5ad2293ed85c3f520"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-11-17T10:40:26Z",
-          "headline": "feat: source-linked OTIO handoff export",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "db505ca4d3346a89a77acdf7edfe876e8b763596",
-          "url": "https://github.com/YRB19/ClipOS/commit/db505ca4d3346a89a77acdf7edfe876e8b763596"
+          "sha": "1d78316585faf61dfd56973d79eb0e5125dc36a7",
+          "url": "https://github.com/YRB19/ClipOS/commit/1d78316585faf61dfd56973d79eb0e5125dc36a7"
         },
         {
           "changed_files": 5,
-          "date": "2026-11-17T10:09:41Z",
-          "headline": "test: spawn worker integration and benchmark artifacts",
+          "date": "2026-11-25T17:57:00Z",
+          "headline": "docs: runtime recovery, model inventory, real-job completion",
           "is_bot": false,
           "is_merge": false,
-          "sha": "919faf754841eed6d0815688a7fda493d7705bb8",
-          "url": "https://github.com/YRB19/ClipOS/commit/919faf754841eed6d0815688a7fda493d7705bb8"
+          "sha": "b47e92eb3db446ab911b81c81595142d641e8b32",
+          "url": "https://github.com/YRB19/ClipOS/commit/b47e92eb3db446ab911b81c81595142d641e8b32"
         },
         {
-          "changed_files": 5,
-          "date": "2026-11-17T10:09:12Z",
-          "headline": "docs: Phase 6 decisions, benchmarks, and checkpoint",
+          "changed_files": 2,
+          "date": "2026-11-25T17:56:53Z",
+          "headline": "feat: updated model defaults from live probes",
           "is_bot": false,
           "is_merge": false,
-          "sha": "f659f72178760fe3d3977b65513eb303b1120e84",
-          "url": "https://github.com/YRB19/ClipOS/commit/f659f72178760fe3d3977b65513eb303b1120e84"
+          "sha": "4edae0abb9aceef0afd2017e34da3c3116ea41ce",
+          "url": "https://github.com/YRB19/ClipOS/commit/4edae0abb9aceef0afd2017e34da3c3116ea41ce"
+        },
+        {
+          "changed_files": 6,
+          "date": "2026-11-25T17:56:48Z",
+          "headline": "feat(frontend): heartbeat stale warning, batch export, correction editor",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "0b26b967ba8918ccf37efa6987d52203fd9f0164",
+          "url": "https://github.com/YRB19/ClipOS/commit/0b26b967ba8918ccf37efa6987d52203fd9f0164"
+        },
+        {
+          "changed_files": 4,
+          "date": "2026-11-25T17:56:38Z",
+          "headline": "test: terminal regression, missing OTIO 503, health without OTIO, mod…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "f9158c06ad5f94a0c3cdb1ba452ef5ca5f8d251f",
+          "url": "https://github.com/YRB19/ClipOS/commit/f9158c06ad5f94a0c3cdb1ba452ef5ca5f8d251f"
+        },
+        {
+          "changed_files": 4,
+          "date": "2026-11-25T17:56:29Z",
+          "headline": "feat: display_final_output keeps old renders visible; lazy OTIO import",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "f8747db34df349d8d42c565ac1db8c66185f2aac",
+          "url": "https://github.com/YRB19/ClipOS/commit/f8747db34df349d8d42c565ac1db8c66185f2aac"
+        },
+        {
+          "changed_files": 4,
+          "date": "2026-11-25T17:55:52Z",
+          "headline": "feat: LLM provider self-correction with numeric interval feedback",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "5debf5714365e50996bbf84f00e33ad44f0983e4",
+          "url": "https://github.com/YRB19/ClipOS/commit/5debf5714365e50996bbf84f00e33ad44f0983e4"
+        },
+        {
+          "changed_files": 9,
+          "date": "2026-11-25T17:55:42Z",
+          "headline": "feat: -nostdin for all FFmpeg media commands (prevents terminal suspe…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "68d25ea5e8d9cd333c3cf93077f0478b5505b036",
+          "url": "https://github.com/YRB19/ClipOS/commit/68d25ea5e8d9cd333c3cf93077f0478b5505b036"
         }
       ]
     },
@@ -1689,7 +1689,7 @@
       ]
     }
   },
-  "generated_at": "2026-11-25T08:46:28Z",
+  "generated_at": "2026-11-25T21:47:35Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
