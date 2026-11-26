@@ -1,13 +1,12 @@
 {
   "coverage": {
-    "closed_days_covered": 23,
+    "closed_days_covered": 24,
     "complete": false,
     "days_in_month": 30,
     "first_day": "2026-11-01",
-    "last_day": "2026-11-24",
+    "last_day": "2026-11-25",
     "missing_days": [
       "2026-11-11",
-      "2026-11-25",
       "2026-11-26",
       "2026-11-27",
       "2026-11-28",
@@ -17,19 +16,19 @@
   },
   "kind": "monthly",
   "languages": {
-    "as_of": "2026-11-25",
+    "as_of": "2026-11-26",
     "items": [
       {
         "language": "Python",
-        "pct": 48.0
+        "pct": 47.9
       },
       {
         "language": "TypeScript",
-        "pct": 27.3
+        "pct": 27.6
       },
       {
         "language": "JavaScript",
-        "pct": 15.7
+        "pct": 15.6
       },
       {
         "language": "CSS",
@@ -53,7 +52,7 @@
     },
     "commits": {
       "statistic": "sum of closed-day counts over the covered days",
-      "value": 188
+      "value": 196
     },
     "merged_prs": {
       "lower_bound": false,
@@ -69,7 +68,7 @@
   "month": "2026-11",
   "per_project": {
     "ClipOS": {
-      "commits": 74
+      "commits": 82
     },
     "CompanionOS": {
       "commits": 0
