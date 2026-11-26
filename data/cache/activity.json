@@ -330,12 +330,39 @@
     },
     "YRB19/FREYA": {
       "commits": {
-        "d30": 5,
-        "d7": 4,
-        "d90": 26
+        "d30": 8,
+        "d7": 7,
+        "d90": 29
       },
       "merged_prs": [],
       "recent_commits": [
+        {
+          "changed_files": 1,
+          "date": "2026-11-26T19:35:08Z",
+          "headline": "docs: describe isolated deployment and verified recovery outcomes",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "32a1aca4213d400453efc39f3cf6a0d9d7f79a5f",
+          "url": "https://github.com/YRB19/FREYA/commit/32a1aca4213d400453efc39f3cf6a0d9d7f79a5f"
+        },
+        {
+          "changed_files": 5,
+          "date": "2026-11-26T19:35:08Z",
+          "headline": "feat: deploy isolated releases with serialized file processing",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "3f20e6c9e7fc712ca09f05abe2c62f6acc161b0c",
+          "url": "https://github.com/YRB19/FREYA/commit/3f20e6c9e7fc712ca09f05abe2c62f6acc161b0c"
+        },
+        {
+          "changed_files": 6,
+          "date": "2026-11-26T19:35:08Z",
+          "headline": "feat: connect plan-only runtime to live canonical reads",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "f3e1b6ee3050c881549eaf0afb451d9c360e0753",
+          "url": "https://github.com/YRB19/FREYA/commit/f3e1b6ee3050c881549eaf0afb451d9c360e0753"
+        },
         {
           "changed_files": 1,
           "date": "2026-11-23T09:27:52Z",
@@ -380,33 +407,6 @@
           "is_merge": false,
           "sha": "3346eabf682d6db4e6813675e2c0a9f6b23627b9",
           "url": "https://github.com/YRB19/FREYA/commit/3346eabf682d6db4e6813675e2c0a9f6b23627b9"
-        },
-        {
-          "changed_files": 6,
-          "date": "2026-10-17T10:38:12Z",
-          "headline": "feat: Phase 9A - Reconciliation health and transaction models",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "b09ba8642a0d270c3abb5992a3a71a0958c91eb3",
-          "url": "https://github.com/YRB19/FREYA/commit/b09ba8642a0d270c3abb5992a3a71a0958c91eb3"
-        },
-        {
-          "changed_files": 3,
-          "date": "2026-09-25T10:23:34Z",
-          "headline": "fix: test_layer_8 & executor",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "00220bf4388b19037e2468304bd7dbbe1ff40df9",
-          "url": "https://github.com/YRB19/FREYA/commit/00220bf4388b19037e2468304bd7dbbe1ff40df9"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-09-23T06:32:56Z",
-          "headline": "fix: handle missing files correctly in Obsidian MCP reads",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "62c6752d39e3346b0532753c3397dd8cbc80ea18",
-          "url": "https://github.com/YRB19/FREYA/commit/62c6752d39e3346b0532753c3397dd8cbc80ea18"
         }
       ]
     },
@@ -814,83 +814,83 @@
     },
     "YRB19/NetOS": {
       "commits": {
-        "d30": 89,
-        "d7": 0,
-        "d90": 213
+        "d30": 101,
+        "d7": 12,
+        "d90": 225
       },
       "merged_prs": [],
       "recent_commits": [
         {
-          "changed_files": 5,
-          "date": "2026-11-16T11:54:58Z",
-          "headline": "docs(slice-13): ADR-29, market-data-feed.md, implementation-log, slic…",
+          "changed_files": 10,
+          "date": "2026-11-26T18:29:46Z",
+          "headline": "docs(slice-13): ADR-30, ADR-31, remediation progress, roadmap audit, …",
           "is_bot": false,
           "is_merge": false,
-          "sha": "ee7a796354491f69fd097343c3d0002e375e1a50",
-          "url": "https://github.com/YRB19/NetOS/commit/ee7a796354491f69fd097343c3d0002e375e1a50"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-11-16T11:54:54Z",
-          "headline": "chore(slice-13): .gitignore for raw market-data captures",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "806b6c7a31e7cbd238abd7ea86ff50e9bf7754a0",
-          "url": "https://github.com/YRB19/NetOS/commit/806b6c7a31e7cbd238abd7ea86ff50e9bf7754a0"
+          "sha": "a3a1c3b368e15c59c02300ef68bd76a26f4346eb",
+          "url": "https://github.com/YRB19/NetOS/commit/a3a1c3b368e15c59c02300ef68bd76a26f4346eb"
         },
         {
           "changed_files": 3,
-          "date": "2026-11-16T11:54:49Z",
-          "headline": "fix(slice-13): arch_lint import rules — feed_transports leaf, data.li…",
+          "date": "2026-11-26T18:29:33Z",
+          "headline": "test(slice-13c): slice13c tests — internal paper broker lifecycle, ne…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "fb2e5bf1ba9ac89b82de60afa74f82866b1b7c03",
-          "url": "https://github.com/YRB19/NetOS/commit/fb2e5bf1ba9ac89b82de60afa74f82866b1b7c03"
+          "sha": "54eedff5dfc34808a2a1e0937eae17a31d4c7636",
+          "url": "https://github.com/YRB19/NetOS/commit/54eedff5dfc34808a2a1e0937eae17a31d4c7636"
+        },
+        {
+          "changed_files": 6,
+          "date": "2026-11-26T18:29:27Z",
+          "headline": "test(slice-13): remediation tests — feed readiness, holdout integrity…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "c4f5d8f0ef7468714c1275e5ee5af5b72fe03fe4",
+          "url": "https://github.com/YRB19/NetOS/commit/c4f5d8f0ef7468714c1275e5ee5af5b72fe03fe4"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-11-26T18:29:23Z",
+          "headline": "feat(slice-13c): simulated broker Fill factory — _make_fill for paper…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "fee56df000be35c4678a400a93bf8ac9cbbdcd4b",
+          "url": "https://github.com/YRB19/NetOS/commit/fee56df000be35c4678a400a93bf8ac9cbbdcd4b"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-11-26T18:29:18Z",
+          "headline": "fix(slice-13): F06 — quote readiness ≠ transport liveness: FeedPipeli…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "e485918256eb04232a88e2430ca26dd0670be5f8",
+          "url": "https://github.com/YRB19/NetOS/commit/e485918256eb04232a88e2430ca26dd0670be5f8"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-11-26T18:29:12Z",
+          "headline": "fix(slice-13): F05 — QualityEngine revision ordering (CORRECTION_ACCE…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "2442165b9d30b606e8a9e3a4db2fec12e2f97ee3",
+          "url": "https://github.com/YRB19/NetOS/commit/2442165b9d30b606e8a9e3a4db2fec12e2f97ee3"
         },
         {
           "changed_files": 4,
-          "date": "2026-11-16T11:54:45Z",
-          "headline": "test(slice-13b): slice13b tests — feed infrastructure, upstox mapper,…",
+          "date": "2026-11-26T18:28:44Z",
+          "headline": "fix(slice-13): F12 — availability-aware replay & identity in both har…",
           "is_bot": false,
           "is_merge": false,
-          "sha": "9fb1a8b1ffbb2a891bd8bce3e87437d191d934d4",
-          "url": "https://github.com/YRB19/NetOS/commit/9fb1a8b1ffbb2a891bd8bce3e87437d191d934d4"
+          "sha": "999cd3ca388181947a175c7036ad9588a479e6aa",
+          "url": "https://github.com/YRB19/NetOS/commit/999cd3ca388181947a175c7036ad9588a479e6aa"
         },
         {
           "changed_files": 1,
-          "date": "2026-11-16T11:54:41Z",
-          "headline": "feat(slice-13b): tools/upstox_feed_capture.py — composition script",
+          "date": "2026-11-26T18:28:37Z",
+          "headline": "feat(slice-13c): research confirmatory protocol — immutable holdouts …",
           "is_bot": false,
           "is_merge": false,
-          "sha": "8a13ea953790ae0be8012828cc91a52e3c2872c9",
-          "url": "https://github.com/YRB19/NetOS/commit/8a13ea953790ae0be8012828cc91a52e3c2872c9"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-11-16T11:54:35Z",
-          "headline": "feat(slice-13b): feed_transports leaf package — Upstox transport (fak…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "c7a92747e322ccca6076fe842ea4fbd8f9a43887",
-          "url": "https://github.com/YRB19/NetOS/commit/c7a92747e322ccca6076fe842ea4fbd8f9a43887"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-11-16T11:54:31Z",
-          "headline": "feat(slice-13b): data.live capture + feed_pipeline — hash-chained cap…",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "2167dee5786bfb940bc509f4595fa9d61754605a",
-          "url": "https://github.com/YRB19/NetOS/commit/2167dee5786bfb940bc509f4595fa9d61754605a"
-        },
-        {
-          "changed_files": 1,
-          "date": "2026-11-16T11:54:28Z",
-          "headline": "feat(slice-13b): data.live upstox_v3 — pure decoder/mapper, injected …",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "5ae9ed2eb66f097171a1d57a1c9e449debd54e39",
-          "url": "https://github.com/YRB19/NetOS/commit/5ae9ed2eb66f097171a1d57a1c9e449debd54e39"
+          "sha": "787f70991aea51376b057e5334d8d651cee84ca7",
+          "url": "https://github.com/YRB19/NetOS/commit/787f70991aea51376b057e5334d8d651cee84ca7"
         }
       ]
     },
@@ -1115,7 +1115,7 @@
     },
     "YRB19/UsageOS": {
       "commits": {
-        "d30": 8,
+        "d30": 7,
         "d7": 3,
         "d90": 29
       },
@@ -1689,7 +1689,7 @@
       ]
     }
   },
-  "generated_at": "2026-11-26T08:32:17Z",
+  "generated_at": "2026-11-26T21:40:37Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
