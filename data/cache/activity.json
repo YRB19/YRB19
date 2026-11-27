@@ -330,12 +330,48 @@
     },
     "YRB19/FREYA": {
       "commits": {
-        "d30": 8,
-        "d7": 7,
-        "d90": 29
+        "d30": 12,
+        "d7": 11,
+        "d90": 33
       },
       "merged_prs": [],
       "recent_commits": [
+        {
+          "changed_files": 3,
+          "date": "2026-11-27T09:41:47Z",
+          "headline": "fix: retry transient launchd bootstrap failures during activation and…",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "b3ca996a8941ac05b653d44ae529ec87caf1a8db",
+          "url": "https://github.com/YRB19/FREYA/commit/b3ca996a8941ac05b653d44ae529ec87caf1a8db"
+        },
+        {
+          "changed_files": 1,
+          "date": "2026-11-27T09:38:45Z",
+          "headline": "docs: record verified recovery outcomes and pending plan quality gaps",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "73a2d681a5bc4fe2aaa60cdfd1c187008f3fa905",
+          "url": "https://github.com/YRB19/FREYA/commit/73a2d681a5bc4fe2aaa60cdfd1c187008f3fa905"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-11-27T09:38:44Z",
+          "headline": "feat: restore reviewed transactions with preserved recovery evidence",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "cb51a0774af6abdb74c7666465c41ff84b8fce8b",
+          "url": "https://github.com/YRB19/FREYA/commit/cb51a0774af6abdb74c7666465c41ff84b8fce8b"
+        },
+        {
+          "changed_files": 2,
+          "date": "2026-11-27T09:38:34Z",
+          "headline": "fix: distinguish unavailable canonical reads during restart recovery",
+          "is_bot": false,
+          "is_merge": false,
+          "sha": "1ec0ac472415c9f6797dd959d235c9b753487b2d",
+          "url": "https://github.com/YRB19/FREYA/commit/1ec0ac472415c9f6797dd959d235c9b753487b2d"
+        },
         {
           "changed_files": 1,
           "date": "2026-11-26T19:35:08Z",
@@ -371,42 +407,6 @@
           "is_merge": false,
           "sha": "e96814490bd6a09f8eb7bd8fa0f9be4997a870da",
           "url": "https://github.com/YRB19/FREYA/commit/e96814490bd6a09f8eb7bd8fa0f9be4997a870da"
-        },
-        {
-          "changed_files": 3,
-          "date": "2026-11-23T09:27:43Z",
-          "headline": "fix: validate recovery evidence and index lock reconciliation",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "e68d3b74eeb19404d55fc1511c42c94013538ed0",
-          "url": "https://github.com/YRB19/FREYA/commit/e68d3b74eeb19404d55fc1511c42c94013538ed0"
-        },
-        {
-          "changed_files": 2,
-          "date": "2026-11-23T09:27:32Z",
-          "headline": "fix: preserve relationship confirmations across source files",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "75c65d2fde87b6302f4e04a35b0b6b9a249fdeff",
-          "url": "https://github.com/YRB19/FREYA/commit/75c65d2fde87b6302f4e04a35b0b6b9a249fdeff"
-        },
-        {
-          "changed_files": 6,
-          "date": "2026-11-23T09:27:10Z",
-          "headline": "test: isolate executor recovery and make pytest checks reliable",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "e7fd576b61439b15f3568cba5a4a256b7a91939e",
-          "url": "https://github.com/YRB19/FREYA/commit/e7fd576b61439b15f3568cba5a4a256b7a91939e"
-        },
-        {
-          "changed_files": 9,
-          "date": "2026-11-05T04:23:12Z",
-          "headline": "feat: Phase 9A reconciliation framework + executor section verification",
-          "is_bot": false,
-          "is_merge": false,
-          "sha": "3346eabf682d6db4e6813675e2c0a9f6b23627b9",
-          "url": "https://github.com/YRB19/FREYA/commit/3346eabf682d6db4e6813675e2c0a9f6b23627b9"
         }
       ]
     },
@@ -1116,8 +1116,8 @@
     "YRB19/UsageOS": {
       "commits": {
         "d30": 7,
-        "d7": 3,
-        "d90": 29
+        "d7": 0,
+        "d90": 19
       },
       "merged_prs": [],
       "recent_commits": [
@@ -1689,7 +1689,7 @@
       ]
     }
   },
-  "generated_at": "2026-11-26T21:40:37Z",
+  "generated_at": "2026-11-27T21:25:57Z",
   "ok": true,
   "schema": 1,
   "source": "github-graphql"
