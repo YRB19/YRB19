@@ -1,13 +1,12 @@
 {
   "coverage": {
-    "closed_days_covered": 24,
+    "closed_days_covered": 25,
     "complete": false,
     "days_in_month": 30,
     "first_day": "2026-11-01",
-    "last_day": "2026-11-25",
+    "last_day": "2026-11-26",
     "missing_days": [
       "2026-11-11",
-      "2026-11-26",
       "2026-11-27",
       "2026-11-28",
       "2026-11-29",
@@ -16,23 +15,23 @@
   },
   "kind": "monthly",
   "languages": {
-    "as_of": "2026-11-26",
+    "as_of": "2026-11-27",
     "items": [
       {
         "language": "Python",
-        "pct": 47.9
+        "pct": 48.7
       },
       {
         "language": "TypeScript",
-        "pct": 27.6
+        "pct": 27.2
       },
       {
         "language": "JavaScript",
-        "pct": 15.6
+        "pct": 15.4
       },
       {
         "language": "CSS",
-        "pct": 5.3
+        "pct": 5.2
       },
       {
         "language": "HTML",
@@ -52,7 +51,7 @@
     },
     "commits": {
       "statistic": "sum of closed-day counts over the covered days",
-      "value": 196
+      "value": 211
     },
     "merged_prs": {
       "lower_bound": false,
@@ -77,7 +76,7 @@
       "commits": 0
     },
     "FREYA": {
-      "commits": 5
+      "commits": 8
     },
     "Finwise": {
       "commits": 0
@@ -86,7 +85,7 @@
       "commits": 0
     },
     "NetOS": {
-      "commits": 89
+      "commits": 101
     },
     "RepoHealth": {
       "commits": 0
