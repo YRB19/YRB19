@@ -1,13 +1,12 @@
 {
   "coverage": {
-    "closed_days_covered": 25,
+    "closed_days_covered": 26,
     "complete": false,
     "days_in_month": 30,
     "first_day": "2026-11-01",
-    "last_day": "2026-11-26",
+    "last_day": "2026-11-27",
     "missing_days": [
       "2026-11-11",
-      "2026-11-27",
       "2026-11-28",
       "2026-11-29",
       "2026-11-30"
@@ -15,19 +14,19 @@
   },
   "kind": "monthly",
   "languages": {
-    "as_of": "2026-11-27",
+    "as_of": "2026-11-28",
     "items": [
       {
         "language": "Python",
-        "pct": 48.7
+        "pct": 48.9
       },
       {
         "language": "TypeScript",
-        "pct": 27.2
+        "pct": 27.1
       },
       {
         "language": "JavaScript",
-        "pct": 15.4
+        "pct": 15.3
       },
       {
         "language": "CSS",
@@ -51,7 +50,7 @@
     },
     "commits": {
       "statistic": "sum of closed-day counts over the covered days",
-      "value": 211
+      "value": 215
     },
     "merged_prs": {
       "lower_bound": false,
@@ -76,7 +75,7 @@
       "commits": 0
     },
     "FREYA": {
-      "commits": 8
+      "commits": 12
     },
     "Finwise": {
       "commits": 0
